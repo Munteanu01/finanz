@@ -3,9 +3,9 @@ import Footer from "../../../components/footer"
 
 export default function InfiintarePfaPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <FinanzNavbar />
-      <main className="container mx-auto py-12 px-4">
+      <main className="container mx-auto py-12 px-4 mt-16 xl:mt-20">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold text-blue-900 mb-8">Înființare PFA</h1>
 

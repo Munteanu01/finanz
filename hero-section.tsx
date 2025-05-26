@@ -113,78 +113,57 @@ export default function HeroSection() {
       </section>
 
       {/* Mobile/Tablet Hero (below lg) */}
-      <section className="lg:hidden bg-white min-h-screen flex flex-col justify-center overflow-x-hidden">
-        <div className="container mx-auto px-4">
-          {/* Badge */}
-          <div className="text-center mb-6">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
-              <CheckCircle className="w-4 h-4 mr-2" />
-              15+ ani de experiență în contabilitate
-            </div>
-          </div>
+      <section className="lg:hidden relative h-screen flex flex-col justify-center overflow-x-hidden">
+        {/* Background Image for Mobile Hero */}
+        <div className="absolute inset-0">
+          <Image src="/images/hero-image.jpg" alt="Background" fill className="object-cover" priority />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/60 to-indigo-900/70"></div>
+        </div>
 
+        <div className="container mx-auto px-6 relative z-10 flex flex-col justify-center h-full">
           {/* Title */}
-          <div className="text-center mb-8">
-            <h1 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">
-              <span className="text-gray-900">Dedicați excelenței în</span>
+          <div className="text-center mb-12">
+            <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+              <span className="text-white">Dedicați excelenței în</span>
               <br />
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                contabilitate și consultanță
-              </span>
+              <span className="text-blue-200">contabilitate și consultanță</span>
             </h1>
 
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-blue-100 leading-relaxed max-w-md mx-auto">
               Navigăm împreună prin provocările financiare, cu experiență, profesionalism și integritate.
             </p>
           </div>
 
-          {/* Stats Card - Only 500+ */}
-          <div className="flex justify-center mb-8">
-            <div className="bg-blue-50 rounded-2xl p-6 text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-              <div className="text-sm text-gray-600">Clienți mulțumiți</div>
-            </div>
-          </div>
+          {/* Contact Buttons - Modern Design like Desktop */}
+          <div className="space-y-4 max-w-sm mx-auto">
+            {/* Email Button - Full width like desktop */}
+            <a
+              href="mailto:financiar.contabil@finanzconsult.ro"
+              className="w-full inline-flex items-center justify-center px-6 py-4 bg-white/90 text-blue-900 rounded-xl hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 backdrop-blur-sm"
+            >
+              <Mail className="h-5 w-5 mr-3" />
+              <span className="font-semibold text-sm">financiar.contabil@finanzconsult.ro</span>
+            </a>
 
-          {/* Contact Information - Mobile Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="bg-gray-50 rounded-2xl p-4">
-              <div className="flex items-center space-x-3 mb-2">
-                <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-2 rounded-lg">
-                  <Mail className="h-4 w-4 text-white" />
-                </div>
-                <h3 className="font-semibold text-gray-900 text-sm">Email</h3>
-              </div>
+            {/* Phone and Address - Grid like desktop */}
+            <div className="grid grid-cols-2 gap-3">
               <a
-                href="mailto:financiar.contabil@finanzconsult.ro"
-                className="text-blue-600 hover:text-blue-800 transition-colors text-xs break-all"
+                href="tel:021203082014"
+                className="inline-flex items-center justify-center px-4 py-3 bg-green-600/90 text-white rounded-lg hover:bg-green-600 transition-all duration-300 shadow-md hover:shadow-lg backdrop-blur-sm"
               >
-                financiar.contabil@finanzconsult.ro
+                <Phone className="h-4 w-4 mr-2" />
+                <span className="font-medium text-xs">021 20308 2014</span>
               </a>
-            </div>
 
-            <div className="bg-gray-50 rounded-2xl p-4">
-              <div className="flex items-center space-x-3 mb-2">
-                <div className="bg-gradient-to-br from-green-500 to-emerald-600 p-2 rounded-lg">
-                  <Phone className="h-4 w-4 text-white" />
-                </div>
-                <h3 className="font-semibold text-gray-900 text-sm">Call Center</h3>
-              </div>
-              <a href="tel:021203082014" className="text-blue-600 hover:text-blue-800 transition-colors text-xs">
-                021 20308 2014 2077
+              <a
+                href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-4 py-3 bg-purple-600/90 text-white rounded-lg hover:bg-purple-600 transition-all duration-300 shadow-md hover:shadow-lg backdrop-blur-sm"
+              >
+                <MapPin className="h-4 w-4 mr-2" />
+                <span className="font-medium text-xs">Sector 6, București</span>
               </a>
-            </div>
-
-            <div className="bg-gray-50 rounded-2xl p-4 sm:col-span-2">
-              <div className="flex items-center space-x-3 mb-2">
-                <div className="bg-gradient-to-br from-purple-500 to-pink-600 p-2 rounded-lg">
-                  <MapPin className="h-4 w-4 text-white" />
-                </div>
-                <h3 className="font-semibold text-gray-900 text-sm">Adresă</h3>
-              </div>
-              <p className="text-gray-700 leading-relaxed text-xs">
-                Splaiul Independentei, Nr 202 B, Sector 6, București
-              </p>
             </div>
           </div>
         </div>

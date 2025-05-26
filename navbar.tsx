@@ -177,7 +177,7 @@ const CustomDropdown = ({ title, items, dropdownKey, columns = 1, isOpen, onTogg
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block px-3 py-2 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors lg:font-semibold lg:text-base"
+                  className="block px-3 py-2 text-xs xl:text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors font-medium"
                   onClick={onClose}
                 >
                   {item.title}
@@ -202,60 +202,52 @@ const StaticLink = ({ title, href, onClick }: { title: string; href: string; onC
   </Link>
 )
 
-// Modern Mobile Menu Item Component
-const ModernMobileMenuItem = ({
+// Simple Mobile Menu Item Component
+const SimpleMobileMenuItem = ({
   title,
   href,
   onClick,
-  className = "",
 }: {
   title: string
   href: string
   onClick: () => void
-  className?: string
 }) => (
   <Link
     href={href}
-    className={`block px-5 py-4 text-lg font-semibold text-slate-800 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-200 border border-transparent hover:border-blue-200 ${className}`}
+    className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors font-medium"
     onClick={onClick}
   >
     {title}
   </Link>
 )
 
-// Modern Mobile Dropdown Section Component
-const ModernMobileDropdownSection = ({
+// Simple Mobile Dropdown Section Component
+const SimpleMobileDropdownSection = ({
   title,
   items,
   onItemClick,
-  itemClassName = "",
 }: {
   title: string
   items: MenuItem[]
   onItemClick: () => void
-  itemClassName?: string
 }) => (
-  <div className="bg-gradient-to-r from-white to-blue-50 rounded-2xl shadow-md border border-blue-100 overflow-hidden">
+  <div>
     <details className="group">
-      <summary className="flex items-center justify-between px-5 py-4 text-lg font-bold text-slate-800 cursor-pointer bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 transition-all duration-200 border-b border-blue-100">
-        <span className="tracking-wide text-blue-900">{title}</span>
-        <div className="bg-blue-500 rounded-full p-1">
-          <ChevronDown className="h-4 w-4 text-white transition-all duration-200 group-open:rotate-180" />
-        </div>
+      <summary className="flex items-center justify-between px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors font-medium cursor-pointer">
+        <span>{title}</span>
+        <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
       </summary>
-      <div className="px-3 pb-3 bg-white">
-        <div className="space-y-1 pt-2">
-          {items.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`block px-4 py-3 text-slate-700 font-medium hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 border border-transparent hover:border-blue-200 ${itemClassName}`}
-              onClick={onItemClick}
-            >
-              {item.title}
-            </Link>
-          ))}
-        </div>
+      <div className="ml-4 mt-1 space-y-1">
+        {items.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="block px-4 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm"
+            onClick={onItemClick}
+          >
+            {item.title}
+          </Link>
+        ))}
       </div>
     </details>
   </div>
@@ -364,80 +356,58 @@ export default function FinanzNavbar() {
         </div>
       </nav>
 
-      {/* Modern Mobile Menu Overlay */}
+      {/* Simple Mobile Menu Overlay */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 bg-gradient-to-br from-slate-100 via-white to-blue-50 z-50 overflow-x-hidden">
-          <div
-            className="h-full overflow-y-auto scrollbar-hide"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            <div className="p-6 pb-20">
-              {/* Modern Mobile Header */}
-              <div className="flex items-center justify-between mb-10">
+        <div className="lg:hidden fixed inset-0 bg-white z-50 overflow-x-hidden">
+          <div className="h-full overflow-y-auto">
+            <div className="p-6">
+              {/* Mobile Header */}
+              <div className="flex items-center justify-between mb-8">
                 <Link href="/" onClick={handleMenuClose}>
                   <Image src="/images/logo.png" alt="FINANZ Consult" width={150} height={40} className="h-8 w-auto" />
                 </Link>
-                <button
-                  onClick={handleMenuClose}
-                  className="p-3 hover:bg-white hover:shadow-lg rounded-2xl transition-all duration-300 focus:outline-none border border-transparent hover:border-slate-200"
-                >
-                  <X className="h-6 w-6 text-slate-600" />
+                <button onClick={handleMenuClose} className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                  <X className="h-6 w-6 text-gray-600" />
                 </button>
               </div>
 
-              {/* Modern Mobile Menu Content */}
-              <div className="space-y-6">
-                {/* Static Links Section */}
-                <div className="bg-gradient-to-r from-white to-blue-50 rounded-2xl shadow-md border border-blue-100 p-2">
-                  <div className="space-y-1">
-                    {STATIC_LINKS.map((link) => (
-                      <ModernMobileMenuItem
-                        key={link.href}
-                        title={link.title}
-                        href={link.href}
-                        onClick={handleMenuClose}
-                      />
-                    ))}
-                  </div>
-                </div>
-
+              {/* Simple Mobile Menu Content - All items in one list */}
+              <div className="space-y-2">
                 {/* Dropdown Sections */}
-                <div className="space-y-5">
-                  <ModernMobileDropdownSection
-                    title="Contabilitate"
-                    items={MENU_ITEMS.contabilitate}
-                    onItemClick={handleMenuClose}
-                    itemClassName="text-base font-semibold"
-                  />
+                <SimpleMobileDropdownSection
+                  title="Contabilitate"
+                  items={MENU_ITEMS.contabilitate}
+                  onItemClick={handleMenuClose}
+                />
 
-                  <ModernMobileDropdownSection
-                    title="Înființări"
-                    items={MENU_ITEMS.infiintari}
-                    onItemClick={handleMenuClose}
-                    itemClassName="text-base font-semibold"
-                  />
+                <SimpleMobileDropdownSection
+                  title="Înființări"
+                  items={MENU_ITEMS.infiintari}
+                  onItemClick={handleMenuClose}
+                />
 
-                  <ModernMobileDropdownSection
-                    title="Modificări SRL"
-                    items={MENU_ITEMS.modificariSrl}
-                    onItemClick={handleMenuClose}
-                    itemClassName="text-sm font-semibold"
-                  />
+                <SimpleMobileDropdownSection
+                  title="Modificări SRL"
+                  items={MENU_ITEMS.modificariSrl}
+                  onItemClick={handleMenuClose}
+                />
 
-                  <ModernMobileDropdownSection
-                    title="Modificări PFA"
-                    items={MENU_ITEMS.modificariPfa}
-                    onItemClick={handleMenuClose}
-                    itemClassName="text-sm font-semibold"
-                  />
+                <SimpleMobileDropdownSection
+                  title="Modificări PFA"
+                  items={MENU_ITEMS.modificariPfa}
+                  onItemClick={handleMenuClose}
+                />
 
-                  <ModernMobileDropdownSection
-                    title="Închideri"
-                    items={MENU_ITEMS.inchideri}
-                    onItemClick={handleMenuClose}
-                    itemClassName="text-base font-semibold"
-                  />
-                </div>
+                <SimpleMobileDropdownSection
+                  title="Închideri"
+                  items={MENU_ITEMS.inchideri}
+                  onItemClick={handleMenuClose}
+                />
+
+                {/* Static Links */}
+                {STATIC_LINKS.map((link) => (
+                  <SimpleMobileMenuItem key={link.href} title={link.title} href={link.href} onClick={handleMenuClose} />
+                ))}
               </div>
             </div>
           </div>
@@ -446,10 +416,6 @@ export default function FinanzNavbar() {
 
       {/* Custom CSS for responsive dropdown positioning */}
       <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        
         @media (min-width: 1280px) {
           [style*="--dropdown-top-xl"] {
             top: var(--dropdown-top-xl) !important;

@@ -125,7 +125,7 @@ export default function Page() {
       {/* Stats Section */}
       <section className="py-16 bg-blue-50">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="text-4xl font-bold text-blue-600 mb-2">500+</div>
               <div className="text-gray-600">Clienți mulțumiți</div>
@@ -137,10 +137,6 @@ export default function Page() {
             <div className="text-center">
               <div className="text-4xl font-bold text-blue-600 mb-2">1000+</div>
               <div className="text-gray-600">Companii înființate</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">24/7</div>
-              <div className="text-gray-600">Suport disponibil</div>
             </div>
           </div>
         </div>
