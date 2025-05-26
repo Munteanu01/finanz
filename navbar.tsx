@@ -151,7 +151,7 @@ const getDropdownClasses = (columns: number) => {
 
 const getButtonClasses = (isActive: boolean) => {
   const baseClasses = `flex items-center ${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium transition-colors whitespace-nowrap rounded-lg`
-  const stateClasses = isActive ? "text-blue-600 bg-blue-50" : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+  const stateClasses = isActive ? "text-primaryColor " : "text-gray-700 hover:text-primaryColor hover:bg-gray-50"
 
   return `${baseClasses} ${stateClasses}`
 }
@@ -177,7 +177,7 @@ const CustomDropdown = ({ title, items, dropdownKey, columns = 1, isOpen, onTogg
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block px-3 py-2 text-xs xl:text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors font-medium"
+                  className="block px-3 py-2 text-xs xl:text-sm text-gray-700 hover:text-primaryColor hover:bg-gray-50 rounded-md transition-colors font-medium"
                   onClick={onClose}
                 >
                   {item.title}
@@ -195,7 +195,7 @@ const CustomDropdown = ({ title, items, dropdownKey, columns = 1, isOpen, onTogg
 const StaticLink = ({ title, href, onClick }: { title: string; href: string; onClick?: () => void }) => (
   <Link
     href={href}
-    className={`${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors whitespace-nowrap`}
+    className={`${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium text-gray-700 hover:text-primaryColor hover:bg-gray-50 rounded-lg transition-colors whitespace-nowrap`}
     onClick={onClick}
   >
     {title}
@@ -214,7 +214,7 @@ const SimpleMobileMenuItem = ({
 }) => (
   <Link
     href={href}
-    className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors font-medium"
+    className="block px-4 py-3 text-gray-700 hover:text-primaryColor hover:bg-blue-50 rounded-lg transition-colors font-medium"
     onClick={onClick}
   >
     {title}
@@ -233,7 +233,7 @@ const SimpleMobileDropdownSection = ({
 }) => (
   <div>
     <details className="group">
-      <summary className="flex items-center justify-between px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors font-medium cursor-pointer">
+      <summary className="flex items-center justify-between px-4 py-3 text-gray-700 hover:text-primaryColor hover:bg-blue-50 rounded-lg transition-colors font-medium cursor-pointer">
         <span>{title}</span>
         <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
       </summary>
@@ -242,7 +242,7 @@ const SimpleMobileDropdownSection = ({
           <Link
             key={item.href}
             href={item.href}
-            className="block px-4 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm"
+            className="block px-4 py-2 text-gray-600 hover:text-primaryColor hover:bg-blue-50 rounded-lg transition-colors text-sm"
             onClick={onItemClick}
           >
             {item.title}

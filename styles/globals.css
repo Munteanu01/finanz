@@ -92,3 +92,10 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.secundaryColor {
+  background-color: #020F59 !important;
+}
+.primaryColor {
+  color: #020F59 !important;
+}

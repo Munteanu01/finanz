@@ -60,7 +60,7 @@ export default function HeroSection() {
                 {/* Email - Full width */}
                 <a
                   href="mailto:financiar.contabil@finanzconsult.ro"
-                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-[#020F59] text-white rounded-xl hover:bg-[#131446] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-primaryColor text-white rounded-xl  transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <Mail className="h-5 w-5 mr-3" />
                   <span className="font-semibold">financiar.contabil@finanzconsult.ro</span>
@@ -69,7 +69,7 @@ export default function HeroSection() {
                 {/* Phone - Full width */}
                 <a
                   href="tel:021203082014"
-                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-[#020F59] text-white rounded-xl hover:bg-[#131446] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-primaryColor text-white rounded-xl  transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <Phone className="h-5 w-5 mr-3" />
                   <span className="font-semibold">021 20308 2014</span>
@@ -169,7 +169,7 @@ export default function HeroSection() {
             {/* Email Button */}
             <a
               href="mailto:financiar.contabil@finanzconsult.ro"
-              className="w-full inline-flex items-center justify-center px-4 py-3 bg-[#020F59] text-white rounded-xl hover:bg-[#131446] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-xs"
+              className="w-full inline-flex items-center justify-center px-4 py-3 bg-primaryColor text-white rounded-xl  transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-xs"
             >
               <Mail className="h-4 w-4 mr-2" />
               <span className="font-semibold">financiar.contabil@finanzconsult.ro</span>
@@ -178,7 +178,7 @@ export default function HeroSection() {
             {/* Phone Button */}
             <a
               href="tel:0219222"
-              className="w-full inline-flex items-center justify-center px-4 py-3 bg-[#020F59] text-white rounded-xl hover:bg-[#131446] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-xs"
+              className="w-full inline-flex items-center justify-center px-4 py-3 bg-primaryColor text-white rounded-xl  transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-xs"
             >
               <Phone className="h-4 w-4 mr-2" />
               <span className="font-semibold">021 9222</span>
