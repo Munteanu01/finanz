@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <div className="overflow-x-hidden">
       {/* Desktop Hero (lg and up) */}
-      <section className="hidden lg:block relative bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 overflow-hidden min-h-screen flex items-center">
+      <section className="hidden lg:block relative bg-white overflow-hidden min-h-screen flex items-center">
         {/* Modern Background Elements */}
         <div className="absolute inset-0">
           {/* Geometric shapes */}
@@ -17,10 +17,11 @@ export default function HeroSection() {
           {/* Grid pattern with fade effect */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#3b82f640_2px,transparent_2px),linear-gradient(to_bottom,#3b82f640_2px,transparent_2px)] bg-[size:60px_60px]"></div>
 
-          {/* Fade overlay to make lines disappear towards edges */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-transparent to-slate-50 opacity-80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-transparent to-slate-50 opacity-80"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/60 via-transparent to-indigo-100/60"></div>
+          {/* Enhanced fade overlay to make lines less visible on edges and more visible in center */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-white"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/20 to-white"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-transparent to-white/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-tl from-white/90 via-transparent to-white/90"></div>
         </div>
 
         {/* Address badge - bottom right */}
@@ -119,7 +120,7 @@ export default function HeroSection() {
       </section>
 
       {/* Mobile/Tablet Hero (below lg) */}
-      <section className="lg:hidden relative h-screen flex flex-col justify-center overflow-x-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+      <section className="lg:hidden relative h-screen flex flex-col justify-center overflow-x-hidden bg-white">
         {/* Modern Background Elements for Mobile - Same as Desktop */}
         <div className="absolute inset-0">
           {/* Geometric shapes */}
@@ -130,10 +131,11 @@ export default function HeroSection() {
           {/* Grid pattern with fade effect - Same as Desktop */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#3b82f640_2px,transparent_2px),linear-gradient(to_bottom,#3b82f640_2px,transparent_2px)] bg-[size:60px_60px]"></div>
 
-          {/* Fade overlay to make lines disappear towards edges */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-transparent to-slate-50 opacity-80"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-transparent to-slate-50 opacity-80"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/60 via-transparent to-indigo-100/60"></div>
+          {/* Enhanced fade overlay to make lines less visible on edges and more visible in center */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-white"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/20 to-white"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-transparent to-white/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-tl from-white/90 via-transparent to-white/90"></div>
         </div>
 
         {/* Address badge - bottom right for mobile */}

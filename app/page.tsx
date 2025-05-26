@@ -3,7 +3,18 @@
 import FinanzNavbar from "../navbar"
 import HeroSection from "../hero-section"
 import Footer from "../components/footer"
-import { CheckCircle, Users, Award, Clock, ArrowRight, Star } from "lucide-react"
+import {
+  CheckCircle,
+  Users,
+  Clock,
+  ArrowRight,
+  Star,
+  FileText,
+  Building2,
+  Shield,
+  TrendingUp,
+  Globe,
+} from "lucide-react"
 import Link from "next/link"
 
 export default function Page() {
@@ -12,110 +23,256 @@ export default function Page() {
       <FinanzNavbar />
       <HeroSection />
 
-      {/* Services Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Serviciile noastre</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Oferim soluții complete pentru toate nevoile dumneavoastră de contabilitate și consultanță
+      {/* Services Section - Modern Design */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-blue-100/30 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-40 h-40 bg-green-100/30 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-purple-100/30 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-4">
+              <Star className="w-4 h-4 mr-2" />
+              Servicii profesionale
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Serviciile <span className="text-blue-600">noastre</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Oferim soluții complete și personalizate pentru toate nevoile dumneavoastră de contabilitate și
+              consultanță juridică
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-              <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <CheckCircle className="h-6 w-6 text-blue-600" />
+            {/* Contabilitate */}
+            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-t-2xl"></div>
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <FileText className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">Servicii de Contabilitate</h3>
+                  <p className="text-sm text-blue-600 font-medium">Soluții complete</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-blue-900">Servicii de Contabilitate</h3>
-              <p className="text-gray-600 mb-4">
-                Oferim servicii complete de contabilitate pentru SRL și PFA, adaptate nevoilor dumneavoastră specifice.
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Oferim servicii complete de contabilitate pentru SRL și PFA, adaptate nevoilor dumneavoastră specifice
+                cu raportări precise și la timp.
               </p>
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                  Contabilitate SRL și PFA
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                  Raportări fiscale
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                  Consultanță fiscală
+                </div>
+              </div>
               <Link
                 href="/contabilitate/srl"
-                className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center"
+                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
               >
-                Află mai mult <ArrowRight className="h-4 w-4 ml-1" />
+                Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-              <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <Users className="h-6 w-6 text-green-600" />
+            {/* Înființări */}
+            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-green-600 rounded-t-2xl"></div>
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <Building2 className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">Înființări Companii</h3>
+                  <p className="text-sm text-green-600 font-medium">Rapid și eficient</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-blue-900">Înființări Companii</h3>
-              <p className="text-gray-600 mb-4">
-                Vă ajutăm să înființați rapid și eficient SRL, PFA sau ONG cu toate documentele necesare.
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Vă ajutăm să înființați rapid și eficient SRL, PFA sau ONG cu toate documentele necesare și procedurile
+                legale.
               </p>
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                  Înființare SRL, PFA, ONG
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                  Documentație completă
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                  Proceduri ONRC
+                </div>
+              </div>
               <Link
                 href="/infiintari/srl"
-                className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center"
+                className="inline-flex items-center text-green-600 hover:text-green-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
               >
-                Află mai mult <ArrowRight className="h-4 w-4 ml-1" />
+                Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-              <div className="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <Award className="h-6 w-6 text-purple-600" />
+            {/* Modificări */}
+            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-purple-600 rounded-t-2xl"></div>
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <Users className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">Modificări și Actualizări</h3>
+                  <p className="text-sm text-purple-600 font-medium">Gestionare completă</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-blue-900">Modificări și Actualizări</h3>
-              <p className="text-gray-600 mb-4">
-                Gestionăm toate modificările necesare pentru compania dumneavoastră la ONRC și alte instituții.
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Gestionăm toate modificările necesare pentru compania dumneavoastră la ONRC și alte instituții
+                competente.
               </p>
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                  Modificări sediu social
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                  Schimbări administratori
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                  Actualizări CAEN
+                </div>
+              </div>
               <Link
                 href="/modificari/srl/sediu-social"
-                className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center"
+                className="inline-flex items-center text-purple-600 hover:text-purple-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
               >
-                Află mai mult <ArrowRight className="h-4 w-4 ml-1" />
+                Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-              <div className="bg-orange-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <Clock className="h-6 w-6 text-orange-600" />
+            {/* Găzduire Sediu */}
+            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-t-2xl"></div>
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <Globe className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">Găzduire Sediu Social</h3>
+                  <p className="text-sm text-orange-600 font-medium">Adresă prestigioasă</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-blue-900">Găzduire Sediu Social</h3>
-              <p className="text-gray-600 mb-4">
-                Adresă prestigioasă în București pentru sediul social al companiei dumneavoastră.
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Adresă prestigioasă în București pentru sediul social al companiei dumneavoastră cu toate facilitățile
+                necesare.
               </p>
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                  Adresă în București
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                  Gestionare corespondență
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                  Servicii complete
+                </div>
+              </div>
               <Link
                 href="/gazduire-sediu"
-                className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center"
+                className="inline-flex items-center text-orange-600 hover:text-orange-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
               >
-                Află mai mult <ArrowRight className="h-4 w-4 ml-1" />
+                Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-              <div className="bg-red-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <Award className="h-6 w-6 text-red-600" />
+            {/* Autorizații */}
+            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-t-2xl"></div>
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <Shield className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">Autorizații și Licențe</h3>
+                  <p className="text-sm text-red-600 font-medium">Asistență completă</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-blue-900">Autorizații și Licențe</h3>
-              <p className="text-gray-600 mb-4">
-                Vă asistăm în obținerea tuturor autorizațiilor necesare pentru activitatea dumneavoastră.
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Vă asistăm în obținerea tuturor autorizațiilor și licențelor necesare pentru desfășurarea activității
+                dumneavoastră.
               </p>
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                  Autorizații de funcționare
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                  Licențe specializate
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                  Consultanță juridică
+                </div>
+              </div>
               <Link
                 href="/autorizatii"
-                className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center"
+                className="inline-flex items-center text-red-600 hover:text-red-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
               >
-                Află mai mult <ArrowRight className="h-4 w-4 ml-1" />
+                Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-              <div className="bg-indigo-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <Star className="h-6 w-6 text-indigo-600" />
+            {/* Înregistrare Mărci */}
+            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-t-2xl"></div>
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <TrendingUp className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">Înregistrare Mărci</h3>
+                  <p className="text-sm text-indigo-600 font-medium">Protecție IP</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-blue-900">Înregistrare Mărci</h3>
-              <p className="text-gray-600 mb-4">
-                Protejați-vă proprietatea intelectuală prin înregistrarea mărcilor și brevetelor.
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Protejați-vă proprietatea intelectuală prin înregistrarea mărcilor, brevetelor și altor drepturi de
+                autor.
               </p>
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
+                  Înregistrare mărci
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
+                  Protecție brevete
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
+                  Drepturi de autor
+                </div>
+              </div>
               <Link
                 href="/inregistrare-marci"
-                className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center"
+                className="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
               >
-                Află mai mult <ArrowRight className="h-4 w-4 ml-1" />
+                Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </div>
           </div>
