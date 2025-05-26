@@ -113,23 +113,30 @@ export default function HeroSection() {
       </section>
 
       {/* Mobile/Tablet Hero (below lg) */}
-      <section className="lg:hidden relative h-screen flex flex-col justify-center overflow-x-hidden">
-        {/* Background Image for Mobile Hero with Low Opacity */}
+      <section className="lg:hidden relative h-screen flex flex-col justify-center overflow-x-hidden bg-black">
+        {/* Background Image for Mobile Hero with Black Overlay */}
         <div className="absolute inset-0">
-          <Image src="/images/hero-image.jpg" alt="Background" fill className="object-cover opacity-20" priority />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-blue-800/30 to-indigo-900/40"></div>
+          <Image
+            src="/images/hero-image.jpg"
+            alt="Background"
+            fill
+            className="object-cover"
+            priority
+            style={{ filter: "brightness(0.5) contrast(1.1)" }}
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10 flex flex-col justify-center h-full">
           {/* Title */}
           <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-white">
+            <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight" style={{ color: "#ffffff" }}>
               <span>Dedicați excelenței în</span>
               <br />
               <span>contabilitate și consultanță</span>
             </h1>
 
-            <p className="text-lg text-white/90 leading-relaxed max-w-md mx-auto">
+            <p className="text-lg leading-relaxed max-w-md mx-auto" style={{ color: "rgba(255, 255, 255, 0.9)" }}>
               Navigăm împreună prin provocările financiare, cu experiență, profesionalism și integritate.
             </p>
           </div>
@@ -139,7 +146,10 @@ export default function HeroSection() {
             {/* Email Button */}
             <a
               href="mailto:financiar.contabil@finanzconsult.ro"
-              className="w-full inline-flex items-center justify-center px-6 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="w-full inline-flex items-center justify-center px-6 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              style={{ backgroundColor: "#2563eb", color: "#ffffff" }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#1d4ed8")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#2563eb")}
             >
               <Mail className="h-5 w-5 mr-3" />
               <span className="font-semibold text-sm">financiar.contabil@finanzconsult.ro</span>
@@ -148,7 +158,10 @@ export default function HeroSection() {
             {/* Phone Button */}
             <a
               href="tel:021203082014"
-              className="w-full inline-flex items-center justify-center px-6 py-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="w-full inline-flex items-center justify-center px-6 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              style={{ backgroundColor: "#16a34a", color: "#ffffff" }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#15803d")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#16a34a")}
             >
               <Phone className="h-5 w-5 mr-3" />
               <span className="font-semibold text-sm">021 20308 2014</span>
@@ -159,10 +172,12 @@ export default function HeroSection() {
               href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full inline-flex items-center justify-center px-6 py-4 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="w-full inline-flex items-center justify-center px-6 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              style={{ backgroundColor: "#9333ea", color: "#ffffff" }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#7c3aed")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#9333ea")}
             >
-              <MapPin className="h-5 w-5 mr-3" />
-              <span className="font-semibold text-sm">Sector 6, București</span>
+              <MapPin className="h-5 w-5" />
             </a>
           </div>
         </div>
