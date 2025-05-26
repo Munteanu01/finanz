@@ -25,8 +25,8 @@ const NAVBAR_CONFIG = {
   dropdown: {
     // Calculate distance from button to navbar bottom - keep mobile at 16px
     distanceToNavbar: {
-      mobile: 16, // Keep as requested - don't change
-      desktop: 22, // Keep as requested
+      mobile: 17, // Keep as requested - don't change
+      desktop: 23, // Keep as requested
     },
     minWidthSingle: "min-w-64",
     maxWidthSingle: "max-w-80",
@@ -132,21 +132,18 @@ const getDropdownWidth = (columns: number) => {
 }
 
 const getDropdownPosition = () => {
-  // Calculate position to be directly under navbar
   const mobileDistance = NAVBAR_CONFIG.dropdown.distanceToNavbar.mobile
   const desktopDistance = NAVBAR_CONFIG.dropdown.distanceToNavbar.desktop
 
   return {
-    // Use CSS calc to position under navbar on different screen sizes
     top: `calc(100% + ${mobileDistance}px)`,
-    // On xl screens, use desktop distance
-    "--dropdown-top-xl": `calc(100% + ${desktopDistance}px)`,
-  }
+    '--dropdown-top-xl': `calc(100% + ${desktopDistance}px)`,
+  } as React.CSSProperties
 }
 
 const getDropdownClasses = (columns: number) => {
   const widthClasses = getDropdownWidth(columns)
-  return `absolute top-full left-0 bg-white border-l border-r border-b border-gray-200 rounded-b-lg shadow-lg ${NAVBAR_CONFIG.dropdown.zIndex} ${widthClasses}`
+  return `navbar-dropdown absolute top-full left-0 bg-white border-l border-r border-b border-gray-200 rounded-b-lg shadow-lg ${NAVBAR_CONFIG.dropdown.zIndex} ${widthClasses}`
 }
 
 const getButtonClasses = (isActive: boolean) => {
@@ -466,9 +463,9 @@ export default function FinanzNavbar() {
       )}
 
       {/* Custom CSS for responsive dropdown positioning */}
-      <style jsx>{`
+      <style jsx global>{`
         @media (min-width: 1280px) {
-          [style*="--dropdown-top-xl"] {
+          .navbar-dropdown {
             top: var(--dropdown-top-xl) !important;
           }
         }
