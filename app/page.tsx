@@ -424,41 +424,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CTA Section - Modern Design */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-        </div>
-        <div className="container mx-auto px-4 text-center relative">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Gata să <span className="text-blue-300">începeți</span> colaborarea cu noi?
-            </h2>
-            <p className="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed">
-              Contactați-ne astăzi pentru o consultanță gratuită și descoperiți cum vă putem ajuta să vă dezvoltați
-              afacerea
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link
-                href="/contact"
-                className="group inline-flex items-center justify-center px-10 py-5 bg-white text-blue-900 rounded-2xl hover:bg-blue-50 transition-all font-bold text-lg transform hover:scale-105 shadow-2xl"
-              >
-                <Heart className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform" />
-                Contactează-ne
-              </Link>
-              <a
-                href="tel:021203082014"
-                className="group inline-flex items-center justify-center px-10 py-5 border-3 border-white text-white rounded-2xl hover:bg-white hover:text-blue-900 transition-all font-bold text-lg transform hover:scale-105"
-              >
-                <Zap className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform" />
-                Sună acum
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
       <Footer />
     </div>
