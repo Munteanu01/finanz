@@ -4,9 +4,7 @@ import FinanzNavbar from "../navbar"
 import HeroSection from "../hero-section"
 import Footer from "../components/footer"
 import {
-  CheckCircle,
   Users,
-  Clock,
   ArrowRight,
   Star,
   FileText,
@@ -14,6 +12,9 @@ import {
   Shield,
   TrendingUp,
   Globe,
+  Award,
+  Zap,
+  Heart,
 } from "lucide-react"
 import Link from "next/link"
 
@@ -35,7 +36,7 @@ export default function Page() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Serviciile <span className="text-blue-600">noastre</span>
+              Serviciile <span className="text-gray-900">noastre</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Oferim soluții complete și personalizate pentru toate nevoile dumneavoastră de contabilitate și
@@ -45,11 +46,10 @@ export default function Page() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Contabilitate */}
-            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-t-2xl"></div>
+            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col h-full">
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                  <FileText className="h-8 w-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4">
+                  <FileText className="h-8 w-8 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">Servicii de Contabilitate</h3>
@@ -60,7 +60,7 @@ export default function Page() {
                 Oferim servicii complete de contabilitate pentru SRL și PFA, adaptate nevoilor dumneavoastră specifice
                 cu raportări precise și la timp.
               </p>
-              <div className="space-y-2 mb-6">
+              <div className="space-y-2 mb-6 flex-grow">
                 <div className="flex items-center text-sm text-gray-600">
                   <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
                   Contabilitate SRL și PFA
@@ -76,18 +76,17 @@ export default function Page() {
               </div>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
+                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-300 mt-auto"
               >
                 Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
               </button>
             </div>
 
             {/* Înființări */}
-            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-green-600 rounded-t-2xl"></div>
+            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col h-full">
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                  <Building2 className="h-8 w-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mr-4">
+                  <Building2 className="h-8 w-8 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">Înființări Companii</h3>
@@ -98,7 +97,7 @@ export default function Page() {
                 Vă ajutăm să înființați rapid și eficient SRL, PFA sau ONG cu toate documentele necesare și procedurile
                 legale.
               </p>
-              <div className="space-y-2 mb-6">
+              <div className="space-y-2 mb-6 flex-grow">
                 <div className="flex items-center text-sm text-gray-600">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
                   Înființare SRL, PFA, ONG
@@ -114,18 +113,17 @@ export default function Page() {
               </div>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="inline-flex items-center text-green-600 hover:text-green-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
+                className="inline-flex items-center text-green-600 hover:text-green-800 font-semibold transition-colors duration-300 mt-auto"
               >
                 Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
               </button>
             </div>
 
             {/* Modificări */}
-            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-purple-600 rounded-t-2xl"></div>
+            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col h-full">
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                  <Users className="h-8 w-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mr-4">
+                  <Users className="h-8 w-8 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">Modificări și Actualizări</h3>
@@ -136,7 +134,7 @@ export default function Page() {
                 Gestionăm toate modificările necesare pentru compania dumneavoastră la ONRC și alte instituții
                 competente.
               </p>
-              <div className="space-y-2 mb-6">
+              <div className="space-y-2 mb-6 flex-grow">
                 <div className="flex items-center text-sm text-gray-600">
                   <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
                   Modificări sediu social
@@ -152,18 +150,17 @@ export default function Page() {
               </div>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="inline-flex items-center text-purple-600 hover:text-purple-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
+                className="inline-flex items-center text-purple-600 hover:text-purple-800 font-semibold transition-colors duration-300 mt-auto"
               >
                 Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
               </button>
             </div>
 
             {/* Găzduire Sediu */}
-            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-t-2xl"></div>
+            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col h-full">
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                  <Globe className="h-8 w-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mr-4">
+                  <Globe className="h-8 w-8 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">Găzduire Sediu Social</h3>
@@ -174,7 +171,7 @@ export default function Page() {
                 Adresă prestigioasă în București pentru sediul social al companiei dumneavoastră cu toate facilitățile
                 necesare.
               </p>
-              <div className="space-y-2 mb-6">
+              <div className="space-y-2 mb-6 flex-grow">
                 <div className="flex items-center text-sm text-gray-600">
                   <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                   Adresă în București
@@ -190,18 +187,17 @@ export default function Page() {
               </div>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="inline-flex items-center text-orange-600 hover:text-orange-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
+                className="inline-flex items-center text-orange-600 hover:text-orange-800 font-semibold transition-colors duration-300 mt-auto"
               >
                 Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
               </button>
             </div>
 
             {/* Autorizații */}
-            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-t-2xl"></div>
+            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col h-full">
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                  <Shield className="h-8 w-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mr-4">
+                  <Shield className="h-8 w-8 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">Autorizații și Licențe</h3>
@@ -212,7 +208,7 @@ export default function Page() {
                 Vă asistăm în obținerea tuturor autorizațiilor și licențelor necesare pentru desfășurarea activității
                 dumneavoastră.
               </p>
-              <div className="space-y-2 mb-6">
+              <div className="space-y-2 mb-6 flex-grow">
                 <div className="flex items-center text-sm text-gray-600">
                   <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
                   Autorizații de funcționare
@@ -228,18 +224,17 @@ export default function Page() {
               </div>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="inline-flex items-center text-red-600 hover:text-red-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
+                className="inline-flex items-center text-red-600 hover:text-red-800 font-semibold transition-colors duration-300 mt-auto"
               >
                 Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
               </button>
             </div>
 
             {/* Înregistrare Mărci */}
-            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-t-2xl"></div>
+            <div className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col h-full">
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                  <TrendingUp className="h-8 w-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mr-4">
+                  <TrendingUp className="h-8 w-8 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">Înregistrare Mărci</h3>
@@ -250,7 +245,7 @@ export default function Page() {
                 Protejați-vă proprietatea intelectuală prin înregistrarea mărcilor, brevetelor și altor drepturi de
                 autor.
               </p>
-              <div className="space-y-2 mb-6">
+              <div className="space-y-2 mb-6 flex-grow">
                 <div className="flex items-center text-sm text-gray-600">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
                   Înregistrare mărci
@@ -266,7 +261,7 @@ export default function Page() {
               </div>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
+                className="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-semibold transition-colors duration-300 mt-auto"
               >
                 Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
               </button>
@@ -280,7 +275,7 @@ export default function Page() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">500+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">1000+</div>
               <div className="text-gray-600">Clienți mulțumiți</div>
             </div>
             <div className="text-center">
@@ -288,128 +283,179 @@ export default function Page() {
               <div className="text-gray-600">Ani de experiență</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">1000+</div>
-              <div className="text-gray-600">Companii înființate</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">24/7</div>
+              <div className="text-gray-600">Suport disponibil</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">De ce să ne alegeți?</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+      {/* Why Choose Us Section - Modern Design */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50"></div>
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              De ce să ne <span className="text-blue-600">alegeți</span>?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Experiența și profesionalismul nostru vă garantează servicii de calitate superioară
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="h-8 w-8 text-blue-600" />
+            <div className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Award className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-blue-900">Experiență Vastă</h3>
-              <p className="text-gray-600">
-                Peste 15 ani de experiență în domeniul contabilității și consultanței fiscale
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Experiență Vastă</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Peste 15 ani de experiență în domeniul contabilității și consultanței fiscale cu rezultate dovedite
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-green-600" />
+            <div className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Users className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-blue-900">Echipă Profesionistă</h3>
-              <p className="text-gray-600">Specialiști certificați și actualizați permanent cu legislația în vigoare</p>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Echipă Profesionistă</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Specialiști certificați și actualizați permanent cu legislația în vigoare pentru servicii impecabile
+              </p>
             </div>
 
-            <div className="text-center">
-              <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-purple-600" />
+            <div className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Zap className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-blue-900">Răspuns Rapid</h3>
-              <p className="text-gray-600">Procesare rapidă a documentelor și răspuns prompt la toate solicitările</p>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Răspuns Rapid</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Procesare rapidă a documentelor și răspuns prompt la toate solicitările în maximum 24 de ore
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50">
+      {/* Testimonials Section - Modern Design */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Ce spun clienții noștri</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Ce spun <span className="text-blue-600">clienții</span> noștri
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Feedback-ul clienților noștri confirmă calitatea serviciilor oferite
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                ))}
+            <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+              <div className="flex items-center mb-6">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <span className="ml-2 text-sm font-semibold text-gray-600">5.0</span>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-700 mb-6 leading-relaxed text-lg">
                 "Servicii profesionale și prompte. Echipa FINANZ Consult ne-a ajutat să înființăm compania rapid și
                 eficient."
               </p>
-              <div className="font-semibold text-blue-900">Maria Popescu</div>
-              <div className="text-sm text-gray-500">Director General, ABC SRL</div>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-white font-bold">MP</span>
+                </div>
+                <div>
+                  <div className="font-bold text-gray-900">Maria Popescu</div>
+                  <div className="text-sm text-gray-500">Director General, ABC SRL</div>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                ))}
+            <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+              <div className="flex items-center mb-6">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <span className="ml-2 text-sm font-semibold text-gray-600">5.0</span>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-700 mb-6 leading-relaxed text-lg">
                 "Colaborăm de 5 ani cu FINANZ Consult pentru contabilitatea companiei. Sunt foarte mulțumit de
                 servicii."
               </p>
-              <div className="font-semibold text-blue-900">Ion Georgescu</div>
-              <div className="text-sm text-gray-500">Antreprenor, XYZ PFA</div>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-white font-bold">IG</span>
+                </div>
+                <div>
+                  <div className="font-bold text-gray-900">Ion Georgescu</div>
+                  <div className="text-sm text-gray-500">Antreprenor, XYZ PFA</div>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-lg">
-              <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                ))}
+            <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+              <div className="flex items-center mb-6">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <span className="ml-2 text-sm font-semibold text-gray-600">5.0</span>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-700 mb-6 leading-relaxed text-lg">
                 "Consultanță fiscală excelentă și suport permanent. Recomand cu încredere serviciile lor."
               </p>
-              <div className="font-semibold text-blue-900">Ana Dumitrescu</div>
-              <div className="text-sm text-gray-500">Manager Financiar, DEF SRL</div>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-white font-bold">AD</span>
+                </div>
+                <div>
+                  <div className="font-bold text-gray-900">Ana Dumitrescu</div>
+                  <div className="text-sm text-gray-500">Manager Financiar, DEF SRL</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-blue-900">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Gata să începeți colaborarea cu noi?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Contactați-ne astăzi pentru o consultanță gratuită și descoperiți cum vă putem ajuta
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-900 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
-            >
-              Contactează-ne
-            </Link>
-            <a
-              href="tel:021203082014"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-900 transition-colors font-semibold"
-            >
-              Sună acum
-            </a>
+      {/* CTA Section - Modern Design */}
+      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+        </div>
+        <div className="container mx-auto px-4 text-center relative">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Gata să <span className="text-blue-300">începeți</span> colaborarea cu noi?
+            </h2>
+            <p className="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed">
+              Contactați-ne astăzi pentru o consultanță gratuită și descoperiți cum vă putem ajuta să vă dezvoltați
+              afacerea
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link
+                href="/contact"
+                className="group inline-flex items-center justify-center px-10 py-5 bg-white text-blue-900 rounded-2xl hover:bg-blue-50 transition-all font-bold text-lg transform hover:scale-105 shadow-2xl"
+              >
+                <Heart className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform" />
+                Contactează-ne
+              </Link>
+              <a
+                href="tel:021203082014"
+                className="group inline-flex items-center justify-center px-10 py-5 border-3 border-white text-white rounded-2xl hover:bg-white hover:text-blue-900 transition-all font-bold text-lg transform hover:scale-105"
+              >
+                <Zap className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform" />
+                Sună acum
+              </a>
+            </div>
           </div>
         </div>
       </section>
