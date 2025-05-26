@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail, Phone, CheckCircle } from "lucide-react"
+import { Mail, Phone, MapPin } from "lucide-react"
 import Image from "next/image"
 
 export default function HeroSection() {
@@ -14,16 +14,26 @@ export default function HeroSection() {
           <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-blue-400/20 to-indigo-600/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tl from-indigo-500/15 to-blue-300/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
 
-          {/* Grid pattern */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+          {/* Grid pattern with fade effect */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#3b82f640_2px,transparent_2px),linear-gradient(to_bottom,#3b82f640_2px,transparent_2px)] bg-[size:40px_40px]"></div>
+
+          {/* Fade overlay to make lines disappear towards edges */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-transparent to-slate-50 opacity-80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-transparent to-slate-50 opacity-80"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/60 via-transparent to-indigo-100/60"></div>
         </div>
 
-        {/* Badge for large screens - bottom right */}
+        {/* Address badge - bottom right */}
         <div className="absolute bottom-8 right-8 z-20">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium shadow-lg">
-            <CheckCircle className="w-4 h-4 mr-2" />
-            15+ ani de experiență în contabilitate
-          </div>
+          <a
+            href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-4 py-2 bg-white/90 backdrop-blur-sm text-gray-700 rounded-full text-sm font-medium shadow-lg border border-gray-200 hover:bg-white hover:shadow-xl transition-all duration-300"
+          >
+            <MapPin className="w-4 h-4 mr-2 text-blue-600" />
+            <span>Splaiul Independentei, Nr 202B, Sector 6, București</span>
+          </a>
         </div>
 
         <div className="container mx-auto px-4 py-8 relative z-10 flex items-center min-h-screen">
@@ -34,8 +44,10 @@ export default function HeroSection() {
                 <h1 className="text-3xl md:text-4xl lg:text-3xl xl:text-5xl font-bold mb-4 leading-tight">
                   <span className="text-gray-900">Dedicați excelenței în</span>
                   <br />
-                  <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                  <span className="relative inline-block text-gray-900 mt-2">
                     contabilitate și consultanță
+                    <span className="text-blue-600">.</span>
+                    <span className="absolute bottom-0 left-0 w-full h-2 bg-blue-600 rounded-full"></span>
                   </span>
                 </h1>
 
@@ -90,6 +102,14 @@ export default function HeroSection() {
                   </div>
                 </div>
 
+                {/* Experience badge - similar to clients badge */}
+                <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 mr-4">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-green-600">15+</div>
+                    <div className="text-sm text-gray-600">Ani experiență</div>
+                  </div>
+                </div>
+
                 {/* Decorative elements */}
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-500/20 to-indigo-600/10 rounded-full blur-xl"></div>
                 <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tl from-indigo-600/15 to-blue-400/20 rounded-full blur-xl"></div>
@@ -100,30 +120,50 @@ export default function HeroSection() {
       </section>
 
       {/* Mobile/Tablet Hero (below lg) */}
-      <section className="lg:hidden relative h-screen flex flex-col justify-center overflow-x-hidden bg-black">
-        {/* Background Image for Mobile Hero with Black Overlay */}
+      <section className="lg:hidden relative h-screen flex flex-col justify-center overflow-x-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+        {/* Modern Background Elements for Mobile - Same as Desktop */}
         <div className="absolute inset-0">
-          <Image
-            src="/images/hero-image.jpg"
-            alt="Background"
-            fill
-            className="object-cover"
-            priority
-            style={{ filter: "brightness(0.5) contrast(1.1)" }}
-          />
-          <div className="absolute inset-0 bg-black/40"></div>
+          {/* Geometric shapes */}
+          <div className="absolute top-20 left-4 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-indigo-600/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-32 right-6 w-40 h-40 bg-gradient-to-tl from-indigo-500/15 to-blue-300/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-r from-indigo-400/20 to-blue-300/15 rounded-full blur-lg animate-pulse delay-500"></div>
+
+          {/* Grid pattern with fade effect - Same as Desktop */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#3b82f640_2px,transparent_2px),linear-gradient(to_bottom,#3b82f640_2px,transparent_2px)] bg-[size:40px_40px]"></div>
+
+          {/* Fade overlay to make lines disappear towards edges */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-transparent to-slate-50 opacity-80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-transparent to-slate-50 opacity-80"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/60 via-transparent to-indigo-100/60"></div>
+        </div>
+
+        {/* Address badge - bottom right for mobile */}
+        <div className="absolute bottom-8 right-4 left-4 z-20">
+          <a
+            href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center px-3 py-2 bg-white/90 backdrop-blur-sm text-gray-700 rounded-full text-xs font-medium shadow-lg border border-gray-200 hover:bg-white hover:shadow-xl transition-all duration-300"
+          >
+            <MapPin className="w-3 h-3 mr-2 text-blue-600 flex-shrink-0" />
+            <span className="text-center">Splaiul Independentei, Nr 202B, Sector 6, București</span>
+          </a>
         </div>
 
         <div className="container mx-auto px-6 relative z-10 flex flex-col justify-center h-full">
           {/* Title */}
           <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight" style={{ color: "#ffffff" }}>
+            <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-gray-900">
               <span>Dedicați excelenței în</span>
               <br />
-              <span>contabilitate și consultanță</span>
+              <span className="relative inline-block text-gray-900 mt-2">
+                contabilitate și consultanță
+                <span className="text-blue-600">.</span>
+                <span className="absolute bottom-0 left-0 w-full h-2 bg-blue-600 rounded-full"></span>
+              </span>
             </h1>
 
-            <p className="text-lg leading-relaxed max-w-md mx-auto" style={{ color: "rgba(255, 255, 255, 0.9)" }}>
+            <p className="text-lg leading-relaxed max-w-md mx-auto text-gray-600">
               Navigăm împreună prin provocările financiare, cu experiență, profesionalism și integritate.
             </p>
           </div>
@@ -133,10 +173,7 @@ export default function HeroSection() {
             {/* Email Button */}
             <a
               href="mailto:financiar.contabil@finanzconsult.ro"
-              className="w-full inline-flex items-center justify-center px-6 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              style={{ backgroundColor: "#2563eb", color: "#ffffff" }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#1d4ed8")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#2563eb")}
+              className="w-full inline-flex items-center justify-center px-6 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <Mail className="h-5 w-5 mr-3" />
               <span className="font-semibold text-sm">financiar.contabil@finanzconsult.ro</span>
@@ -145,10 +182,7 @@ export default function HeroSection() {
             {/* Phone Button */}
             <a
               href="tel:021203082014"
-              className="w-full inline-flex items-center justify-center px-6 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              style={{ backgroundColor: "#16a34a", color: "#ffffff" }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#15803d")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#16a34a")}
+              className="w-full inline-flex items-center justify-center px-6 py-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <Phone className="h-5 w-5 mr-3" />
               <span className="font-semibold text-sm">021 20308 2014</span>

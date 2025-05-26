@@ -27,22 +27,22 @@ export default function SchimbareAdministratorSrlPage() {
               <div className="bg-yellow-50 p-6 rounded-lg">
                 <h3 className="text-2xl font-semibold text-yellow-900 mb-4">Motive frecvente</h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li>• Demisia administratorului actual</li>
-                  <li>• Expirarea mandatului</li>
-                  <li>• Schimbarea strategiei de management</li>
-                  <li>• Cerințe ale asociaților</li>
-                  <li>• Incompatibilități legale</li>
+                  <li>Demisia administratorului actual</li>
+                  <li>Expirarea mandatului</li>
+                  <li>Schimbarea strategiei de management</li>
+                  <li>Cerințe ale asociaților</li>
+                  <li>Incompatibilități legale</li>
                 </ul>
               </div>
 
               <div className="bg-green-50 p-6 rounded-lg">
                 <h3 className="text-2xl font-semibold text-green-900 mb-4">Beneficii</h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li>• Management îmbunătățit</li>
-                  <li>• Conformitate legală</li>
-                  <li>• Reprezentare actualizată</li>
-                  <li>• Responsabilități clare</li>
-                  <li>• Continuitatea activității</li>
+                  <li>Management îmbunătățit</li>
+                  <li>Conformitate legală</li>
+                  <li>Reprezentare actualizată</li>
+                  <li>Responsabilități clare</li>
+                  <li>Continuitatea activității</li>
                 </ul>
               </div>
             </div>
@@ -51,13 +51,13 @@ export default function SchimbareAdministratorSrlPage() {
 
             <div className="bg-gray-50 p-6 rounded-lg mb-8">
               <ul className="space-y-2 text-gray-700">
-                <li>• Hotărârea AGEA de numire/revocare administrator</li>
-                <li>• Demisia administratorului actual (dacă este cazul)</li>
-                <li>• Acceptarea mandatului de către noul administrator</li>
-                <li>• Copii CI ale tuturor administratorilor</li>
-                <li>• Cazierul judiciar al noului administrator</li>
-                <li>• Declarația pe propria răspundere</li>
-                <li>• CV-ul noului administrator</li>
+                <li>Hotărârea AGEA de numire/revocare administrator</li>
+                <li>Demisia administratorului actual (dacă este cazul)</li>
+                <li>Acceptarea mandatului de către noul administrator</li>
+                <li>Copii CI ale tuturor administratorilor</li>
+                <li>Cazierul judiciar al noului administrator</li>
+                <li>Declarația pe propria răspundere</li>
+                <li>CV-ul noului administrator</li>
               </ul>
             </div>
 

@@ -27,22 +27,22 @@ export default function SchimbareCodCaenPage() {
               <div className="bg-yellow-50 p-6 rounded-lg">
                 <h3 className="text-2xl font-semibold text-yellow-900 mb-4">Motive frecvente</h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li>• Schimbarea activității principale</li>
-                  <li>• Extinderea domeniului de activitate</li>
-                  <li>• Conformarea cu cerințele ANAF</li>
-                  <li>• Optimizarea fiscală</li>
-                  <li>• Accesarea de fonduri europene</li>
+                  <li>Schimbarea activității principale</li>
+                  <li>Extinderea domeniului de activitate</li>
+                  <li>Conformarea cu cerințele ANAF</li>
+                  <li>Optimizarea fiscală</li>
+                  <li>Accesarea de fonduri europene</li>
                 </ul>
               </div>
 
               <div className="bg-green-50 p-6 rounded-lg">
                 <h3 className="text-2xl font-semibold text-green-900 mb-4">Avantaje</h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li>• Conformitate cu activitatea reală</li>
-                  <li>• Evitarea sancțiunilor ANAF</li>
-                  <li>• Acces la facilități fiscale</li>
-                  <li>• Eligibilitate pentru granturi</li>
-                  <li>• Claritate în relațiile comerciale</li>
+                  <li>Conformitate cu activitatea reală</li>
+                  <li>Evitarea sancțiunilor ANAF</li>
+                  <li>Acces la facilități fiscale</li>
+                  <li>Eligibilitate pentru granturi</li>
+                  <li>Claritate în relațiile comerciale</li>
                 </ul>
               </div>
             </div>
@@ -51,11 +51,11 @@ export default function SchimbareCodCaenPage() {
 
             <div className="bg-gray-50 p-6 rounded-lg mb-8">
               <ul className="space-y-2 text-gray-700">
-                <li>• Hotărârea AGEA de modificare cod CAEN</li>
-                <li>• Justificarea alegerii noului cod CAEN</li>
-                <li>• Copii CI ale administratorilor</li>
-                <li>• Certificatul de înregistrare al societății</li>
-                <li>• Declarația pe propria răspundere</li>
+                <li>Hotărârea AGEA de modificare cod CAEN</li>
+                <li>Justificarea alegerii noului cod CAEN</li>
+                <li>Copii CI ale administratorilor</li>
+                <li>Certificatul de înregistrare al societății</li>
+                <li>Declarația pe propria răspundere</li>
               </ul>
             </div>
 

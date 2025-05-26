@@ -3,22 +3,47 @@ import Footer from "../../../components/footer"
 
 export default function InfiintareSrlPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/50">
       <FinanzNavbar />
-      <main className="container mx-auto py-12 px-4 mt-16 xl:mt-20">
+
+      {/* Background decorative elements */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-indigo-400/10 to-purple-600/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tl from-purple-500/8 to-indigo-300/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-gradient-to-r from-violet-400/8 to-purple-300/6 rounded-full blur-2xl"></div>
+      </div>
+
+      <main className="container mx-auto py-12 px-4 mt-16 xl:mt-20 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-blue-900 mb-8">Înființare SRL</h1>
+          {/* Modern header section */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></span>
+              Înființare societăți cu răspundere limitată
+            </div>
+            <h1 className="text-4xl font-bold text-blue-900 mb-4">Înființare SRL</h1>
+            <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
+          </div>
 
           <div className="prose prose-lg max-w-none">
-            <p className="text-xl text-gray-700 mb-8">
-              Vă ajutăm să înființați rapid și eficient o societate cu răspundere limitată (SRL), cu toate documentele
-              necesare și procedurile legale.
-            </p>
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 mb-8">
+              <p className="text-xl text-gray-700 mb-8">
+                Vă ajutăm să înființați rapid și eficient o societate cu răspundere limitată (SRL), cu toate documentele
+                necesare și procedurile legale.
+              </p>
+            </div>
 
-            <div className="bg-blue-50 p-6 rounded-lg mb-8">
-              <h3 className="text-2xl font-semibold text-blue-900 mb-4">Pachet complet înființare SRL</h3>
-              <div className="text-3xl font-bold text-blue-900 mb-4">599 RON</div>
-              <p className="text-gray-700">Toate taxele și procedurile incluse, fără costuri ascunse!</p>
+            <div className="bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl p-8 mb-8 text-white shadow-xl">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-white font-bold text-xl">€</span>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold">Pachet complet înființare SRL</h3>
+                  <p className="text-indigo-100">Toate taxele și procedurile incluse, fără costuri ascunse!</p>
+                </div>
+              </div>
+              <div className="text-4xl font-bold">599 RON</div>
             </div>
 
             <h2 className="text-3xl font-bold text-blue-900 mb-6">Documentele necesare</h2>
