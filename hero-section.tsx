@@ -7,21 +7,16 @@ export default function HeroSection() {
   return (
     <div className="overflow-x-hidden">
       {/* Desktop Hero (lg and up) */}
-      <section className="hidden lg:block relative bg-white overflow-hidden min-h-screen flex items-center">
-        {/* Modern Background Elements */}
-        <div className="absolute inset-0">
-          {/* Geometric shapes */}
-          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-blue-400/20 to-indigo-600/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tl from-indigo-500/15 to-blue-300/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-
-          {/* Grid pattern with fade effect */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#3b82f640_2px,transparent_2px),linear-gradient(to_bottom,#3b82f640_2px,transparent_2px)] bg-[size:60px_60px]"></div>
-
-          {/* Enhanced fade overlay to make lines less visible on edges and more visible in center */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-white"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/20 to-white"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-transparent to-white/90"></div>
-          <div className="absolute inset-0 bg-gradient-to-tl from-white/90 via-transparent to-white/90"></div>
+      <section className="hidden lg:block relative overflow-hidden min-h-screen flex items-center">
+        {/* Haikei PNG Background */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <Image
+            src="/wave-haikei (1).png"
+            alt="Wave background"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
 
         {/* Address badge - bottom right */}
@@ -42,21 +37,20 @@ export default function HeroSection() {
             {/* Left Content */}
             <div className="space-y-8">
               <div>
-                <h1 className="text-3xl md:text-4xl lg:text-3xl xl:text-5xl font-bold mb-4 ">
-                <span className="text-gray-900 group leading-relaxed">
-                  Dedicați <span className="relative inline-block">
-                    <span className="relative z-10">excelenței</span>
-                    <span className="absolute left-0 bottom-1 w-full h-2 bg-[#FE6309] z-0 transition-all duration-300 group-hover:h-5/6"></span>
+                <h1 className="text-3xl md:text-4xl lg:text-3xl xl:text-5xl font-bold mb-4 text-white">
+                  <span className="text-white group leading-relaxed">
+                    Dedicați <span className="relative inline-block">
+                      <span className="relative z-10">excelenței</span>
+                      <span className="absolute left-0 bottom-1 w-full xl:h-2 h-1 bg-[#FE6309] z-0 transition-all duration-300 group-hover:h-5/6"></span>
                     </span> în
-                    </span>
-
+                  </span>
                   <br />
                   <span className="relative inline-block mt-2">
                     <span className="relative z-10  font-bold">contabilitate și consultanță</span>
                   </span>
                 </h1>
 
-                <p className="text-lg md:text-xl lg:text-base xl:text-xl mb-6 text-gray-600 leading-relaxed">
+                <p className="text-lg md:text-xl lg:text-base xl:text-xl mb-6 text-white leading-relaxed">
                   Navigăm împreună prin provocările financiare, cu experiență, profesionalism și integritate.
                 </p>
               </div>
@@ -125,22 +119,16 @@ export default function HeroSection() {
       </section>
 
       {/* Mobile/Tablet Hero (below lg) */}
-      <section className="lg:hidden relative h-screen flex flex-col justify-center overflow-x-hidden bg-white">
-        {/* Modern Background Elements for Mobile - Same as Desktop */}
-        <div className="absolute inset-0">
-          {/* Geometric shapes */}
-          <div className="absolute top-20 left-4 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-indigo-600/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-32 right-6 w-40 h-40 bg-gradient-to-tl from-indigo-500/15 to-blue-300/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-r from-indigo-400/20 to-blue-300/15 rounded-full blur-lg animate-pulse delay-500"></div>
-
-          {/* Grid pattern with fade effect - Same as Desktop */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#3b82f640_2px,transparent_2px),linear-gradient(to_bottom,#3b82f640_2px,transparent_2px)] bg-[size:60px_60px]"></div>
-
-          {/* Enhanced fade overlay to make lines less visible on edges and more visible in center */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-white"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-white/20 to-white"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-transparent to-white/90"></div>
-          <div className="absolute inset-0 bg-gradient-to-tl from-white/90 via-transparent to-white/90"></div>
+      <section className="lg:hidden relative h-screen flex flex-col justify-center overflow-x-hidden">
+        {/* Haikei PNG Background */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <Image
+            src="/wave-haikei (1).png"
+            alt="Wave background"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
 
         {/* Address badge - bottom right for mobile */}
