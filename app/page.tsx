@@ -14,7 +14,6 @@ import {
   Globe,
   Award,
   Zap,
-  Heart,
 } from "lucide-react"
 import Link from "next/link"
 
@@ -380,7 +379,7 @@ export default function Page() {
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <span className="ml-2 text-sm font-semibold text-gray-600">5.0</span>
+                
               </div>
               <p className="text-gray-700 mb-6 leading-relaxed text-lg">
                 "Colaborăm de 5 ani cu FINANZ Consult pentru contabilitatea companiei. Sunt foarte mulțumit de
@@ -404,7 +403,7 @@ export default function Page() {
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <span className="ml-2 text-sm font-semibold text-gray-600">5.0</span>
+                
               </div>
               <p className="text-gray-700 mb-6 leading-relaxed text-lg">
                 "Consultanță fiscală excelentă și suport permanent. Recomand cu încredere serviciile lor."

@@ -46,8 +46,7 @@ export default function HeroSection() {
                   <span className="text-gray-900">Dedicați excelenței în</span>
                   <br />
                   <span className="relative inline-block mt-2">
-                    <span className="relative z-10 text-blue-600 font-bold">contabilitate și consultanță</span>
-                    <span className="absolute bottom-0 left-0 w-full h-1/6 bg-blue-100 -z-10"></span>
+                    <span className="relative z-10  font-bold">contabilitate și consultanță</span>
                   </span>
                 </h1>
 
@@ -61,7 +60,7 @@ export default function HeroSection() {
                 {/* Email - Full width */}
                 <a
                   href="mailto:financiar.contabil@finanzconsult.ro"
-                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-[#131446] text-white rounded-xl hover:bg-[#0f172a] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <Mail className="h-5 w-5 mr-3" />
                   <span className="font-semibold">financiar.contabil@finanzconsult.ro</span>
@@ -70,7 +69,7 @@ export default function HeroSection() {
                 {/* Phone - Full width */}
                 <a
                   href="tel:021203082014"
-                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-[#131446] text-white rounded-xl hover:bg-[#0f172a] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <Phone className="h-5 w-5 mr-3" />
                   <span className="font-semibold">021 20308 2014</span>
@@ -97,7 +96,7 @@ export default function HeroSection() {
                 {/* Floating stats cards */}
                 <div className="absolute -top-6 -left-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">500+</div>
+                    <div className="text-2xl font-bold text-[#FE6309]">1000+</div>
                     <div className="text-sm text-gray-600">Clienți mulțumiți</div>
                   </div>
                 </div>
@@ -105,7 +104,7 @@ export default function HeroSection() {
                 {/* Experience badge - similar to clients badge */}
                 <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 mr-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-green-600">15+</div>
+                    <div className="text-2xl font-bold text-[#FE6309]">15+</div>
                     <div className="text-sm text-gray-600">Ani experiență</div>
                   </div>
                 </div>
