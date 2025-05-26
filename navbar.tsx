@@ -334,10 +334,10 @@ export default function FinanzNavbar() {
           top: 0,
         }}
       >
-        <div className="flex items-center justify-center gap-8 w-full max-w-5xl px-6 py-1">
+        <div className="flex items-center justify-center md:gap-8 gap-1 w-full max-w-5xl px-6 py-1">
           <a
             href="tel:+40712345678"
-            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-semibold text-sm rounded-lg px-3 py-1 hover:bg-blue-800/40 focus:outline-none focus:ring-2 focus:ring-white/40"
+            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-semibold sm:text-sm text-xs rounded-lg px-3 py-1 hover:bg-blue-800/40 focus:outline-none focus:ring-2 focus:ring-white/40"
             style={{ textDecoration: "none" }}
           >
             <Phone className="w-4 h-4" />
@@ -345,7 +345,7 @@ export default function FinanzNavbar() {
           </a>
           <a
             href="mailto:office@finanz.ro"
-            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-semibold text-sm rounded-lg px-3 py-1 hover:bg-blue-800/40 focus:outline-none focus:ring-2 focus:ring-white/40"
+            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-semibold sm:text-sm text-xs  rounded-lg px-3 py-1 hover:bg-blue-800/40 focus:outline-none focus:ring-2 focus:ring-white/40"
             style={{ textDecoration: "none" }}
           >
             <Mail className="w-4 h-4" />

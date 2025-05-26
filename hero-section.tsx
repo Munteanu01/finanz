@@ -9,7 +9,7 @@ export default function HeroSection() {
       {/* Desktop Hero (lg and up) */}
       <section className="hidden lg:block relative overflow-hidden min-h-screen flex items-center">
         {/* Haikei PNG Background */}
-        <div className="absolute inset-0 w-full h-full z-0">
+        <div className="absolute inset-0 w-full h-full z-0 ">
           <Image
             src="/wave-haikei (1).png"
             alt="Wave background"
@@ -27,7 +27,7 @@ export default function HeroSection() {
             rel="noopener noreferrer"
             className="inline-flex items-center px-4 py-2 bg-white/90 backdrop-blur-sm text-gray-700 rounded-full text-sm font-medium shadow-lg border border-gray-200 hover:bg-white hover:shadow-xl transition-all duration-300"
           >
-            <MapPin className="w-4 h-4 mr-2 text-blue-600" />
+            <MapPin className="w-4 h-4 mr-2 text-[#FE6309]" />
             <span>Splaiul Independentei, Nr 202B, Sector 6, București</span>
           </a>
         </div>
@@ -139,46 +139,49 @@ export default function HeroSection() {
             rel="noopener noreferrer"
             className="inline-flex items-center px-3 py-2 bg-white/90 backdrop-blur-sm text-gray-700 rounded-full text-xs font-medium shadow-lg border border-gray-200 hover:bg-white hover:shadow-xl transition-all duration-300"
           >
-            <MapPin className="w-3 h-3 mr-2 text-blue-600 flex-shrink-0" />
+            <MapPin className="w-3 h-3 mr-2 text-[#FE6309] flex-shrink-0" />
             <span>Splaiul Independentei, Nr 202B, Sector 6, București</span>
           </a>
         </div>
 
         <div className="container mx-auto px-6 relative z-10 flex flex-col justify-center h-full">
           {/* Title */}
-          <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-gray-900">
-              <span>Dedicați excelenței în</span>
+          <div className="text-center mb-8">
+            <h1 className="text-2xl font-bold mb-3 text-white leading-tight">
+              <span className="text-white group leading-relaxed">
+                Dedicați <span className="relative inline-block">
+                  <span className="relative z-10">excelenței</span>
+                  <span className="absolute left-0 bottom-1 w-full h-1 bg-[#FE6309] z-0 transition-all duration-300 group-hover:h-5/6"></span>
+                </span> în
+              </span>
               <br />
-              <span className="relative inline-block mt-2">
-                <span className="relative z-10 text-blue-600 font-bold">contabilitate și consultanță</span>
-                <span className="absolute bottom-0 left-0 w-full h-1/6 bg-blue-100 -z-10"></span>
+              <span className="relative inline-block mt-1">
+                <span className="relative z-10 font-bold">contabilitate și consultanță</span>
               </span>
             </h1>
 
-            <p className="text-lg leading-relaxed max-w-md mx-auto text-gray-600">
+            <p className="text-base mb-4 text-white leading-relaxed">
               Navigăm împreună prin provocările financiare, cu experiență, profesionalism și integritate.
             </p>
           </div>
-
           {/* Contact Buttons - Only Email and Phone */}
-          <div className="space-y-4 max-w-sm mx-auto">
+          <div className="grid grid-cols-1 gap-3 max-w-2xl mx-auto mb-8">
             {/* Email Button */}
             <a
               href="mailto:financiar.contabil@finanzconsult.ro"
-              className="w-full inline-flex items-center justify-center px-6 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="w-full inline-flex items-center justify-center px-4 py-3 bg-[#020F59] text-white rounded-xl hover:bg-[#131446] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-xs"
             >
-              <Mail className="h-5 w-5 mr-3" />
-              <span className="font-semibold text-sm">financiar.contabil@finanzconsult.ro</span>
+              <Mail className="h-4 w-4 mr-2" />
+              <span className="font-semibold">financiar.contabil@finanzconsult.ro</span>
             </a>
 
             {/* Phone Button */}
             <a
-              href="tel:021203082014"
-              className="w-full inline-flex items-center justify-center px-6 py-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              href="tel:0219222"
+              className="w-full inline-flex items-center justify-center px-4 py-3 bg-[#020F59] text-white rounded-xl hover:bg-[#131446] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-xs"
             >
-              <Phone className="h-5 w-5 mr-3" />
-              <span className="font-semibold text-sm">021 20308 2014</span>
+              <Phone className="h-4 w-4 mr-2" />
+              <span className="font-semibold">021 9222</span>
             </a>
           </div>
         </div>
