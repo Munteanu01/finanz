@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronDown, Menu, X } from "lucide-react"
+import { ChevronDown, Menu, X, Phone, Mail } from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect, useRef, useCallback } from "react"
 import Image from "next/image"
@@ -319,21 +319,47 @@ export default function FinanzNavbar() {
   return (
     <div className="overflow-x-hidden">
       {/* Contact Bar - appears after scroll */}
-      {showContactBar && (
-        <div className="fixed top-0 left-0 right-0 z-50 bg-blue-600 text-white text-xs xl:text-sm py-2 px-4 flex items-center justify-center space-x-6 transition-all">
-          <span>
-            📞 <a href="tel:+40712345678" className="underline hover:text-blue-200">+40 712 345 678</a>
-          </span>
-          <span>
-            ✉️ <a href="mailto:office@finanz.ro" className="underline hover:text-blue-200">office@finanz.ro</a>
-          </span>
+      <div
+        className={`
+          fixed left-0 right-0 z-50 flex items-center justify-center
+          transition-transform transition-opacity duration-500 ease-in-out
+          ${showContactBar ? "translate-y-0 opacity-100 pointer-events-auto" : "-translate-y-full opacity-0 pointer-events-none"}
+        `}
+        style={{
+          minHeight: 34,
+          background: "#0E124C",
+          margin: 0,
+          padding: 0,
+          boxShadow: "0 2px 8px 0 rgba(0,0,0,0.04)",
+          top: 0,
+        }}
+      >
+        <div className="flex items-center justify-center gap-8 w-full max-w-5xl px-6 py-1">
+          <a
+            href="tel:+40712345678"
+            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-semibold text-sm rounded-lg px-3 py-1 hover:bg-blue-800/40 focus:outline-none focus:ring-2 focus:ring-white/40"
+            style={{ textDecoration: "none" }}
+          >
+            <Phone className="w-4 h-4" />
+            <span className=" decoration-white/40 hover:decoration-white">021 9222</span>
+          </a>
+          <a
+            href="mailto:office@finanz.ro"
+            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-semibold text-sm rounded-lg px-3 py-1 hover:bg-blue-800/40 focus:outline-none focus:ring-2 focus:ring-white/40"
+            style={{ textDecoration: "none" }}
+          >
+            <Mail className="w-4 h-4" />
+            <span className=" decoration-white/40 hover:decoration-white">financiar.contabil@finanzconsult.ro</span>
+          </a>
         </div>
-      )}
+      </div>
       {/* Main Navigation */}
       <nav
-        className={`bg-white shadow-sm border-b border-gray-200 fixed left-0 right-0 z-40 transition-all ${
-          showContactBar ? "top-10 xl:top-10" : "top-0"
-        }`}
+        className={`
+          bg-white shadow-sm border-b border-gray-200 fixed left-0 right-0 z-40
+          transition-all duration-500 ease-in-out
+          ${showContactBar ? "top-[34px]" : "top-0"}
+        `}
       >
         <div className="container mx-auto px-4">
           <div
