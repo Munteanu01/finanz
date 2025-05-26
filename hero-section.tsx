@@ -42,8 +42,14 @@ export default function HeroSection() {
             {/* Left Content */}
             <div className="space-y-8">
               <div>
-                <h1 className="text-3xl md:text-4xl lg:text-3xl xl:text-5xl font-bold mb-4 leading-tight">
-                  <span className="text-gray-900">Dedicați excelenței în</span>
+                <h1 className="text-3xl md:text-4xl lg:text-3xl xl:text-5xl font-bold mb-4 ">
+                <span className="text-gray-900 group leading-relaxed">
+                  Dedicați <span className="relative inline-block">
+                    <span className="relative z-10">excelenței</span>
+                    <span className="absolute left-0 bottom-1 w-full h-2 bg-[#FE6309] z-0 transition-all duration-300 group-hover:h-5/6"></span>
+                    </span> în
+                    </span>
+
                   <br />
                   <span className="relative inline-block mt-2">
                     <span className="relative z-10  font-bold">contabilitate și consultanță</span>
@@ -60,7 +66,7 @@ export default function HeroSection() {
                 {/* Email - Full width */}
                 <a
                   href="mailto:financiar.contabil@finanzconsult.ro"
-                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-[#131446] text-white rounded-xl hover:bg-[#0f172a] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-[#020F59] text-white rounded-xl hover:bg-[#131446] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <Mail className="h-5 w-5 mr-3" />
                   <span className="font-semibold">financiar.contabil@finanzconsult.ro</span>
@@ -69,7 +75,7 @@ export default function HeroSection() {
                 {/* Phone - Full width */}
                 <a
                   href="tel:021203082014"
-                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-[#131446] text-white rounded-xl hover:bg-[#0f172a] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-[#020F59] text-white rounded-xl hover:bg-[#131446] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <Phone className="h-5 w-5 mr-3" />
                   <span className="font-semibold">021 20308 2014</span>

@@ -257,6 +257,7 @@ const SimpleMobileDropdownSection = ({
 export default function FinanzNavbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [showContactBar, setShowContactBar] = useState(false)
   const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
 
   // ===== HOOKS =====
@@ -290,6 +291,15 @@ export default function FinanzNavbar() {
     }
   }, [openDropdown])
 
+  // Show contact bar on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowContactBar(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   // ===== EVENT HANDLERS =====
 
   const handleMenuClose = useCallback(() => {
@@ -308,8 +318,23 @@ export default function FinanzNavbar() {
 
   return (
     <div className="overflow-x-hidden">
+      {/* Contact Bar - appears after scroll */}
+      {showContactBar && (
+        <div className="fixed top-0 left-0 right-0 z-50 bg-blue-600 text-white text-xs xl:text-sm py-2 px-4 flex items-center justify-center space-x-6 transition-all">
+          <span>
+            📞 <a href="tel:+40712345678" className="underline hover:text-blue-200">+40 712 345 678</a>
+          </span>
+          <span>
+            ✉️ <a href="mailto:office@finanz.ro" className="underline hover:text-blue-200">office@finanz.ro</a>
+          </span>
+        </div>
+      )}
       {/* Main Navigation */}
-      <nav className="bg-white shadow-sm border-b border-gray-200 fixed top-0 left-0 right-0 z-40">
+      <nav
+        className={`bg-white shadow-sm border-b border-gray-200 fixed left-0 right-0 z-40 transition-all ${
+          showContactBar ? "top-10 xl:top-10" : "top-0"
+        }`}
+      >
         <div className="container mx-auto px-4">
           <div
             className={`flex items-center justify-between ${NAVBAR_CONFIG.heights.mobile} ${NAVBAR_CONFIG.heights.desktop}`}
