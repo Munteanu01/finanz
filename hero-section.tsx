@@ -69,7 +69,7 @@ export default function HeroSection() {
                 {/* Phone - Full width */}
                 <a
                   href="tel:021203082014"
-                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-yellow-300 text-white rounded-xl hover:bg-yellow-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <Phone className="h-5 w-5 mr-3" />
                   <span className="font-semibold">021 20308 2014</span>
@@ -104,7 +104,7 @@ export default function HeroSection() {
                 {/* Experience badge - similar to clients badge */}
                 <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 mr-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-yellow-400">15+</div>
+                    <div className="text-2xl font-bold text-green-600">15+</div>
                     <div className="text-sm text-gray-600">Ani experiență</div>
                   </div>
                 </div>
@@ -180,7 +180,7 @@ export default function HeroSection() {
             {/* Phone Button */}
             <a
               href="tel:021203082014"
-              className="w-full inline-flex items-center justify-center px-6 py-4 bg-yellow-300 text-white rounded-xl hover:bg-yellow-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="w-full inline-flex items-center justify-center px-6 py-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <Phone className="h-5 w-5 mr-3" />
               <span className="font-semibold text-sm">021 20308 2014</span>
