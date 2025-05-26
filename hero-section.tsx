@@ -114,57 +114,56 @@ export default function HeroSection() {
 
       {/* Mobile/Tablet Hero (below lg) */}
       <section className="lg:hidden relative h-screen flex flex-col justify-center overflow-x-hidden">
-        {/* Background Image for Mobile Hero */}
+        {/* Background Image for Mobile Hero with Low Opacity */}
         <div className="absolute inset-0">
-          <Image src="/images/hero-image.jpg" alt="Background" fill className="object-cover" priority />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/60 to-indigo-900/70"></div>
+          <Image src="/images/hero-image.jpg" alt="Background" fill className="object-cover opacity-20" priority />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-blue-800/30 to-indigo-900/40"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10 flex flex-col justify-center h-full">
           {/* Title */}
           <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-              <span className="text-white">Dedicați excelenței în</span>
+            <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-white">
+              <span>Dedicați excelenței în</span>
               <br />
-              <span className="text-blue-200">contabilitate și consultanță</span>
+              <span>contabilitate și consultanță</span>
             </h1>
 
-            <p className="text-lg text-blue-100 leading-relaxed max-w-md mx-auto">
+            <p className="text-lg text-white/90 leading-relaxed max-w-md mx-auto">
               Navigăm împreună prin provocările financiare, cu experiență, profesionalism și integritate.
             </p>
           </div>
 
-          {/* Contact Buttons - Modern Design like Desktop */}
+          {/* Contact Buttons - All Stacked Vertically */}
           <div className="space-y-4 max-w-sm mx-auto">
-            {/* Email Button - Full width like desktop */}
+            {/* Email Button */}
             <a
               href="mailto:financiar.contabil@finanzconsult.ro"
-              className="w-full inline-flex items-center justify-center px-6 py-4 bg-white/90 text-blue-900 rounded-xl hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 backdrop-blur-sm"
+              className="w-full inline-flex items-center justify-center px-6 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <Mail className="h-5 w-5 mr-3" />
               <span className="font-semibold text-sm">financiar.contabil@finanzconsult.ro</span>
             </a>
 
-            {/* Phone and Address - Grid like desktop */}
-            <div className="grid grid-cols-2 gap-3">
-              <a
-                href="tel:021203082014"
-                className="inline-flex items-center justify-center px-4 py-3 bg-green-600/90 text-white rounded-lg hover:bg-green-600 transition-all duration-300 shadow-md hover:shadow-lg backdrop-blur-sm"
-              >
-                <Phone className="h-4 w-4 mr-2" />
-                <span className="font-medium text-xs">021 20308 2014</span>
-              </a>
+            {/* Phone Button */}
+            <a
+              href="tel:021203082014"
+              className="w-full inline-flex items-center justify-center px-6 py-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              <Phone className="h-5 w-5 mr-3" />
+              <span className="font-semibold text-sm">021 20308 2014</span>
+            </a>
 
-              <a
-                href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-4 py-3 bg-purple-600/90 text-white rounded-lg hover:bg-purple-600 transition-all duration-300 shadow-md hover:shadow-lg backdrop-blur-sm"
-              >
-                <MapPin className="h-4 w-4 mr-2" />
-                <span className="font-medium text-xs">Sector 6, București</span>
-              </a>
-            </div>
+            {/* Address Button */}
+            <a
+              href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full inline-flex items-center justify-center px-6 py-4 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              <MapPin className="h-5 w-5 mr-3" />
+              <span className="font-semibold text-sm">Sector 6, București</span>
+            </a>
           </div>
         </div>
       </section>
