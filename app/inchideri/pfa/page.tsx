@@ -93,7 +93,7 @@ export default function InchiderePfaPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">Documentele necesare</h2>
+            <h2 className="text-3xl font-bold text-blue-900 mb-6 mt-12">Documentele necesare</h2>
 
             <div className="bg-gray-50 p-6 rounded-lg mb-8">
               <ul className="space-y-2 text-gray-700">

@@ -47,7 +47,7 @@ export default function HeroSection() {
                   <br />
                   <span className="relative inline-block mt-2">
                     <span className="relative z-10 text-blue-600 font-bold">contabilitate și consultanță</span>
-                    <span className="absolute bottom-0 left-0 w-full h-1/2 bg-blue-100 -z-10"></span>
+                    <span className="absolute bottom-0 left-0 w-full h-1/6 bg-blue-100 -z-10"></span>
                   </span>
                 </h1>
 
@@ -159,7 +159,7 @@ export default function HeroSection() {
               <br />
               <span className="relative inline-block mt-2">
                 <span className="relative z-10 text-blue-600 font-bold">contabilitate și consultanță</span>
-                <span className="absolute bottom-0 left-0 w-full h-1/2 bg-blue-100 -z-10"></span>
+                <span className="absolute bottom-0 left-0 w-full h-1/6 bg-blue-100 -z-10"></span>
               </span>
             </h1>
 

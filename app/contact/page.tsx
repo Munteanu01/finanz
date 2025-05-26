@@ -19,16 +19,7 @@ export default function ContactPage() {
 
               <div className="space-y-6">
                 <div className="bg-blue-50 p-4 rounded-lg">
-                  <h3 className="font-semibold text-blue-900 mb-2">Adresa:</h3>
-                  <p className="text-gray-700">
-                    Splaiul Independentei, Nr 202 B, Bl. 202B, Sc. 1, Et. 4, Ap. 15
-                    <br />
-                    Sector 6, București
-                  </p>
-                </div>
-
-                <div className="bg-green-50 p-4 rounded-lg">
-                  <h3 className="font-semibold text-green-900 mb-2">Email:</h3>
+                  <h3 className="font-semibold text-blue-900 mb-2">Email:</h3>
                   <p className="text-gray-700">
                     <a href="mailto:financiar.contabil@finanzconsult.ro" className="text-blue-600 hover:text-blue-800">
                       financiar.contabil@finanzconsult.ro
@@ -36,11 +27,27 @@ export default function ContactPage() {
                   </p>
                 </div>
 
-                <div className="bg-purple-50 p-4 rounded-lg">
-                  <h3 className="font-semibold text-purple-900 mb-2">Telefon:</h3>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-green-900 mb-2">Telefon:</h3>
                   <p className="text-gray-700">
                     <a href="tel:021203082014" className="text-blue-600 hover:text-blue-800">
                       021 20308 2014 2077
+                    </a>
+                  </p>
+                </div>
+
+                <div className="bg-purple-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-purple-900 mb-2">Adresa:</h3>
+                  <p className="text-gray-700">
+                    <a
+                      href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      Splaiul Independentei, Nr 202 B, Bl. 202B, Sc. 1, Et. 4, Ap. 15
+                      <br />
+                      Sector 6, București
                     </a>
                   </p>
                 </div>

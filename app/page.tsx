@@ -34,10 +34,6 @@ export default function Page() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-4">
-              <Star className="w-4 h-4 mr-2" />
-              Servicii profesionale
-            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Serviciile <span className="text-blue-600">noastre</span>
             </h2>
@@ -78,12 +74,12 @@ export default function Page() {
                   Consultanță fiscală
                 </div>
               </div>
-              <Link
-                href="/contabilitate/srl"
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
               >
                 Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
-              </Link>
+              </button>
             </div>
 
             {/* Înființări */}
@@ -116,12 +112,12 @@ export default function Page() {
                   Proceduri ONRC
                 </div>
               </div>
-              <Link
-                href="/infiintari/srl"
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="inline-flex items-center text-green-600 hover:text-green-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
               >
                 Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
-              </Link>
+              </button>
             </div>
 
             {/* Modificări */}
@@ -154,12 +150,12 @@ export default function Page() {
                   Actualizări CAEN
                 </div>
               </div>
-              <Link
-                href="/modificari/srl/sediu-social"
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="inline-flex items-center text-purple-600 hover:text-purple-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
               >
                 Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
-              </Link>
+              </button>
             </div>
 
             {/* Găzduire Sediu */}
@@ -192,12 +188,12 @@ export default function Page() {
                   Servicii complete
                 </div>
               </div>
-              <Link
-                href="/gazduire-sediu"
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="inline-flex items-center text-orange-600 hover:text-orange-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
               >
                 Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
-              </Link>
+              </button>
             </div>
 
             {/* Autorizații */}
@@ -230,12 +226,12 @@ export default function Page() {
                   Consultanță juridică
                 </div>
               </div>
-              <Link
-                href="/autorizatii"
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="inline-flex items-center text-red-600 hover:text-red-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
               >
                 Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
-              </Link>
+              </button>
             </div>
 
             {/* Înregistrare Mărci */}
@@ -268,12 +264,12 @@ export default function Page() {
                   Drepturi de autor
                 </div>
               </div>
-              <Link
-                href="/inregistrare-marci"
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-semibold group-hover:translate-x-1 transition-all duration-300"
               >
                 Află mai mult <ArrowRight className="h-4 w-4 ml-2" />
-              </Link>
+              </button>
             </div>
           </div>
         </div>
