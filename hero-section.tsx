@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail, MapPin, Phone, CheckCircle } from "lucide-react"
+import { Mail, Phone, CheckCircle } from "lucide-react"
 import Image from "next/image"
 
 export default function HeroSection() {
@@ -44,37 +44,24 @@ export default function HeroSection() {
                 </p>
               </div>
 
-              {/* Contact Information Buttons - Desktop - New Grid Layout */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-2xl">
+              {/* Contact Information Buttons - Desktop - Updated Layout */}
+              <div className="grid grid-cols-1 gap-4 max-w-2xl">
                 {/* Email - Full width */}
-                <div className="lg:col-span-2">
-                  <a
-                    href="mailto:financiar.contabil@finanzconsult.ro"
-                    className="w-full inline-flex items-center justify-center px-6 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                  >
-                    <Mail className="h-5 w-5 mr-3" />
-                    <span className="font-semibold">financiar.contabil@finanzconsult.ro</span>
-                  </a>
-                </div>
-
-                {/* Phone */}
                 <a
-                  href="tel:021203082014"
-                  className="inline-flex items-center justify-center px-4 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all duration-300 shadow-md hover:shadow-lg"
+                  href="mailto:financiar.contabil@finanzconsult.ro"
+                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                  <Phone className="h-4 w-4 mr-2" />
-                  <span className="font-medium text-sm">021 20308 2014</span>
+                  <Mail className="h-5 w-5 mr-3" />
+                  <span className="font-semibold">financiar.contabil@finanzconsult.ro</span>
                 </a>
 
-                {/* Address */}
+                {/* Phone - Full width */}
                 <a
-                  href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-4 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all duration-300 shadow-md hover:shadow-lg"
+                  href="tel:021203082014"
+                  className="w-full inline-flex items-center justify-center px-6 py-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                  <MapPin className="h-4 w-4 mr-2" />
-                  <span className="font-medium text-sm">Sector 6, București</span>
+                  <Phone className="h-5 w-5 mr-3" />
+                  <span className="font-semibold">021 20308 2014</span>
                 </a>
               </div>
             </div>
@@ -141,7 +128,7 @@ export default function HeroSection() {
             </p>
           </div>
 
-          {/* Contact Buttons - All Stacked Vertically */}
+          {/* Contact Buttons - Only Email and Phone */}
           <div className="space-y-4 max-w-sm mx-auto">
             {/* Email Button */}
             <a
@@ -165,19 +152,6 @@ export default function HeroSection() {
             >
               <Phone className="h-5 w-5 mr-3" />
               <span className="font-semibold text-sm">021 20308 2014</span>
-            </a>
-
-            {/* Address Button */}
-            <a
-              href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full inline-flex items-center justify-center px-6 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              style={{ backgroundColor: "#9333ea", color: "#ffffff" }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#7c3aed")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#9333ea")}
-            >
-              <MapPin className="h-5 w-5" />
             </a>
           </div>
         </div>
