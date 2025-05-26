@@ -296,16 +296,16 @@ export default function Page() {
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              De ce să ne <span className="text-blue-600">alegeți</span>?
+              De ce să ne alegeți?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Experiența și profesionalismul nostru vă garantează servicii de calitate superioară
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 text-center gap-8">
             <div className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-20 mx-auto h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Award className="h-10 w-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Experiență Vastă</h3>
@@ -315,7 +315,7 @@ export default function Page() {
             </div>
 
             <div className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-20 h-20 mx-auto bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Users className="h-10 w-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Echipă Profesionistă</h3>
@@ -325,12 +325,12 @@ export default function Page() {
             </div>
 
             <div className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-20 mx-auto h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Zap className="h-10 w-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Răspuns Rapid</h3>
               <p className="text-gray-600 leading-relaxed">
-                Procesare rapidă a documentelor și răspuns prompt la toate solicitările în maximum 24 de ore
+                Procesare rapidă a documentelor și răspuns prompt la toate solicitările 
               </p>
             </div>
           </div>
@@ -342,7 +342,7 @@ export default function Page() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Ce spun <span className="text-blue-600">clienții</span> noștri
+              Ce spun clienții noștri
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Feedback-ul clienților noștri confirmă calitatea serviciilor oferite
@@ -357,7 +357,6 @@ export default function Page() {
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <span className="ml-2 text-sm font-semibold text-gray-600">5.0</span>
               </div>
               <p className="text-gray-700 mb-6 leading-relaxed text-lg">
                 "Servicii profesionale și prompte. Echipa FINANZ Consult ne-a ajutat să înființăm compania rapid și
