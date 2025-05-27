@@ -319,43 +319,64 @@ export default function FinanzNavbar() {
       <div
         className={`
           fixed left-0 right-0 z-50 flex items-center justify-center
-          transition-transform transition-opacity duration-500 ease-in-out
-          ${showContactBar ? "translate-y-0 opacity-100 pointer-events-auto" : "-translate-y-full opacity-0 pointer-events-none"}
+          transition-transform duration-500 ease-in-out
         `}
         style={{
-          minHeight: 34,
+          minHeight: 28,
           background: "#0E124C",
           margin: 0,
           padding: 0,
           boxShadow: "0 2px 8px 0 rgba(0,0,0,0.04)",
-          top: 0,
+          transform: showContactBar ? "translateY(0)" : "translateY(-100%)",
+          pointerEvents: showContactBar ? "auto" : "none",
         }}
       >
-        <div className="flex items-center justify-center md:gap-8 gap-1 w-full max-w-5xl px-6 py-1">
+        <div className="flex items-center justify-center gap-0 w-full max-w-5xl px-6 py-1">
           <a
             href="tel:+40712345678"
-            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-semibold sm:text-sm text-xs rounded-lg px-3 py-1 hover:bg-blue-800/40 focus:outline-none focus:ring-2 focus:ring-white/40"
+            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-semibold sm:text-xs text-[11px] rounded-lg px-2 py-0.5 hover:bg-blue-800/40 focus:outline-none focus:ring-2 focus:ring-white/40"
             style={{ textDecoration: "none" }}
           >
-            <Phone className="w-4 h-4" />
-            <span className=" decoration-white/40 hover:decoration-white">021 9222</span>
+            <Phone className="w-3.5 h-3.5" />
+            <span className="decoration-white/40 hover:decoration-white">021 9222</span>
           </a>
+          <span className="h-4 w-px bg-white/40 mx-1.5" />
           <a
             href="mailto:office@finanz.ro"
-            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-semibold sm:text-sm text-xs  rounded-lg px-3 py-1 hover:bg-blue-800/40 focus:outline-none focus:ring-2 focus:ring-white/40"
+            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-semibold sm:text-xs text-[11px] rounded-lg px-2 py-0.5 hover:bg-blue-800/40 focus:outline-none focus:ring-2 focus:ring-white/40"
             style={{ textDecoration: "none" }}
           >
-            <Mail className="w-4 h-4" />
-            <span className=" decoration-white/40 hover:decoration-white">financiar.contabil@finanzconsult.ro</span>
+            <Mail className="w-3.5 h-3.5" />
+            <span className="decoration-white/40 hover:decoration-white">financiar.contabil@finanzconsult.ro</span>
           </a>
+          <span className="h-4 w-px bg-white/40 mx-1.5" />
+          {/* Urmareste-ne section */}
+          <div className="flex items-center gap-2.5">
+            <span className="text-white/90 font-semibold text-[11px] sm:text-xs">Urmărește-ne:</span>
+            <a href="https://www.tiktok.com/@finanz" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70">
+              <Image src="/tik-tok.png" alt="TikTok" width={12} height={12} />
+            </a>
+            <a href="https://www.facebook.com/finanzconsult" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70">
+              <Image src="/facebook-app-symbol.png" alt="Facebook" width={12} height={12} />
+            </a>
+            <a href="https://www.instagram.com/finanzconsult" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70">
+              <Image src="/instagram.png" alt="Instagram" width={12} height={12} />
+            </a>
+          </div>
         </div>
       </div>
+      {/* Divider line under contact bar */}
+      <div className="fixed left-0 right-0 z-40 bg-gray-200 h-px transition-all duration-500 ease-in-out" style={{
+        top: showContactBar ? 28 : 0,
+        opacity: showContactBar ? 1 : 0,
+        pointerEvents: showContactBar ? "auto" : "none",
+      }}></div>
       {/* Main Navigation */}
       <nav
         className={`
           bg-white shadow-sm border-b border-gray-200 fixed left-0 right-0 z-40
           transition-all duration-500 ease-in-out
-          ${showContactBar ? "top-[34px]" : "top-0"}
+          ${showContactBar ? "top-[28px]" : "top-0"}
         `}
       >
         <div className="container mx-auto px-4">
