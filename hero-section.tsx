@@ -90,7 +90,7 @@ export default function HeroSection() {
                     className="w-full h-auto object-cover"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/30 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-primaryColor/30 via-transparent to-transparent"></div>
                 </div>
 
                 {/* Floating stats cards */}

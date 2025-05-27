@@ -35,35 +35,35 @@ const Footer = () => {
             <div className="space-y-3">
               <a
                 href="mailto:firma@finanzconsult.ro"
-                className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                className="flex items-center text-gray-600 hover:text-primaryColor transition-colors text-sm"
               >
                 <Mail className="h-4 w-4 mr-2 flex-shrink-0" />
                 firma@finanzconsult.ro
               </a>
               <a
                 href="mailto:financiar.contabil@finanzconsult.ro"
-                className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                className="flex items-center text-gray-600 hover:text-primaryColor transition-colors text-sm"
               >
                 <Mail className="h-4 w-4 mr-2 flex-shrink-0" />
                 financiar.contabil@finanzconsult.ro
               </a>
               <a
                 href="mailto:salarizare@finanzconsult.ro"
-                className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                className="flex items-center text-gray-600 hover:text-primaryColor transition-colors text-sm"
               >
                 <Mail className="h-4 w-4 mr-2 flex-shrink-0" />
                 salarizare@finanzconsult.ro
               </a>
               <a
                 href="mailto:sesizari@finanzconsult.ro"
-                className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                className="flex items-center text-gray-600 hover:text-primaryColor transition-colors text-sm"
               >
                 <Mail className="h-4 w-4 mr-2 flex-shrink-0" />
                 sesizari@finanzconsult.ro
               </a>
               <a
                 href="mailto:management@finanzconsult.ro"
-                className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                className="flex items-center text-gray-600 hover:text-primaryColor transition-colors text-sm"
               >
                 <Mail className="h-4 w-4 mr-2 flex-shrink-0" />
                 management@finanzconsult.ro
@@ -82,19 +82,19 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <h3 className="text-lg font-semibold text-gray-900 mb-6">Link-uri utile</h3>
             <div className="space-y-3 mb-6">
-              <a href="/termeni-conditii" className="block text-gray-600 hover:text-blue-600 transition-colors text-sm">
+              <a href="/termeni-conditii" className="block text-gray-600 hover:text-primaryColor transition-colors text-sm">
                 Temeni și condiții
               </a>
               <a
                 href="/politica-confidentialitate"
-                className="block text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                className="block text-gray-600 hover:text-primaryColor transition-colors text-sm"
               >
                 Politica de confidențialitate
               </a>
-              <a href="/politica-cookie" className="block text-gray-600 hover:text-blue-600 transition-colors text-sm">
-                Politica cookie
+              <a href="/politica-cookies" className="block text-gray-600 hover:text-primaryColor transition-colors text-sm">
+                Politica cookies
               </a>
-              <a href="/contact" className="block text-gray-600 hover:text-blue-600 transition-colors text-sm">
+              <a href="/contact" className="block text-gray-600 hover:text-primaryColor transition-colors text-sm">
                 Contact
               </a>
             </div>

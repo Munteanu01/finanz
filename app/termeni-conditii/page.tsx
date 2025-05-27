@@ -7,11 +7,11 @@ export default function TermeniConditii() {
       <FinanzNavbar />
       <main className="container mx-auto py-12 px-4 mt-16 xl:mt-20">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-blue-900 mb-8">Termeni și condiții</h1>
+          <h1 className="text-4xl font-bold text-primaryColor mb-8">Termeni și condiții</h1>
 
           <div className="prose prose-lg max-w-none space-y-8">
             <section>
-              <h2 className="text-2xl font-semibold text-blue-900 mb-4">1. Informații generale</h2>
+              <h2 className="text-2xl font-semibold text-primaryColor mb-4">1. Informații generale</h2>
               <p className="text-gray-700 leading-relaxed">
                 Prezentii termeni și condiții reglementează utilizarea site-ului web https://finanzconsult.ro/, deținut
                 și operat de FINANZ CONSULT S.R.L., cu sediul în Splaiul Independentei, Nr 202 B, Sector 6, București.
@@ -23,7 +23,7 @@ export default function TermeniConditii() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-blue-900 mb-4">2. Servicii oferite</h2>
+              <h2 className="text-2xl font-semibold text-primaryColor mb-4">2. Servicii oferite</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 FINANZ CONSULT oferă următoarele servicii prin intermediul site-ului:
               </p>
@@ -40,7 +40,7 @@ export default function TermeniConditii() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-blue-900 mb-4">3. Utilizarea site-ului</h2>
+              <h2 className="text-2xl font-semibold text-primaryColor mb-4">3. Utilizarea site-ului</h2>
               <div className="space-y-4">
                 <div className="bg-blue-50 p-4 rounded-lg">
                   <h3 className="text-lg font-semibold text-gray-800 mb-2">3.1 Utilizare permisă</h3>
@@ -61,7 +61,7 @@ export default function TermeniConditii() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-blue-900 mb-4">4. Proprietatea intelectuală</h2>
+              <h2 className="text-2xl font-semibold text-primaryColor mb-4">4. Proprietatea intelectuală</h2>
               <p className="text-gray-700 leading-relaxed">
                 Toate drepturile de proprietate intelectuală asupra conținutului site-ului, inclusiv dar fără a se
                 limita la texte, imagini, grafice, logo-uri, icoane, software, aparțin FINANZ CONSULT S.R.L. sau
@@ -70,7 +70,7 @@ export default function TermeniConditii() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-blue-900 mb-4">5. Responsabilitate</h2>
+              <h2 className="text-2xl font-semibold text-primaryColor mb-4">5. Responsabilitate</h2>
               <div className="space-y-4">
                 <div className="bg-yellow-50 p-4 rounded-lg">
                   <h3 className="text-lg font-semibold text-gray-800 mb-2">5.1 Limitarea răspunderii</h3>
@@ -91,7 +91,7 @@ export default function TermeniConditii() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-blue-900 mb-4">6. Modificări ale termenilor</h2>
+              <h2 className="text-2xl font-semibold text-primaryColor mb-4">6. Modificări ale termenilor</h2>
               <p className="text-gray-700 leading-relaxed">
                 FINANZ CONSULT S.R.L. își rezervă dreptul de a modifica acești termeni și condiții în orice moment, fără
                 notificare prealabilă. Modificările vor intra în vigoare imediat după publicarea pe site.
@@ -99,7 +99,7 @@ export default function TermeniConditii() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-blue-900 mb-4">7. Legea aplicabilă</h2>
+              <h2 className="text-2xl font-semibold text-primaryColor mb-4">7. Legea aplicabilă</h2>
               <p className="text-gray-700 leading-relaxed">
                 Acești termeni și condiții sunt guvernați de legea română. Orice dispută care decurge din sau în
                 legătură cu acești termeni va fi soluționată de instanțele competente din România.
@@ -107,7 +107,7 @@ export default function TermeniConditii() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-blue-900 mb-4">8. Contact</h2>
+              <h2 className="text-2xl font-semibold text-primaryColor mb-4">8. Contact</h2>
               <p className="text-gray-700 leading-relaxed">
                 Pentru întrebări referitoare la acești termeni și condiții, ne puteți contacta la:
               </p>

@@ -7,7 +7,7 @@ export default function InregistrareMarcePage() {
       <FinanzNavbar />
       <main className="container mx-auto py-12 px-4 mt-16 xl:mt-20">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-blue-900 mb-8">Înregistrare Mărci și Brevete</h1>
+          <h1 className="text-4xl font-bold text-primaryColor mb-8">Înregistrare Mărci și Brevete</h1>
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-gray-700 mb-8">
@@ -17,7 +17,7 @@ export default function InregistrareMarcePage() {
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-blue-50 p-6 rounded-lg">
-                <h3 className="text-2xl font-semibold text-blue-900 mb-4">Servicii disponibile</h3>
+                <h3 className="text-2xl font-semibold text-primaryColor mb-4">Servicii disponibile</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Înregistrare mărci</li>
                   <li>• Înregistrare brevete</li>
@@ -41,7 +41,7 @@ export default function InregistrareMarcePage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">Procesul de înregistrare</h2>
+            <h2 className="text-3xl font-bold text-primaryColor mb-6">Procesul de înregistrare</h2>
 
             <div className="space-y-6 mb-12">
               <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
@@ -99,12 +99,12 @@ export default function InregistrareMarcePage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">Tarife și termene</h2>
+            <h2 className="text-3xl font-bold text-primaryColor mb-6">Tarife și termene</h2>
 
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               <div className="border border-gray-200 rounded-lg p-6">
-                <h4 className="text-xl font-semibold mb-4 text-blue-900">Înregistrare Marcă Națională</h4>
-                <div className="text-2xl font-bold text-blue-900 mb-2">1.200 RON</div>
+                <h4 className="text-xl font-semibold mb-4 text-primaryColor">Înregistrare Marcă Națională</h4>
+                <div className="text-2xl font-bold text-primaryColor mb-2">1.200 RON</div>
                 <p className="text-sm text-gray-600 mb-4">Include toate taxele OSIM și serviciile noastre</p>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Termen: 12-18 luni</li>
@@ -114,8 +114,8 @@ export default function InregistrareMarcePage() {
               </div>
 
               <div className="border border-gray-200 rounded-lg p-6">
-                <h4 className="text-xl font-semibold mb-4 text-blue-900">Înregistrare Marcă UE</h4>
-                <div className="text-2xl font-bold text-blue-900 mb-2">2.500 RON</div>
+                <h4 className="text-xl font-semibold mb-4 text-primaryColor">Înregistrare Marcă UE</h4>
+                <div className="text-2xl font-bold text-primaryColor mb-2">2.500 RON</div>
                 <p className="text-sm text-gray-600 mb-4">Protecție în toate țările UE</p>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Termen: 4-6 luni</li>

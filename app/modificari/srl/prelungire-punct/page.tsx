@@ -7,7 +7,7 @@ export default function PrelungirePunctSrlPage() {
       <FinanzNavbar />
       <main className="container mx-auto py-12 px-4 mt-16 xl:mt-20">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-blue-900 mb-8">Prelungire Punct de Lucru SRL</h1>
+          <h1 className="text-4xl font-bold text-primaryColor mb-8">Prelungire Punct de Lucru SRL</h1>
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-gray-700 mb-8">
@@ -16,12 +16,12 @@ export default function PrelungirePunctSrlPage() {
             </p>
 
             <div className="bg-blue-50 p-6 rounded-lg mb-8">
-              <h3 className="text-2xl font-semibold text-blue-900 mb-4">Serviciu prelungire punct de lucru</h3>
-              <div className="text-3xl font-bold text-blue-900 mb-4">199 RON</div>
+              <h3 className="text-2xl font-semibold text-primaryColor mb-4">Serviciu prelungire punct de lucru</h3>
+              <div className="text-3xl font-bold text-primaryColor mb-4">199 RON</div>
               <p className="text-gray-700">Include toate procedurile și actualizările!</p>
             </div>
 
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">Ce este un punct de lucru</h2>
+            <h2 className="text-3xl font-bold text-primaryColor mb-6">Ce este un punct de lucru</h2>
 
             <div className="bg-gray-50 p-6 rounded-lg mb-8">
               <p className="text-gray-700 leading-relaxed">
@@ -30,7 +30,7 @@ export default function PrelungirePunctSrlPage() {
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">Documentele necesare</h2>
+            <h2 className="text-3xl font-bold text-primaryColor mb-6">Documentele necesare</h2>
 
             <div className="bg-gray-50 p-6 rounded-lg mb-8">
               <ul className="space-y-2 text-gray-700">
@@ -42,7 +42,7 @@ export default function PrelungirePunctSrlPage() {
               </ul>
             </div>
 
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">Procedura de prelungire</h2>
+            <h2 className="text-3xl font-bold text-primaryColor mb-6">Procedura de prelungire</h2>
 
             <div className="space-y-6">
               <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">

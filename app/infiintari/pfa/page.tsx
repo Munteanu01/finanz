@@ -7,7 +7,7 @@ export default function InfiintarePfaPage() {
       <FinanzNavbar />
       <main className="container mx-auto py-12 px-4 mt-16 xl:mt-20">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-blue-900 mb-8">Înființare PFA</h1>
+          <h1 className="text-4xl font-bold text-primaryColor mb-8">Înființare PFA</h1>
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-gray-700 mb-8">
@@ -21,11 +21,11 @@ export default function InfiintarePfaPage() {
               <p className="text-gray-700">Include toate taxele și procedurile, fără costuri ascunse!</p>
             </div>
 
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">Avantajele PFA</h2>
+            <h2 className="text-3xl font-bold text-primaryColor mb-6">Avantajele PFA</h2>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div>
-                <h4 className="text-xl font-semibold text-blue-900 mb-4">Beneficii:</h4>
+                <h4 className="text-xl font-semibold text-primaryColor mb-4">Beneficii:</h4>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Procedură simplă și rapidă</li>
                   <li>• Costuri reduse de înființare</li>
@@ -37,7 +37,7 @@ export default function InfiintarePfaPage() {
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold text-blue-900 mb-4">Documentele necesare:</h4>
+                <h4 className="text-xl font-semibold text-primaryColor mb-4">Documentele necesare:</h4>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Copie CI/Pașaport</li>
                   <li>• Certificat de naștere</li>
@@ -48,7 +48,7 @@ export default function InfiintarePfaPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">Procedura de înființare</h2>
+            <h2 className="text-3xl font-bold text-primaryColor mb-6">Procedura de înființare</h2>
 
             <div className="space-y-6">
               <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
@@ -95,7 +95,7 @@ export default function InfiintarePfaPage() {
             </div>
 
             <div className="bg-blue-50 p-6 rounded-lg mt-8">
-              <h3 className="text-xl font-semibold text-blue-900 mb-3">Timp de procesare: 1-3 zile lucrătoare</h3>
+              <h3 className="text-xl font-semibold text-primaryColor mb-3">Timp de procesare: 1-3 zile lucrătoare</h3>
               <p className="text-gray-700">
                 Procedura de autorizare PFA este foarte rapidă și se finalizează în 1-3 zile lucrătoare de la depunerea
                 dosarului complet.

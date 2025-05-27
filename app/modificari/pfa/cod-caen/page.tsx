@@ -7,7 +7,7 @@ export default function CodCaenPfaPage() {
       <FinanzNavbar />
       <main className="container mx-auto py-12 px-4 mt-16 xl:mt-20">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-blue-900 mb-8">Adăugare Cod CAEN PFA</h1>
+          <h1 className="text-4xl font-bold text-primaryColor mb-8">Adăugare Cod CAEN PFA</h1>
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-gray-700 mb-8">
@@ -20,11 +20,11 @@ export default function CodCaenPfaPage() {
               <p className="text-gray-700">Include toate procedurile și taxele!</p>
             </div>
 
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">Când să adăugați noi coduri CAEN</h2>
+            <h2 className="text-3xl font-bold text-primaryColor mb-6">Când să adăugați noi coduri CAEN</h2>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-blue-50 p-6 rounded-lg">
-                <h3 className="text-2xl font-semibold text-blue-900 mb-4">Motive pentru extindere</h3>
+                <h3 className="text-2xl font-semibold text-primaryColor mb-4">Motive pentru extindere</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Diversificarea activității</li>
                   <li>• Noi oportunități de business</li>
@@ -46,7 +46,7 @@ export default function CodCaenPfaPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">Documentele necesare</h2>
+            <h2 className="text-3xl font-bold text-primaryColor mb-6">Documentele necesare</h2>
 
             <div className="bg-gray-50 p-6 rounded-lg mb-8">
               <ul className="space-y-2 text-gray-700">
@@ -59,7 +59,7 @@ export default function CodCaenPfaPage() {
               </ul>
             </div>
 
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">Procedura de adăugare</h2>
+            <h2 className="text-3xl font-bold text-primaryColor mb-6">Procedura de adăugare</h2>
 
             <div className="space-y-6">
               <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">

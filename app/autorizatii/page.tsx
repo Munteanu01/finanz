@@ -7,7 +7,7 @@ export default function AutorizatiiPage() {
       <FinanzNavbar />
       <main className="container mx-auto py-12 px-4 mt-16 xl:mt-20">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-blue-900 mb-8">Autorizații și Licențe</h1>
+          <h1 className="text-4xl font-bold text-primaryColor mb-8">Autorizații și Licențe</h1>
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-gray-700 mb-8">
@@ -17,7 +17,7 @@ export default function AutorizatiiPage() {
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-blue-50 p-6 rounded-lg">
-                <h3 className="text-2xl font-semibold text-blue-900 mb-4">Tipuri de autorizații</h3>
+                <h3 className="text-2xl font-semibold text-primaryColor mb-4">Tipuri de autorizații</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>• Autorizație sanitară veterinară</li>
                   <li>• Autorizație de mediu</li>
@@ -41,7 +41,7 @@ export default function AutorizatiiPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold text-blue-900 mb-6">Procedura de obținere</h2>
+            <h2 className="text-3xl font-bold text-primaryColor mb-6">Procedura de obținere</h2>
 
             <div className="space-y-6 mb-12">
               <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">

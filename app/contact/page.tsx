@@ -73,9 +73,9 @@ export default function ContactPage() {
           {/* Main Content */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-white border border-gray-200 rounded-xl p-8">
+            <div className="bg-white border border-gray-200 rounded-xl p-8 h-full flex flex-col">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Trimite-ne un mesaj</h2>
-              <form className="space-y-6">
+              <form className="flex flex-col flex-1 space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Nume complet</label>
@@ -121,15 +121,14 @@ export default function ContactPage() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Mesajul dumneavoastră</label>
                   <textarea
-                    rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryColor focus:border-transparent resize-none"
+                    rows={10}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryColor focus:border-transparent resize-none min-h-40"
                     placeholder="Descrieți în detaliu cererea dumneavoastră..."
                   ></textarea>
                 </div>
-
                 <button
                   type="submit"
-                  className="w-full bg-primaryColor text-white py-3 px-6 rounded-lg hover:bg-primaryColor hover:bg-opacity-90 transition-colors font-semibold flex items-center justify-center"
+                  className="w-full mt-8 bg-primaryColor text-white py-3 px-6 rounded-lg hover:bg-primaryColor hover:bg-opacity-90 transition-colors font-semibold flex items-center justify-center"
                 >
                   <Send className="h-5 w-5 mr-2" />
                   Trimite mesajul
@@ -138,7 +137,7 @@ export default function ContactPage() {
             </div>
 
             {/* Map */}
-            <div className="bg-white border border-gray-200 rounded-xl p-8">
+            <div className="bg-white border border-gray-200 rounded-xl p-8 h-full flex flex-col">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Locația noastră</h2>
               <div className="w-full h-96 bg-gray-100 rounded-lg overflow-hidden mb-4">
                 <iframe
@@ -152,23 +151,24 @@ export default function ContactPage() {
                   title="Locația FINANZ CONSULT S.R.L."
                 ></iframe>
               </div>
-              <div className="text-center">
+              <div className="text-center mb-4">
                 <h3 className="font-semibold text-gray-900 mb-2">FINANZ CONSULT S.R.L.</h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600">
                   Splaiul Independentei, Nr 202 B, Bl. 202B, Sc. 1, Et. 4, Ap. 15
                   <br />
                   Sector 6, București
                 </p>
-                <a
-                  href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 bg-primaryColor text-white rounded-lg hover:bg-opacity-90 transition-colors font-medium"
-                >
-                  <MapPin className="h-4 w-4 mr-2" />
-                  Deschide în Google Maps
-                </a>
               </div>
+              <a
+                href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full mt-8 bg-primaryColor text-white py-3 px-6 rounded-lg hover:bg-primaryColor hover:bg-opacity-90 transition-colors font-semibold flex items-center justify-center"
+                style={{ minHeight: "48px" }}
+              >
+                <MapPin className="h-4 w-4 mr-2" />
+                Deschide în Google Maps
+              </a>
             </div>
           </div>
         </div>

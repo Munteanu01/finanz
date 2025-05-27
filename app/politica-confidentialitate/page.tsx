@@ -7,11 +7,11 @@ export default function PoliticaConfidentialitate() {
       <FinanzNavbar />
       <main className="container mx-auto py-12 px-4 mt-16 xl:mt-20">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-blue-900 mb-8">Politica de confidențialitate</h1>
+          <h1 className="text-4xl font-bold text-primaryColor mb-8">Politica de confidențialitate</h1>
 
           <div className="prose prose-lg max-w-none space-y-8">
             <section>
-              <h2 className="text-2xl font-semibold text-blue-900 mb-4">I. Informații generale</h2>
+              <h2 className="text-2xl font-semibold text-primaryColor mb-4">I. Informații generale</h2>
               <p className="text-gray-700 leading-relaxed">
                 Confidențialitatea datelor dumneavoastră cu caracter personal reprezintă una dintre preocupările
                 principale ale FINANZ CONSULT S.R.L., cu sediul în Spl. Independentei, Nr.202 B, Sector 6, Județ:
@@ -24,7 +24,7 @@ export default function PoliticaConfidentialitate() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-blue-900 mb-4">
+              <h2 className="text-2xl font-semibold text-primaryColor mb-4">
                 II. Categoriile de date cu caracter personal prelucrate
               </h2>
 
@@ -47,7 +47,7 @@ export default function PoliticaConfidentialitate() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-blue-900 mb-4">III. Scopurile și temeiurile de prelucrare</h2>
+              <h2 className="text-2xl font-semibold text-primaryColor mb-4">III. Scopurile și temeiurile de prelucrare</h2>
 
               <h3 className="text-xl font-semibold text-gray-800 mb-3">III.1. Pentru clienții Site-ului</h3>
               <div className="space-y-4">
@@ -89,7 +89,7 @@ export default function PoliticaConfidentialitate() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-blue-900 mb-4">IV. Durata pentru care vă prelucrăm datele</h2>
+              <h2 className="text-2xl font-semibold text-primaryColor mb-4">IV. Durata pentru care vă prelucrăm datele</h2>
               <p className="text-gray-700 leading-relaxed">
                 Ca principiu, deținătorul website-ului va prelucra datele dumneavoastră cu caracter personal atât cât
                 este necesar pentru realizarea scopurilor de prelucrare menționate mai sus.
@@ -103,7 +103,7 @@ export default function PoliticaConfidentialitate() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-blue-900 mb-4">V. Drepturile de care beneficiați</h2>
+              <h2 className="text-2xl font-semibold text-primaryColor mb-4">V. Drepturile de care beneficiați</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h4 className="font-semibold text-gray-800 mb-2">Dreptul la informare</h4>
@@ -131,7 +131,7 @@ export default function PoliticaConfidentialitate() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-blue-900 mb-4">VI. Contact</h2>
+              <h2 className="text-2xl font-semibold text-primaryColor mb-4">VI. Contact</h2>
               <p className="text-gray-700 leading-relaxed">
                 Pentru orice întrebări suplimentare cu privire la modul în care datele cu caracter personal sunt
                 prelucrate și pentru a vă exercita drepturile menționate mai sus, vă rugăm să vă adresați la adresa de
