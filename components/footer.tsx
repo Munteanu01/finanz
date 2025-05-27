@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="mb-6">
               <Image
-                src="Logo-blue.png"
+                src="/Logo-blue.png"
                 alt="FINANZ CONSULT - Evoluam pentru tine"
                 width={300}
                 height={120}

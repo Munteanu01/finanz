@@ -1,8 +1,12 @@
+"use client"
+import React, { useState } from "react";
 import FinanzNavbar from "../../navbar"
 import Footer from "../../components/footer"
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react"
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react"
 
 export default function ContactPage() {
+  const [sent, setSent] = useState(false);
+
   return (
     <div className="min-h-screen overflow-x-hidden bg-white">
       <FinanzNavbar />
@@ -17,8 +21,8 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <div className="text-center p-6 bg-gray-50 rounded-xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 mb-12">
+            <div className="text-center p-2 py-5 bg-gray-50 rounded-xl">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Mail className="h-8 w-8 text-blue-600" />
               </div>
@@ -31,7 +35,7 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div className="text-center p-6 bg-gray-50 rounded-xl">
+            <div className="text-center p-2 py-5 bg-gray-50 rounded-xl">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Phone className="h-8 w-8 text-green-600" />
               </div>
@@ -41,7 +45,7 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div className="text-center p-6 bg-gray-50 rounded-xl">
+            <div className="text-center p-2 py-5 bg-gray-50 rounded-xl">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="h-8 w-8 text-purple-600" />
               </div>
@@ -58,7 +62,7 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div className="text-center p-6 bg-gray-50 rounded-xl">
+            <div className="text-center p-2 py-5 bg-gray-50 rounded-xl">
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="h-8 w-8 text-orange-600" />
               </div>
@@ -75,11 +79,37 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="bg-white border border-gray-200 rounded-xl p-8 h-full flex flex-col">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Trimite-ne un mesaj</h2>
-              <form className="flex flex-col flex-1 space-y-6">
+              <form
+                className="flex flex-col flex-1 space-y-6"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget;
+                  const formData = new FormData(form);
+
+                  const data = {
+                    name: formData.get("name"),
+                    email: formData.get("email"),
+                    phone: formData.get("phone"),
+                    service: formData.get("service"),
+                    message: formData.get("message"),
+                  };
+
+                  await fetch("/api/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                  });
+
+                  setSent(true);
+                  form.reset();
+                  setTimeout(() => setSent(false), 5000);
+                }}
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Nume complet</label>
                     <input
+                      name="name"
                       type="text"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryColor focus:border-transparent"
                       placeholder="Introduceți numele"
@@ -88,6 +118,7 @@ export default function ContactPage() {
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                     <input
+                      name="email"
                       type="email"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryColor focus:border-transparent"
                       placeholder="exemplu@email.com"
@@ -99,6 +130,7 @@ export default function ContactPage() {
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
                     <input
+                      name="phone"
                       type="tel"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryColor focus:border-transparent"
                       placeholder="+40 xxx xxx xxx"
@@ -106,7 +138,10 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Tip serviciu</label>
-                    <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryColor focus:border-transparent">
+                    <select
+                      name="service"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryColor focus:border-transparent hover:ring-2 hover:ring-primaryColor transition"
+                    >
                       <option>Selectați serviciul</option>
                       <option>Contabilitate SRL</option>
                       <option>Contabilitate PFA</option>
@@ -121,6 +156,7 @@ export default function ContactPage() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Mesajul dumneavoastră</label>
                   <textarea
+                    name="message"
                     rows={10}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryColor focus:border-transparent resize-none min-h-40"
                     placeholder="Descrieți în detaliu cererea dumneavoastră..."
@@ -129,15 +165,25 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   className="w-full mt-8 bg-primaryColor text-white py-3 px-6 rounded-lg hover:bg-primaryColor hover:bg-opacity-90 transition-colors font-semibold flex items-center justify-center"
+                  disabled={sent}
                 >
-                  <Send className="h-5 w-5 mr-2" />
-                  Trimite mesajul
+                  {sent ? (
+                    <>
+                      <CheckCircle className="h-5 w-5 mr-2" />
+                      Mesajul a fost trimis!
+                    </>
+                  ) : (
+                    <>
+                      <Send className="h-5 w-5 mr-2" />
+                      Trimite mesajul
+                    </>
+                  )}
                 </button>
               </form>
             </div>
 
             {/* Map */}
-            <div className="bg-white border border-gray-200 rounded-xl p-8 h-full flex flex-col">
+            <div className="bg-white border border-gray-200 rounded-xl p-8 h-full flex flex-col flex-1">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Locația noastră</h2>
               <div className="w-full h-96 bg-gray-100 rounded-lg overflow-hidden mb-4">
                 <iframe
@@ -151,7 +197,7 @@ export default function ContactPage() {
                   title="Locația FINANZ CONSULT S.R.L."
                 ></iframe>
               </div>
-              <div className="text-center mb-4">
+              <div className="text-center mb-4 text-sm xl:text-base">
                 <h3 className="font-semibold text-gray-900 mb-2">FINANZ CONSULT S.R.L.</h3>
                 <p className="text-gray-600">
                   Splaiul Independentei, Nr 202 B, Bl. 202B, Sc. 1, Et. 4, Ap. 15
@@ -163,7 +209,7 @@ export default function ContactPage() {
                 href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full mt-8 bg-primaryColor text-white py-3 px-6 rounded-lg hover:bg-primaryColor hover:bg-opacity-90 transition-colors font-semibold flex items-center justify-center"
+                className="w-full mt-auto bg-primaryColor text-white py-3 px-6 rounded-lg hover:bg-primaryColor hover:bg-opacity-90 transition-colors font-semibold flex items-center justify-center"
                 style={{ minHeight: "48px" }}
               >
                 <MapPin className="h-4 w-4 mr-2" />
