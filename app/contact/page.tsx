@@ -81,7 +81,7 @@ export default function ContactPage() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Nume complet</label>
                     <input
                       type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryColor focus:border-transparent"
                       placeholder="Introduceți numele"
                     />
                   </div>
@@ -89,7 +89,7 @@ export default function ContactPage() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                     <input
                       type="email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryColor focus:border-transparent"
                       placeholder="exemplu@email.com"
                     />
                   </div>
@@ -100,13 +100,13 @@ export default function ContactPage() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
                     <input
                       type="tel"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryColor focus:border-transparent"
                       placeholder="+40 xxx xxx xxx"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Tip serviciu</label>
-                    <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryColor focus:border-transparent">
                       <option>Selectați serviciul</option>
                       <option>Contabilitate SRL</option>
                       <option>Contabilitate PFA</option>
@@ -122,14 +122,14 @@ export default function ContactPage() {
                   <label className="block text-sm font-medium text-gray-700 mb-2">Mesajul dumneavoastră</label>
                   <textarea
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryColor focus:border-transparent resize-none"
                     placeholder="Descrieți în detaliu cererea dumneavoastră..."
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center"
+                  className="w-full bg-primaryColor text-white py-3 px-6 rounded-lg hover:bg-primaryColor hover:bg-opacity-90 transition-colors font-semibold flex items-center justify-center"
                 >
                   <Send className="h-5 w-5 mr-2" />
                   Trimite mesajul
@@ -163,7 +163,7 @@ export default function ContactPage() {
                   href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                  className="inline-flex items-center px-4 py-2 bg-primaryColor text-white rounded-lg hover:bg-opacity-90 transition-colors font-medium"
                 >
                   <MapPin className="h-4 w-4 mr-2" />
                   Deschide în Google Maps
