@@ -269,33 +269,33 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-blue-50">
+       {/* Stats Section */}
+       <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">1000+</div>
+              <div className="text-4xl font-bold text-primaryColor mb-2">1000+</div>
               <div className="text-gray-600">Clienți mulțumiți</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">15+</div>
+              <div className="text-4xl font-bold text-primaryColor mb-2">15+</div>
               <div className="text-gray-600">Ani de experiență</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">24/7</div>
-              <div className="text-gray-600">Suport disponibil</div>
+              <div className="text-4xl font-bold text-primaryColor mb-2">25+</div>
+              <div className="text-gray-600">Membrii in echipa</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section - Modern Design */}
+      {/* Despre */}
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50"></div>
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              De ce să ne alegeți?
+              Despre noi
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Experiența și profesionalismul nostru vă garantează servicii de calitate superioară

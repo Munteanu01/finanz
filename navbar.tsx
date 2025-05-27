@@ -334,24 +334,24 @@ export default function FinanzNavbar() {
         <div className="flex items-center justify-center gap-0 w-full max-w-5xl px-6 py-1">
           <a
             href="tel:+40712345678"
-            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-semibold sm:text-xs text-[11px] rounded-lg px-2 py-0.5 hover:bg-blue-800/40 focus:outline-none focus:ring-2 focus:ring-white/40"
+            className="flex items-center gap-1 text-white/90 hover:text-white transition-colors font-semibold sm:text-xs text-[11px] rounded-lg px-2 py-0.5 hover:bg-blue-800/40 focus:outline-none focus:ring-2 focus:ring-white/40"
             style={{ textDecoration: "none" }}
           >
             <Phone className="w-3.5 h-3.5" />
             <span className="decoration-white/40 hover:decoration-white">021 9222</span>
           </a>
-          <span className="h-4 w-px bg-white/40 mx-1.5" />
+          <span className="h-4 w-px bg-white/40 mx-1" />
           <a
             href="mailto:office@finanz.ro"
-            className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-semibold sm:text-xs text-[11px] rounded-lg px-2 py-0.5 hover:bg-blue-800/40 focus:outline-none focus:ring-2 focus:ring-white/40"
+            className="flex items-center gap-1 text-white/90 hover:text-white transition-colors font-semibold sm:text-xs text-[11px] rounded-lg px-2 py-0.5 hover:bg-blue-800/40 focus:outline-none focus:ring-2 focus:ring-white/40"
             style={{ textDecoration: "none" }}
           >
             <Mail className="w-3.5 h-3.5" />
             <span className="decoration-white/40 hover:decoration-white">financiar.contabil@finanzconsult.ro</span>
           </a>
-          <span className="h-4 w-px bg-white/40 mx-1.5" />
-          {/* Urmareste-ne section */}
-          <div className="flex items-center gap-2.5">
+          <span className="h-4 w-px bg-white/40 mx-1" />
+          {/* Urmareste-ne section - ascuns pe mobil */}
+          <div className="hidden sm:flex items-center gap-2.5">
             <span className="text-white/90 font-semibold text-[11px] sm:text-xs">Urmărește-ne:</span>
             <a href="https://www.tiktok.com/@finanz" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70">
               <Image src="/tik-tok.png" alt="TikTok" width={12} height={12} />
