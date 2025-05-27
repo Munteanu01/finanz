@@ -123,7 +123,7 @@ const config: Config = {
           ring: 'hsl(var(--sidebar-ring))'
         },
         primaryColor: "#020F59",
-        secundaryColor: "#020F59"
+        secundaryColor: "#FE6309"
       },
       borderRadius: {
         lg: 'var(--radius)',
