@@ -37,8 +37,8 @@ export default function HeroSection() {
             {/* Left Content */}
             <div className="space-y-8">
               <div>
-                <h1 className="text-3xl md:text-4xl lg:text-3xl xl:text-5xl font-bold mb-4 text-white">
-                  <span className="text-white group leading-relaxed">
+                <h1 className="text-3xl md:text-4xl lg:text-3xl xl:text-5xl font-bold mb-4 text-gray-700 leading-tight">
+                  <span className="group leading-relaxed">
                     Dedicați <span className="relative inline-block">
                       <span className="relative z-10">excelenței</span>
                       <span className="absolute left-0 bottom-1 w-full xl:h-2 h-1 bg-[#FE6309] z-0 transition-all duration-300 group-hover:h-5/6"></span>
@@ -50,7 +50,7 @@ export default function HeroSection() {
                   </span>
                 </h1>
 
-                <p className="text-lg md:text-xl lg:text-base xl:text-xl mb-6 text-white leading-relaxed">
+                <p className="text-lg md:text-xl lg:text-base xl:text-xl mb-6 text-gray-500 leading-relaxed">
                   Navigăm împreună prin provocările financiare, cu experiență, profesionalism și integritate.
                 </p>
               </div>
@@ -147,8 +147,8 @@ export default function HeroSection() {
         <div className="container mx-auto px-6 relative z-10 flex flex-col justify-center h-full">
           {/* Title */}
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold mb-3 text-white leading-tight">
-              <span className="text-white group leading-relaxed">
+            <h1 className="text-2xl font-bold mb-3 text-gray-700 leading-tight">
+              <span className="text-gray-700 group leading-relaxed">
                 Dedicați <span className="relative inline-block">
                   <span className="relative z-10">excelenței</span>
                   <span className="absolute left-0 bottom-1 w-full h-1 bg-[#FE6309] z-0 transition-all duration-300 group-hover:h-5/6"></span>
@@ -160,7 +160,7 @@ export default function HeroSection() {
               </span>
             </h1>
 
-            <p className="text-base mb-4 text-white leading-relaxed">
+            <p className="text-base mb-4 text-gray-500 leading-relaxed">
               Navigăm împreună prin provocările financiare, cu experiență, profesionalism și integritate.
             </p>
           </div>
