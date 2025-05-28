@@ -19,8 +19,8 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Address badge - bottom right */}
-        <div className="absolute bottom-8 right-8 z-20">
+        {/* Address badge - bottom left (was right) */}
+        <div className="absolute bottom-8 left-8 z-20">
           <a
             href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
             target="_blank"
@@ -131,8 +131,8 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Address badge - bottom right for mobile */}
-        <div className="absolute bottom-8 right-4 z-20">
+        {/* Address badge - bottom left for mobile (was right) */}
+        <div className="absolute bottom-8 left-4 z-20">
           <a
             href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
             target="_blank"
