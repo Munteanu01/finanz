@@ -352,10 +352,10 @@ export default function Page() {
                       Alături de afacerea ta, pas cu pas
                     </h3>
                     <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                      Suntem încântați să anunțăm că întregul departament <b className="text-primaryColor">Financiar-Contabil</b> al <b className="text-primaryColor">Srlconsult</b> se transformă în <b className="text-primaryColor">Finanz Consult</b>! Această schimbare vine ca parte a strategiei noastre de expansiune și dezvoltare, menită să ne permită să oferim servicii și mai eficiente și adaptate nevoilor clienților noștri.
+                      Suntem încântați să anunțăm că întregul departament <b className="text-primaryColor whitespace-nowrap">Financiar-Contabil</b> al <b className="text-primaryColor whitespace-nowrap">Srlconsult</b> se transformă în <b className="text-primaryColor whitespace-nowrap">Finanz Consult</b>! Această schimbare vine ca parte a strategiei noastre de expansiune și dezvoltare, menită să ne permită să oferim servicii și mai eficiente și adaptate nevoilor clienților noștri.
                     </p>
                     <p className="text-gray-700 text-lg leading-relaxed">
-                      În contextul creșterii cererii pentru servicii financiare și contabile de înaltă calitate, am decis să ne extindem și să ne consolidăm sub noul brand <b className="text-primaryColor">Finanz Consult</b>. Această transformare ne va permite să ne adaptăm mai bine la schimbările pieței și să oferim soluții inovatoare și personalizate pentru fiecare client.
+                      În contextul creșterii cererii pentru servicii financiare și contabile de înaltă calitate, am decis să ne extindem și să ne consolidăm sub noul brand <b className="text-primaryColor whitespace-nowrap">Finanz Consult</b>. Această transformare ne va permite să ne adaptăm mai bine la schimbările pieței și să oferim soluții inovatoare și personalizate pentru fiecare client.
                     </p>
                   </div>
                   {/* Coloana imagine - mai mare */}

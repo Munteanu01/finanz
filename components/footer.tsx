@@ -41,11 +41,11 @@ const Footer = () => {
                 firma@finanzconsult.ro
               </a>
               <a
-                href="mailto:financiar.contabil@finanzconsult.ro"
+                href="mailto:contact@finanzconsult.ro"
                 className="flex items-center text-gray-600 hover:text-primaryColor transition-colors text-sm"
               >
                 <Mail className="h-4 w-4 mr-2 flex-shrink-0" />
-                financiar.contabil@finanzconsult.ro
+                contact@finanzconsult.ro
               </a>
               <a
                 href="mailto:salarizare@finanzconsult.ro"

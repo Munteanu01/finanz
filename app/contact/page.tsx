@@ -28,10 +28,10 @@ export default function ContactPage() {
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
               <a
-                href="mailto:financiar.contabil@finanzconsult.ro"
+                href="mailto:contact@finanzconsult.ro"
                 className="text-blue-600 hover:text-blue-800 text-sm break-all"
               >
-                financiar.contabil@finanzconsult.ro
+                contact@finanzconsult.ro
               </a>
             </div>
 
