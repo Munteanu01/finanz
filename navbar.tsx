@@ -396,7 +396,7 @@ export default function FinanzNavbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className={`hidden lg:flex items-center space-x-0 ${NAVBAR_CONFIG.spacing.desktop}`}>
+            <div className={`hidden 2xl:flex items-center space-x-0 ${NAVBAR_CONFIG.spacing.desktop}`}>
               {/* Dropdown Menus */}
               {DROPDOWN_CONFIG.map((dropdown) => (
                 <CustomDropdown
@@ -418,7 +418,7 @@ export default function FinanzNavbar() {
             </div>
 
             {/* Mobile menu button */}
-            <Button variant="ghost" size="sm" className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
+            <Button variant="ghost" size="sm" className="2xl:hidden" onClick={() => setIsOpen(!isOpen)}>
               <Menu className="h-5 w-5" />
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
@@ -428,7 +428,7 @@ export default function FinanzNavbar() {
 
       {/* Simple Mobile Menu Overlay */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 bg-white z-50 overflow-x-hidden">
+        <div className="2xl:hidden fixed inset-0 bg-white z-50 overflow-x-hidden">
           <div className="h-full overflow-y-auto">
             <div className="p-6">
               {/* Mobile Header */}

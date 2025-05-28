@@ -19,8 +19,10 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Address badge - bottom left (was right) */}
-        <div className="absolute bottom-8 left-8 z-20">
+        {/* Address badge - bottom left, aligned with buttons */}
+        <div
+          className="absolute bottom-8 left-4 z-20"
+        >
           <a
             href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
             target="_blank"
@@ -51,7 +53,8 @@ export default function HeroSection() {
                 </h1>
 
                 <p className="text-lg md:text-xl lg:text-base xl:text-xl mb-6 text-gray-500 leading-relaxed">
-                  Navigăm împreună prin provocările financiare, cu experiență, profesionalism și integritate.
+                Procedura se desfășoară exclusiv online, prin intermediul platformei, sau email,  cu implicarea avocaților, juriștilor și contabililor autorizați!
+
                 </p>
               </div>
 
@@ -59,11 +62,11 @@ export default function HeroSection() {
               <div className="grid grid-cols-1 gap-4 max-w-2xl">
                 {/* Email - Full width */}
                 <a
-                  href="mailto:contact@finanzconsult.ro"
+                  href="mailto:financiar.contabil@finanzconsult.ro"
                   className="w-full inline-flex items-center justify-center px-6 py-4 bg-primaryColor text-white rounded-xl  transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <Mail className="h-5 w-5 mr-3" />
-                  <span className="font-semibold">contact@finanzconsult.ro</span>
+                  <span className="font-semibold">financiar.contabil@finanzconsult.ro</span>
                 </a>
 
                 {/* Phone - Full width */}
@@ -131,7 +134,7 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Address badge - bottom left for mobile (was right) */}
+        {/* Address badge - bottom left for mobile */}
         <div className="absolute bottom-8 left-4 z-20">
           <a
             href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
@@ -168,11 +171,11 @@ export default function HeroSection() {
           <div className="grid grid-cols-1 gap-3 max-w-2xl mx-auto mb-8">
             {/* Email Button */}
             <a
-              href="mailto:contact@finanzconsult.ro"
+              href="mailto:financiar.contabil@finanzconsult.ro"
               className="w-full inline-flex items-center justify-center px-4 py-3 bg-primaryColor text-white rounded-xl  transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-xs"
             >
               <Mail className="h-4 w-4 mr-2" />
-              <span className="font-semibold">contact@finanzconsult.ro</span>
+              <span className="font-semibold">financiar.contabil@finanzconsult.ro</span>
             </a>
 
             {/* Phone Button */}
