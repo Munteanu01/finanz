@@ -62,11 +62,11 @@ export default function HeroSection() {
               <div className="grid grid-cols-1 gap-4 max-w-2xl">
                 {/* Email - Full width */}
                 <a
-                  href="mailto:financiar.contabil@finanzconsult.ro"
+                  href="mailto:contact@finanzconsult.rofinanzconsult.ro"
                   className="w-full inline-flex items-center justify-center px-6 py-4 bg-primaryColor text-white rounded-xl  transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <Mail className="h-5 w-5 mr-3" />
-                  <span className="font-semibold">financiar.contabil@finanzconsult.ro</span>
+                  <span className="font-semibold">contact@finanzconsult.rofinanzconsult.ro</span>
                 </a>
 
                 {/* Phone - Full width */}
@@ -171,11 +171,11 @@ export default function HeroSection() {
           <div className="grid grid-cols-1 gap-3 max-w-2xl mx-auto mb-8">
             {/* Email Button */}
             <a
-              href="mailto:financiar.contabil@finanzconsult.ro"
+              href="mailto:contact@finanzconsult.rofinanzconsult.ro"
               className="w-full inline-flex items-center justify-center px-4 py-3 bg-primaryColor text-white rounded-xl  transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-xs"
             >
               <Mail className="h-4 w-4 mr-2" />
-              <span className="font-semibold">financiar.contabil@finanzconsult.ro</span>
+              <span className="font-semibold">contact@finanzconsult.rofinanzconsult.ro</span>
             </a>
 
             {/* Phone Button */}
