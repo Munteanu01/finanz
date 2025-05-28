@@ -96,6 +96,7 @@ const STATIC_LINKS = [
   { title: "Găzduire sediu", href: "/gazduire-sediu" },
   { title: "Autorizații", href: "/autorizatii" },
   { title: "Înregistrare mărci", href: "/inregistrare-marci" },
+  { title: "Juridic", href: "/juridic" }, // This is now a simple link
   { title: "Contact", href: "/contact" },
 ]
 
