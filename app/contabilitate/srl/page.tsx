@@ -136,10 +136,16 @@ export default function ContabilitateSrlPage() {
       <FinanzNavbar />
 
       {/* Background image container, 100vh height, covers entire area */}
-      <div
-        className="absolute top-0 left-0 w-full h-[100vh] bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center "
-        aria-hidden="true"
-      />
+      <div className="absolute top-0 left-0 w-full h-[90vh]">
+  {/* Imaginea */}
+  <div className="w-full h-full bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
+
+  {/* Overlay negru semi-transparent */}
+  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70" />
+
+  {/* Gradient pentru tranziție spre alb */}
+  <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white to-transparent" />
+</div>
 
       <main className="w-full max-w-[1600px] mx-auto py-12 px-4 mt-16 xl:mt-20 relative z-10">
         <div className="w-full max-w-[1280px] mx-auto min-h-[100vh] pt-10">
