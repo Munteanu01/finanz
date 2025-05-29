@@ -6,7 +6,7 @@ import FAQ from "../../../components/faq"
 import Prices from "../../../components/Prices.jsx"
 import AccountingFeatures from "../../../components/AccountingFeatures.jsx"
 import { Laptop, UserCheck, ShieldCheck  } from "lucide-react"
-
+import { motion } from "framer-motion"
 
 const contabilitateFaq = [
   {
@@ -133,65 +133,93 @@ const prices = [
   }
 ]
 
+
 export default function ContabilitateSrlPage() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-white relative">
       <FinanzNavbar />
 
-      {/* HERO SECTION CU FUNDAL + TEXT PESTE */}
+      {/* HERO SECTION */}
       <section className="relative w-full min-h-screen flex items-center justify-center text-white">
-        {/* Fundal */}
         <div className="absolute inset-0 z-0 bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
-        {/* Overlay */}
         <div className="absolute inset-0 z-10 bg-black opacity-70" />
 
-        {/* Conținutul peste imagine */}
-        <div className="relative z-20 w-full  px-6 py-20 text-center">
-          <div className="mb-5 md:text-sm text-xs uppercase font-bold tracking-widest text-white bg-primaryColor px-4 py-2 mt-5 rounded-md inline-block">
+        <div className="relative z-20 w-full px-6 py-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-5 md:text-sm text-xs uppercase font-bold tracking-widest text-white bg-primaryColor px-4 py-2 mt-5 rounded-md inline-block"
+          >
             Contabilitate 100% online
-          </div>
+          </motion.div>
 
-          <h1 className="lg:text-5xl text-3xl font-bold text-white mb-6">
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="lg:text-5xl text-3xl font-bold text-white mb-6"
+          >
             Contabilitate SRL
-          </h1>
+          </motion.h1>
 
-          <p className="text-xl mb-10">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-xl mb-10"
+          >
             Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului
-          </p>
+          </motion.p>
 
-          <div className="grid 2xl:grid-cols-3 gap-3 max-w-xl 2xl:max-w-[1350px] mx-auto justify-content-between mt-10 text-center">
-            {/* Card 1 */}
-            <div className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-start text-gray-800">
-              <Laptop className="text-primaryColor mx-auto w-10 h-10 mb-4" />
-              <h3 className="text-xl flex mx-auto font-semibold mb-2">Contabilitate 100% online</h3>
-              <p>
-                Gestionează contabilitatea firmei tale 100% online, fără drumuri la birou, indiferent dacă ești în România sau în străinătate.
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-start text-gray-800">
-              <UserCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />
-              <h3 className="text-xl flex mx-auto font-semibold mb-2">Contabil dedicat</h3>
-              <p>
-                Ai un contabil personal care îți cunoaște firma și te asistă în orice moment, pentru o gestionare eficientă și fără stres.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-start text-gray-800">
-              <ShieldCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />
-              <h3 className="text-xl flex mx-auto font-semibold mb-2">Garanția mulțumirii sau rambursare</h3>
-              <p>
-                Ne asigurăm că ești mulțumit de serviciile noastre, iar dacă nu, primești banii înapoi fără complicații.
-              </p>
-            </div>
+          {/* GRID CU CARDURI */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.15,
+                },
+              },
+            }}
+            className="grid 2xl:grid-cols-3 gap-3 max-w-xl 2xl:max-w-[1350px] mx-auto mt-10 text-center"
+          >
+            {[{
+              icon: <Laptop className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
+              title: "Contabilitate 100% online",
+              description: "Gestionează contabilitatea firmei tale 100% online, fără drumuri la birou, indiferent dacă ești în România sau în străinătate."
+            }, {
+              icon: <UserCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
+              title: "Contabil dedicat",
+              description: "Ai un contabil personal care îți cunoaște firma și te asistă în orice moment, pentru o gestionare eficientă și fără stres."
+            }, {
+              icon: <ShieldCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
+              title: "Garanția mulțumirii sau rambursare",
+              description: "Ne asigurăm că ești mulțumit de serviciile noastre, iar dacă nu, primești banii înapoi fără complicații."
+            }].map((item, index) => (
+              <motion.div
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.15 + index * 0.05 }}
+                whileHover={{ scale: 1.03 }}
+                className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-start text-gray-800 transition-all duration-100"
+              >
+                {item.icon}
+                <h3 className="text-xl flex mx-auto font-semibold mb-2">{item.title}</h3>
+                <p>{item.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-        </div>
-
       </section>
+
       <AccountingFeatures />
-      {/* PRICES + FAQ SUB HERO */}
+
       <main className="w-full max-w-[1600px] mx-auto px-4 py-16 relative z-10">
         <div className="w-full max-w-[1280px] mx-auto">
           <Prices prices={prices} />
@@ -201,5 +229,6 @@ export default function ContabilitateSrlPage() {
 
       <Footer />
     </div>
-  )
+  );
 }
+

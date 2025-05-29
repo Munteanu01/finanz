@@ -35,8 +35,8 @@ const NAVBAR_CONFIG = {
     zIndex: "z-50",
   },
   spacing: {
-    desktop: "lg:space-x-1 xl:space-x-2",
-    padding: "px-1 lg:px-2 xl:px-3 py-2",
+    desktop: "",
+    padding: "px-1 xl:px-2 2xl:px-3 py-2",
     textSize: "text-xs xl:text-sm",
   },
 }
@@ -97,7 +97,9 @@ const STATIC_LINKS = [
   { title: "Autorizații", href: "/autorizatii" },
   { title: "Înregistrare mărci", href: "/inregistrare-marci" },
   { title: "Juridic", href: "/juridic" }, // This is now a simple link
+  { title: "Aplicație", href: "https://online-srlconsult.ro/" },
   { title: "Contact", href: "/contact" },
+
 ]
 
 // ===== DROPDOWN CONFIGURATION =====
@@ -147,12 +149,27 @@ const getDropdownClasses = (columns: number) => {
   return `navbar-dropdown absolute top-full left-0 bg-white border-l border-r border-b border-gray-200 rounded-b-lg shadow-lg ${NAVBAR_CONFIG.dropdown.zIndex} ${widthClasses}`
 }
 
-const getButtonClasses = (isActive: boolean) => {
-  const baseClasses = `flex items-center ${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium transition-colors whitespace-nowrap rounded-lg`
-  const stateClasses = isActive ? "text-primaryColor " : "text-gray-700 hover:text-primaryColor hover:bg-gray-50"
+const getButtonClasses = (isActive: boolean, isAppLink = false) => {
+  const baseClasses = `
+    flex items-center
+    ${NAVBAR_CONFIG.spacing.padding}
+    ${NAVBAR_CONFIG.spacing.textSize}
+    font-medium
+    transition-colors
+    whitespace-nowrap
+    rounded-lg
+    max-2xl:px-1 max-2xl:py-1
+  `
+
+  const stateClasses = isAppLink
+    ? "bg-primaryColor text-white hover:bg-primaryColor/90"
+    : isActive
+      ? "text-primaryColor"
+      : "text-gray-700 hover:text-primaryColor hover:bg-gray-50"
 
   return `${baseClasses} ${stateClasses}`
 }
+
 
 // ===== COMPONENTS =====
 
@@ -412,9 +429,40 @@ export default function FinanzNavbar() {
               ))}
 
               {/* Static Links */}
-              {STATIC_LINKS.map((link) => (
-                <StaticLink key={link.href} title={link.title} href={link.href} />
-              ))}
+              {STATIC_LINKS.map(({ title, href }) => {
+                const isAppLink = title.toLowerCase() === "aplicație";
+                const isContactLink = title.toLowerCase() === "contact";
+                const specialClasses = isAppLink
+                ? "bg-primaryColor text-white hover:text-white hover:bg-primaryColor/80"
+                : isContactLink
+                ? "bg-secundaryColor text-white hover:text-white hover:bg-secundaryColor/80"
+                : "text-gray-700";
+
+                const baseClasses = `
+                  ${NAVBAR_CONFIG.spacing.padding} 
+                  ${NAVBAR_CONFIG.spacing.textSize} 
+                  font-medium 
+                  whitespace-nowrap
+                  rounded-lg
+                  transition-colors
+                  hover:text-primaryColor 
+                  hover:bg-gray-50
+                `;
+
+             
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    className={`${baseClasses} ${specialClasses}`}
+                    target={isAppLink ? "_blank" : undefined}
+                    rel={isAppLink ? "noopener noreferrer" : undefined}
+                  >
+                    {title}
+                  </Link>
+                );
+              })}
+
             </div>
 
             {/* Mobile menu button */}
