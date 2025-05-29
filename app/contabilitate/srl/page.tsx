@@ -136,24 +136,27 @@ export default function ContabilitateSrlPage() {
       <FinanzNavbar />
 
       {/* Background image container, 100vh height, covers entire area */}
-      <div className="absolute top-0 left-0 w-full h-[90vh]">
+      <div className="absolute top-0 left-0 w-full h-[100vh] mb-20">
   {/* Imaginea */}
   <div className="w-full h-full bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
 
   {/* Overlay negru semi-transparent */}
   <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70" />
 
-  {/* Gradient pentru tranziție spre alb */}
-  <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white to-transparent" />
+  
 </div>
 
-      <main className="w-full max-w-[1600px] mx-auto py-12 px-4 mt-16 xl:mt-20 relative z-10">
-        <div className="w-full max-w-[1280px] mx-auto min-h-[100vh] pt-10">
-          <h1 className="lg:text-4xl text-3xl font-bold text-white text-center mb-8 xl:pl-2">
+      <main className="w-full max-w-[1600px] mx-auto py-12 px-4 mt-16 xl:mt-14 relative z-10">
+        <div className="w-full max-w-[1280px] mx-auto min-h-[100vh] text-center pt-10">
+        <div className="text-center mb-5 text-sm uppercase font-bold tracking-widest text-white  bg-primaryColor px-4 py-2 rounded-md inline-block">
+  Contabilitate 100% online
+</div>
+
+          <h1 className="lg:text-5xl text-3xl font-bold text-white text-center mb-8 xl:pl-2">
             Contabilitate SRL
           </h1>
 
-          <div className="prose prose-lg max-w-none prose-ul:list-disc prose-li:marker:text-primaryColor">
+          <div className="prose text-left prose-lg max-w-none prose-ul:list-disc prose-li:marker:text-primaryColor">
             <p className="text-xl text-center xl:px-10 px-5 text-white mb-8">
               Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului
             </p>
