@@ -18,7 +18,7 @@ const NAVBAR_CONFIG = {
   logo: {
     mobile: "h-8",
     tablet: "lg:h-8",
-    desktop: "xl:h-12",
+    desktop: "xl:h-10 3xl:h-12",
     width: 200,
     height: 50,
   },
