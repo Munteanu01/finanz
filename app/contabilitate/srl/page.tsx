@@ -3,6 +3,7 @@ import React from "react"
 import FinanzNavbar from "../../../navbar"
 import Footer from "../../../components/footer"
 import FAQ from "../../../components/faq"
+import Prices from "../../../components/Prices.jsx"
 
 const contabilitateFaq = [
   {
@@ -54,13 +55,91 @@ const contabilitateFaq = [
   }
 ];
 
+const prices = [
+  {
+    title: "Start",
+    price: "Gratuit",
+    subtitle: "Facturare integrată cu e-Factura, ideală pentru firme la început de drum.",
+    details: [
+      "Acces la aplicația de contabilitate",
+      "Facturare rapidă și automatizată",
+      "Integrare completă cu e-Factura",
+      "Încasare directă cu cardul prin Stripe",
+      "Emitere facturi în mai multe monede",
+      "Gestionare completă a documentelor contabile",
+      "Administrare și salarizare angajați",
+      "Contabil dedicat și asistență directă",
+      "Disponibil doar la înființarea unui SRL.",
+      "Pentru firmele plătitoare de TVA, tariful crește cu 20€/lună.",
+      "Pentru fiecare salariat în plus, tariful crește cu 15€/lună."
+    ]
+  },
+  {
+    title: "Basic",
+    price: "€40/lună + TVA",
+    subtitle: "Servicii contabile esențiale pentru startup-uri și afaceri mici.",
+    details: [
+      "Acces la platforma de contabilitate",
+      "Gestionare până la 10 documente lunar",
+      "Salarizare pentru 1 angajat inclus",
+      "Facturare integrată e-Factura",
+      "Import automat al facturilor de la furnizori",
+      "Încasare online prin Stripe",
+      "Evidență contabilă completă",
+      "Contabil dedicat pentru suport personalizat",
+      "Comunicare directă prin telefon și chat",
+      "Pentru firmele plătitoare de TVA, tariful crește cu 20€/lună.",
+      "Pentru fiecare angajat suplimentar, tariful crește cu 15€/lună."
+    ]
+  },
+  {
+    title: "Pro",
+    price: "€100/lună + TVA",
+    subtitle: "Ideal pentru afaceri în creștere care au nevoie de mai multă flexibilitate.",
+    details: [
+      "Acces complet la platforma de contabilitate",
+      "Gestionare de până la 100 documente lunar",
+      "Salarizare pentru 3 angajați incluși",
+      "Facturare automată cu e-Factura",
+      "Import rapid al facturilor de la furnizori",
+      "Încasare digitală prin Stripe",
+      "Administrare contabilă completă și transparentă",
+      "Contabil dedicat pentru consultanță fiscală",
+      "Suport prin telefon și chat în timp real",
+      "Pentru firmele plătitoare de TVA, tariful crește cu 20€/lună.",
+      "Pentru fiecare angajat suplimentar, tariful crește cu 15€/lună."
+    ]
+  },
+  {
+    title: "Business",
+    price: "€180/lună + TVA",
+    subtitle: "Pachet complet pentru firme care gestionează un volum mare de documente.",
+    details: [
+      "Acces premium la platforma de contabilitate",
+      "Gestionare de până la 200 documente lunar",
+      "Salarizare pentru 5 angajați incluși",
+      "Facturare automatizată cu e-Factura",
+      "Preluare automată a facturilor furnizorilor",
+      "Încasare facturi direct cu cardul prin Stripe",
+      "Contabilitate detaliată și rapoarte financiare",
+      "Contabil dedicat pentru suport fiscal avansat",
+      "Comunicare directă prin telefon și mesagerie",
+      "Pentru firmele plătitoare de TVA, tariful crește cu 20€/lună.",
+      "Pentru fiecare angajat suplimentar, tariful crește cu 15€/lună."
+    ]
+  }
+]
+
 export default function ContabilitateSrlPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-white">
       <FinanzNavbar />
-      <main className="container mx-auto py-12 px-4 mt-16 xl:mt-20">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-primaryColor mb-8">Contabilitate SRL</h1>
+      {/* Containerul principal este la fel de lat ca navbarul și logo-ul */}
+      <main className="w-full max-w-[1600px] mx-auto py-12 px-4 mt-16 xl:mt-20">
+        <div className="w-full max-w-[1280px] mx-auto">
+          <h1 className="text-4xl font-bold text-primaryColor mb-8 text-left xl:pl-2">
+            Contabilitate SRL
+          </h1>
 
           <div className="prose prose-lg max-w-none prose-ul:list-disc prose-li:marker:text-primaryColor">
             <p className="text-xl text-gray-700 mb-8">
@@ -94,48 +173,14 @@ export default function ContabilitateSrlPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold text-primaryColor mb-6">Pachete de servicii</h2>
+            <h2 className="text-3xl font-bold text-primaryColor mb-6 text-left xl:pl-2">
+              Pachete de servicii
+            </h2>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <div className="border border-gray-200 rounded-lg p-6 text-center">
-                <h4 className="text-xl font-semibold mb-4 text-primaryColor">Pachet Basic</h4>
-                <div className="text-3xl font-bold text-primaryColor mb-4">150 RON/lună</div>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li>Până la 20 operațiuni/lună</li>
-                  <li>Declarații fiscale</li>
-                  <li>Bilanț anual</li>
-                  <li>Suport telefonic</li>
-                </ul>
-              </div>
-
-              <div className="border-2 border-blue-500 rounded-lg p-6 text-center relative">
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm">
-                  Recomandat
-                </div>
-                <h4 className="text-xl font-semibold mb-4 text-primaryColor">Pachet Standard</h4>
-                <div className="text-3xl font-bold text-primaryColor mb-4">300 RON/lună</div>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li>Până la 50 operațiuni/lună</li>
-                  <li>Toate serviciile Basic</li>
-                  <li>Consiliere fiscală</li>
-                  <li>Reprezentare ANAF</li>
-                </ul>
-              </div>
-
-              <div className="border border-gray-200 rounded-lg p-6 text-center">
-                <h4 className="text-xl font-semibold mb-4 text-primaryColor">Pachet Premium</h4>
-                <div className="text-3xl font-bold text-primaryColor mb-4">500 RON/lună</div>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li>Operațiuni nelimitate</li>
-                  <li>Toate serviciile Standard</li>
-                  <li>Optimizare fiscală</li>
-                  <li>Consultanță strategică</li>
-                </ul>
-              </div>
+            <div className="w-full">
+              <Prices prices={prices} />
             </div>
 
-            {/* FAQ Section */}
-          
             <FAQ items={contabilitateFaq} />
           </div>
         </div>
