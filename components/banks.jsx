@@ -1,7 +1,8 @@
-// banks.jsx
-import React from "react";
+import React, { useState } from "react";
 
 const Banks = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
   const imageUrls = [
     "/images/bancatransilvania.png",
     "/images/digisign.png",
@@ -24,12 +25,18 @@ const Banks = () => {
         {imageUrls.map((url, index) => (
           <div
             key={index}
-            className="flex items-center justify-center h-20 sm:h-24 w-full"
+            className={`flex items-center justify-center h-20 sm:h-24 w-full transition-all duration-700 ease-in-out ${
+              hoveredIndex === index ? "-translate-y-2" : ""
+            }`}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
           >
             <img
               src={url}
               alt={`banca-${index + 1}`}
-              className="max-h-full max-w-full object-contain"
+              className={`max-h-full max-w-full object-contain transition-all duration-500 ease-in-out ${
+                hoveredIndex !== null && hoveredIndex !== index ? "opacity-30" : "opacity-100"
+              }`}
             />
           </div>
         ))}
