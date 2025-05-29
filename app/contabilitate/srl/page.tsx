@@ -132,19 +132,24 @@ const prices = [
 
 export default function ContabilitateSrlPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="min-h-screen overflow-x-hidden bg-white relative">
       <FinanzNavbar />
-      {/* Containerul principal este la fel de lat ca navbarul și logo-ul */}
-      <main className="w-full max-w-[1600px] mx-auto py-12 px-4 mt-16 xl:mt-20">
-        <div className="w-full max-w-[1280px] mx-auto">
-          <h1 className="text-4xl font-bold text-primaryColor mb-8 text-left xl:pl-2">
+
+      {/* Background image container, 100vh height, covers entire area */}
+      <div
+        className="absolute top-0 left-0 w-full h-[100vh] bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center "
+        aria-hidden="true"
+      />
+
+      <main className="w-full max-w-[1600px] mx-auto py-12 px-4 mt-16 xl:mt-20 relative z-10">
+        <div className="w-full max-w-[1280px] mx-auto min-h-[100vh] pt-10">
+          <h1 className="lg:text-4xl text-3xl font-bold text-white text-center mb-8 xl:pl-2">
             Contabilitate SRL
           </h1>
 
           <div className="prose prose-lg max-w-none prose-ul:list-disc prose-li:marker:text-primaryColor">
-            <p className="text-xl text-gray-700 mb-8">
-              Oferim servicii complete de contabilitate pentru societățile cu răspundere limitată (SRL), adaptate
-              nevoilor specifice ale afacerii dumneavoastră.
+            <p className="text-xl text-center xl:px-10 px-5 text-white mb-8">
+              Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -172,10 +177,6 @@ export default function ContabilitateSrlPage() {
                 </ul>
               </div>
             </div>
-
-            <h2 className="text-3xl font-bold text-primaryColor mb-6 text-left xl:pl-2">
-              Pachete de servicii
-            </h2>
 
             <div className="w-full">
               <Prices prices={prices} />

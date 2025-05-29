@@ -5,6 +5,9 @@ export default function Prices({ prices, color = "primaryColor" }) {
 
   return (
     <div className="w-full mb-12">
+         <h2 className="lg:text-4xl text-2xl font-bold text-center text-primaryColor mb-6 xl:pl-2 py-10 pt-28">
+            Planuri de contabilitate pentru orice etapă a businessului
+            </h2>
       <div
         className="
           flex flex-wrap justify-center xl:justify-start gap-6
@@ -15,10 +18,11 @@ export default function Prices({ prices, color = "primaryColor" }) {
             key={idx}
             className="
               flex flex-col items-center text-center bg-white shadow-sm border border-gray-200 rounded-lg
-              p-8
+              p-2
+              pb-5
               flex-1
-              min-w-[260px]
-              max-w-xs
+              min-w-[300px]
+              max-w-sm
               md:basis-[45%]
               lg:basis-[30%]
               xl:basis-[18%]
@@ -27,9 +31,9 @@ export default function Prices({ prices, color = "primaryColor" }) {
             style={{ flexBasis: "18%" }} // ~5 per row on xl, but will auto-fit
           >
             <h4 className={`text-xl font-semibold mb-2 text-${color}`}>{item.title}</h4>
-            <div className={`text-3xl font-bold text-${color} mb-1`}>{item.price}</div>
+            <div className={`text-2xl font-bold text-${color} mb-1`}>{item.price}</div>
             {item.subtitle && (
-              <p className="text-base text-gray-700 mb-4">{item.subtitle}</p>
+              <p className="text-sm lg:min-h-20 min-h-16 pt-3 text-gray-700 mb-4">{item.subtitle}</p>
             )}
             {item.details && (
               <ul className="text-sm text-gray-600 space-y-1 text-left mx-auto max-w-xs">
