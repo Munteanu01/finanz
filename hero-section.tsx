@@ -19,25 +19,25 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Address badge - bottom left, aligned with buttons */}
-        <div
-          className="absolute bottom-8 left-4 z-20"
+        {/* Address badge - bottom left, aligned with container */}
+        {/* <div
+          className="absolute bottom-8 left-4 z-20" // Sterge acest badge
         >
           <a
             href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 bg-white/90 backdrop-blur-sm text-gray-700 rounded-full text-sm font-medium shadow-lg border border-gray-200 hover:bg-white hover:shadow-xl transition-all duration-300"
+            className="inline-flex items-center px-6 py-4 bg-white/90 backdrop-blur-sm text-gray-700 rounded-full text-sm font-medium shadow-lg border border-gray-200 hover:bg-white hover:shadow-xl transition-all duration-300"
           >
             <MapPin className="w-4 h-4 mr-2 text-[#FE6309]" />
             <span>Splaiul Independentei, Nr 202B, Sector 6, București</span>
           </a>
-        </div>
+        </div> */}
 
         <div className="container mx-auto px-4 py-8 relative z-10 flex items-center min-h-screen">
           <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
             {/* Left Content */}
-            <div className="space-y-8">
+            <div className="space-y-8 relative h-full">
               <div>
                 <h1 className="text-3xl md:text-4xl lg:text-3xl xl:text-5xl font-bold mb-4 text-gray-700 leading-tight">
                   <span className="group leading-relaxed">
@@ -118,6 +118,19 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
+
+          {/* Address badge - la bottom-ul secțiunii, doar pe lg+ */}
+          <div className="hidden lg:block absolute left-4 bottom-8 z-20">
+            <a
+              href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+București"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-4 bg-white/90 backdrop-blur-sm text-gray-700 rounded-full text-sm font-medium shadow-lg border border-gray-200 hover:bg-white hover:shadow-xl transition-all duration-300"
+            >
+              <MapPin className="w-4 h-4 mr-2 text-[#FE6309]" />
+              <span>Splaiul Independentei, Nr 202B, Sector 6, București</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -135,9 +148,9 @@ export default function HeroSection() {
         </div>
 
         {/* Address badge - bottom left for mobile */}
-        <div className="absolute bottom-8 left-4 z-20">
+        <div className="absolute bottom-8 left-6 z-20">
           <a
-            href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
+            href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+București"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-3 py-2 bg-white/90 backdrop-blur-sm text-gray-700 rounded-full text-xs font-medium shadow-lg border border-gray-200 hover:bg-white hover:shadow-xl transition-all duration-300"
@@ -164,7 +177,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-base mb-4 text-gray-500 leading-relaxed">
-              Navigăm împreună prin provocările financiare, cu experiență, profesionalism și integritate.
+            Procedura se desfășoară exclusiv online, prin intermediul platformei, sau email, cu implicarea avocaților, juriștilor și contabililor autorizați!
             </p>
           </div>
           {/* Contact Buttons - Only Email and Phone */}

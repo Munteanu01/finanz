@@ -1,5 +1,58 @@
+"use client"
+import React from "react"
 import FinanzNavbar from "../../../navbar"
 import Footer from "../../../components/footer"
+import FAQ from "../../../components/faq"
+
+const contabilitateFaq = [
+  {
+    question: "Pot înființa o firmă prin Finanzconsult fără să mă deplasez?",
+    answer: "Da, <strong>Finanzconsult</strong> îți permite să înființezi o firmă 100% online, indiferent de locația ta, fie că ești în România sau în străinătate."
+  },
+  {
+    question: "Ce obligații am după înființarea firmei cu Finanzconsult?",
+    answer: `
+      După înființare, în termen de 30 de zile, trebuie să:
+      <ul>
+        <li>Achiziționezi Registrul Unic de Control de la ANAF.</li>
+        <li>Deschizi un cont bancar pe numele firmei.</li>
+        <li>Închei un contract de servicii contabile cu <strong>Finanzconsult</strong> sau altă firmă acreditată CECCAR.</li>
+        <li>Opțional, să îți procuri o ștampilă și un soft de facturare.</li>
+      </ul>
+    `
+  },
+  {
+    question: "Ce taxe va trebui să plătesc după înființarea firmei?",
+    answer: `
+      Ca microîntreprindere, vei plăti un impozit pe venit de:
+      <ul>
+        <li>1% dacă ai cel puțin un angajat.</li>
+        <li>3% dacă nu ai angajați.</li>
+      </ul>
+      De asemenea, dacă depășești plafonul de 300.000 lei cifră de afaceri anuală, va trebui să te înregistrezi ca plătitor de TVA.
+    `
+  },
+  {
+    question: "Cum mă ajută Bizfix cu actualizările legislative fiscale?",
+    answer: "Bizfix îți oferă actualizări în timp real privind modificările legislative fiscale, asigurându-te că firma ta rămâne conformă cu reglementările în vigoare."
+  },
+  {
+    question: "Cum pot comunica cu contabilul dedicat prin Finanzconsult?",
+    answer: "Prin aplicația <strong>Finanzconsult</strong>, ai acces direct la contabilul tău dedicat, putând comunica rapid și eficient prin chat sau apel telefonic pentru orice nelămuriri sau servicii suplimentare."
+  },
+  {
+    question: "Ce se întâmplă dacă nu am un sediu social pentru firmă?",
+    answer: "Bizfix îți oferă opțiunea de găzduire a sediului social în 41 de locații din țară, astfel încât să poți alege cea mai convenabilă variantă pentru tine."
+  },
+  {
+    question: "Pot să facturez gratuit după ce îmi înființez firma cu Finanzconsult?",
+    answer: "Da, <strong>Finanzconsult</strong> îți pune la dispoziție un sistem de facturare gratuit, integrat cu e-Factura, permițându-ți să emiți și să încasezi facturi rapid și eficient."
+  },
+  {
+    question: "Care sunt costurile pentru serviciile de contabilitate oferite de Finanzconsult?",
+    answer: "<strong>Finanzconsult</strong> oferă diverse pachete de contabilitate, adaptate nevoilor afacerii tale. Pentru detalii specifice și oferte personalizate, te rugăm să ne contactezi direct."
+  }
+];
 
 export default function ContabilitateSrlPage() {
   return (
@@ -9,7 +62,7 @@ export default function ContabilitateSrlPage() {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold text-primaryColor mb-8">Contabilitate SRL</h1>
 
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none prose-ul:list-disc prose-li:marker:text-primaryColor">
             <p className="text-xl text-gray-700 mb-8">
               Oferim servicii complete de contabilitate pentru societățile cu răspundere limitată (SRL), adaptate
               nevoilor specifice ale afacerii dumneavoastră.
@@ -80,6 +133,10 @@ export default function ContabilitateSrlPage() {
                 </ul>
               </div>
             </div>
+
+            {/* FAQ Section */}
+          
+            <FAQ items={contabilitateFaq} />
           </div>
         </div>
       </main>
