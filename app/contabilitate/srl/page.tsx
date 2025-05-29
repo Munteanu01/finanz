@@ -4,6 +4,7 @@ import FinanzNavbar from "../../../navbar"
 import Footer from "../../../components/footer"
 import FAQ from "../../../components/faq"
 import Prices from "../../../components/Prices.jsx"
+import { Laptop, UserCheck, ShieldCheck } from "lucide-react"
 
 const contabilitateFaq = [
   {
@@ -143,8 +144,8 @@ export default function ContabilitateSrlPage() {
         <div className="absolute inset-0 z-10 bg-black opacity-70" />
 
         {/* Conținutul peste imagine */}
-        <div className="relative z-20 w-full max-w-5xl px-6 py-20 text-center">
-          <div className="mb-5 text-sm uppercase font-bold tracking-widest text-white bg-primaryColor px-4 py-2 rounded-md inline-block">
+        <div className="relative z-20 w-full  px-6 py-20 text-center">
+          <div className="mb-5 md:text-sm text-xs uppercase font-bold tracking-widest text-white bg-primaryColor px-4 py-2 mt-5 rounded-md inline-block">
             Contabilitate 100% online
           </div>
 
@@ -156,32 +157,36 @@ export default function ContabilitateSrlPage() {
             Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8 mt-10 text-left">
-            <div className="bg-blue-50/90 p-6 rounded-lg text-gray-800">
-              <h3 className="text-2xl font-semibold text-primaryColor mb-4">Servicii incluse</h3>
-              <ul className="space-y-2">
-                <li>• Întocmirea bilanțului contabil</li>
-                <li>• Declarații fiscale lunare și anuale</li>
-                <li>• Gestiunea registrelor contabile</li>
-                <li>• Consiliere fiscală permanentă</li>
-                <li>• Reprezentare în relația cu ANAF</li>
-                <li>• Optimizare fiscală</li>
-              </ul>
-            </div>
+  <div className="grid md:grid-cols-3 gap-3 justify-content-between mt-10 text-center">
+  {/* Card 1 */}
+  <div className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-start text-gray-800">
+    <Laptop className="text-primaryColor mx-auto w-10 h-10 mb-4" />
+    <h3 className="text-xl flex mx-auto font-semibold mb-2">Contabilitate 100% online</h3>
+    <p>
+      Gestionează contabilitatea firmei tale 100% online, fără drumuri la birou, indiferent dacă ești în România sau în străinătate.
+    </p>
+  </div>
 
-            <div className="bg-green-50/90 p-6 rounded-lg text-gray-800">
-              <h3 className="text-2xl font-semibold text-green-900 mb-4">Avantaje</h3>
-              <ul className="space-y-2">
-                <li>• Conformitate 100% cu legislația</li>
-                <li>• Reducerea costurilor administrative</li>
-                <li>• Acces la experți contabili</li>
-                <li>• Raportare în timp real</li>
-                <li>• Suport pentru audit</li>
-                <li>• Consultanță strategică</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+  {/* Card 2 */}
+  <div className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-start text-gray-800">
+    <UserCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />
+    <h3 className="text-xl flex mx-auto font-semibold mb-2">Contabil dedicat</h3>
+    <p>
+      Ai un contabil personal care îți cunoaște firma și te asistă în orice moment, pentru o gestionare eficientă și fără stres.
+    </p>
+  </div>
+
+  {/* Card 3 */}
+  <div className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-start text-gray-800">
+    <ShieldCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />
+    <h3 className="text-xl flex mx-auto font-semibold mb-2">Garanția mulțumirii sau rambursare</h3>
+    <p>
+      Ne asigurăm că ești mulțumit de serviciile noastre, iar dacă nu, primești banii înapoi fără complicații.
+    </p>
+  </div>
+</div>
+</div>
+
       </section>
 
       {/* PRICES + FAQ SUB HERO */}
