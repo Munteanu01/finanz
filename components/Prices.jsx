@@ -4,7 +4,7 @@ export default function Prices({ prices, color = "primaryColor" }) {
   if (!prices || prices.length === 0) return null
 
   return (
-    <div className="w-full mb-12 mt-40">
+    <div className="w-full mb-12">
          <h2 className="lg:text-4xl text-2xl font-bold text-center text-primaryColor mb-6 xl:pl-2 py-10">
             Planuri de contabilitate pentru orice etapă a businessului
             </h2>

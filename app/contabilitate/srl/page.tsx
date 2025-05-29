@@ -135,66 +135,63 @@ export default function ContabilitateSrlPage() {
     <div className="min-h-screen overflow-x-hidden bg-white relative">
       <FinanzNavbar />
 
-      {/* Background image container, 100vh height, covers entire area */}
-      <div className="absolute top-0 left-0 w-full h-[100vh] mb-20">
-  {/* Imaginea */}
-  <div className="w-full h-full bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
+      {/* HERO SECTION CU FUNDAL + TEXT PESTE */}
+      <section className="relative w-full min-h-screen flex items-center justify-center text-white">
+        {/* Fundal */}
+        <div className="absolute inset-0 z-0 bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
+        {/* Overlay */}
+        <div className="absolute inset-0 z-10 bg-black opacity-70" />
 
-  {/* Overlay negru semi-transparent */}
-  <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70" />
+        {/* Conținutul peste imagine */}
+        <div className="relative z-20 w-full max-w-5xl px-6 py-20 text-center">
+          <div className="mb-5 text-sm uppercase font-bold tracking-widest text-white bg-primaryColor px-4 py-2 rounded-md inline-block">
+            Contabilitate 100% online
+          </div>
 
-  
-</div>
-
-      <main className="w-full max-w-[1600px] mx-auto py-12 px-4 mt-16 xl:mt-14 relative z-10">
-        <div className="w-full max-w-[1280px] mx-auto min-h-[100vh] text-center pt-10">
-        <div className="text-center mb-5 text-sm uppercase font-bold tracking-widest text-white  bg-primaryColor px-4 py-2 rounded-md inline-block">
-  Contabilitate 100% online
-</div>
-
-          <h1 className="lg:text-5xl text-3xl font-bold text-white text-center mb-8 xl:pl-2">
+          <h1 className="lg:text-5xl text-3xl font-bold text-white mb-6">
             Contabilitate SRL
           </h1>
 
-          <div className="prose text-left prose-lg max-w-none prose-ul:list-disc prose-li:marker:text-primaryColor">
-            <p className="text-xl text-center xl:px-10 px-5 text-white mb-8">
-              Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului
-            </p>
+          <p className="text-xl mb-10">
+            Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului
+          </p>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <h3 className="text-2xl font-semibold text-primaryColor mb-4">Servicii incluse</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Întocmirea bilanțului contabil</li>
-                  <li>• Declarații fiscale lunare și anuale</li>
-                  <li>• Gestiunea registrelor contabile</li>
-                  <li>• Consiliere fiscală permanentă</li>
-                  <li>• Reprezentare în relația cu ANAF</li>
-                  <li>• Optimizare fiscală</li>
-                </ul>
-              </div>
-
-              <div className="bg-green-50 p-6 rounded-lg">
-                <h3 className="text-2xl font-semibold text-green-900 mb-4">Avantaje</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Conformitate 100% cu legislația</li>
-                  <li>• Reducerea costurilor administrative</li>
-                  <li>• Acces la experți contabili</li>
-                  <li>• Raportare în timp real</li>
-                  <li>• Suport pentru audit</li>
-                  <li>• Consultanță strategică</li>
-                </ul>
-              </div>
+          <div className="grid md:grid-cols-2 gap-8 mt-10 text-left">
+            <div className="bg-blue-50/90 p-6 rounded-lg text-gray-800">
+              <h3 className="text-2xl font-semibold text-primaryColor mb-4">Servicii incluse</h3>
+              <ul className="space-y-2">
+                <li>• Întocmirea bilanțului contabil</li>
+                <li>• Declarații fiscale lunare și anuale</li>
+                <li>• Gestiunea registrelor contabile</li>
+                <li>• Consiliere fiscală permanentă</li>
+                <li>• Reprezentare în relația cu ANAF</li>
+                <li>• Optimizare fiscală</li>
+              </ul>
             </div>
 
-            <div className="w-full">
-              <Prices prices={prices} />
+            <div className="bg-green-50/90 p-6 rounded-lg text-gray-800">
+              <h3 className="text-2xl font-semibold text-green-900 mb-4">Avantaje</h3>
+              <ul className="space-y-2">
+                <li>• Conformitate 100% cu legislația</li>
+                <li>• Reducerea costurilor administrative</li>
+                <li>• Acces la experți contabili</li>
+                <li>• Raportare în timp real</li>
+                <li>• Suport pentru audit</li>
+                <li>• Consultanță strategică</li>
+              </ul>
             </div>
-
-            <FAQ items={contabilitateFaq} />
           </div>
         </div>
+      </section>
+
+      {/* PRICES + FAQ SUB HERO */}
+      <main className="w-full max-w-[1600px] mx-auto px-4 py-16 relative z-10">
+        <div className="w-full max-w-[1280px] mx-auto">
+          <Prices prices={prices} />
+          <FAQ items={contabilitateFaq} />
+        </div>
       </main>
+
       <Footer />
     </div>
   )
