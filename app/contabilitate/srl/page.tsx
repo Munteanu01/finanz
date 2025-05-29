@@ -4,7 +4,9 @@ import FinanzNavbar from "../../../navbar"
 import Footer from "../../../components/footer"
 import FAQ from "../../../components/faq"
 import Prices from "../../../components/Prices.jsx"
-import { Laptop, UserCheck, ShieldCheck } from "lucide-react"
+import AccountingFeatures from "../../../components/AccountingFeatures.jsx"
+import { Laptop, UserCheck, ShieldCheck  } from "lucide-react"
+
 
 const contabilitateFaq = [
   {
@@ -157,38 +159,38 @@ export default function ContabilitateSrlPage() {
             Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului
           </p>
 
-  <div className="grid 2xl:grid-cols-3 gap-3 max-w-xl 2xl:max-w-[1350px] mx-auto justify-content-between mt-10 text-center">
-  {/* Card 1 */}
-  <div className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-start text-gray-800">
-    <Laptop className="text-primaryColor mx-auto w-10 h-10 mb-4" />
-    <h3 className="text-xl flex mx-auto font-semibold mb-2">Contabilitate 100% online</h3>
-    <p>
-      Gestionează contabilitatea firmei tale 100% online, fără drumuri la birou, indiferent dacă ești în România sau în străinătate.
-    </p>
-  </div>
+          <div className="grid 2xl:grid-cols-3 gap-3 max-w-xl 2xl:max-w-[1350px] mx-auto justify-content-between mt-10 text-center">
+            {/* Card 1 */}
+            <div className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-start text-gray-800">
+              <Laptop className="text-primaryColor mx-auto w-10 h-10 mb-4" />
+              <h3 className="text-xl flex mx-auto font-semibold mb-2">Contabilitate 100% online</h3>
+              <p>
+                Gestionează contabilitatea firmei tale 100% online, fără drumuri la birou, indiferent dacă ești în România sau în străinătate.
+              </p>
+            </div>
 
-  {/* Card 2 */}
-  <div className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-start text-gray-800">
-    <UserCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />
-    <h3 className="text-xl flex mx-auto font-semibold mb-2">Contabil dedicat</h3>
-    <p>
-      Ai un contabil personal care îți cunoaște firma și te asistă în orice moment, pentru o gestionare eficientă și fără stres.
-    </p>
-  </div>
+            {/* Card 2 */}
+            <div className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-start text-gray-800">
+              <UserCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />
+              <h3 className="text-xl flex mx-auto font-semibold mb-2">Contabil dedicat</h3>
+              <p>
+                Ai un contabil personal care îți cunoaște firma și te asistă în orice moment, pentru o gestionare eficientă și fără stres.
+              </p>
+            </div>
 
-  {/* Card 3 */}
-  <div className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-start text-gray-800">
-    <ShieldCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />
-    <h3 className="text-xl flex mx-auto font-semibold mb-2">Garanția mulțumirii sau rambursare</h3>
-    <p>
-      Ne asigurăm că ești mulțumit de serviciile noastre, iar dacă nu, primești banii înapoi fără complicații.
-    </p>
-  </div>
-</div>
-</div>
+            {/* Card 3 */}
+            <div className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-start text-gray-800">
+              <ShieldCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />
+              <h3 className="text-xl flex mx-auto font-semibold mb-2">Garanția mulțumirii sau rambursare</h3>
+              <p>
+                Ne asigurăm că ești mulțumit de serviciile noastre, iar dacă nu, primești banii înapoi fără complicații.
+              </p>
+            </div>
+        </div>
+        </div>
 
       </section>
-
+      <AccountingFeatures />
       {/* PRICES + FAQ SUB HERO */}
       <main className="w-full max-w-[1600px] mx-auto px-4 py-16 relative z-10">
         <div className="w-full max-w-[1280px] mx-auto">
