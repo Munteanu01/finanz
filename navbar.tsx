@@ -35,7 +35,7 @@ const NAVBAR_CONFIG = {
     zIndex: "z-50",
   },
   spacing: {
-    desktop: "",
+    desktop: "space-x-1 2xl:space-x-2",
     padding: "px-1 xl:px-2 2xl:px-3 py-2",
     textSize: "text-xs xl:text-sm",
   },
