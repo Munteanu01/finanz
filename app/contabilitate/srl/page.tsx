@@ -157,7 +157,7 @@ export default function ContabilitateSrlPage() {
             Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului
           </p>
 
-  <div className="grid md:grid-cols-3 gap-3 justify-content-between mt-10 text-center">
+  <div className="grid 2xl:grid-cols-3 gap-3 max-w-xl 2xl:max-w-[1350px] mx-auto justify-content-between mt-10 text-center">
   {/* Card 1 */}
   <div className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-start text-gray-800">
     <Laptop className="text-primaryColor mx-auto w-10 h-10 mb-4" />
