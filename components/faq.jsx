@@ -8,7 +8,7 @@ const FAQ = ({ items }) => {
   };
 
   return (
-    <div className="faq w-full py-10">
+    <div className="faq w-full pt-10 ">
       <h2 className="text-3xl text-center font-bold text-primaryColor mb-10 pt-10">Întrebări frecvente</h2>
       <div className="flex flex-col gap-10">
         {items.map((item, idx) => {

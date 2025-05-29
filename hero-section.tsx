@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <div className="overflow-x-hidden">
       {/* Desktop Hero (lg and up) */}
-      <section className="hidden lg:block relative overflow-hidden min-h-screen flex items-center">
+      <section className=" hidden lg:block relative overflow-hidden min-h-screen items-center">
         {/* Haikei PNG Background */}
         <div className="absolute inset-0 w-full h-full z-0 ">
           <Image
@@ -19,25 +19,12 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Address badge - bottom left, aligned with container */}
-        {/* <div
-          className="absolute bottom-8 left-4 z-20" // Sterge acest badge
-        >
-          <a
-            href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-4 bg-white/90 backdrop-blur-sm text-gray-700 rounded-full text-sm font-medium shadow-lg border border-gray-200 hover:bg-white hover:shadow-xl transition-all duration-300"
-          >
-            <MapPin className="w-4 h-4 mr-2 text-[#FE6309]" />
-            <span>Splaiul Independentei, Nr 202B, Sector 6, București</span>
-          </a>
-        </div> */}
+      
 
         <div className="container mx-auto px-4 py-8 relative z-10 flex items-center min-h-screen">
           <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
             {/* Left Content */}
-            <div className="space-y-8 relative h-full">
+            <div className="space-y-8 relative h-full pt-10">
               <div>
                 <h1 className="text-3xl md:text-4xl lg:text-3xl xl:text-5xl font-bold mb-4 text-gray-700 leading-tight">
                   <span className="group leading-relaxed">

@@ -3,6 +3,7 @@
 import FinanzNavbar from "../navbar"
 import HeroSection from "../hero-section"
 import Footer from "../components/footer"
+import Banks from "../components/banks.jsx"
 import {
   Users,
   ArrowRight,
@@ -372,7 +373,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-
+      <Banks />
       {/* Testimonials Section - Modern Design */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
         <div className="container mx-auto px-4">

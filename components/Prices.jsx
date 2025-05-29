@@ -5,7 +5,7 @@ export default function Prices({ prices, color = "primaryColor" }) {
 
   return (
     <div className="w-full mb-12">
-         <h2 className="lg:text-4xl text-2xl font-bold text-center text-primaryColor mb-6 xl:pl-2 py-10">
+         <h2 className="lg:text-4xl text-2xl font-bold text-center  mb-6 xl:pl-2 py-10">
             Planuri de contabilitate pentru orice etapă a businessului
             </h2>
       <div

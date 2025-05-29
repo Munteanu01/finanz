@@ -348,9 +348,9 @@ export default function FinanzNavbar() {
             style={{ textDecoration: "none" }}
           >
             <Mail className="w-3.5 h-3.5" />
-            <span className="decoration-white/40 hover:decoration-white">contact@finanzconsult.rofinanzconsult.ro</span>
+            <span className="decoration-white/40 hover:decoration-white">contact@finanzconsult.ro</span>
           </a>
-          <span className="h-4 w-px bg-white/40 mx-1" />
+          <span className="h-4 sm:flex mr-2 hidden w-px bg-white/40 " />
           {/* Urmareste-ne section - ascuns pe mobil */}
           <div className="hidden sm:flex items-center gap-2.5">
             <span className="text-white/90 font-semibold text-[11px] sm:text-xs">Urmărește-ne:</span>
