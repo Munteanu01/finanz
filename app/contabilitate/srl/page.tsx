@@ -6,6 +6,7 @@ import FAQ from "../../../components/faq"
 import Prices from "../../../components/Prices.jsx"
 import AccountingFeatures from "../../../components/AccountingFeatures.jsx"
 import FacturareDiv from "../../../components/facturareDiv.jsx"
+import Features from "../../../components/features.jsx"
 import { Laptop, UserCheck, ShieldCheck  } from "lucide-react"
 import { motion } from "framer-motion"
 
@@ -142,7 +143,7 @@ export default function ContabilitateSrlPage() {
 
       {/* HERO SECTION */}
       {/* HERO SECTION */}
-<section className="relative w-full min-h-[100vh] 3xl:min-h-[70vh] flex items-center justify-center text-white">
+<section className="relative w-full min-h-[100vh] 2xl:min-h-[70vh] 2xl:pt-16 2xl:pb-5 flex items-center justify-center text-white">
   <div className="absolute inset-0 z-0 bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
   <div className="absolute inset-0 z-10 bg-black opacity-70" />
 
@@ -233,6 +234,7 @@ export default function ContabilitateSrlPage() {
         <div className="w-full max-w-[1280px] mx-auto">
           <Prices prices={prices} />
           <FacturareDiv />
+          <Features />
           <FAQ items={contabilitateFaq} />
         </div>
       </main>
