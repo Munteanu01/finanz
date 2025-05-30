@@ -106,7 +106,7 @@ export default function TarifePage() {
       <FinanzNavbar />
 
       {/* Hero Section */}
-      <section className="pt-10 relative w-full min-h-screen flex items-center justify-center text-white">
+      <section className="pt-10 relative w-full min-h-[100vh] 2xl:min-h-[70vh] flex items-center justify-center text-white">
         <div className="absolute inset-0 z-0 bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 z-10 bg-black opacity-70" />
 
@@ -128,58 +128,56 @@ export default function TarifePage() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-4xl lg:text-6xl font-bold text-center mb-4 max-w-4xl mx-auto"
           >
-            Transparență și flexibilitate
+            Tarife evidență contabilă
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-xl lg:text-2xl text-center mb-16 max-w-3xl mx-auto"
+            className="text-xl lg:text-2xl text-center mb-12 max-w-3xl mx-auto"
           >
-            în costuri contabile
+            Transparență și flexibilitate în costuri contabile
           </motion.p>
 
-          {/* Feature cards - updated layout */}
-          <div className="max-w-5xl mx-auto">
+          {/* Feature cards - updated layout with wider cards */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.15 }
+              }
+            }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto justify-items-center"
+          >
             <motion.div
-              initial="hidden"
-              animate="visible"
               variants={{
-                hidden: {},
-                visible: {
-                  transition: { staggerChildren: 0.15 }
-                }
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
               }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center"
+              transition={{ duration: 0.15 }}
+              className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-center text-center text-gray-800 transition-all duration-100 w-full max-w-[500px]"
             >
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                transition={{ duration: 0.15 }}
-                className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-center text-center text-gray-800 transition-all duration-100 w-full max-w-[400px]"
-              >
-                <FileText className="text-primaryColor mx-auto w-10 h-10 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Reducere 10% pentru plata pe 6 luni</h3>
-                <p>Plătește serviciile de contabilitate pe 6 luni în avans și economisește 10% din costuri.</p>
-              </motion.div>
-
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                transition={{ duration: 0.15 }}
-                className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-center text-center text-gray-800 transition-all duration-100 w-full max-w-[400px]"
-              >
-                <Calculator className="text-primaryColor mx-auto w-10 h-10 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">Tarife flexibile pentru volume mari</h3>
-                <p>Pentru peste 100 de documente lunar, îți oferim o ofertă personalizată adaptată afacerii tale.</p>
-              </motion.div>
+              <FileText className="text-primaryColor mx-auto w-10 h-10 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Reducere 10% pentru plata pe 6 luni</h3>
+              <p>Plătește serviciile de contabilitate pe 6 luni în avans și economisește 10% din costuri.</p>
             </motion.div>
-          </div>
+
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.15 }}
+              className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-center text-center text-gray-800 transition-all duration-100 w-full max-w-[500px]"
+            >
+              <Calculator className="text-primaryColor mx-auto w-10 h-10 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Tarife flexibile pentru volume mari</h3>
+              <p>Pentru peste 100 de documente lunar, îți oferim o ofertă personalizată adaptată afacerii tale.</p>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
