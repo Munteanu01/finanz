@@ -106,7 +106,7 @@ export default function TarifePage() {
       <FinanzNavbar />
 
       {/* Hero Section */}
-      <section className="pt-10 relative w-full min-h-[120vh] 2xl:min-h-[90vh] flex items-center justify-center text-white">
+      <section className="pt-10 relative w-full min-h-[100vh] 2xl:min-h-[70vh] flex items-center justify-center text-white">
         <div className="absolute inset-0 z-0 bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 z-10 bg-black opacity-70" />
 
