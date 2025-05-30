@@ -12,6 +12,8 @@ import { Laptop, UserCheck, ShieldCheck } from "lucide-react"
 import { motion } from "framer-motion"
 import ProcesSimplificat from "../../../components/ProcesSimplificat"
 import PasiInfiintare from "../../../components/PasiInfiintare";
+import OperationalSteps from "../../../components/OperationalSteps";
+import PlanuriContabile from "../../../components/PlanuriContabile";
 
 const infiintariFaq = [
   {
@@ -116,7 +118,7 @@ export default function InfiintareSrlPage() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-white relative">
       <FinanzNavbar />
-
+      
       {/* Hero Section */}
       <section className="pt-10 relative w-full min-h-[100vh]">
         <div className="absolute inset-0 z-0 bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
@@ -184,8 +186,14 @@ export default function InfiintareSrlPage() {
         </div>
       </section>
 
-      {/* Adaugă secțiunea Pași după Hero */}
+      {/* Adaugă secțiunea Planuri Contabile */}
+      <PlanuriContabile />
+
+      {/* Restul secțiunilor */}
       <PasiInfiintare />
+
+      {/* Adaugă secțiunea Operational Steps */}
+      <OperationalSteps />
 
       {/* Proces Simplificat Section */}
       <ProcesSimplificat />

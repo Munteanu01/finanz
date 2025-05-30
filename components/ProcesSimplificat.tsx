@@ -11,34 +11,35 @@ const beneficii = [
   {
     icon: <Rocket className="w-8 h-8" />,
     title: "Proces simplu și rapid",
-    description: "Fără timp pierdut și fără drumuri la instituții. Ne ocupăm de tot pentru tine."
+    description: "Fără timp pierdut și fără drumuri la instituții. Ne ocupăm de tot pentru tine.",
   },
   {
     icon: <Clock className="w-8 h-8" />,
     title: "Modificări în doar 3 zile",
-    description: "Timpul tău este prețios. Orice schimbare necesară firmei tale este gata în maximum 3 zile."
+    description: "Timpul tău este prețios. Orice schimbare necesară firmei tale este gata în maximum 3 zile.",
   },
   {
     icon: <FileCheck className="w-8 h-8" />,
     title: "Fără formalități, fără stres",
-    description: "Noi ne ocupăm de întregul proces – de la redactarea actelor până la înregistrare. Tu doar semnezi!"
+    description: "Noi ne ocupăm de întregul proces – de la redactarea actelor până la înregistrare. Tu doar semnezi!",
   },
   {
     icon: <Building2 className="w-8 h-8" />,
     title: "Fără drumuri la instituții",
-    description: "Totul se desfășoară online, indiferent unde te afli. Gestionăm relația cu Registrul Comerțului."
+    description: "Totul se desfășoară online, indiferent unde te afli. Gestionăm relația cu Registrul Comerțului.",
   },
   {
     icon: <Scale className="w-8 h-8" />,
     title: "Consultanță juridică inclusă",
-    description: "De la primul pas până la finalizare, beneficiezi de suport specializat pentru succes garantat."
-  }
+    description: "De la primul pas până la finalizare, beneficiezi de suport specializat pentru succes garantat.",
+  },
 ];
 
 export default function ProcesSimplificat() {
   return (
     <section className="py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +60,8 @@ export default function ProcesSimplificat() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Benefits Grid */}
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8">
           {beneficii.map((beneficiu, idx) => (
             <motion.div
               key={idx}
@@ -67,21 +69,20 @@ export default function ProcesSimplificat() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100"
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200"
             >
-              <div className="bg-gradient-to-br from-primaryColor/10 to-primaryColor p-3 rounded-lg w-fit mb-4">
+              <div className="bg-gradient-to-br from-primaryColor/60 to-primaryColor p-3 rounded-lg w-fit mb-4">
                 {beneficiu.icon}
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {beneficiu.title}
               </h3>
-              <p className="text-gray-600">
-                {beneficiu.description}
-              </p>
+              <p className="text-gray-600">{beneficiu.description}</p>
             </motion.div>
           ))}
         </div>
 
+        {/* Call-to-Action Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
