@@ -106,11 +106,11 @@ export default function TarifePage() {
       <FinanzNavbar />
 
       {/* Hero Section */}
-      <section className="pt-10 relative w-full min-h-[100vh] 2xl:min-h-[70vh] flex items-center justify-center text-white">
+      <section className="pt-10 relative w-full min-h-[120vh] 2xl:min-h-[90vh] flex items-center justify-center text-white">
         <div className="absolute inset-0 z-0 bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 z-10 bg-black opacity-70" />
 
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
