@@ -22,7 +22,7 @@ export default function PriceTable({ title, headers, rows, note }: PriceTablePro
       viewport={{ once: true }}
       className="w-full"
     >
-      <h3 className="text-2xl font-bold text-primaryColor mb-8 text-center">{title}</h3>
+      <h3 className="text-2xl font-bold text-primaryColor mb-8 text-center  lg:text-4xl ">{title}</h3>
       <div className="overflow-x-auto rounded-xl shadow-lg border border-gray-100">
         <table className="w-full min-w-[640px] table-auto">
           <thead>
