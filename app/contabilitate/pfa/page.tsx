@@ -156,6 +156,8 @@ const contabilitateFaq = [
 ];
 
 export default function ContabilitatePfaPage() {
+	const pricingTitle = "Planuri de contabilitate pentru orice etapă a businessului";
+	
 	return (
 		<div className="min-h-screen overflow-x-hidden bg-white relative">
 			<FinanzNavbar />
@@ -234,7 +236,12 @@ export default function ContabilitatePfaPage() {
 
 			<section className="w-full bg-white">
 				<div className="w-full bg-white">
-					<Prices prices={prices} />
+					<Prices 
+						prices={prices} 
+						title={pricingTitle}
+						formattedTitle="Planuri de contabilitate"
+					/>
+					
 				</div>
 			</section>
 

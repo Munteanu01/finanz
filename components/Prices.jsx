@@ -2,10 +2,8 @@ import React from "react";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function Prices({ prices, color = "primaryColor" }) {
+export default function Prices({ prices, title, formattedTitle, color = "primaryColor" }) {
   if (!prices || prices.length === 0) return null;
-
-  const title = "Planuri de contabilitate pentru orice etapă a businessului";
 
   const containerVariants = {
     hidden: {},
@@ -17,31 +15,18 @@ export default function Prices({ prices, color = "primaryColor" }) {
     },
   };
 
-  const wordVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   return (
     <div className="w-full py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2
-          className="lg:text-4xl text-2xl font-bold text-center mb-6 xl:pl-2 py-10 text-zinc-800 flex flex-wrap justify-center"
+        <motion.div
+          className="lg:text-4xl text-center text-2xl font-bold mb-6 xl:pl-2 py-10 text-zinc-800"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {title.split(" ").map((word, index) => (
-            <motion.span
-              key={index}
-              variants={wordVariants}
-              className="mr-2"
-            >
-              {word}
-            </motion.span>
-          ))}
-        </motion.h2>
+          {formattedTitle}
+        </motion.div>
 
         <div className="flex flex-wrap justify-center gap-8">
           {prices.map((item, idx) => (

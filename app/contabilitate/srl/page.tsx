@@ -138,6 +138,8 @@ const prices = [
 
 
 export default function ContabilitateSrlPage() {
+  const pricingTitle = "Planuri de contabilitate pentru orice etapă a businessului";
+  
   return (
     <div className="min-h-screen overflow-x-hidden bg-white relative">
       <FinanzNavbar />
@@ -235,8 +237,14 @@ export default function ContabilitateSrlPage() {
       </section>
 
       <section className="w-full bg-white">
-        <Prices prices={prices} />
-      </section>
+      <div className="w-full bg-white">
+        <Prices 
+          prices={prices} 
+          title={pricingTitle}
+          formattedTitle={pricingTitle}
+        />
+      </div>
+    </section>
 
       <section className="w-full bg-gray-50">
         <Features />
