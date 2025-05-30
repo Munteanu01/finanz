@@ -5,6 +5,7 @@ import Footer from "../../../components/footer"
 import FAQ from "../../../components/faq"
 import Prices from "../../../components/Prices.jsx"
 import AccountingFeatures from "../../../components/AccountingFeatures.jsx"
+import FacturareDiv from "../../../components/facturareDiv.jsx"
 import { Laptop, UserCheck, ShieldCheck  } from "lucide-react"
 import { motion } from "framer-motion"
 
@@ -149,7 +150,7 @@ export default function ContabilitateSrlPage() {
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-5 md:text-sm text-xs uppercase font-bold tracking-widest text-white bg-primaryColor px-4 py-2 mt-5 rounded-md inline-block"
+            className="mb-5 md:text-sm text-xs uppercase font-bold tracking-widest text-white bg-primaryColor/80 px-4 py-2 mt-5 rounded-md inline-block"
           >
             Contabilitate 100% online
           </motion.div>
@@ -223,6 +224,7 @@ export default function ContabilitateSrlPage() {
       <main className="w-full max-w-[1600px] mx-auto px-4 py-16 relative z-10">
         <div className="w-full max-w-[1280px] mx-auto">
           <Prices prices={prices} />
+          <FacturareDiv />
           <FAQ items={contabilitateFaq} />
         </div>
       </main>

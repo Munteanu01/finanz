@@ -6,6 +6,7 @@ import {
   BarChart2,
   Headset
 } from "lucide-react"
+import { motion } from "framer-motion"
 
 export default function AccountingFeatures() {
   const features = [
@@ -32,21 +33,48 @@ export default function AccountingFeatures() {
   ]
 
   return (
-    <section className="w-full max-w-6xl mx-auto px-4 mt-20 ">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-20 pt-10">
-        Ne ocupăm de contabilitate, tu te concentrezi pe afacerea ta
-      </h2>
-      <div className="grid lg:grid-cols-2 2xl:grid-cols-4 gap-6 justify-center">
-        {features.map((feature, index) => (
-          <div
-            key={index}
-            className="flex flex-col border border-gray-200 rounded-lg  p-8 min-h-[260px]"
-          >
-            {feature.icon}
-            <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-            <p className="text-gray-700">{feature.description}</p>
-          </div>
-        ))}
+    <section className="w-full relative py-20 bg-gradient-to-br from-[#f9fafb] to-[#e9f1ff]">
+      {/* Decorativ background blur cercuri */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute w-96 h-96 bg-primaryColor/20 rounded-full blur-[150px] -top-20 -left-20" />
+        <div className="absolute w-96 h-96 bg-primaryColor/10 rounded-full blur-[150px] bottom-0 right-0" />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-4xl font-bold text-center mb-20 text-gray-700"
+        >
+          Ne ocupăm de{" "}
+          <span className=" text-primaryColor bg-clip-text animate-text">
+            contabilitate
+          </span>
+          , tu te concentrezi pe{" "}
+          <span className=" text-primaryColor bg-clip-text animate-text">
+            afacerea ta
+          </span>
+        </motion.h2>
+
+        <div className="grid lg:grid-cols-2 2xl:grid-cols-4 gap-6">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.15 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.03 }}
+              className="flex flex-col bg-white shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300"
+            >
+              {feature.icon}
+              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p className="text-gray-700">{feature.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   )
