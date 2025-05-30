@@ -7,7 +7,7 @@ export default function FacturareDiv() {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <section className="w-full py-24 bg-gradient-to-br bg-gray-200 rounded-xl relative overflow-hidden">
+    <section className="w-full py-24 bg-gradient-to-br rounded-xl relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 flex flex-col xl:flex-row items-center gap-16">
         {/* Text Content */}
         <div className="xl:flex-1 max-w-xl mx-auto xl:mx-0">
@@ -21,7 +21,7 @@ export default function FacturareDiv() {
             <div
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-              className="inline-flex flex-wrap text-3xl sm:text-5xl font-extrabold text-primaryColor/90 gap-x-2 gap-y-3 leading-tight"
+              className="inline-flex flex-wrap text-3xl sm:text-4xl font-extrabold text-primaryColor/90 gap-x-2 gap-y-3 leading-tight"
             >
               <span className="mr-1">Facturare</span>
 

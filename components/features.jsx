@@ -1,81 +1,128 @@
-import Image from 'next/image';
+import React from 'react';
+import { motion } from 'framer-motion';
 
-const features = [
+const firstSectionTitle = 'Gestiune financiară completă, direct din telefonul tău';
+const secondSectionTitle = 'Siguranță fiscală prin contabilitate profesională';
+
+const firstSectionItems = [
   {
-    title: 'Gestiune financiară completă, direct din telefonul tău',
-    description: '',
+    title: 'Asistență de la experți contabili',
+    description:
+      'Facturile emise sunt gestionate direct de contabilul tău și integrate automat în e-Factura.',
     image: 'IMAGE_LINK_1',
   },
   {
-    title: 'Asistență de la experți contabili',
-    description: 'Facturile emise sunt gestionate direct de contabilul tău și integrate automat în e-Factura.',
+    title: 'Vezi taxele scadente la timp',
+    description:
+      'Primești actualizări despre taxele datorate și ai mereu situația fiscală la zi.',
     image: 'IMAGE_LINK_2',
   },
   {
-    title: 'Vezi taxele scadente la timp',
-    description: 'Primești actualizări despre taxele datorate și ai mereu situația fiscală la zi.',
-    image: 'IMAGE_LINK_3',
-  },
-  {
     title: 'Situația financiară în timp real',
-    description: 'Ai acces rapid la venituri, cheltuieli și balanța firmei, direct în aplicație.',
-    image: 'IMAGE_LINK_4',
-  },
-  {
-    title: 'Siguranță fiscală prin contabilitate profesională',
-    description: '',
-    image: 'IMAGE_LINK_5',
-  },
-  {
-    title: 'Contabili acreditați, expertiză garantată',
-    description: 'Specialiști CECCAR care asigură corectitudinea și conformitatea evidențelor contabile.',
-    image: 'IMAGE_LINK_6',
-  },
-  {
-    title: 'Legislatie fiscală mereu la zi',
-    description: 'Beneficiezi de actualizări fiscale automate și consultanță pentru a evita riscurile legislative.',
-    image: 'IMAGE_LINK_7',
-  },
-  {
-    title: 'Comunicare rapidă cu contabilul tău',
-    description: 'Menții legătura directă cu contabilul alocat prin telefon, oricând ai nevoie.',
-    image: 'IMAGE_LINK_8',
+    description:
+      'Ai acces rapid la venituri, cheltuieli și balanța firmei, direct în aplicație.',
+    image: 'IMAGE_LINK_3',
   },
 ];
 
-export default function Features() {
+const secondSectionItems = [
+  {
+    title: 'Contabili acreditați, expertiză garantată',
+    description:
+      'Specialiști CECCAR care asigură corectitudinea și conformitatea evidențelor contabile.',
+    image: 'IMAGE_LINK_4',
+  },
+  {
+    title: 'Legislatie fiscală mereu la zi',
+    description:
+      'Beneficiezi de actualizări fiscale automate și consultanță pentru a evita riscurile legislative.',
+    image: 'IMAGE_LINK_5',
+  },
+  {
+    title: 'Comunicare rapidă cu contabilul tău',
+    description:
+      'Menții legătura directă cu contabilul alocat prin telefon, oricând ai nevoie.',
+    image: 'IMAGE_LINK_6',
+  },
+];
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 50 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+};
+
+export default function FinancialFeatures() {
   return (
-    <section className="px-4 py-12 sm:px-6 lg:px-16 bg-white">
-      <div className="max-w-7xl mx-auto space-y-16">
-        {features.map((feature, index) => (
-          <div
-            key={index}
-            className={`flex flex-col md:flex-row items-center gap-8 ${
-              index % 2 !== 0 ? 'md:flex-row-reverse' : ''
-            }`}
+    <section className="bg-white  mx-auto px-4 py-20 sm:px-6 lg:px-24 space-y-20">
+      {/* Prima secțiune */}
+      <Section
+        title={firstSectionTitle}
+        items={firstSectionItems}
+      />
+
+      {/* A doua secțiune */}
+      <Section
+        title={secondSectionTitle}
+        items={secondSectionItems}
+      />
+    </section>
+  );
+}
+
+function Section({ title, items }) {
+  return (
+    <div>
+      <motion.h2
+        className="text-4xl font-extrabold  mb-12 max-w-3xl mx-auto text-center text-gray-700"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
+        {title}
+      </motion.h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {items.map(({ title, description, image }, idx) => (
+          <motion.article
+            key={idx}
+            className="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center cursor-pointer
+            hover:scale-[1.03] transition-transform duration-300 ease-in-out"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
           >
-            <div className="w-full md:w-1/2">
-              <Image
-                src={feature.image}
-                alt={feature.title}
-                width={600}
-                height={400}
-                className="rounded-xl shadow-lg object-cover w-full h-auto"
-              />
-            </div>
-            <div className="w-full md:w-1/2 text-center md:text-left">
-              <h3 className="text-2xl font-bold text-[var(--primaryColor)] mb-4">
-                {feature.title}
-              </h3>
-              {feature.description && (
-                <p className="text-lg text-[var(--secundaryColor)]">
-                  {feature.description}
-                </p>
-              )}
-            </div>
-          </div>
+            <motion.img
+              src={image}
+              alt={title}
+              className="w-full h-52 object-cover rounded-xl mb-6 shadow-md"
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              loading="lazy"
+            />
+            <motion.h3
+              className="text-2xl font-semibold text-primaryColor mb-3"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              {title}
+            </motion.h3>
+            {description && (
+              <motion.p
+                className="text-[var(--secundaryColor)] text-base leading-relaxed"
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.4 }}
+              >
+                {description}
+              </motion.p>
+            )}
+          </motion.article>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

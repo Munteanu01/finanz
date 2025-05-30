@@ -9,7 +9,7 @@ const FAQ = ({ items }) => {
 
   return (
     <div className="faq w-full pt-10 ">
-      <h2 className="text-3xl text-center font-bold text-primaryColor mb-10 pt-10">Întrebări frecvente</h2>
+      <h2 className="text-3xl lg:text-4xl text-center font-bold text-gray-700 mb-10 pt-10">Întrebări frecvente</h2>
       <div className="flex flex-col gap-10">
         {items.map((item, idx) => {
           const isOpen = openIndex === idx;
@@ -21,7 +21,7 @@ const FAQ = ({ items }) => {
               }`}
             >
               <button
-                className="w-full flex justify-between items-center px-8 py-5 text-lg font-semibold text-left text-primaryColor focus:outline-none transition-colors hover:bg-primaryColor/10 cursor-pointer"
+                className="w-full flex justify-between items-center px-8 py-5 text-lg font-semibold text-left text-gray-700 focus:outline-none transition-colors hover:bg-primaryColor/10 cursor-pointer"
                 onClick={() => toggle(idx)}
                 type="button"
                 tabIndex={0}
