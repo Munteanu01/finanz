@@ -7,7 +7,7 @@ import Prices from "../../../components/Prices.jsx"
 import AccountingFeatures from "../../../components/AccountingFeatures.jsx"
 import FacturareDiv from "../../../components/facturareDiv.jsx"
 import Features from "../../../components/features.jsx"
-import LegalSupport from "../../../components/legalSupport.jsx"
+import LegalSupport from "../../../components/LegalSupport.jsx"
 import { Laptop, UserCheck, ShieldCheck  } from "lucide-react"
 import { motion } from "framer-motion"
 
