@@ -142,7 +142,7 @@ export default function ContabilitateSrlPage() {
 
       {/* HERO SECTION */}
       {/* HERO SECTION */}
-<section className="relative w-full min-h-[80vh] lg:min-h-[65vh] flex items-center justify-center text-white">
+<section className="relative w-full min-h-[100vh] 3xl:min-h-[70vh] flex items-center justify-center text-white">
   <div className="absolute inset-0 z-0 bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
   <div className="absolute inset-0 z-10 bg-black opacity-70" />
 
