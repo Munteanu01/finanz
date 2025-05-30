@@ -2,7 +2,7 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-
+import Link from "next/link"
 export default function FacturareDiv() {
   const [isHovered, setIsHovered] = useState(false)
 
@@ -69,14 +69,16 @@ export default function FacturareDiv() {
           >
             Emiți facturi fără costuri suplimentare, le trimiți direct prin e-Factura și încasezi rapid, economisind timp și bani pentru afacerea ta.
           </motion.p>
-
+          <Link   href="https://online-srlconsult.ro/">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+          
             className="inline-flex items-center gap-3 px-7 py-3 bg-primaryColor text-white font-semibold rounded-lg shadow-lg hover:bg-orange-600 transition-colors duration-300"
           >
-            Aplicație <ArrowRight size={22} />
+           Aplicație<ArrowRight size={22} />
           </motion.button>
+          </Link>
         </div>
 
         {/* Images only on xl */}
