@@ -1,75 +1,260 @@
+"use client"
+import React from "react"
 import FinanzNavbar from "../../../navbar"
 import Footer from "../../../components/footer"
+import FAQ from "../../../components/faq"
+import Prices from "../../../components/Prices.jsx"
+import AccountingFeatures from "../../../components/firstFeatures.jsx"
+import FacturareDiv from "../../../components/facturareDiv.jsx"
+import Features from "../../../components/secondFeatures.jsx"
+import LegalSupport from "../../../components/LegalSupport.jsx"
+import { Laptop, UserCheck, ShieldCheck } from "lucide-react"
+import { motion } from "framer-motion"
+
+const prices = [
+	{
+		title: "Start",
+		price: "Gratuit",
+		subtitle:
+			"Facturare integrată cu e-Factura, perfectă pentru PFA-uri nou-înființate.",
+		details: [
+			"Acces gratuit la aplicația de facturare",
+			"Emitere rapidă de facturi și proforme",
+			"Integrare automată cu e-Factura",
+			"Încasare online prin Stripe",
+			"Facturare în mai multe monede",
+			"Evidență contabilă digitală completă",
+			"Salarizare și administrare personal",
+			"Contabil dedicat pentru consultanță fiscală",
+			"Comunicare directă prin chat și telefon",
+			"Disponibil doar la înființarea unui PFA.",
+			"Pentru firmele plătitoare de TVA, tariful crește cu 20€/lună.",
+			"Pentru fiecare angajat suplimentar, tariful crește cu 15€/lună.",
+		],
+	},
+	{
+		title: "Basic",
+		price: "€30/lună + TVA",
+		subtitle:
+			"Servicii contabile esențiale pentru PFA-uri aflate la început de drum.",
+		details: [
+			"Acces complet la platforma de contabilitate",
+			"Gestionare de până la 10 documente lunar",
+			"Salarizare pentru 1 angajat inclus",
+			"Facturare automată cu e-Factura",
+			"Import rapid al facturilor de la furnizori",
+			"Încasare facturi cu cardul prin Stripe",
+			"Contabilitate clară și actualizată",
+			"Contabil dedicat pentru suport personalizat",
+			"Comunicare directă prin telefon și chat",
+			"Pentru firmele plătitoare de TVA, tariful crește cu 20€/lună.",
+			"Pentru fiecare angajat suplimentar, tariful crește cu 15€/lună.",
+		],
+	},
+	{
+		title: "Pro",
+		price: "€60/lună + TVA",
+		subtitle:
+			"Ideal pentru PFA-uri cu activitate intensă și gestionare avansată a documentelor.",
+		details: [
+			"Acces premium la aplicația de contabilitate",
+			"Gestionare de până la 100 documente lunar",
+			"Salarizare pentru 3 angajați incluși",
+			"Facturare rapidă, integrată cu e-Factura",
+			"Preluare automată a facturilor furnizorilor",
+			"Încasare digitală prin Stripe",
+			"Evidență contabilă completă și detaliată",
+			"Contabil dedicat pentru consultanță fiscală",
+			"Suport direct prin telefon și mesagerie",
+			"Pentru firmele plătitoare de TVA, tariful crește cu 20€/lună.",
+			"Pentru fiecare angajat suplimentar, tariful crește cu 15€/lună.",
+		],
+	},
+];
+
+const heroFeatures = [
+	{
+		icon: <Laptop className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
+		title: "Contabilitate 100% online",
+		description:
+			"Gestionează contabilitatea firmei tale 100% online, fără drumuri la birou, indiferent dacă ești în România sau în străinătate.",
+	},
+	{
+		icon: <UserCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
+		title: "Contabil dedicat",
+		description:
+			"Ai un contabil personal care îți cunoaște firma și te asistă în orice moment, pentru o gestionare eficientă și fără stres.",
+	},
+	{
+		icon: <ShieldCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
+		title: "Garanția mulțumirii sau rambursare",
+		description:
+			"Ne asigurăm că ești mulțumit de serviciile noastre, iar dacă nu, primești banii înapoi fără complicații.",
+	},
+];
+
+const contabilitateFaq = [
+	{
+		question: "Pot înființa o firmă prin Finanzconsult fără să mă deplasez?",
+		answer: "Da, **Finanzconsult** îți permite să înființezi o firmă 100% online, indiferent de locația ta, fie că ești în România sau în străinătate.",
+	},
+	{
+		question: "Ce obligații am după înființarea firmei cu Finanzconsult?",
+		answer: `
+      După înființare, în termen de 30 de zile, trebuie să:
+      * Depui Declarația Unică pentru stabilirea impozitului pe venit și a contribuțiilor sociale
+      * Achiziționezi Registrul de Evidență Fiscală (dacă ești în sistem real)
+      * Ții o evidență clară a veniturilor și cheltuielilor
+      * Declari și achiți taxele la termenele stabilite de ANAF
+
+      Cu **Finanzconsult**, ai contabil dedicat care te ghidează și o platformă digitală pentru gestionarea tuturor acestor obligații.
+    `,
+	},
+	{
+		question: "Ce taxe va trebui să plătesc după înființarea PFA-ului?",
+		answer: `
+      Ca PFA, principalele obligații fiscale sunt:
+      * Impozitul pe venit (10% din venitul net)
+      * CAS (25% din venitul ales, minim 12 salarii minime pe economie)
+      * CASS (10% din venitul ales, minim 6 salarii minime pe economie)
+      * TVA (dacă depășești plafonul de 300.000 lei)
+    `,
+	},
+	{
+		question: "Cum mă ajută Bizfix cu actualizările legislative fiscale?",
+		answer: "**Finanzconsult** îți oferă actualizări în timp real privind modificările legislative fiscale, asigurându-te că PFA-ul tău rămâne conform cu reglementările în vigoare.",
+	},
+	{
+		question: "Cum pot comunica cu contabilul dedicat prin Finanzconsult?",
+		answer: "Prin aplicația **Finanzconsult**, ai acces direct la contabilul tău dedicat, putând comunica rapid și eficient prin chat sau apel telefonic pentru orice nelămuriri sau servicii suplimentare.",
+	},
+	{
+		question: "Care este diferența între norma de venit și sistemul real la PFA?",
+		answer: `
+      * **Norma de venit:** Impozitul se calculează la o sumă fixă stabilită de ANAF, indiferent de veniturile reale
+      * **Sistemul real:** Impozitul se calculează pe baza veniturilor și cheltuielilor efective
+      * Cu **Finanzconsult**, primești consultanță pentru a alege sistemul optim pentru activitatea ta
+    `,
+	},
+	{
+		question: "Pot să facturez gratuit după ce îmi înființez PFA-ul cu Finanzconsult?",
+		answer: "Da, **Finanzconsult** îți pune la dispoziție un sistem de facturare gratuit, integrat cu e-Factura, permițându-ți să emiți și să încasezi facturi rapid și eficient.",
+	},
+	{
+		question: "Ce documente trebuie să păstrez pentru contabilitatea PFA?",
+		answer: `
+      Pentru o evidență contabilă corectă, trebuie să păstrezi:
+      * Toate facturile emise și primite
+      * Chitanțe și bonuri fiscale pentru cheltuieli
+      * Extrase de cont bancar
+      * Registrul de Evidență Fiscală (în sistem real)
+      * Declarațiile și documentele depuse la ANAF
+
+      Cu aplicația **Finanzconsult**, toate acestea sunt organizate și stocate digital.
+    `,
+	},
+];
 
 export default function ContabilitatePfaPage() {
-  return (
-    <div className="min-h-screen overflow-x-hidden">
-      <FinanzNavbar />
-      <main className="container mx-auto py-12 px-4 mt-16 xl:mt-20">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-primaryColor mb-8">Contabilitate PFA</h1>
+	return (
+		<div className="min-h-screen overflow-x-hidden bg-white relative">
+			<FinanzNavbar />
 
-          <div className="prose prose-lg max-w-none">
-            <p className="text-xl text-gray-700 mb-8">
-              Servicii de contabilitate specializate pentru persoanele fizice autorizate (PFA), cu focus pe simplitate
-              și eficiență.
-            </p>
+			{/* Hero Section */}
+			<section className="pt-10 relative w-full min-h-[100vh] 2xl:min-h-[70vh] flex items-center justify-center text-white">
+				<div className="absolute inset-0 z-0 bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
+				<div className="absolute inset-0 z-10 bg-black opacity-70" />
 
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <h3 className="text-2xl font-semibold text-primaryColor mb-4">Servicii pentru PFA</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Evidența veniturilor și cheltuielilor</li>
-                  <li>• Declarația anuală de venituri</li>
-                  <li>• Calculul și plata contribuțiilor sociale</li>
-                  <li>• Declarații TVA (dacă este cazul)</li>
-                  <li>• Consiliere fiscală</li>
-                  <li>• Optimizare taxe și contribuții</li>
-                </ul>
-              </div>
+				<div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+					<motion.div
+						initial={{ opacity: 0, y: -30 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6 }}
+						className="flex justify-center mb-8"
+					>
+						<span className="text-sm md:text-base uppercase font-bold tracking-wider text-white bg-primaryColor/80 px-6 py-2 rounded-md">
+							Contabilitate 100% online
+						</span>
+					</motion.div>
 
-              <div className="bg-green-50 p-6 rounded-lg">
-                <h3 className="text-2xl font-semibold text-green-900 mb-4">Beneficii</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Proceduri simplificate</li>
-                  <li>• Costuri reduse</li>
-                  <li>• Flexibilitate maximă</li>
-                  <li>• Suport personalizat</li>
-                  <li>• Conformitate legislativă</li>
-                  <li>• Economii de timp</li>
-                </ul>
-              </div>
-            </div>
+					<motion.h1
+						initial={{ opacity: 0, y: 40 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0.2, duration: 0.8 }}
+						className="text-4xl lg:text-6xl font-bold text-center mb-8 max-w-4xl mx-auto"
+					>
+						Contabilitate PFA
+					</motion.h1>
 
-            <h2 className="text-3xl font-bold text-primaryColor mb-6">Tarife PFA</h2>
+					<motion.p
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0.4, duration: 0.6 }}
+						className="text-xl lg:text-2xl text-center mb-12 max-w-3xl mx-auto"
+					>
+						Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului
+					</motion.p>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <div className="border border-gray-200 rounded-lg p-6 text-center">
-                <h4 className="text-xl font-semibold mb-4 text-primaryColor">PFA Standard</h4>
-                <div className="text-3xl font-bold text-primaryColor mb-4">80 RON/lună</div>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li>Evidența veniturilor</li>
-                  <li>Declarația anuală</li>
-                  <li>Calculul contribuțiilor</li>
-                  <li>Suport telefonic</li>
-                </ul>
-              </div>
+					{/* Feature cards */}
+					<motion.div
+						initial="hidden"
+						animate="visible"
+						variants={{
+							hidden: {},
+							visible: {
+								transition: { staggerChildren: 0.15 },
+							},
+						}}
+						className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto justify-items-center"
+					>
+						{heroFeatures.map((item, index) => (
+							<motion.div
+								key={index}
+								variants={{
+									hidden: { opacity: 0, y: 30 },
+									visible: { opacity: 1, y: 0 },
+								}}
+								transition={{ duration: 0.15 + index * 0.05 }}
+								whileHover={{ scale: 1.03 }}
+								className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-center text-center text-gray-800 transition-all duration-100 w-full max-w-[400px]"
+							>
+								{item.icon}
+								<h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+								<p>{item.description}</p>
+							</motion.div>
+						))}
+					</motion.div>
+				</div>
+			</section>
 
-              <div className="border-2 border-blue-500 rounded-lg p-6 text-center">
-                <h4 className="text-xl font-semibold mb-4 text-primaryColor">PFA cu TVA</h4>
-                <div className="text-3xl font-bold text-primaryColor mb-4">150 RON/lună</div>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li>Toate serviciile Standard</li>
-                  <li>Declarații TVA</li>
-                  <li>Evidența TVA</li>
-                  <li>Consiliere fiscală</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  )
+			{/* Content Sections */}
+			<section className="w-full bg-gray-50">
+				<AccountingFeatures />
+			</section>
+
+			<section className="w-full bg-white">
+				<div className="w-full bg-white">
+					<Prices prices={prices} />
+				</div>
+			</section>
+
+			<section className="w-full bg-gray-50">
+				<Features />
+			</section>
+
+			<section className="w-full bg-white">
+				<FacturareDiv />
+			</section>
+
+			<section className="w-full bg-gray-50">
+				<LegalSupport />
+			</section>
+
+			<section className="w-full bg-white">
+				<FAQ items={contabilitateFaq} />
+			</section>
+
+			<Footer />
+		</div>
+	);
 }
