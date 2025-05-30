@@ -4,9 +4,9 @@ import FinanzNavbar from "../../../navbar"
 import Footer from "../../../components/footer"
 import FAQ from "../../../components/faq"
 import Prices from "../../../components/Prices.jsx"
-import AccountingFeatures from "../../../components/AccountingFeatures.jsx"
+import AccountingFeatures from "../../../components/firstFeatures.jsx"
 import FacturareDiv from "../../../components/facturareDiv.jsx"
-import Features from "../../../components/features.jsx"
+import Features from "../../../components/secondFeatures.jsx"
 import LegalSupport from "../../../components/LegalSupport.jsx"
 import { Laptop, UserCheck, ShieldCheck  } from "lucide-react"
 import { motion } from "framer-motion"
@@ -231,16 +231,12 @@ export default function ContabilitateSrlPage() {
 
       <AccountingFeatures />
 
-      <main className="w-full max-w-[1600px] mx-auto px-4 py-16 relative z-10">
-        <div className="w-full max-w-[1280px] mx-auto">
-          <Prices prices={prices} />
-          <Features />
-          <FacturareDiv />
-          <LegalSupport />
-          <FAQ items={contabilitateFaq} />
-        </div>
-      </main>
-
+      
+      <Prices prices={prices} />
+      <Features />
+      <FacturareDiv />
+      <LegalSupport />
+      <FAQ items={contabilitateFaq} />
       <Footer />
     </div>
   );

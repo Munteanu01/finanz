@@ -8,7 +8,19 @@ export default function FacturareDiv() {
 
   return (
     <section className="w-full py-24 bg-gradient-to-br rounded-xl relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col xl:flex-row items-center gap-16">
+  {/* Fundal cu opacitate redusă */}
+  <div
+    className="absolute inset-0"
+    style={{
+      backgroundImage: 'url(/svg1.svg)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'right top',
+      backgroundRepeat: 'no-repeat',
+      opacity: 0.3, // ajustează cât de vizibil vrei fundalul
+      pointerEvents: 'none', // ca să nu blocheze clickurile
+    }}
+  />
+      <div className="max-w-6xl mx-auto px-6 flex flex-col xl:flex-row items-center gap-16 relative z-10">
         {/* Text Content */}
         <div className="xl:flex-1 max-w-xl mx-auto xl:mx-0">
           <motion.h2

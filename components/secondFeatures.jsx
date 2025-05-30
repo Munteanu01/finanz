@@ -9,19 +9,19 @@ const firstSectionItems = [
     title: 'Asistență de la experți contabili',
     description:
       'Facturile emise sunt gestionate direct de contabilul tău și integrate automat în e-Factura.',
-    image: 'IMAGE_LINK_1',
+    image: '/1.jpg',
   },
   {
     title: 'Vezi taxele scadente la timp',
     description:
       'Primești actualizări despre taxele datorate și ai mereu situația fiscală la zi.',
-    image: 'IMAGE_LINK_2',
+    image: '/2.jpg',
   },
   {
     title: 'Situația financiară în timp real',
     description:
       'Ai acces rapid la venituri, cheltuieli și balanța firmei, direct în aplicație.',
-    image: 'IMAGE_LINK_3',
+    image: '/3.jpg',
   },
 ];
 
@@ -30,19 +30,19 @@ const secondSectionItems = [
     title: 'Contabili acreditați, expertiză garantată',
     description:
       'Specialiști CECCAR care asigură corectitudinea și conformitatea evidențelor contabile.',
-    image: 'IMAGE_LINK_4',
+    image: '/4.jpg',
   },
   {
     title: 'Legislatie fiscală mereu la zi',
     description:
       'Beneficiezi de actualizări fiscale automate și consultanță pentru a evita riscurile legislative.',
-    image: 'IMAGE_LINK_5',
+    image: '/5.jpg',
   },
   {
     title: 'Comunicare rapidă cu contabilul tău',
     description:
       'Menții legătura directă cu contabilul alocat prin telefon, oricând ai nevoie.',
-    image: 'IMAGE_LINK_6',
+    image: '/6.jpg',
   },
 ];
 
@@ -53,27 +53,30 @@ const fadeInUp = {
 
 export default function FinancialFeatures() {
   return (
-    <section className="bg-white  mx-auto px-4 py-20 sm:px-6 lg:px-24 space-y-20">
+    <section
+  style={{
+    backgroundImage: 'url(/svg3.svg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'right top', // focus pe partea de sus/dreapta
+    backgroundRepeat: 'no-repeat',
+  }}
+  className="bg-white mx-auto px-4 py-20 sm:px-6 lg:px-24 space-y-20"
+>
+
       {/* Prima secțiune */}
-      <Section
-        title={firstSectionTitle}
-        items={firstSectionItems}
-      />
+      <Section title={firstSectionTitle} items={firstSectionItems} />
 
       {/* A doua secțiune */}
-      <Section
-        title={secondSectionTitle}
-        items={secondSectionItems}
-      />
+      <Section title={secondSectionTitle} items={secondSectionItems} />
     </section>
   );
 }
 
 function Section({ title, items }) {
   return (
-    <div>
+    <div className="py-10">
       <motion.h2
-        className="text-4xl font-extrabold  mb-12 max-w-3xl mx-auto text-center text-gray-700"
+        className="text-4xl font-extrabold mb-12 max-w-3xl mx-auto text-center text-gray-700"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -96,7 +99,7 @@ function Section({ title, items }) {
             <motion.img
               src={image}
               alt={title}
-              className="w-full h-52 object-cover rounded-xl mb-6 shadow-md"
+              className="w-full aspect-[4/3] object-cover rounded-xl mb-6 shadow-md max-h-72"
               initial={{ scale: 0.9, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6, ease: 'easeOut' }}
