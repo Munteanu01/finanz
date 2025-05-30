@@ -33,14 +33,14 @@ export default function AccountingFeatures() {
   ]
 
   return (
-    <section className="w-full relative py-20 bg-gradient-to-br from-[#f9fafb] to-[#e9f1ff]">
-      {/* Decorativ background blur cercuri */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute w-96 h-96 bg-primaryColor/20 rounded-full blur-[150px] -top-20 -left-20" />
-        <div className="absolute w-96 h-96 bg-primaryColor/10 rounded-full blur-[150px] bottom-0 right-0" />
-      </div>
+    <div className="w-full py-16 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Decorativ background blur cercuri */}
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute w-96 h-96 bg-primaryColor/20 rounded-full blur-[150px] -top-20 -left-20" />
+          <div className="absolute w-96 h-96 bg-primaryColor/10 rounded-full blur-[150px] bottom-0 right-0" />
+        </div>
 
-      <div className="max-w-6xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,6 +76,6 @@ export default function AccountingFeatures() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   )
 }

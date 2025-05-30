@@ -30,7 +30,7 @@ const NAVBAR_CONFIG = {
     },
     minWidthSingle: "min-w-64",
     maxWidthSingle: "max-w-80",
-    minWidthDouble: "min-w-[600px]",
+    minWidthDouble: "min-w-[700px]",
     maxWidthDouble: "max-w-4xl",
     zIndex: "z-50",
   },

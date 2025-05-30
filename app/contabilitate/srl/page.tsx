@@ -144,25 +144,27 @@ export default function ContabilitateSrlPage() {
 
       {/* HERO SECTION */}
       {/* HERO SECTION */}
-<section className="relative w-full min-h-[100vh] 2xl:min-h-[70vh] 2xl:pt-16 2xl:pb-5 pt-10 flex items-center justify-center text-white">
+<section className="pt-10 relative w-full min-h-[100vh] 2xl:min-h-[70vh] flex items-center justify-center text-white">
   <div className="absolute inset-0 z-0 bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
   <div className="absolute inset-0 z-10 bg-black opacity-70" />
 
-  <div className="relative z-20 w-full px-6 py-16 lg:py-12 text-center">
+  <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
     <motion.div
       initial={{ opacity: 0, y: -30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="mb-5 md:text-sm text-xs uppercase font-bold tracking-widest text-white bg-primaryColor/80 px-4 py-2 mt-5 rounded-md inline-block"
+      className="flex justify-center mb-8"
     >
-      Contabilitate 100% online
+      <span className="text-sm md:text-base uppercase font-bold tracking-wider text-white bg-primaryColor/80 px-6 py-2 rounded-md">
+        Contabilitate 100% online
+      </span>
     </motion.div>
 
     <motion.h1
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2, duration: 0.8 }}
-      className="lg:text-5xl text-3xl font-bold text-white mb-6 max-w-3xl mx-auto"
+      className="text-4xl lg:text-6xl font-bold text-center mb-8 max-w-4xl mx-auto"
     >
       Contabilitate SRL
     </motion.h1>
@@ -171,24 +173,22 @@ export default function ContabilitateSrlPage() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.4, duration: 0.6 }}
-      className="text-xl mb-6 lg:mb-4 max-w-2xl mx-auto"
+      className="text-xl lg:text-2xl text-center mb-12 max-w-3xl mx-auto"
     >
       Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului
     </motion.p>
 
-    {/* GRID CU CARDURI */}
+    {/* Feature cards grid */}
     <motion.div
       initial="hidden"
       animate="visible"
       variants={{
         hidden: {},
         visible: {
-          transition: {
-            staggerChildren: 0.15,
-          },
-        },
+          transition: { staggerChildren: 0.15 }
+        }
       }}
-      className="grid 2xl:grid-cols-3 gap-3 max-w-xl 2xl:max-w-[1350px] mx-auto mt-8 lg:mt-6 text-center"
+      className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto justify-items-center"
     >
       {[
         {
@@ -218,10 +218,10 @@ export default function ContabilitateSrlPage() {
           }}
           transition={{ duration: 0.15 + index * 0.05 }}
           whileHover={{ scale: 1.03 }}
-          className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-start text-gray-800 transition-all duration-100"
+          className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-center text-center text-gray-800 transition-all duration-100 w-full max-w-[400px]"
         >
           {item.icon}
-          <h3 className="text-xl flex mx-auto font-semibold mb-2">{item.title}</h3>
+          <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
           <p>{item.description}</p>
         </motion.div>
       ))}
@@ -229,14 +229,31 @@ export default function ContabilitateSrlPage() {
   </div>
 </section>
 
-      <AccountingFeatures />
+      {/* Update the sections structure */}
+      <section className="w-full bg-gray-50">
+        <AccountingFeatures />
+      </section>
 
-      
-      <Prices prices={prices} />
-      <Features />
-      <FacturareDiv />
-      <LegalSupport />
-      <FAQ items={contabilitateFaq} />
+      <section className="w-full bg-white">
+        <Prices prices={prices} />
+      </section>
+
+      <section className="w-full bg-gray-50">
+        <Features />
+      </section>
+
+      <section className="w-full bg-white">
+        <FacturareDiv />
+      </section>
+
+      <section className="w-full bg-gray-50">
+        <LegalSupport />
+      </section>
+
+      <section className="w-full bg-white">
+        <FAQ items={contabilitateFaq} />
+      </section>
+
       <Footer />
     </div>
   );

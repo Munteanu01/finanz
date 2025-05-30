@@ -51,32 +51,38 @@ const fadeInUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
 };
 
-export default function FinancialFeatures() {
+export default function Features() {
   return (
-    <section
-  style={{
-    backgroundImage: 'url(/svg3.svg)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'right top', // focus pe partea de sus/dreapta
-    backgroundRepeat: 'no-repeat',
-  }}
-  className="bg-white mx-auto px-4 py-20 sm:px-6 lg:px-24 space-y-20"
->
+    <div 
+      className="w-full bg-white" 
+      style={{
+        backgroundImage: 'url(/svg3.svg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'right top',
+        backgroundRepeat: 'no-repeat',
+        
+      }}
+    >
+      <div className="w-full py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-20"> {/* Added spacing between sections */}
+            {/* Prima secțiune */}
+            <Section title={firstSectionTitle} items={firstSectionItems} />
 
-      {/* Prima secțiune */}
-      <Section title={firstSectionTitle} items={firstSectionItems} />
-
-      {/* A doua secțiune */}
-      <Section title={secondSectionTitle} items={secondSectionItems} />
-    </section>
+            {/* A doua secțiune */}
+            <Section title={secondSectionTitle} items={secondSectionItems} />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
 function Section({ title, items }) {
   return (
-    <div className="py-10">
+    <div className="relative">
       <motion.h2
-        className="text-4xl font-extrabold mb-12 max-w-3xl mx-auto text-center text-gray-700"
+        className="text-4xl font-extrabold mb-16 max-w-3xl mx-auto text-center text-gray-700"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -85,12 +91,14 @@ function Section({ title, items }) {
         {title}
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 justify-items-center">
         {items.map(({ title, description, image }, idx) => (
           <motion.article
             key={idx}
-            className="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center cursor-pointer
-            hover:scale-[1.03] transition-transform duration-300 ease-in-out"
+            className="bg-white rounded-3xl shadow-lg p-4 lg:p-8 flex flex-col items-center text-center
+              hover:scale-[1.03] transition-transform duration-300 ease-in-out
+              backdrop-blur-sm border border-gray-100 w-full 
+              max-w-[280px] lg:max-w-none"
             variants={fadeInUp}
             initial="hidden"
             whileInView="show"
@@ -99,14 +107,14 @@ function Section({ title, items }) {
             <motion.img
               src={image}
               alt={title}
-              className="w-full aspect-[4/3] object-cover rounded-xl mb-6 shadow-md max-h-72"
+              className="w-full aspect-[4/3] object-cover rounded-xl mb-4 lg:mb-8 shadow-md"
               initial={{ scale: 0.9, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6, ease: 'easeOut' }}
               loading="lazy"
             />
             <motion.h3
-              className="text-2xl font-semibold text-primaryColor mb-3"
+              className="text-lg lg:text-2xl font-semibold text-primaryColor mb-2 lg:mb-4"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
@@ -115,7 +123,7 @@ function Section({ title, items }) {
             </motion.h3>
             {description && (
               <motion.p
-                className="text-[var(--secundaryColor)] text-base leading-relaxed"
+                className="text-[var(--secundaryColor)] text-xs lg:text-base leading-relaxed"
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.7, delay: 0.4 }}
