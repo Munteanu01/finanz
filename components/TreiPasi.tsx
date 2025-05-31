@@ -29,7 +29,7 @@ export default function PasiInfiintare() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.3 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
@@ -46,8 +46,8 @@ export default function PasiInfiintare() {
           {pasi.map((pas, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50 }} // Start from the left
+              whileInView={{ opacity: 1, x: 0 }} // Move to the center
               transition={{ duration: 0.5, delay: idx * 0.2 }}
               viewport={{ once: true }}
               className="relative"

@@ -1,19 +1,7 @@
 "use client";
 
 import React from "react";
-import FinanzNavbar from "../../../navbar";
-import Footer from "../../../components/footer";
-import FAQ from "../../../components/faq";
-import Prices from "../../../components/Prices.jsx";
-import AccountingFeatures from "../../../components/firstFeatures.jsx";
-import FacturareDiv from "../../../components/facturareDiv.jsx";
-import Features from "../../../components/secondFeatures.jsx";
-import LegalSupport from "../../../components/LegalSupport.jsx";
-import ProcesSimplificat from "../../../components/ProcesSimplificat";
-import PasiInfiintare from "../../../components/PasiInfiintare";
-import OperationalSteps from "../../../components/OperationalSteps";
-import PlanuriContabile from "../../../components/PlanuriContabile";
-import HeroPages from "../../../components/HeroPages";
+import InfiintariLayout from "../../../components/InfiintariLayout";
 import { Laptop, FileText, ShieldCheck } from "lucide-react";
 
 const infiintariFaq = [
@@ -89,16 +77,13 @@ const prices = [
 
 export default function InfiintareSrlPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white relative">
-      <FinanzNavbar />
-
-      {/* Hero Section */}
-      <HeroPages
-        backgroundImage="/images/srl-background.jpg"
-        badge="Înființare SRL 100% online"
-        title="Înființare SRL"
-        subtitle="Înființează-ți SRL-ul simplu, rapid și fără bătăi de cap, de oriunde te afli."
-        cards={[
+    <InfiintariLayout
+      heroProps={{
+        backgroundImage: "/images/srl-background.jpg",
+        badge: "Înființare SRL 100% online",
+        title: "Înființare SRL",
+        subtitle: "Înființează-ți SRL-ul simplu, rapid și fără bătăi de cap, de oriunde te afli.",
+        cards: [
           {
             icon: <Laptop className="w-12 h-12 mb-4 text-primaryColor" />,
             title: "Înființare rapidă 100% online",
@@ -117,39 +102,10 @@ export default function InfiintareSrlPage() {
             description:
               "Ai siguranța unui serviciu eficient! Dacă nu ești mulțumit de proces, îți returnăm banii fără întrebări.",
           },
-        ]}
-      />
-
-      {/* Other Components */}
-      <ProcesSimplificat />
-      <AccountingFeatures />
-      <PasiInfiintare />
-      <OperationalSteps />
-      
-      <PlanuriContabile />
-      
-     
-     
-
-      {/* Pricing Section */}
-      <section className="w-full bg-white">
-        <Prices
-          prices={prices}
-          title="Alege un abonament de contabilitate și înființarea firmei este gratuită!"
-          formattedTitle="Alege un abonament de contabilitate și înființarea firmei este gratuită!"
-        />
-      </section>
-      <Features />
-     
-      <LegalSupport />
-      <FacturareDiv />
-      {/* FAQ Section */}
-      <section className="w-full bg-white">
-        <FAQ items={infiintariFaq} />
-      </section>
-
-      
-      <Footer />
-    </div>
+        ],
+      }}
+      faqItems={infiintariFaq}
+      prices={prices}
+    />
   );
 }
