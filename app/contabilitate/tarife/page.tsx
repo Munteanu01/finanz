@@ -119,7 +119,7 @@ export default function TarifePage() {
       {/* Hero Section */}
       <Hero
         backgroundImage="/images/contabilitatefundal.jpg"
-        badge="Tarife evidență contabilă"
+        badge=""
         title="Tarife evidență contabilă"
         subtitle="Transparență și flexibilitate în costuri contabile"
         cards={heroFeatures}
