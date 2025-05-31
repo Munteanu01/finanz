@@ -23,7 +23,7 @@ export default function HeroPages({
   cards,
 }: HeroProps) {
   return (
-    <section className="relative w-full h-[90vh] flex flex-col justify-center items-center text-white">
+    <section className="relative w-full lg:h-[90vh] flex flex-col justify-center items-center text-white">
       {/* Fundalul secțiunii Hero */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
@@ -55,7 +55,7 @@ export default function HeroPages({
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-4xl lg:text-6xl font-bold text-center mb-8 max-w-4xl"
+          className="text-3xl sm:text-4xl lg:text-6xl font-bold text-center mb-6 sm:mb-8 max-w-4xl px-4"
         >
           {title}
         </motion.h1>
@@ -65,7 +65,7 @@ export default function HeroPages({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-xl lg:text-2xl text-center mb-12 max-w-3xl"
+          className="text-base sm:text-xl lg:text-2xl text-center mb-8 sm:mb-12 max-w-3xl px-4"
         >
           {subtitle}
         </motion.p>
@@ -80,8 +80,8 @@ export default function HeroPages({
               transition: { staggerChildren: 0.15 },
             },
           }}
-          className={`grid lg:gap-1 lg:bg-white rounded-xl px-5 justify-center items-start 
-    grid-cols-1 lg:grid-cols-${Math.min(cards.length, 3)}`}
+          className={`grid gap-4 pb-10 lg:pb-0 sm:gap-6 lg:gap-1 lg:bg-white rounded-xl px-4 sm:px-5 justify-center items-start 
+        grid-cols-1 lg:grid-cols-${Math.min(cards.length, 3)}`}
         >
           {cards.map((item, index) => (
             <motion.div
@@ -92,11 +92,17 @@ export default function HeroPages({
               }}
               transition={{ duration: 0.15 + index * 0.05 }}
               whileHover={{ scale: 1.03 }}
-              className="flex lg:bg-transparent bg-white flex-col items-center lg:py-5 rounded-xl py-3 my-2 lg:my-0 text-center text-gray-800 transition-all duration-100"
+              className="flex lg:bg-transparent bg-white flex-col items-center py-4 sm:py-5 rounded-xl text-center text-gray-800 transition-all duration-100"
             >
-              <div className="text-primaryColor text-xl mb-4">{item.icon}</div>
-              <h3 className="xl:text-lg font-semibold mb-2">{item.title}</h3>
-              <p className="text-gray-600 text-sm xl:text-base px-2">{item.description}</p>
+              <div className="text-primaryColor text-lg sm:text-xl mb-3 sm:mb-4">
+                {item.icon}
+              </div>
+              <h3 className="text-base xl:text-xl font-semibold mb-1 sm:mb-2">
+                {item.title}
+              </h3>
+              <p className="text-gray-600 text-xs sm:text-sm xl:text-base px-2">
+                {item.description}
+              </p>
             </motion.div>
           ))}
         </motion.div>
