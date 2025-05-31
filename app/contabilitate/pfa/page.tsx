@@ -10,6 +10,7 @@ import Features from "../../../components/secondFeatures.jsx"
 import LegalSupport from "../../../components/LegalSupport.jsx"
 import { Laptop, UserCheck, ShieldCheck } from "lucide-react"
 import { motion } from "framer-motion"
+import Hero from "../../../components/HeroPages";
 
 const prices = [
 	{
@@ -156,112 +157,53 @@ const contabilitateFaq = [
 ];
 
 export default function ContabilitatePfaPage() {
-	const pricingTitle = "Planuri de contabilitate pentru orice etapă a businessului";
-	
-	return (
-		<div className="min-h-screen overflow-x-hidden bg-white relative">
-			<FinanzNavbar />
+    const pricingTitle = "Planuri de contabilitate pentru orice etapă a businessului";
 
-			{/* Hero Section */}
-			<section className="pt-10 relative w-full min-h-[100vh] 2xl:min-h-[70vh] flex items-center justify-center text-white">
-				<div className="absolute inset-0 z-0 bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
-				<div className="absolute inset-0 z-10 bg-black opacity-70" />
+    return (
+        <div className="min-h-screen overflow-x-hidden bg-white relative">
+            <FinanzNavbar />
 
-				<div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-					<motion.div
-						initial={{ opacity: 0, y: -30 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6 }}
-						className="flex justify-center mb-8"
-					>
-						<span className="text-sm md:text-base uppercase font-bold tracking-wider text-white bg-primaryColor/80 px-6 py-2 rounded-md">
-							Contabilitate 100% online
-						</span>
-					</motion.div>
+            {/* Hero Section */}
+            <Hero
+                backgroundImage="/images/contabilitatefundal.jpg"
+                badge="Contabilitate 100% online"
+                title="Contabilitate PFA"
+                subtitle="Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului"
+                cards={heroFeatures}
+            />
 
-					<motion.h1
-						initial={{ opacity: 0, y: 40 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.2, duration: 0.8 }}
-						className="text-4xl lg:text-6xl font-bold text-center mb-8 max-w-4xl mx-auto"
-					>
-						Contabilitate PFA
-					</motion.h1>
+            {/* Content Sections */}
+            <section className="w-full bg-gray-50">
+                <AccountingFeatures />
+            </section>
 
-					<motion.p
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.4, duration: 0.6 }}
-						className="text-xl lg:text-2xl text-center mb-12 max-w-3xl mx-auto"
-					>
-						Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului
-					</motion.p>
+            <section className="w-full bg-white">
+                <div className="w-full bg-white">
+                    <Prices 
+                        prices={prices} 
+                        title={pricingTitle}
+                        formattedTitle="Planuri de contabilitate"
+                    />
+                </div>
+            </section>
 
-					{/* Feature cards */}
-					<motion.div
-						initial="hidden"
-						animate="visible"
-						variants={{
-							hidden: {},
-							visible: {
-								transition: { staggerChildren: 0.15 },
-							},
-						}}
-						className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto justify-items-center"
-					>
-						{heroFeatures.map((item, index) => (
-							<motion.div
-								key={index}
-								variants={{
-									hidden: { opacity: 0, y: 30 },
-									visible: { opacity: 1, y: 0 },
-								}}
-								transition={{ duration: 0.15 + index * 0.05 }}
-								whileHover={{ scale: 1.03 }}
-								className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-center text-center text-gray-800 transition-all duration-100 w-full max-w-[400px]"
-							>
-								{item.icon}
-								<h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-								<p>{item.description}</p>
-							</motion.div>
-						))}
-					</motion.div>
-				</div>
-			</section>
+            <section className="w-full bg-gray-50">
+                <Features />
+            </section>
 
-			{/* Content Sections */}
-			<section className="w-full bg-gray-50">
-				<AccountingFeatures />
-			</section>
+            <section className="w-full bg-white">
+                <FacturareDiv />
+            </section>
 
-			<section className="w-full bg-white">
-				<div className="w-full bg-white">
-					<Prices 
-						prices={prices} 
-						title={pricingTitle}
-						formattedTitle="Planuri de contabilitate"
-					/>
-					
-				</div>
-			</section>
+            <section className="w-full bg-gray-50">
+                <LegalSupport />
+            </section>
 
-			<section className="w-full bg-gray-50">
-				<Features />
-			</section>
+            <section className="w-full bg-white">
+                <FAQ items={contabilitateFaq} />
+            </section>
 
-			<section className="w-full bg-white">
-				<FacturareDiv />
-			</section>
-
-			<section className="w-full bg-gray-50">
-				<LegalSupport />
-			</section>
-
-			<section className="w-full bg-white">
-				<FAQ items={contabilitateFaq} />
-			</section>
-
-			<Footer />
-		</div>
-	);
+            <Footer />
+        </div>
+    );
 }

@@ -1,14 +1,12 @@
-"use client"
-import React from "react"
-import FinanzNavbar from "../../../navbar"
-import Footer from "../../../components/footer"
-import PriceTable from "../../../components/PriceTable"
-import AccountingFeatures from "../../../components/firstFeatures"
-import Features from "../../../components/secondFeatures"
-import FacturareDiv from "../../../components/facturareDiv"
-import LegalSupport from "../../../components/LegalSupport"
-import { FileText, Calculator, Shield } from "lucide-react"
-import { motion } from "framer-motion"
+"use client";
+import React from "react";
+import FinanzNavbar from "../../../navbar";
+import Footer from "../../../components/footer";
+import PriceTable from "../../../components/PriceTable";
+import FacturareDiv from "../../../components/facturareDiv";
+import LegalSupport from "../../../components/LegalSupport";
+import Hero from "../../../components/HeroPages";
+import { FileText, Calculator } from "lucide-react";
 
 const accountingPrices = {
   title: "Tarife pentru serviciile de contabilitate",
@@ -20,7 +18,7 @@ const accountingPrices = {
     { service: "30 documente", price: { nonVAT: "395 lei", VAT: "445 lei" } },
     { service: "50 documente", price: { nonVAT: "595 lei", VAT: "645 lei" } },
   ],
-  note: "Ai un volum mai mare de 100 de documente lunar? Contactează-ne pentru o ofertă personalizată."
+  note: "Ai un volum mai mare de 100 de documente lunar? Contactează-ne pentru o ofertă personalizată.",
 };
 
 const payrollPrices = {
@@ -31,7 +29,7 @@ const payrollPrices = {
     { service: "Administrare salarizare", price: { employees: "6-10", cost: "65 lei" } },
     { service: "Administrare salarizare", price: { employees: "11-15", cost: "55 lei" } },
   ],
-  note: "Pentru peste 15 angajați, tariful se stabilește individual, în funcție de nevoile firmei."
+  note: "Pentru peste 15 angajați, tariful se stabilește individual, în funcție de nevoile firmei.",
 };
 
 const payrollServicesPrices = {
@@ -56,7 +54,7 @@ const payrollServicesPrices = {
     { service: "Administrare poprire angajat (pe lună)", price: "100 ron" },
     { service: "Întocmire act adițional la CIM", price: "100 ron" },
     { service: "Înregistrare concediu medical angajat", price: "100 ron" },
-  ]
+  ],
 };
 
 const consultingPrices = {
@@ -97,8 +95,21 @@ const consultingPrices = {
     { service: "Întocmire și depunere Formular 177", price: "300 lei" },
     { service: "Depunere cerere reactivare fiscală în SPV", price: "500 lei" },
     { service: "Obținere CIF pentru puncte de lucru", price: "300 lei" },
-  ]
+  ],
 };
+
+const heroFeatures = [
+  {
+    icon: <FileText className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
+    title: "Reducere 10% pentru plata pe 6 luni",
+    description: "Plătește serviciile de contabilitate pe 6 luni în avans și economisește 10% din costuri.",
+  },
+  {
+    icon: <Calculator className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
+    title: "Tarife flexibile pentru volume mari",
+    description: "Pentru peste 100 de documente lunar, îți oferim o ofertă personalizată adaptată afacerii tale.",
+  },
+];
 
 export default function TarifePage() {
   return (
@@ -106,80 +117,13 @@ export default function TarifePage() {
       <FinanzNavbar />
 
       {/* Hero Section */}
-      <section className="pt-10 relative w-full min-h-[100vh] 2xl:min-h-[70vh] flex items-center justify-center text-white">
-        <div className="absolute inset-0 z-0 bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
-        <div className="absolute inset-0 z-10 bg-black opacity-70" />
-
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-          <motion.div
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex justify-center mb-8"
-          >
-            <span className="text-sm md:text-base uppercase font-bold tracking-wider text-white bg-primaryColor/80 px-6 py-2 rounded-md">
-              Tarife evidență contabilă
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-4xl lg:text-6xl font-bold text-center mb-4 max-w-4xl mx-auto"
-          >
-            Tarife evidență contabilă
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-xl lg:text-2xl text-center mb-12 max-w-3xl mx-auto"
-          >
-            Transparență și flexibilitate în costuri contabile
-          </motion.p>
-
-          {/* Feature cards - updated layout with wider cards */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {},
-              visible: {
-                transition: { staggerChildren: 0.15 }
-              }
-            }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto justify-items-center"
-          >
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 0.15 }}
-              className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-center text-center text-gray-800 transition-all duration-100 w-full max-w-[500px]"
-            >
-              <FileText className="text-primaryColor mx-auto w-10 h-10 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Reducere 10% pentru plata pe 6 luni</h3>
-              <p>Plătește serviciile de contabilitate pe 6 luni în avans și economisește 10% din costuri.</p>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 0.15 }}
-              className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-center text-center text-gray-800 transition-all duration-100 w-full max-w-[500px]"
-            >
-              <Calculator className="text-primaryColor mx-auto w-10 h-10 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Tarife flexibile pentru volume mari</h3>
-              <p>Pentru peste 100 de documente lunar, îți oferim o ofertă personalizată adaptată afacerii tale.</p>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      <Hero
+        backgroundImage="/images/contabilitatefundal.jpg"
+        badge="Tarife evidență contabilă"
+        title="Tarife evidență contabilă"
+        subtitle="Transparență și flexibilitate în costuri contabile"
+        cards={heroFeatures}
+      />
 
       {/* Price Tables Sections */}
       <section className="w-full bg-gray-50 py-16 lg:py-24">

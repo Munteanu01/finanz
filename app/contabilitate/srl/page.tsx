@@ -8,7 +8,8 @@ import AccountingFeatures from "../../../components/firstFeatures.jsx"
 import FacturareDiv from "../../../components/facturareDiv.jsx"
 import Features from "../../../components/secondFeatures.jsx"
 import LegalSupport from "../../../components/LegalSupport.jsx"
-import { Laptop, UserCheck, ShieldCheck  } from "lucide-react"
+import Hero from "../../../components/HeroPages"
+import { Laptop, UserCheck, ShieldCheck } from "lucide-react"
 import { motion } from "framer-motion"
 
 const contabilitateFaq = [
@@ -140,96 +141,38 @@ const prices = [
 export default function ContabilitateSrlPage() {
   const pricingTitle = "Planuri de contabilitate pentru orice etapă a businessului";
   
+  const heroCards = [
+    {
+      icon: <Laptop className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
+      title: "Contabilitate 100% online",
+      description:
+        "Gestionează contabilitatea firmei tale 100% online, fără drumuri la birou, indiferent dacă ești în România sau în străinătate.",
+    },
+    {
+      icon: <UserCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
+      title: "Contabil dedicat",
+      description:
+        "Ai un contabil personal care îți cunoaște firma și te asistă în orice moment, pentru o gestionare eficientă și fără stres.",
+    },
+    {
+      icon: <ShieldCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
+      title: "Garanția mulțumirii sau rambursare",
+      description:
+        "Ne asigurăm că ești mulțumit de serviciile noastre, iar dacă nu, primești banii înapoi fără complicații.",
+    },
+  ];
+
   return (
     <div className="min-h-screen overflow-x-hidden bg-white relative">
       <FinanzNavbar />
 
-      {/* HERO SECTION */}
-      {/* HERO SECTION */}
-<section className="pt-10 relative w-full min-h-[100vh] 2xl:min-h-[70vh] flex items-center justify-center text-white">
-  <div className="absolute inset-0 z-0 bg-[url('/images/contabilitatefundal.jpg')] bg-cover bg-center" />
-  <div className="absolute inset-0 z-10 bg-black opacity-70" />
-
-  <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-    <motion.div
-      initial={{ opacity: 0, y: -30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="flex justify-center mb-8"
-    >
-      <span className="text-sm md:text-base uppercase font-bold tracking-wider text-white bg-primaryColor/80 px-6 py-2 rounded-md">
-        Contabilitate 100% online
-      </span>
-    </motion.div>
-
-    <motion.h1
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2, duration: 0.8 }}
-      className="text-4xl lg:text-6xl font-bold text-center mb-8 max-w-4xl mx-auto"
-    >
-      Contabilitate SRL
-    </motion.h1>
-
-    <motion.p
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.4, duration: 0.6 }}
-      className="text-xl lg:text-2xl text-center mb-12 max-w-3xl mx-auto"
-    >
-      Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului
-    </motion.p>
-
-    {/* Feature cards grid */}
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={{
-        hidden: {},
-        visible: {
-          transition: { staggerChildren: 0.15 }
-        }
-      }}
-      className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto justify-items-center"
-    >
-      {[
-        {
-          icon: <Laptop className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
-          title: "Contabilitate 100% online",
-          description:
-            "Gestionează contabilitatea firmei tale 100% online, fără drumuri la birou, indiferent dacă ești în România sau în străinătate.",
-        },
-        {
-          icon: <UserCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
-          title: "Contabil dedicat",
-          description:
-            "Ai un contabil personal care îți cunoaște firma și te asistă în orice moment, pentru o gestionare eficientă și fără stres.",
-        },
-        {
-          icon: <ShieldCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
-          title: "Garanția mulțumirii sau rambursare",
-          description:
-            "Ne asigurăm că ești mulțumit de serviciile noastre, iar dacă nu, primești banii înapoi fără complicații.",
-        },
-      ].map((item, index) => (
-        <motion.div
-          key={index}
-          variants={{
-            hidden: { opacity: 0, y: 30 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          transition={{ duration: 0.15 + index * 0.05 }}
-          whileHover={{ scale: 1.03 }}
-          className="bg-white backdrop-blur-sm border border-white/20 shadow-lg rounded-2xl p-6 flex flex-col items-center text-center text-gray-800 transition-all duration-100 w-full max-w-[400px]"
-        >
-          {item.icon}
-          <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-          <p>{item.description}</p>
-        </motion.div>
-      ))}
-    </motion.div>
-  </div>
-</section>
+      <Hero
+        backgroundImage="/images/contabilitatefundal.jpg"
+        badge="Contabilitate 100% online"
+        title="Contabilitate SRL"
+        subtitle="Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului"
+        cards={heroCards}
+      />
 
       {/* Update the sections structure */}
       <section className="w-full bg-gray-50">
