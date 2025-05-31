@@ -121,11 +121,11 @@ export default function InfiintareSrlPage() {
       />
 
       {/* Other Components */}
-      
+      <ProcesSimplificat />
       <AccountingFeatures />
       <PasiInfiintare />
       <OperationalSteps />
-      <ProcesSimplificat />
+      
       <PlanuriContabile />
       
      
