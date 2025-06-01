@@ -1,41 +1,12 @@
 "use client"
 import React from "react"
-import {
-  FileText,
-  ReceiptText,
-  BarChart2,
-  Headset
-} from "lucide-react"
 import { motion } from "framer-motion"
 
-export default function AccountingFeatures() {
-  const features = [
-    {
-      icon: <ReceiptText className="w-10 h-10 text-primaryColor mb-4" />,
-      title: "Emite facturi cu un click",
-      description: "Toate facturile ajung direct la contabilul tău și sunt integrate automat în e-Factura."
-    },
-    {
-      icon: <FileText className="w-10 h-10 text-primaryColor mb-4" />,
-      title: "Adaugă rapid cheltuieli",
-      description: "Încarci bonuri, facturi și cheltuieli din aplicație – contabilul tău le primește instant."
-    },
-    {
-      icon: <BarChart2 className="w-10 h-10 text-primaryColor mb-4" />,
-      title: "Deții evidența taxelor la zi",
-      description: "Vizualizezi în timp real ce taxe ai de plătit și ai acces la registrele contabile."
-    },
-    {
-      icon: <Headset className="w-10 h-10 text-primaryColor mb-4" />,
-      title: "Contabil dedicat disponibil",
-      description: "Comunici direct cu contabilul tău dedicat pentru orice întrebare sau serviciu nou."
-    }
-  ]
-
+export default function AccountingFeatures({ title, features }) {
   return (
     <div className="w-full py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Decorativ background blur cercuri */}
+        {/* Decorative background blur circles */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute w-96 h-96 bg-primaryColor/20 rounded-full blur-[150px] -top-20 -left-20" />
           <div className="absolute w-96 h-96 bg-primaryColor/10 rounded-full blur-[150px] bottom-0 right-0" />
@@ -48,17 +19,14 @@ export default function AccountingFeatures() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold text-center mb-20 text-gray-700"
         >
-          Ne ocupăm de{" "}
-          <span className=" text-primaryColor bg-clip-text animate-text">
-            contabilitate
-          </span>
-          , tu te concentrezi pe{" "}
-          <span className=" text-primaryColor bg-clip-text animate-text">
-            afacerea ta
-          </span>
+          {title}
         </motion.h2>
 
-        <div className="grid lg:grid-cols-2 2xl:grid-cols-4 gap-6">
+        <div
+          className={`grid ${
+            features.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2 2xl:grid-cols-4"
+          } gap-6`}
+        >
           {features.map((feature, index) => (
             <motion.div
               key={index}

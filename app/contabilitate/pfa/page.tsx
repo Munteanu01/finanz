@@ -8,9 +8,24 @@ import AccountingFeatures from "../../../components/firstFeatures.jsx"
 import FacturareDiv from "../../../components/facturareDiv.jsx"
 import Features from "../../../components/secondFeatures.jsx"
 import LegalSupport from "../../../components/LegalSupport.jsx"
-import { Laptop, UserCheck, ShieldCheck } from "lucide-react"
-import { motion } from "framer-motion"
-import Hero from "../../../components/HeroPages";
+import { ReceiptText, FileText, BarChart2, UserCheck } from "lucide-react"
+import Hero from "../../../components/HeroPages"
+
+const contabilitateFaq = [
+	{
+		question: "Cum pot începe colaborarea?",
+		answer: "Ne poți contacta prin formularul de pe site sau direct prin telefon.",
+	},
+	{
+		question: "Ce documente sunt necesare?",
+		answer:
+			"Vom avea nevoie de actele firmei și alte detalii specifice activității tale.",
+	},
+	{
+		question: "Cum funcționează facturarea?",
+		answer: "Facturile sunt emise automat și integrate cu e-Factura.",
+	},
+]
 
 const prices = [
 	{
@@ -71,11 +86,11 @@ const prices = [
 			"Pentru fiecare angajat suplimentar, tariful crește cu 15€/lună.",
 		],
 	},
-];
+]
 
 const heroFeatures = [
 	{
-		icon: <Laptop className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
+		icon: <ReceiptText className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
 		title: "Contabilitate 100% online",
 		description:
 			"Gestionează contabilitatea firmei tale 100% online, fără drumuri la birou, indiferent dacă ești în România sau în străinătate.",
@@ -87,123 +102,99 @@ const heroFeatures = [
 			"Ai un contabil personal care îți cunoaște firma și te asistă în orice moment, pentru o gestionare eficientă și fără stres.",
 	},
 	{
-		icon: <ShieldCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
+		icon: <BarChart2 className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
 		title: "Garanția mulțumirii sau rambursare",
 		description:
 			"Ne asigurăm că ești mulțumit de serviciile noastre, iar dacă nu, primești banii înapoi fără complicații.",
 	},
-];
+]
 
-const contabilitateFaq = [
-	{
-		question: "Pot înființa o firmă prin Finanzconsult fără să mă deplasez?",
-		answer: "Da, **Finanzconsult** îți permite să înființezi o firmă 100% online, indiferent de locația ta, fie că ești în România sau în străinătate.",
-	},
-	{
-		question: "Ce obligații am după înființarea firmei cu Finanzconsult?",
-		answer: `
-      După înființare, în termen de 30 de zile, trebuie să:
-      * Depui Declarația Unică pentru stabilirea impozitului pe venit și a contribuțiilor sociale
-      * Achiziționezi Registrul de Evidență Fiscală (dacă ești în sistem real)
-      * Ții o evidență clară a veniturilor și cheltuielilor
-      * Declari și achiți taxele la termenele stabilite de ANAF
+const accountingFeaturesTitle = (
+	<>
+		Ne ocupăm de{" "}
+		<span className="text-primaryColor bg-clip-text animate-text">contabilitate</span>, tu te concentrezi pe{" "}
+		<span className="text-primaryColor bg-clip-text animate-text">afacerea ta</span>
+	</>
+)
 
-      Cu **Finanzconsult**, ai contabil dedicat care te ghidează și o platformă digitală pentru gestionarea tuturor acestor obligații.
-    `,
+const accountingFeatures = [
+	{
+		icon: <ReceiptText className="w-10 h-10 text-primaryColor mb-4" />,
+		title: "Emite facturi cu un click",
+		description:
+			"Toate facturile ajung direct la contabilul tău și sunt integrate automat în e-Factura.",
 	},
 	{
-		question: "Ce taxe va trebui să plătesc după înființarea PFA-ului?",
-		answer: `
-      Ca PFA, principalele obligații fiscale sunt:
-      * Impozitul pe venit (10% din venitul net)
-      * CAS (25% din venitul ales, minim 12 salarii minime pe economie)
-      * CASS (10% din venitul ales, minim 6 salarii minime pe economie)
-      * TVA (dacă depășești plafonul de 300.000 lei)
-    `,
+		icon: <FileText className="w-10 h-10 text-primaryColor mb-4" />,
+		title: "Adaugă rapid cheltuieli",
+		description:
+			"This is just a simple text made for the demos to show the available features.",
 	},
 	{
-		question: "Cum mă ajută Bizfix cu actualizările legislative fiscale?",
-		answer: "**Finanzconsult** îți oferă actualizări în timp real privind modificările legislative fiscale, asigurându-te că PFA-ul tău rămâne conform cu reglementările în vigoare.",
+		icon: <BarChart2 className="w-10 h-10 text-primaryColor mb-4" />,
+		title: "Deții evidența taxelor la zi",
+		description:
+			"Vizualizezi în timp real ce taxe ai de plătit și ai acces la registrele contabile.",
 	},
 	{
-		question: "Cum pot comunica cu contabilul dedicat prin Finanzconsult?",
-		answer: "Prin aplicația **Finanzconsult**, ai acces direct la contabilul tău dedicat, putând comunica rapid și eficient prin chat sau apel telefonic pentru orice nelămuriri sau servicii suplimentare.",
+		icon: <UserCheck className="w-10 h-10 text-primaryColor mb-4" />,
+		title: "Contabil dedicat disponibil",
+		description:
+			"Comunici direct cu contabilul tău dedicat pentru orice întrebare sau serviciu nou.",
 	},
-	{
-		question: "Care este diferența între norma de venit și sistemul real la PFA?",
-		answer: `
-      * **Norma de venit:** Impozitul se calculează la o sumă fixă stabilită de ANAF, indiferent de veniturile reale
-      * **Sistemul real:** Impozitul se calculează pe baza veniturilor și cheltuielilor efective
-      * Cu **Finanzconsult**, primești consultanță pentru a alege sistemul optim pentru activitatea ta
-    `,
-	},
-	{
-		question: "Pot să facturez gratuit după ce îmi înființez PFA-ul cu Finanzconsult?",
-		answer: "Da, **Finanzconsult** îți pune la dispoziție un sistem de facturare gratuit, integrat cu e-Factura, permițându-ți să emiți și să încasezi facturi rapid și eficient.",
-	},
-	{
-		question: "Ce documente trebuie să păstrez pentru contabilitatea PFA?",
-		answer: `
-      Pentru o evidență contabilă corectă, trebuie să păstrezi:
-      * Toate facturile emise și primite
-      * Chitanțe și bonuri fiscale pentru cheltuieli
-      * Extrase de cont bancar
-      * Registrul de Evidență Fiscală (în sistem real)
-      * Declarațiile și documentele depuse la ANAF
-
-      Cu aplicația **Finanzconsult**, toate acestea sunt organizate și stocate digital.
-    `,
-	},
-];
+]
 
 export default function ContabilitatePfaPage() {
-    const pricingTitle = "Planuri de contabilitate pentru orice etapă a businessului";
+	const pricingTitle = "Planuri de contabilitate pentru orice etapă a businessului"
 
-    return (
-        <div className="min-h-screen overflow-x-hidden bg-white relative">
-            <FinanzNavbar />
+	return (
+		<div className="min-h-screen overflow-x-hidden bg-white relative">
+			<FinanzNavbar />
 
-            {/* Hero Section */}
-            <Hero
-                backgroundImage="/images/contabilitatefundal.jpg"
-                badge="Contabilitate 100% online"
-                title="Contabilitate PFA"
-                subtitle="Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului"
-                cards={heroFeatures}
-            />
+			{/* Hero Section */}
+			<Hero
+				backgroundImage="/images/contabilitatefundal.jpg"
+				badge="Contabilitate 100% online"
+				title="Contabilitate PFA"
+				subtitle="Gestionăm contabilitatea, tu te concentrezi pe creșterea businessului"
+				cards={heroFeatures}
+			/>
 
-            {/* Content Sections */}
-            <section className="w-full bg-gray-50">
-                <AccountingFeatures />
-            </section>
+			{/* Content Sections */}
+			<section className="w-full bg-gray-50">
+				<AccountingFeatures
+					title={accountingFeaturesTitle}
+					features={accountingFeatures}
+				/>
+			</section>
 
-            <section className="w-full bg-white">
-                <div className="w-full bg-white">
-                    <Prices 
-                        prices={prices} 
-                        title={pricingTitle}
-                        formattedTitle="Planuri de contabilitate"
-                    />
-                </div>
-            </section>
+			<section className="w-full bg-white">
+				<div className="w-full bg-white">
+					<Prices
+						prices={prices}
+						title={pricingTitle}
+						formattedTitle="Planuri de contabilitate"
+					/>
+				</div>
+			</section>
 
-            <section className="w-full bg-gray-50">
-                <Features />
-            </section>
+			<section className="w-full bg-gray-50">
+				<Features />
+			</section>
 
-            <section className="w-full bg-white">
-                <FacturareDiv />
-            </section>
+			<section className="w-full bg-white">
+				<FacturareDiv />
+			</section>
 
-            <section className="w-full bg-gray-50">
-                <LegalSupport />
-            </section>
+			<section className="w-full bg-gray-50">
+				<LegalSupport />
+			</section>
 
-            <section className="w-full bg-white">
-                <FAQ items={contabilitateFaq} />
-            </section>
+			<section className="w-full bg-white">
+				<FAQ items={contabilitateFaq} />
+			</section>
 
-            <Footer />
-        </div>
-    );
+			<Footer />
+		</div>
+	)
 }
