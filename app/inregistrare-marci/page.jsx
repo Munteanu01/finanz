@@ -2,9 +2,10 @@
 import FinanzNavbar from "../../navbar";
 import Footer from "../../components/footer";
 import HeroPages from "../../components/HeroPages";
-import { Briefcase, ShieldCheck, UserCheck } from "lucide-react";
+import { Briefcase, ShieldCheck, UserCheck, FileText, FileCheck, Award } from "lucide-react";
 import LegalSupport from "../../components/LegalSupport";
 import FAQ from "../../components/faq"; // Folosește componenta existentă
+import AccountingFeatures from "../../components/firstFeatures"; // Importăm componenta
 
 // FAQ data
 const faqData = [
@@ -42,12 +43,34 @@ const faqData = [
   },
 ];
 
+// Features data
+const featuresData = [
+  {
+    title: "Completăm cererea",
+    description:
+      "Ne furnizezi informațiile esențiale despre marcă, iar noi pregătim documentația necesară pentru depunere.",
+    icon: <FileText className="w-10 h-10 text-primaryColor mb-4" />,
+  },
+  {
+    title: "Depunem dosarul la autorități",
+    description:
+      "Ne ocupăm de întocmirea și depunerea dosarului, asigurându-ne că îndeplinește toate cerințele legale.",
+    icon: <FileCheck className="w-10 h-10 text-primaryColor mb-4" />,
+  },
+  {
+    title: "Obții certificatul de înregistrare",
+    description:
+      "După aprobare, vei primi certificatul care îți garantează drepturile exclusive asupra mărcii tale.",
+    icon: <Award className="w-10 h-10 text-primaryColor mb-4" />,
+  },
+];
+
 export default function InregistrareMarcePage() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <FinanzNavbar />
       <HeroPages
-      backgroundImage="/inregistrare.jpg"
+        backgroundImage="/inregistrare.jpg"
         title="Înregistrare mărci"
         subtitle="Un proces simplu pentru protecția identității afacerii tale"
         badge="Protecție legală rapidă și sigură"
@@ -56,25 +79,30 @@ export default function InregistrareMarcePage() {
             title: "Fără drumuri și birocrație",
             description:
               "Ne ocupăm noi de toate formalitățile, astfel încât să nu pierzi timp cu depunerea actelor la instituțiile competente.",
-            icon: <Briefcase className="w-8 h-8 text-primaryColor" />,
+            icon: <Briefcase className="w-10 h-10 text-primaryColor mb-4" />,
           },
           {
             title: "Îți înregistrăm marca simplu și eficient",
             description:
               "Asigurându-te că ai toate drepturile legale asupra brandului tău.",
-            icon: <ShieldCheck className="w-8 h-8 text-primaryColor" />,
+            icon: <ShieldCheck className="w-10 h-10 text-primaryColor mb-4" />,
           },
           {
             title: "Consultanță la fiecare pas",
             description:
               "Beneficiezi de suport specializat de la început până la final, astfel încât procesul să fie clar, rapid și fără probleme.",
-            icon: <UserCheck className="w-8 h-8 text-primaryColor" />,
+            icon: <UserCheck className="w-10 h-10 text-primaryColor mb-4" />,
           },
         ]}
       />
-     
+
+      <AccountingFeatures
+        title="Înregistrează-ți marca simplu și fără birocrație"
+        features={featuresData}
+      />
+
       <FAQ items={faqData} />
-        <LegalSupport />
+      <LegalSupport />
       <Footer />
     </div>
   );
