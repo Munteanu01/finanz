@@ -7,6 +7,8 @@ import LegalSupport from "../../components/LegalSupport";
 import FAQ from "../../components/faq";
 import AccountingFeatures from "../../components/firstFeatures";
 import PriceTable from "../../components/PriceTable";
+import FacturareDiv from "../../components/facturareDiv";
+import { motion } from "framer-motion";
 
 // FAQ data
 const faqData = [
@@ -69,7 +71,7 @@ export default function GazduireSediuPage() {
     <div className="min-h-screen overflow-x-hidden">
       <FinanzNavbar />
       <HeroPages
-        backgroundImage="/gazduire-sediu.jpg"
+        backgroundImage="/gazduire.jpg"
         title="Găzduire sediu social"
         subtitle="Înființează-ți firma fără să-ți faci griji pentru sediu social"
         cards={[
@@ -80,7 +82,7 @@ export default function GazduireSediuPage() {
             icon: <Briefcase className="w-10 h-10 text-primaryColor mb-4" />,
           },
           {
-            title: "Recepționare și gestionare corespondență",
+            title: "Administrare corespondență",
             description:
               "Toată corespondența oficială este recepționată și gestionată, astfel încât să nu pierzi niciun document important.",
             icon: <ShieldCheck className="w-10 h-10 text-primaryColor mb-4" />,
@@ -99,33 +101,60 @@ export default function GazduireSediuPage() {
         features={featuresData}
       />
 
-      <PriceTable {...priceTableData} />
+      <div className="w-full py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <PriceTable {...priceTableData} />
+        </div>
+      </div>
 
-      <div className="py-16 lg:py-24">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Prelungirea sau schimbarea sediului social se face fără complicații
-        </h2>
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-            <h3 className="text-xl font-semibold mb-4">600 lei</h3>
-            <p className="text-gray-700">
-              <strong>Schimbare sediu social</strong>
-              <br />
-              Mută sediul social al firmei tale într-o nouă locație și actualizează documentele oficiale pentru a reflecta această schimbare.
-            </p>
-          </div>
-          <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-            <h3 className="text-xl font-semibold mb-4">450 lei</h3>
-            <p className="text-gray-700">
-              <strong>Prelungire sediu social</strong>
-              <br />
-              Extinde perioada de valabilitate a sediului social actual prin prelungirea duratei contractului de închiriere sau a dreptului de folosință.
-            </p>
+      <div className="w-full py-16 lg:py-24" >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold text-center mb-20 text-gray-700"
+          >
+            Prelungirea sau schimbarea sediului social se face fără complicații
+          </motion.h2>
+
+          <div className="grid lg:grid-cols-2 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.03 }}
+              className="flex flex-col bg-white shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300"
+            >
+              <div className="text-3xl font-bold text-primaryColor mb-4 bg-[#DADEF5]">600 lei</div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Schimbare sediu social</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Mută sediul social al firmei tale într-o nouă locație și actualizează documentele oficiale pentru a reflecta această schimbare.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.03 }}
+              className="flex flex-col bg-white shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300"
+            >
+              <div className="text-3xl font-bold text-primaryColor mb-4 bg-[#DADEF5]">450 lei</div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Prelungire sediu social</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Extinde perioada de valabilitate a sediului social actual prin prelungirea duratei contractului de închiriere sau a dreptului de folosință.
+              </p>
+            </motion.div>
           </div>
         </div>
       </div>
 
       <FAQ items={faqData} />
+      <FacturareDiv />
       <LegalSupport />
       <Footer />
     </div>
