@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import InfiintariLayout from "../../../components/InfiintariLayout.js";
+import InfiintariLayout from "../../../components/InfiintariLayout";
 import { Laptop, FileText, ShieldCheck } from "lucide-react";
 
 const infiintariFaq = [
@@ -85,19 +85,19 @@ export default function InfiintareSrlPage() {
         subtitle: "Înființează-ți SRL-ul simplu, rapid și fără bătăi de cap, de oriunde te afli.",
         cards: [
           {
-            icon: <Laptop className="w-12 h-12 mb-4 text-primaryColor" />,
+            icon: <Laptop className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
             title: "Înființare rapidă 100% online",
             description:
               "Deschide-ți firma fără drumuri la instituții! Tot procesul se desfășoară online, indiferent unde te afli – în România sau în străinătate.",
           },
           {
-            icon: <FileText className="w-12 h-12 mb-4 text-primaryColor" />,
+            icon: <FileText className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
             title: "Documente procesate în 30 min",
             description:
-              "Ne ocupăm rapid de actele necesare, astfel încât firma ta să fie înregistrată fără întârzieri. Tot ce trebuie să faci este să ne trimiți documentele!",
+              "Ne ocupăm rapid de actele necesare, astfel încât firma ta să fie înregistrată fără întârzieri. Tot ce trebuie să faci este să ne trimiți !",
           },
           {
-            icon: <ShieldCheck className="w-12 h-12 mb-4 text-primaryColor" />,
+            icon: <ShieldCheck className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
             title: "Garanția mulțumirii sau rambursare",
             description:
               "Ai siguranța unui serviciu eficient! Dacă nu ești mulțumit de proces, îți returnăm banii fără întrebări.",

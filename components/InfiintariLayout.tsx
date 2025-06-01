@@ -69,8 +69,9 @@ export default function InfiintariLayout({
         ]}
       />
       {/* Other Components */}
-      <ProcesSimplificat />
       <PasiInfiintare />
+      <ProcesSimplificat />
+      
       <OperationalSteps />
       <PlanuriContabile />
 
