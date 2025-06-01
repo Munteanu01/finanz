@@ -8,6 +8,7 @@ import FAQ from "../../components/faq";
 import AccountingFeatures from "../../components/firstFeatures";
 import PriceTable from "../../components/PriceTable";
 import FacturareDiv from "../../components/facturareDiv";
+import ModificationServices from "../../components/ModificationServices";
 import { motion } from "framer-motion";
 
 // FAQ data
@@ -66,6 +67,65 @@ const priceTableData = {
   ],
 };
 
+// Modification services data
+const modificationServicesData = [
+  {
+    price: "650 lei",
+    title: "Actualizarea codurilor CAEN",
+    description: "Adu-ți codurile CAEN la zi conform noilor standarde Revizia 3 pentru a asigura conformitatea activităților firmei tale.",
+  },
+  {
+    price: "600 lei",
+    title: "Adăugare/Ștergere Cod CAEN",
+    description: "Extinde sau restrânge domeniul de activitate al firmei tale prin adăugarea sau eliminarea codurilor CAEN relevante.",
+  },
+  {
+    price: "600 lei",
+    title: "Schimbare cod CAEN principal",
+    description: "Modifică activitatea principală a firmei tale prin actualizarea codului CAEN principal pentru a reflecta noua direcție a afacerii.",
+  },
+  {
+    price: "600 lei",
+    title: "Schimbare sediu social",
+    description: "Mută sediul social al firmei tale într-o nouă locație și actualizează documentele oficiale pentru a reflecta această schimbare.",
+  },
+  {
+    price: "450 lei",
+    title: "Prelungire sediu social",
+    description: "Extinde perioada de valabilitate a sediului social actual prin prelungirea duratei contractului de închiriere sau a dreptului de folosință.",
+  },
+  {
+    price: "450 lei",
+    title: "Deschidere punct de lucru",
+    description: "Extinde-ți afacerea prin deschiderea unui nou punct de lucru și înregistrează-l oficial la autoritățile competente.",
+  },
+  {
+    price: "450 lei",
+    title: "Prelungire punct de lucru",
+    description: "Menține activitatea punctului de lucru existent prin prelungirea duratei de funcționare înregistrată oficial.",
+  },
+  {
+    price: "450 lei",
+    title: "Închidere punct de lucru",
+    description: "Închide un punct de lucru care nu mai este activ și actualizează documentele firmei pentru a reflecta această modificare.",
+  },
+  {
+    price: "600 lei",
+    title: "Modificare nume firmă",
+    description: "Redefinește identitatea afacerii tale prin schimbarea denumirii oficiale a firmei și înregistrarea noii denumiri.",
+  },
+  {
+    price: "600 lei",
+    title: "Majorare capital social",
+    description: "Consolidează baza financiară a firmei tale prin majorarea capitalului social și actualizarea actelor constitutive.",
+  },
+  {
+    price: "600 lei",
+    title: "Cesiune părți sociale",
+    description: "Transferă părțile sociale către noi asociați sau parteneri și actualizează structura de proprietate a firmei tale.",
+  },
+];
+
 export default function GazduireSediuPage() {
   return (
     <div className="min-h-screen overflow-x-hidden">
@@ -107,50 +167,11 @@ export default function GazduireSediuPage() {
         </div>
       </div>
 
-      <div className="w-full py-16 lg:py-24" >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-center mb-20 text-gray-700"
-          >
-            Prelungirea sau schimbarea sediului social se face fără complicații
-          </motion.h2>
-
-          <div className="grid lg:grid-cols-2 gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.03 }}
-              className="flex flex-col bg-white shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300"
-            >
-              <h1 className="text-3xl font-bold text-primaryColor mb-4 bg-[#E8EBFA] px-3 py-1 rounded-lg w-fit">600 lei</h1>
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">Schimbare sediu social</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Mută sediul social al firmei tale într-o nouă locație și actualizează documentele oficiale pentru a reflecta această schimbare.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.03 }}
-              className="flex flex-col bg-white shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300"
-            >
-              <h1 className="text-3xl font-bold text-primaryColor mb-4 bg-[#E8EBFA] px-3 py-1 rounded-lg w-fit">450 lei</h1>
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">Prelungire sediu social</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Extinde perioada de valabilitate a sediului social actual prin prelungirea duratei contractului de închiriere sau a dreptului de folosință.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </div>
+      <ModificationServices
+        title="Simplificăm procesul oricărei modificări"
+        subtitle="Indiferent ce modificare ai nevoie, procesul este simplu și 100% online. Poți efectua oricâte modificări simultan și plătești doar o singură taxă."
+        services={modificationServicesData}
+      />
 
       <FAQ items={faqData} />
       <FacturareDiv />
