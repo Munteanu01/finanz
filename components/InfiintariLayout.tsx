@@ -20,7 +20,7 @@ export default function InfiintariLayout({
   prices,
 }: {
   heroProps: {
-    backgroundImage: '/infintare.jpg';
+    backgroundImage: string;
     badge: string;
     title: string;
     subtitle: string;
@@ -35,11 +35,14 @@ export default function InfiintariLayout({
   }>;
 }) {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white relative">
+    <>
       <FinanzNavbar />
 
       {/* Hero Section */}
-      <HeroPages {...heroProps} />
+      <HeroPages
+        {...heroProps}
+        backgroundImage="/infintare.jpg"
+      />
       <AccountingFeatures
         title="Noi ne ocupăm de tot, tu te concentrezi pe afacerea ta"
         features={[
@@ -67,7 +70,6 @@ export default function InfiintariLayout({
       />
       {/* Other Components */}
       <ProcesSimplificat />
-      
       <PasiInfiintare />
       <OperationalSteps />
       <PlanuriContabile />
@@ -90,6 +92,6 @@ export default function InfiintariLayout({
       </section>
 
       <Footer />
-    </div>
+    </>
   );
 }
