@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/faq.jsx", "app/inregistrare-marci/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/faq.jsx", "app/inregistrare-marci/page.jsx"],, "app/infiintari/srl/page.jsx"
   "exclude": ["node_modules"]
 }

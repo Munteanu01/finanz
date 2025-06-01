@@ -12,6 +12,7 @@ import PasiInfiintare from "./TreiPasi";
 import OperationalSteps from "../components/OperationalSteps";
 import PlanuriContabile from "../components/PlanuriContabile";
 import HeroPages from "../components/HeroPages";
+import { Clock, FileCheck2, Globe, Gavel } from "lucide-react";
 
 export default function InfiintariLayout({
   heroProps,
@@ -19,7 +20,7 @@ export default function InfiintariLayout({
   prices,
 }: {
   heroProps: {
-    backgroundImage: string;
+    backgroundImage: '/infintare.jpg';
     badge: string;
     title: string;
     subtitle: string;
@@ -39,10 +40,34 @@ export default function InfiintariLayout({
 
       {/* Hero Section */}
       <HeroPages {...heroProps} />
-
+      <AccountingFeatures
+        title="Noi ne ocupăm de tot, tu te concentrezi pe afacerea ta"
+        features={[
+          {
+            icon: <Clock className="w-10 h-10 text-primaryColor mb-4" />,
+            title: "Modificări rapide, în doar 3 zile",
+            description: "Timpul tău este prețios. Orice schimbare necesară firmei tale este gata în maximum 3 zile, fără întârzieri.",
+          },
+          {
+            icon: <FileCheck2 className="w-10 h-10 text-primaryColor mb-4" />,
+            title: "Fără formalități, fără stres",
+            description: "Noi ne ocupăm de întregul proces – de la redactarea actelor până la înregistrarea lor. Tu doar semnezi!",
+          },
+          {
+            icon: <Globe className="w-10 h-10 text-primaryColor mb-4" />,
+            title: "Fără drumuri la instituții",
+            description: "Totul se desfășoară online, indiferent unde te afli. Gestionăm relația cu Registrul Comerțului în locul tău.",
+          },
+          {
+            icon: <Gavel className="w-10 h-10 text-primaryColor mb-4" />,
+            title: "Consultanță juridică inclusă",
+            description: "De la primul pas până la finalizare, beneficiezi de suport specializat pentru ca totul să decurgă fără probleme.",
+          },
+        ]}
+      />
       {/* Other Components */}
       <ProcesSimplificat />
-      <AccountingFeatures />
+      
       <PasiInfiintare />
       <OperationalSteps />
       <PlanuriContabile />
