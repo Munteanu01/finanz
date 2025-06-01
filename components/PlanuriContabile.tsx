@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Users } from "lucide-react";
+import { Users, User } from "lucide-react"; // importă și User
 
 type PlanuriContabileProps = {
   title?: string;
@@ -9,7 +9,7 @@ type PlanuriContabileProps = {
 
 export default function PlanuriContabile({ title, subtitle, pfa }: PlanuriContabileProps) {
   if (pfa) {
-    // Secțiune separată pentru PFA
+    // Secțiune separată pentru PFA cu iconiță User și titlu/descriere identice cu SRL
     return (
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,10 +21,11 @@ export default function PlanuriContabile({ title, subtitle, pfa }: PlanuriContab
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              {title || "Înființare PFA"}
+              Flexibilitate și suport contabil la orice nivel
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {subtitle || "Plată unică - 210 lei"}
+              Alege planul potrivit pentru afacerea ta și beneficiază de servicii
+              contabile complete, facturare integrată și suport personalizat.
             </p>
           </motion.div>
           <div className="flex justify-center">
@@ -37,23 +38,17 @@ export default function PlanuriContabile({ title, subtitle, pfa }: PlanuriContab
             >
               <div className="mb-4 flex justify-center">
                 <div className="bg-primaryColor/10 rounded-sm w-16 h-16 flex items-center justify-center">
-                  <Users className="w-10 h-10 text-primaryColor" />
+                  <User className="w-10 h-10 text-primaryColor" />
                 </div>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center">
                   Înființare PFA
                 </h3>
-                <div className="text-3xl font-bold text-primaryColor mb-4 text-center">
-                  210 lei
-                </div>
-                <ul className="text-gray-700 text-left space-y-2 mt-6 max-w-md mx-auto">
-                  <li>Consultanță și alegerea codurilor CAEN</li>
-                  <li>Întocmirea tuturor documentelor necesare</li>
-                  <li>Depunerea dosarului la ANAF</li>
-                  <li>Ridicarea autorizației PFA</li>
-                  <li>Fără costuri ascunse</li>
-                  <li>Proces rapid: 1-3 zile lucrătoare</li>
+             
+                <ul className="text-gray-700 text-center space-y-2 mt-6 max-w-md mx-auto">
+                  <li>Plată unică - 210 lei</li>
+                 
                 </ul>
               </div>
             </motion.div>
