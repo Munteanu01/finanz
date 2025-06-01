@@ -18,6 +18,7 @@ export default function InfiintariLayout({
   heroProps,
   faqItems,
   prices,
+  pfa = false, // adaugă default false
 }: {
   heroProps: {
     backgroundImage: string;
@@ -33,6 +34,7 @@ export default function InfiintariLayout({
     subtitle: string;
     details: string[];
   }>;
+  pfa?: boolean; // adaugă tipul aici
 }) {
   return (
     <>
@@ -73,16 +75,13 @@ export default function InfiintariLayout({
       <ProcesSimplificat />
       
       <OperationalSteps />
-      <PlanuriContabile />
+      <PlanuriContabile
+        title={pfa ? "Înființare PFA" : undefined}
+        subtitle={pfa ? "Plată unică - 210 lei" : undefined}
+        pfa={pfa}
+      />
 
-      {/* Pricing Section */}
-      <section className="w-full bg-white">
-        <Prices
-          prices={prices}
-          title="Alege un abonament de contabilitate și înființarea firmei este gratuită!"
-          formattedTitle="Alege un abonament de contabilitate și înființarea firmei este gratuită!"
-        />
-      </section>
+      
       <Features />
       <LegalSupport />
       <FacturareDiv />
