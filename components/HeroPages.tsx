@@ -97,7 +97,7 @@ export default function HeroPages({
               <div className="text-primaryColor text-lg sm:text-xl mb-3 sm:mb-4">
                 {item.icon}
               </div>
-              <h3 className="text-base xl:text-xl font-semibold mb-1 sm:mb-2">
+              <h3 className="text-base xl:text-lg font-semibold mb-1 sm:mb-2">
                 {item.title}
               </h3>
               <p className="text-gray-600 text-xs sm:text-sm xl:text-base px-2">
