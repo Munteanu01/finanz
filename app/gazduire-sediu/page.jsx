@@ -123,12 +123,11 @@ export default function GazduireSediuPage() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.03 }}
               className="flex flex-col bg-white shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300"
             >
-              <div className="text-3xl font-bold text-primaryColor mb-4 bg-[#DADEF5]">600 lei</div>
+              <h1 className="text-3xl font-bold text-primaryColor mb-4 bg-[#E8EBFA] px-3 py-1 rounded-lg w-fit">600 lei</h1>
               <h3 className="text-xl font-semibold mb-4 text-gray-800">Schimbare sediu social</h3>
               <p className="text-gray-700 leading-relaxed">
                 Mută sediul social al firmei tale într-o nouă locație și actualizează documentele oficiale pentru a reflecta această schimbare.
@@ -143,7 +142,7 @@ export default function GazduireSediuPage() {
               whileHover={{ scale: 1.03 }}
               className="flex flex-col bg-white shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300"
             >
-              <div className="text-3xl font-bold text-primaryColor mb-4 bg-[#DADEF5]">450 lei</div>
+              <h1 className="text-3xl font-bold text-primaryColor mb-4 bg-[#E8EBFA] px-3 py-1 rounded-lg w-fit">450 lei</h1>
               <h3 className="text-xl font-semibold mb-4 text-gray-800">Prelungire sediu social</h3>
               <p className="text-gray-700 leading-relaxed">
                 Extinde perioada de valabilitate a sediului social actual prin prelungirea duratei contractului de închiriere sau a dreptului de folosință.
