@@ -2,7 +2,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 
-export default function ModificationServices({ title, subtitle, services }) {
+export default function ModificationServices({ title, subtitle, services = [] }) {
   return (
     <div className="w-full py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,7 +29,7 @@ export default function ModificationServices({ title, subtitle, services }) {
         )}
 
         <div className="flex flex-wrap justify-center gap-6">
-          {services.map((service, index) => (
+          {services && services.length > 0 && services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
