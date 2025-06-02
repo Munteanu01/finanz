@@ -49,7 +49,7 @@ export default function ProcesSimplificat() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primaryColor to-secundaryColor">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primaryColor to-mediumBlue">
               Simplificăm procesul pentru tine
             </span>
           </h2>
@@ -100,6 +100,20 @@ export default function ProcesSimplificat() {
           ))}
         </div>
 
+        {/* Call-to-Action Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <Link href="/contact">
+            <button className="bg-gradient-to-r from-primaryColor to-mediumBlue text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+              Începe Acum →
+            </button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

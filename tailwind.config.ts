@@ -125,7 +125,7 @@ const config: Config = {
         primaryColor: "#020F59",
         lightBlue: "#86bbd8",
         mediumBlue: "#0770bb",
-        accentColorr: "#F6ae2d",
+        accentColor: "#F6ae2d",
         secundaryColor: "#F26419"
       },
       borderRadius: {

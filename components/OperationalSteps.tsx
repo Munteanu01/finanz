@@ -54,7 +54,7 @@ export default function OperationalSteps() {
 							<motion.button
 								whileHover={{ scale: 1.05 }}
 								whileTap={{ scale: 0.95 }}
-								className="bg-gradient-to-r from-primaryColor to-secundaryColor text-white 
+								className="bg-gradient-to-r from-secundaryColor to-orange-400 text-white 
                          px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg 
                          transition-all duration-300"
 							>
