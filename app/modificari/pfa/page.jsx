@@ -147,11 +147,51 @@ export default function ModificariPfaPage() {
 				features={firstFeaturesData}
 			/>
 
-			<ModificationServices
-				title="Servicii modificare PFA"
-				subtitle="Alege modificarea de care ai nevoie. Proces simplu, rapid și 100% online."
-				services={modificationServicesData}
-			/>
+			{/* Add IDs to each service for anchor navigation */}
+			<section id="servicii-modificari-pfa">
+				<ModificationServices
+					title="Servicii modificare PFA"
+					subtitle="Alege modificarea de care ai nevoie. Proces simplu, rapid și 100% online."
+					services={modificationServicesData.map((service) => {
+						let id = ""
+						switch (service.title) {
+							case "Actualizare coduri CAEN":
+								id = "actualizare-rev3"
+								break
+							case "Adăugare Cod CAEN":
+								id = "cod-caen"
+								break
+							case "Schimbare sediu social":
+								id = "sediu-social"
+								break
+							case "Prelungire sediu social":
+								id = "prelungire-sediu"
+								break
+							case "Deschidere punct de lucru":
+								id = "deschidere-punct"
+								break
+							case "Prelungire punct de lucru":
+								id = "prelungire-punct"
+								break
+							case "Închidere punct de lucru":
+								id = "inchidere-punct"
+								break
+							case "Suspendare activitate PFA":
+								id = "suspendare"
+								break
+							case "Reluare activitate PFA":
+								id = "reluare"
+								break
+							case "Închidere activitate PFA":
+								id = "inchidere"
+								break
+							default:
+								id = ""
+						}
+						return { ...service, id }
+					})}
+				/>
+			</section>
 
 			<FacturareDiv />
 
