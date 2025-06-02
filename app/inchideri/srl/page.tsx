@@ -4,7 +4,7 @@ import Footer from "../../../components/footer"
 import HeroPages from "../../../components/HeroPages"
 import { FileText, Clock, Shield, CheckCircle, ArrowRight, Users } from "lucide-react"
 import { motion } from "framer-motion"
-
+import Link from "next/link"
 export default function InchidereSrlPage() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
@@ -89,19 +89,19 @@ export default function InchidereSrlPage() {
               className="relative group"
             >
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600"></div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-3 rounded-xl">
+                  <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-xl">
                     <Users className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-3xl font-bold text-gray-200 group-hover:text-purple-200 transition-colors">
+                  <span className="text-3xl font-bold text-gray-200 group-hover:text-blue-200 transition-colors">
                     02
                   </span>
                 </div>
                 <h4 className="text-xl font-bold text-gray-800 mb-3">Redactare & semnare</h4>
                 <div className="flex items-center gap-2 mb-4">
-                  <Clock className="w-4 h-4 text-purple-500" />
-                  <span className="text-sm font-semibold text-purple-600">30 minute</span>
+                  <Clock className="w-4 h-4 text-blue-500" />
+                  <span className="text-sm font-semibold text-blue-600">30 minute</span>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
                   Redactăm documentația completă, o pregătim pentru semnare și o depunem la ONRC în numele tău.
@@ -221,15 +221,17 @@ export default function InchidereSrlPage() {
                   </div>
                 </div>
               </div>
-
+              <Link href="/contact">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-8 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
+                onClick={() => window.location.href = '/contact'}
+                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-4 px-8 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
               >
                 Începe procesul de închidere
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
+              </Link>
             </div>
           </motion.div>
         </motion.div>
