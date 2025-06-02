@@ -185,6 +185,8 @@ export default function ContactPage() {
             {/* Map */}
             <div className="bg-white border border-gray-200 rounded-xl p-8 h-full flex flex-col flex-1">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Locația noastră</h2>
+              
+              {/* Map */}
               <div className="w-full h-96 bg-gray-100 rounded-lg overflow-hidden mb-4">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2849.1234567890123!2d26.0123456789!3d44.4123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff1234567890%3A0x1234567890abcdef!2sSplaiul%20Independentei%20202B%2C%20Bucuresti!5e0!3m2!1sro!2sro!4v1234567890123!5m2!1sro!2sro"
@@ -215,6 +217,35 @@ export default function ContactPage() {
                 <MapPin className="h-4 w-4 mr-2" />
                 Deschide în Google Maps
               </a>
+            </div>
+          </div>
+
+          {/* Building Photo Section */}
+          <div className="mt-12 bg-white border border-gray-200 rounded-xl p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Biroul nostru</h2>
+            <div className="max-w-4xl mx-auto">
+              <a
+                href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block cursor-pointer hover:opacity-90 transition-opacity"
+              >
+                <div className="w-full rounded-lg overflow-hidden">
+                  <img
+                    src="/sediuLogo.jpg"
+                    alt="Clădirea FINANZ CONSULT S.R.L."
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </a>
+              <div className="text-center mt-6">
+                <h3 className="font-semibold text-gray-900 mb-2 text-base md:text-lg">FINANZ CONSULT S.R.L.</h3>
+                <p className="text-gray-600 text-sm md:text-base">
+                  Splaiul Independentei, Nr 202B
+                  <br />
+                  Sector 6, București
+                </p>
+              </div>
             </div>
           </div>
         </div>
