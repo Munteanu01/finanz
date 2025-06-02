@@ -4,6 +4,9 @@ import Footer from "../../../components/footer"
 import HeroPages from "../../../components/HeroPages"
 import ModificationServices from "../../../components/ModificationServices"
 import FirstFeatures from "../../../components/firstFeatures"
+import FAQ from "../../../components/faq"
+import FacturareDiv from "../../../components/facturareDiv"
+import LegalSupport from "../../../components/LegalSupport"
 import { Globe, FileText, Smile, Edit, FileCheck2, Send } from "lucide-react"
 
 const modificationServicesData = [
@@ -90,6 +93,23 @@ const firstFeaturesData = [
 	},
 ]
 
+const faqItems = [
+	{
+		question: "Cât durează modificarea unui PFA?",
+		answer:
+			"Procesul durează, în general, între 2 și 5 zile lucrătoare, în funcție de tipul modificării și de rapiditatea cu care sunt furnizate documentele necesare.",
+	},
+	{
+		question: "Pot face modificarea dacă nu sunt în țară?",
+		answer: "Da, toate modificările se pot face 100% online, indiferent unde te afli.",
+	},
+	{
+		question: "Ce documente sunt necesare pentru modificare?",
+		answer:
+			"Documentele necesare diferă în funcție de tipul modificării. După completarea cererii, vei primi lista exactă de documente pe email.",
+	},
+]
+
 export default function ModificariPfaPage() {
 	return (
 		<div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
@@ -132,6 +152,12 @@ export default function ModificariPfaPage() {
 				subtitle="Alege modificarea de care ai nevoie. Proces simplu, rapid și 100% online."
 				services={modificationServicesData}
 			/>
+
+			<FacturareDiv />
+
+			<LegalSupport />
+
+			<FAQ items={faqItems} />
 
 			<Footer />
 		</div>
