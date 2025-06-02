@@ -15,11 +15,11 @@ const juridicFaq = [
   },
   {
     question: "Cât durează recuperarea unei creanțe?",
-    answer: "Durata recuperării creanțelor depinde de complexitatea cazului. În faza amiabilă, poate dura 30-60 zile, iar în instanță poate lua între 6 luni și 2 ani."
+    answer: "Durata recuperării creanțelor depinde de complexitatea cazului. În faza amiabilă, poate dura 30 zile, iar în instanță poate lua între 6 luni și 2 ani."
   },
   {
     question: "Recuperez onorariile de avocat?",
-    answer: "Da, în majoritatea cazurilor câștigate, onorariile avocatului sunt recuperate integral ca și cheltuială de judecată din partea adversă."
+    answer: "Da, în majoritatea cazurilor câștigate, onorariile avocatului sunt recuperate integral ca și cheltuială de judecată de la partea adversă."
   },
   {
     question: "Oferiți consultanță online?",
@@ -116,7 +116,7 @@ export default function JuridicPage() {
                   <FileText className="w-8 h-8 text-primaryColor mr-3" />
                   <h3 className="text-lg font-semibold text-gray-900">Redactare contracte</h3>
                 </div>
-                <p className="text-gray-600">Contracte redactate și revizuite profesional de avocați și juriști experiențați.</p>
+                <p className="text-gray-600">Contracte redactate și revizuite profesional de avocați și juriști experimentați.</p>
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">

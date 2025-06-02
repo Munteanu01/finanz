@@ -22,39 +22,39 @@ export default function ContactPage() {
 
           {/* Contact Info Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 mb-12">
-            <div className="text-center p-2 py-5 bg-gray-50 rounded-xl">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="h-8 w-8 text-blue-600" />
+            <div className="text-center p-4 bg-gray-50 rounded-xl">
+              <div className="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Mail className="h-8 w-8 text-blue" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
               <a
                 href="mailto:contact@finanzconsult.ro"
-                className="text-blue-600 hover:text-blue-800 text-sm break-all"
+                className="text-blue hover:text-blue/80 text-sm break-all"
               >
                 contact@finanzconsult.ro
               </a>
             </div>
 
-            <div className="text-center p-2 py-5 bg-gray-50 rounded-xl">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="h-8 w-8 text-green-600" />
+            <div className="text-center p-4 bg-gray-50 rounded-xl">
+              <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Phone className="h-8 w-8 text-green-500" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Telefon</h3>
-              <a href="tel:021203082014" className="text-green-600 hover:text-green-800 font-medium">
+              <a href="tel:021203082014" className="text-green-500 hover:text-green-500/80 text-sm">
                 021 20308 2014 2077
               </a>
             </div>
 
-            <div className="text-center p-2 py-5 bg-gray-50 rounded-xl">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="h-8 w-8 text-purple-600" />
+            <div className="text-center p-4 bg-gray-50 rounded-xl">
+              <div className="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MapPin className="h-8 w-8 text-purple-500" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Adresa</h3>
               <a
                 href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-purple-600 hover:text-purple-800 text-sm"
+                className="text-purple-500 hover:text-purple-500/80 text-sm"
               >
                 Splaiul Independentei, Nr 202B
                 <br />
@@ -62,12 +62,12 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div className="text-center p-2 py-5 bg-gray-50 rounded-xl">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-orange-600" />
+            <div className="text-center p-4 bg-gray-50 rounded-xl">
+              <div className="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-8 w-8 text-orange-500" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Program</h3>
-              <div className="text-orange-600 text-sm">
+              <div className="text-orange-500 text-sm">
                 <p>Luni - Vineri: 09:00 - 18:00</p>
                 <p>Sâmbătă: 10:00 - 14:00</p>
               </div>
