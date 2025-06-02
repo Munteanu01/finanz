@@ -203,7 +203,7 @@ export default function InchidereSrlPage() {
                   <h4 className="font-semibold text-gray-800 mb-3">Suport expert:</h4>
                   <div className="space-y-3">
                     {[
-                      "Suport expert chat, telefonic și email cu experții Srlconsult",
+                      "Suport expert chat, telefonic și email cu experții Finanz Consult",
                       "Opțional: Găzduire sediu social în orice județ în 41 de locații",
                     ].map((item, index) => (
                       <motion.div

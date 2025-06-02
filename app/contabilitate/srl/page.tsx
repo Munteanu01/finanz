@@ -40,8 +40,8 @@ const contabilitateFaq = [
     `,
   },
   {
-    question: "Cum mă ajută Bizfix cu actualizările legislative fiscale?",
-    answer: "Bizfix îți oferă actualizări în timp real privind modificările legislative fiscale, asigurându-te că firma ta rămâne conformă cu reglementările în vigoare.",
+    question: "Cum mă ajută Finanz Consult cu actualizările legislative fiscale?",
+    answer: "Finanz Consult îți oferă actualizări în timp real privind modificările legislative fiscale, asigurându-te că firma ta rămâne conformă cu reglementările în vigoare.",
   },
   {
     question: "Cum pot comunica cu contabilul dedicat prin Finanzconsult?",
@@ -49,7 +49,7 @@ const contabilitateFaq = [
   },
   {
     question: "Ce se întâmplă dacă nu am un sediu social pentru firmă?",
-    answer: "Bizfix îți oferă opțiunea de găzduire a sediului social în 41 de locații din țară, astfel încât să poți alege cea mai convenabilă variantă pentru tine.",
+    answer: "Finanz Consult îți oferă opțiunea de găzduire a sediului social în 41 de locații din țară, astfel încât să poți alege cea mai convenabilă variantă pentru tine.",
   },
   {
     question: "Pot să facturez gratuit după ce îmi înființez firma cu Finanzconsult?",

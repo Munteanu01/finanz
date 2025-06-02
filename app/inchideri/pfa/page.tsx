@@ -229,7 +229,7 @@ export default function InchiderePfaPage() {
                   <h4 className="font-semibold text-gray-800 mb-3">Suport expert:</h4>
                   <div className="space-y-3">
                     {[
-                      "Chat live cu experții Srlconsult",
+                      "Chat live cu experții Finanz Consult",
                       "Suport telefonic și email",
                       "Consultanță juridică gratuită",
                       "Opțional: Găzduire sediu social",
