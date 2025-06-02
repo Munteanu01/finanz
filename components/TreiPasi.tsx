@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ClipboardCheck, FileSignature, MailCheck } from "lucide-react";
-
+import Link from "next/link";
 const pasi = [
   {
     icon: <ClipboardCheck className="w-12 h-12" />,
@@ -81,7 +81,7 @@ export default function PasiInfiintare() {
             </motion.div>
           ))}
         </div>
-
+        <Link href="/contact">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -93,6 +93,7 @@ export default function PasiInfiintare() {
             Începe Procesul →
           </button>
         </motion.div>
+        </Link>
       </div>
     </section>
   );
