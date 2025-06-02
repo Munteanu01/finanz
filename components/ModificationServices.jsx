@@ -9,6 +9,37 @@ export default function ModificationServices({ title, subtitle, services = [] })
   // Înălțimea navbarului (ajustează dacă ai altă valoare)
   const NAVBAR_HEIGHT = 80
 
+  // Verifică hash-ul la încărcarea paginii
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const checkHashOnLoad = () => {
+      const hash = window.location.hash.replace("#", "")
+      if (hash && services.some(s => s.id === hash)) {
+        setFocusedId(hash)
+        setTimeout(() => {
+          const el = refs.current[hash]
+          if (el) {
+            const rect = el.getBoundingClientRect()
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+            window.scrollTo({
+              top: rect.top + scrollTop - NAVBAR_HEIGHT - 50,
+              behavior: "smooth"
+            })
+          }
+        }, 500) // Mai mult timp pentru ca elementele să se încarce
+        // Remove effect after 5s
+        setTimeout(() => {
+          setFocusedId(null)
+        }, 5000)
+      }
+    }
+
+    // Verifică imediat și după ce componenta s-a încărcat complet
+    checkHashOnLoad()
+    setTimeout(checkHashOnLoad, 100)
+  }, [services])
+
   useEffect(() => {
     if (typeof window === "undefined") return
 
