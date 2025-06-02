@@ -18,7 +18,14 @@ export default function InfiintariLayout({
   heroProps,
   faqItems,
   prices,
-  pfa = false, // adaugă default false
+  pfa = false,
+  showPrices = true,
+  showPasiInfiintare = true,
+  showProcesSimplificat = true,
+  showOperationalSteps = true,
+  showFeatures = true,
+  showLegalSupport = true,
+  showFacturareDiv = true,
 }: {
   heroProps: {
     backgroundImage: string;
@@ -34,7 +41,14 @@ export default function InfiintariLayout({
     subtitle: string;
     details: string[];
   }>;
-  pfa?: boolean; // adaugă tipul aici
+  pfa?: boolean;
+  showPrices?: boolean;
+  showPasiInfiintare?: boolean;
+  showProcesSimplificat?: boolean;
+  showOperationalSteps?: boolean;
+  showFeatures?: boolean;
+  showLegalSupport?: boolean;
+  showFacturareDiv?: boolean;
 }) {
   return (
     <>
@@ -71,20 +85,22 @@ export default function InfiintariLayout({
         ]}
       />
       {/* Other Components */}
-      <PasiInfiintare />
-      <ProcesSimplificat />
+      {showPasiInfiintare && <PasiInfiintare />}
+      {showProcesSimplificat && <ProcesSimplificat />}
       
-      <OperationalSteps />
-      <PlanuriContabile
-        title={pfa ? "Înființare PFA" : undefined}
-        subtitle={pfa ? "Plată unică - 210 lei" : undefined}
-        pfa={pfa}
-      />
+      {showOperationalSteps && <OperationalSteps />}
+      {showPrices && (
+        <PlanuriContabile
+          title={pfa ? "Înființare PFA" : undefined}
+          subtitle={pfa ? "Plată unică - 210 lei" : undefined}
+          pfa={pfa}
+        />
+      )}
 
       
-      <Features />
-      <LegalSupport />
-      <FacturareDiv />
+      {showFeatures && <Features />}
+      {showLegalSupport && <LegalSupport />}
+      {showFacturareDiv && <FacturareDiv />}
 
       {/* FAQ Section */}
       <section className="w-full bg-white">
