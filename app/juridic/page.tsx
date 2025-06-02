@@ -15,7 +15,7 @@ const juridicFaq = [
   },
   {
     question: "Cât durează recuperarea unei creanțe?",
-    answer: "Durata recuperării creanțelor depinde de complexitatea cazului. În faza amiabilă, poate dura 30 zile, iar în instanță poate lua între 6 luni și 2 ani."
+    answer: "Durata recuperării creanțelor depinde de complexitatea cazului. În faza amiabilă, poate dura 30 zile, iar în instanță poate dura între 6 luni și 2 ani."
   },
   {
     question: "Recuperez onorariile de avocat?",

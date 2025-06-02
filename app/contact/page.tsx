@@ -8,6 +8,67 @@ export default function ContactPage() {
   const [sent, setSent] = useState(false);
   const [showModal, setShowModal] = useState(false); // Add modal state
 
+  const contactCards = [
+    {
+      icon: <Mail className="h-8 w-8 text-blue" />,
+      border: "from-blue-400 to-blue-600",
+      bg: "bg-blue/10",
+      title: "Email",
+      content: (
+        <a
+          href="mailto:contact@finanzconsult.ro"
+          className="text-blue hover:text-blue/80 text-sm break-all"
+        >
+          contact@finanzconsult.ro
+        </a>
+      ),
+    },
+    {
+      icon: <Phone className="h-8 w-8 text-green-500" />,
+      border: "from-green-400 to-green-600",
+      bg: "bg-green-500/10",
+      title: "Telefon",
+      content: (
+        <a
+          href="tel:021203082014"
+          className="text-green-500 hover:text-green-500/80 text-sm"
+        >
+          021 20308 2014 2077
+        </a>
+      ),
+    },
+    {
+      icon: <MapPin className="h-8 w-8 text-purple-500" />,
+      border: "from-purple-400 to-purple-600",
+      bg: "bg-purple-500/10",
+      title: "Adresa",
+      content: (
+        <a
+          href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-purple-500 hover:text-purple-500/80 text-sm"
+        >
+          Splaiul Independentei, Nr 202B
+          <br />
+          Sector 6, București
+        </a>
+      ),
+    },
+    {
+      icon: <Clock className="h-8 w-8 text-orange-500" />,
+      border: "from-orange-400 to-orange-600",
+      bg: "bg-orange-500/10",
+      title: "Program",
+      content: (
+        <div className="text-orange-500 text-sm">
+          <p>Luni - Vineri: 09:00 - 18:00</p>
+          <p>Sâmbătă: 10:00 - 14:00</p>
+        </div>
+      ),
+    },
+  ];
+
   return (
     <div className="min-h-screen overflow-x-hidden bg-white">
       <FinanzNavbar />
@@ -23,56 +84,34 @@ export default function ContactPage() {
 
           {/* Contact Info Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 mb-12">
-            <div className="text-center p-4 bg-gray-50 rounded-xl">
-              <div className="w-16 h-16 bg-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="h-8 w-8 text-blue" />
-              </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
-              <a
-                href="mailto:contact@finanzconsult.ro"
-                className="text-blue hover:text-blue/80 text-sm break-all"
+            {contactCards.map((card, idx) => (
+              <div
+                key={idx}
+                className={`
+                  text-center p-4 rounded-xl bg-white
+                  border-2
+                  border-gray-200
+                  bg-clip-padding
+                  relative
+                  before:content-['']
+                  before:absolute before:inset-0 before:rounded-xl
+                  before:bg-gradient-to-br before:${card.border}
+                  before:z-[-1]
+                  before:p-[2px]
+                  before:pointer-events-none
+                  overflow-hidden
+                `}
+                style={{
+                  boxShadow: "0 2px 8px 0 rgba(0,0,0,0.03)",
+                }}
               >
-                contact@finanzconsult.ro
-              </a>
-            </div>
-
-            <div className="text-center p-4 bg-gray-50 rounded-xl">
-              <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="h-8 w-8 text-green-500" />
+                <div className={`w-16 h-16 ${card.bg} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                  {card.icon}
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">{card.title}</h3>
+                {card.content}
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Telefon</h3>
-              <a href="tel:021203082014" className="text-green-500 hover:text-green-500/80 text-sm">
-                021 20308 2014 2077
-              </a>
-            </div>
-
-            <div className="text-center p-4 bg-gray-50 rounded-xl">
-              <div className="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="h-8 w-8 text-purple-500" />
-              </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Adresa</h3>
-              <a
-                href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-purple-500 hover:text-purple-500/80 text-sm"
-              >
-                Splaiul Independentei, Nr 202B
-                <br />
-                Sector 6, București
-              </a>
-            </div>
-
-            <div className="text-center p-4 bg-gray-50 rounded-xl">
-              <div className="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-orange-500" />
-              </div>
-              <h3 className="font-semibold text-gray-900 mb-2">Program</h3>
-              <div className="text-orange-500 text-sm">
-                <p>Luni - Vineri: 09:00 - 18:00</p>
-                <p>Sâmbătă: 10:00 - 14:00</p>
-              </div>
-            </div>
+            ))}
           </div>
 
           {/* Main Content */}

@@ -124,7 +124,7 @@ const config: Config = {
         },
         primaryColor: "#020F59",
         lightBlue: "#86bbd8",
-        blue: "#0770bb",
+        mediumBlue: "#0770bb",
         accentColorr: "#F6ae2d",
         secundaryColor: "#F26419"
       },
