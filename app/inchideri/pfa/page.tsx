@@ -1,132 +1,268 @@
+"use client"
 import FinanzNavbar from "../../../navbar"
 import Footer from "../../../components/footer"
+import HeroPages from "../../../components/HeroPages"
+import { FileText, Clock, Shield, CheckCircle, ArrowRight, Zap, Users, Award, Phone, MessageSquare } from "lucide-react"
+import { motion } from "framer-motion"
 
 export default function InchiderePfaPage() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  }
+
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
       <FinanzNavbar />
-      <main className="container mx-auto py-12 px-4 mt-16 xl:mt-20">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-primaryColor mb-8">Închidere PFA</h1>
 
-          <div className="prose prose-lg max-w-none">
-            <p className="text-xl text-gray-700 mb-8">
-              Procedura de închidere a Persoanei Fizice Autorizate (PFA) este simplă și rapidă. Vă ajutăm să finalizați
-              toate obligațiile legale.
-            </p>
+      <HeroPages
+        backgroundImage="/inchidere-pfa.jpg"
+        title="Închide PFA-ul 100% Online"
+        subtitle="Procesul complet în doar 3 zile lucrătoare"
+        badge="Digital • Rapid • Sigur"
+        cards={[]}
+      />
 
-            <div className="bg-red-50 p-6 rounded-lg mb-8">
-              <h3 className="text-2xl font-semibold text-red-900 mb-4">Pachet complet închidere PFA</h3>
-              <div className="text-3xl font-bold text-red-900 mb-4">199 RON</div>
-              <p className="text-gray-700">Include toate procedurile și declarațiile finale!</p>
-            </div>
 
-            <h2 className="text-3xl font-bold text-primaryColor mb-6">Motive pentru închidere</h2>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <h3 className="text-2xl font-semibold text-primaryColor mb-4">Închidere voluntară</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Decizia titularului</li>
-                  <li>• Încetarea activității</li>
-                  <li>• Schimbarea formei juridice</li>
-                  <li>• Pensionare</li>
-                </ul>
-              </div>
-
-              <div className="bg-orange-50 p-6 rounded-lg">
-                <h3 className="text-2xl font-semibold text-orange-900 mb-4">Închidere din oficiu</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Nerespectarea obligațiilor</li>
-                  <li>• Lipsă activitate prelungită</li>
-                  <li>• Neachitarea taxelor</li>
-                  <li>• Decesul titularului</li>
-                </ul>
-              </div>
-            </div>
-
-            <h2 className="text-3xl font-bold text-primaryColor mb-6">Procedura de închidere</h2>
-
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
-                <div className="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">
-                  1
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Cererea de radiere</h4>
-                  <p className="text-gray-700">Se depune cererea de radiere la Administrația Financiară competentă.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
-                <div className="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">
-                  2
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Declarațiile fiscale finale</h4>
-                  <p className="text-gray-700">
-                    Se depun declarațiile fiscale finale și se achită toate obligațiile restante.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
-                <div className="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">
-                  3
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Verificarea ANAF</h4>
-                  <p className="text-gray-700">ANAF verifică situația fiscală și confirmă lipsa datoriilor.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
-                <div className="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">
-                  4
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Radiere din evidențe</h4>
-                  <p className="text-gray-700">
-                    Se emite decizia de radiere și PFA-ul este eliminat din evidențele fiscale.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <h2 className="text-3xl font-bold text-primaryColor mb-6 mt-12">Documentele necesare</h2>
-
-            <div className="bg-gray-50 p-6 rounded-lg mb-8">
-              <ul className="space-y-2 text-gray-700">
-                <li>• Cererea de radiere (formular ANAF)</li>
-                <li>• Copia autorizației PFA</li>
-                <li>• Declarația finală de venituri</li>
-                <li>• Dovada achitării datoriilor</li>
-                <li>• Declarația TVA finală (dacă este cazul)</li>
-                <li>• Copia CI a titularului</li>
-              </ul>
-            </div>
-
-            <h2 className="text-3xl font-bold text-primaryColor mb-6">Obligații după închidere</h2>
-
-            <div className="bg-yellow-50 p-6 rounded-lg mb-8">
-              <ul className="space-y-2 text-gray-700">
-                <li>• Păstrarea documentelor contabile 10 ani</li>
-                <li>• Informarea clienților și furnizorilor</li>
-                <li>• Finalizarea contractelor în curs</li>
-                <li>• Returnarea documentelor oficiale</li>
-              </ul>
-            </div>
-
-            <div className="bg-green-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-green-900 mb-3">Timp de procesare: 5-10 zile lucrătoare</h3>
-              <p className="text-gray-700">
-                Procedura de închidere PFA este rapidă și se finalizează în 5-10 zile lucrătoare de la depunerea
-                dosarului complet.
-              </p>
-            </div>
+      <main className="container mx-auto py-16 px-4">
+        {/* Process Steps */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-6xl mx-auto mb-20"
+        >
+          <div className="text-center mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent"
+            >
+              Procesul în 3 pași simpli
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-xl text-gray-600 max-w-2xl mx-auto"
+            >
+              De la completarea formularului până la primirea documentelor finale
+            </motion.p>
           </div>
-        </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Step 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              className="relative group"
+            >
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="bg-gradient-to-br from-blue-500 to-cyan-500 p-3 rounded-xl">
+                    <FileText className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="text-3xl font-bold text-gray-200 group-hover:text-blue-200 transition-colors">
+                    01
+                  </span>
+                </div>
+                <h4 className="text-xl font-bold text-gray-800 mb-3">Completare formular</h4>
+                <div className="flex items-center gap-2 mb-4">
+                  <Clock className="w-4 h-4 text-blue-500" />
+                  <span className="text-sm font-semibold text-blue-600">1 minut</span>
+                </div>
+                <p className="text-gray-600 leading-relaxed">
+                  Completezi formularul online sau contactezi un consilier pentru asistență personalizată în alegerea
+                  opțiunilor potrivite.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Step 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              className="relative group"
+            >
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-3 rounded-xl">
+                    <Users className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="text-3xl font-bold text-gray-200 group-hover:text-purple-200 transition-colors">
+                    02
+                  </span>
+                </div>
+                <h4 className="text-xl font-bold text-gray-800 mb-3">Redactare & semnare</h4>
+                <div className="flex items-center gap-2 mb-4">
+                  <Clock className="w-4 h-4 text-purple-500" />
+                  <span className="text-sm font-semibold text-purple-600">30 minute</span>
+                </div>
+                <p className="text-gray-600 leading-relaxed">
+                  Redactăm documentația completă, o pregătim pentru semnare și o depunem la ONRC în numele tău.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Step 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              className="relative group"
+            >
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-emerald-500"></div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="bg-gradient-to-br from-green-500 to-emerald-500 p-3 rounded-xl">
+                    <CheckCircle className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="text-3xl font-bold text-gray-200 group-hover:text-green-200 transition-colors">
+                    03
+                  </span>
+                </div>
+                <h4 className="text-xl font-bold text-gray-800 mb-3">Finalizare proces</h4>
+                <div className="flex items-center gap-2 mb-4">
+                  <Clock className="w-4 h-4 text-green-500" />
+                  <span className="text-sm font-semibold text-green-600">2-3 zile</span>
+                </div>
+                <p className="text-gray-600 leading-relaxed">
+                  Primești pe email certificatul de închidere și toate documentele necesare, semnate digital de ONRC.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Pricing Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+              Pachete de închidere PFA
+            </h2>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-gradient-to-br from-white to-blue-50 p-8 md:p-12 rounded-3xl shadow-2xl border border-blue-100 relative overflow-hidden"
+          >
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Pachet complet închidere PFA</h3>
+                  <p className="text-gray-600">Tot ce ai nevoie pentru închiderea legală a PFA-ului</p>
+                </div>
+                <div className="text-right">
+                  <div className="text-4xl font-bold text-blue-600 mb-1">350 lei</div>
+                  <div className="text-sm text-gray-500">Plată unică</div>
+                  <div className="text-sm font-semibold text-green-600">0 lei taxe ONRC</div>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="space-y-4">
+                  <h4 className="font-semibold text-gray-800 mb-3">Servicii incluse:</h4>
+                  <div className="space-y-3">
+                    {[
+                      "Dosar complet cu toate documentele necesare",
+                      "Înregistrarea dosarului la Registrul Comerțului",
+                      "Relaționare completă cu ONRC",
+                      "Modificări nelimitate până la finalizare",
+                    ].map((item, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: index * 0.1 }}
+                        className="flex items-center gap-3"
+                      >
+                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <span className="text-gray-700">{item}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <h4 className="font-semibold text-gray-800 mb-3">Suport expert:</h4>
+                  <div className="space-y-3">
+                    {[
+                      "Chat live cu experții Srlconsult",
+                      "Suport telefonic și email",
+                      "Consultanță juridică gratuită",
+                      "Opțional: Găzduire sediu social",
+                    ].map((item, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: index * 0.1 + 0.4 }}
+                        className="flex items-center gap-3"
+                      >
+                        <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                        <span className="text-gray-700">{item}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-8 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
+              >
+                Începe procesul de închidere
+                <ArrowRight className="w-5 h-5" />
+              </motion.button>
+            </div>
+          </motion.div>
+        </motion.div>
       </main>
+
       <Footer />
     </div>
   )
