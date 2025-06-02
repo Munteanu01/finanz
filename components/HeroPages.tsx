@@ -43,7 +43,7 @@ export default function HeroPages({
         style={{ display: "none" }}
         onLoad={() => setImageLoaded(true)}
       />
-      <div className="absolute inset-0 z-10 bg-gray-700 opacity-70" />
+      <div className="absolute inset-0 z-10 bg-black opacity-70" />
 
       {/* Conținutul secțiunii Hero */}
       <div className="relative pt-20 z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
