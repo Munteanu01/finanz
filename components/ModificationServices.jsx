@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 
 export default function ModificationServices({ title, subtitle, services = [] }) {
   const [focusedId, setFocusedId] = useState(null)
-  const [fadeOutId, setFadeOutId] = useState(null)
   const refs = useRef({})
 
   // Înălțimea navbarului (ajustează dacă ai altă valoare)
@@ -19,24 +18,21 @@ export default function ModificationServices({ title, subtitle, services = [] })
         const hash = anchor.hash.replace("#", "")
         if (services.some(s => s.id === hash)) {
           setFocusedId(hash)
-          // Scroll cu offset pentru navbar
           setTimeout(() => {
             const el = refs.current[hash]
             if (el) {
               const rect = el.getBoundingClientRect()
               const scrollTop = window.pageYOffset || document.documentElement.scrollTop
               window.scrollTo({
-                top: rect.top + scrollTop - NAVBAR_HEIGHT - 24,
+                top: rect.top + scrollTop - NAVBAR_HEIGHT - 420,
                 behavior: "smooth"
               })
             }
           }, 10)
-          // Start fade out after 3s
+          // Remove effect after 5s
           setTimeout(() => {
-            setFadeOutId(hash)
             setFocusedId(null)
-            setTimeout(() => setFadeOutId(null), 700)
-          }, 3000)
+          }, 5000)
         }
       }
     }
@@ -82,7 +78,7 @@ export default function ModificationServices({ title, subtitle, services = [] })
               viewport={{ once: true }}
               whileHover={{ scale: 1.03 }}
               className={`flex flex-col bg-white shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300 w-full max-w-md md:w-[calc(50%-12px)] xl:w-[calc(33.333%-16px)]
-                ${focusedId === service.id ? "border-4 border-transparent border-gradient-to-r from-blue-700 to-cyan-700 border-animate-dark ring-4 ring-blue-300 ring-opacity-70" : ""}
+                ${focusedId === service.id ? "pulse-glow" : ""}
               `}
               
             >
@@ -100,14 +96,38 @@ export default function ModificationServices({ title, subtitle, services = [] })
         </div>
       </div>
       <style jsx global>{`
-        .border-animate-dark {
-          transition: box-shadow 0.7s, border-color 0.7s, border-image 0.7s, opacity 0.7s;
-          opacity: 1;
-          box-shadow: 0 0 0 8px #93c5fdcc;
+        .pulse-glow {
+          animation: pulse-glow 5s ease-in-out;
         }
-        .border-fade-dark {
-          opacity: 0;
-          transition: opacity 0.7s;
+        @keyframes pulse-glow {
+          0% {
+            transform: scale(1);
+            box-shadow: 0 0 3px #60a5fa55, 0 0 6px #60a5fa55;
+          }
+          10% {
+            transform: scale(1.005);
+            box-shadow: 0 0 8px #60a5fa77, 0 0 12px #60a5fa77;
+          }
+          25% {
+            transform: scale(1.008);
+            box-shadow: 0 0 12px #60a5fa88, 0 0 18px #60a5fa88;
+          }
+          50% {
+            transform: scale(1.01);
+            box-shadow: 0 0 15px #60a5fa99, 0 0 22px #60a5fa99;
+          }
+          75% {
+            transform: scale(1.008);
+            box-shadow: 0 0 12px #60a5fa88, 0 0 18px #60a5fa88;
+          }
+          90% {
+            transform: scale(1.005);
+            box-shadow: 0 0 8px #60a5fa77, 0 0 12px #60a5fa77;
+          }
+          100% {
+            transform: scale(1);
+            box-shadow: 0 0 3px #60a5fa55, 0 0 6px #60a5fa55;
+          }
         }
       `}</style>
     </div>
