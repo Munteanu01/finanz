@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 export interface HeroCard {
@@ -22,12 +22,26 @@ export default function HeroPages({
   subtitle,
   cards,
 }: HeroProps) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <section className="relative w-full lg:h-[90vh] flex flex-col justify-center items-center text-white">
-      {/* Fundalul secțiunii Hero */}
-      <div
+      {/* Fundalul secțiunii Hero cu fade-in */}
+      <motion.div
         className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('${backgroundImage}')` }}
+        style={{
+          backgroundImage: imageLoaded ? `url('${backgroundImage}')` : "none",
+        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: imageLoaded ? 1 : 0 }}
+        transition={{ duration: 1 }}
+      />
+      {/* Preîncărcare imagine */}
+      <img
+        src={backgroundImage}
+        alt=""
+        style={{ display: "none" }}
+        onLoad={() => setImageLoaded(true)}
       />
       <div className="absolute inset-0 z-10 bg-gray-700 opacity-70" />
 
