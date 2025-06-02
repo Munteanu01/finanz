@@ -13,22 +13,32 @@ export default function ModificationServices({ title, subtitle, services = [] })
     if (typeof window === "undefined") return
 
     const handleClick = e => {
+      console.log("Click detected:", e.target) // Debug
       const anchor = e.target.closest("a[href^='/modificari/pfa#']")
+      console.log("Anchor found:", anchor) // Debug
+      
       if (anchor) {
+        e.preventDefault() // Previne navigarea default
         const hash = anchor.hash.replace("#", "")
+        console.log("Hash:", hash) // Debug
+        console.log("Services:", services.map(s => s.id)) // Debug
+        
         if (services.some(s => s.id === hash)) {
+          console.log("Service found, setting focus") // Debug
           setFocusedId(hash)
           setTimeout(() => {
             const el = refs.current[hash]
+            console.log("Element to scroll to:", el) // Debug
             if (el) {
               const rect = el.getBoundingClientRect()
               const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+              console.log("Scrolling to:", rect.top + scrollTop - NAVBAR_HEIGHT - 420) // Debug
               window.scrollTo({
-                top: rect.top + scrollTop - NAVBAR_HEIGHT - 420,
+                top: rect.top + scrollTop - NAVBAR_HEIGHT - 50,
                 behavior: "smooth"
               })
             }
-          }, 10)
+          }, 100) // Mărit la 100ms
           // Remove effect after 5s
           setTimeout(() => {
             setFocusedId(null)
@@ -37,8 +47,9 @@ export default function ModificationServices({ title, subtitle, services = [] })
       }
     }
 
-    window.addEventListener("click", handleClick)
-    return () => window.removeEventListener("click", handleClick)
+    // Adaugă listener și pe document pentru a prinde click-urile din navbar
+    document.addEventListener("click", handleClick, true)
+    return () => document.removeEventListener("click", handleClick, true)
   }, [services])
 
   return (
