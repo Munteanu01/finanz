@@ -6,6 +6,7 @@ import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react"
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [showModal, setShowModal] = useState(false); // Add modal state
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-white">
@@ -224,11 +225,14 @@ export default function ContactPage() {
           <div className="mt-12 bg-white border border-gray-200 rounded-xl p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Biroul nostru</h2>
             <div className="max-w-4xl mx-auto">
-              <a
-                href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
-                target="_blank"
-                rel="noopener noreferrer"
+              {/* Only the image opens fullscreen modal */}
+              <div
                 className="block cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => setShowModal(true)}
+                tabIndex={0}
+                role="button"
+                aria-label="Deschide imaginea în fullscreen"
+                onKeyDown={e => { if (e.key === "Enter" || e.key === " ") setShowModal(true); }}
               >
                 <div className="w-full rounded-lg overflow-hidden">
                   <img
@@ -237,17 +241,63 @@ export default function ContactPage() {
                     className="w-full h-auto object-contain"
                   />
                 </div>
-              </a>
+              </div>
               <div className="text-center mt-6">
                 <h3 className="font-semibold text-gray-900 mb-2 text-base md:text-lg">FINANZ CONSULT S.R.L.</h3>
-                <p className="text-gray-600 text-sm md:text-base">
+                {/* Only the address is a link */}
+                <a
+                  href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 text-sm md:text-base  hover:text-primaryColor transition-colors"
+                >
                   Splaiul Independentei, Nr 202B
                   <br />
                   Sector 6, București
-                </p>
+                </a>
               </div>
             </div>
           </div>
+
+          {/* Modal for fullscreen image */}
+          {showModal && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-fade-in"
+              onClick={() => setShowModal(false)}
+              tabIndex={-1}
+              aria-modal="true"
+              role="dialog"
+            >
+              {/* X button in top-right of viewport */}
+              <button
+                className="fixed top-6 right-6 z-50 bg-white/80 hover:bg-white text-black rounded-full p-2 shadow-lg transition-colors"
+                onClick={() => setShowModal(false)}
+                aria-label="Închide imaginea"
+                style={{ fontSize: 28, lineHeight: 1 }}
+              >
+                <svg width="28" height="28" viewBox="0 0 20 20" fill="none">
+                  <path d="M6 6l8 8M6 14L14 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"/>
+                </svg>
+              </button>
+              <div className="relative max-w-3xl w-full flex flex-col items-center">
+                <img
+                  src="/sediuLogo.jpg"
+                  alt="Clădirea FINANZ CONSULT S.R.L. Fullscreen"
+                  className="rounded-xl transition-transform duration-300 scale-100 hover:scale-105"
+                  onClick={e => e.stopPropagation()}
+                />
+              </div>
+              <style jsx global>{`
+                .animate-fade-in {
+                  animation: fadeInModal 0.25s ease;
+                }
+                @keyframes fadeInModal {
+                  from { opacity: 0; }
+                  to { opacity: 1; }
+                }
+              `}</style>
+            </div>
+          )}
         </div>
       </main>
       <Footer />
