@@ -87,9 +87,9 @@ export default function ModificationServices({ title, subtitle, services = [] })
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.03 }}
+              whileHover={focusedId === service.id ? {} : { scale: 1.03 }}
               className={`flex flex-col bg-white shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300 w-full max-w-md md:w-[calc(50%-12px)] xl:w-[calc(33.333%-16px)]
-                ${focusedId === service.id ? "pulse-glow" : ""}
+                ${focusedId === service.id ? "pulse-glow" : "hover-effect"}
               `}
               
             >
@@ -109,6 +109,9 @@ export default function ModificationServices({ title, subtitle, services = [] })
       <style jsx global>{`
         .pulse-glow {
           animation: pulse-glow 5s ease-in-out;
+        }
+        .hover-effect:hover {
+          transform: scale(1.03);
         }
         @keyframes pulse-glow {
           0% {
