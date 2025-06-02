@@ -10,7 +10,7 @@ export default function LegalSupport() {
           
           {/* Text Content */}
           <motion.div
-            className="w-full md:w-1/2 flex flex-col justify-center items-start  md:text-left px-6 py-16 md:px-16 space-y-4  bg-white text-black z-10"
+            className="w-full md:w-1/2 flex flex-col justify-center items-start  md:text-left px-6 py-16 md:px-16 space-y-4  bg-white text-gray-700 z-10"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
