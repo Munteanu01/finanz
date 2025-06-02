@@ -45,42 +45,87 @@ export default function ModificationServices({ title, subtitle, services = [] })
 
     const handleClick = e => {
       console.log("Click detected:", e.target) // Debug
-      const anchor = e.target.closest("a[href^='/modificari/pfa#']")
+      // Caută linkuri pentru ambele tipuri de pagini
+      const anchor = e.target.closest("a[href^='/modificari/pfa#']") || 
+                     e.target.closest("a[href^='/modificari/srl#']")
       console.log("Anchor found:", anchor) // Debug
       
       if (anchor) {
-        e.preventDefault() // Previne navigarea default
         const hash = anchor.hash.replace("#", "")
         console.log("Hash:", hash) // Debug
         console.log("Services:", services.map(s => s.id)) // Debug
         
         if (services.some(s => s.id === hash)) {
           console.log("Service found, setting focus") // Debug
-          setFocusedId(hash)
-          setTimeout(() => {
-            const el = refs.current[hash]
-            console.log("Element to scroll to:", el) // Debug
-            if (el) {
-              const rect = el.getBoundingClientRect()
-              const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-              console.log("Scrolling to:", rect.top + scrollTop - NAVBAR_HEIGHT - 420) // Debug
-              window.scrollTo({
-                top: rect.top + scrollTop - NAVBAR_HEIGHT - 50,
-                behavior: "smooth"
-              })
-            }
-          }, 100) // Mărit la 100ms
-          // Remove effect after 5s
-          setTimeout(() => {
-            setFocusedId(null)
-          }, 5000)
+          
+          // Verifică dacă suntem pe aceeași pagină
+          const currentPath = window.location.pathname
+          const linkPath = new URL(anchor.href, window.location.origin).pathname
+          
+          if (currentPath === linkPath) {
+            // Suntem pe aceeași pagină, previne navigarea și aplică efectul
+            e.preventDefault()
+            console.log("Same page, applying focus effect") // Debug
+            
+            setFocusedId(hash)
+            setTimeout(() => {
+              const el = refs.current[hash]
+              console.log("Element to scroll to:", el) // Debug
+              if (el) {
+                const rect = el.getBoundingClientRect()
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+                console.log("Scrolling to:", rect.top + scrollTop - NAVBAR_HEIGHT - 50) // Debug
+                window.scrollTo({
+                  top: rect.top + scrollTop - NAVBAR_HEIGHT - 50,
+                  behavior: "smooth"
+                })
+              }
+            }, 100)
+            // Remove effect after 5s
+            setTimeout(() => {
+              setFocusedId(null)
+            }, 5000)
+          } else {
+            // Lăsăm navigarea să se întâmple normal pentru pagini diferite
+            console.log("Different page, allowing navigation") // Debug
+          }
         }
       }
     }
 
-    // Adaugă listener și pe document pentru a prinde click-urile din navbar
+    // Adaugă listener pentru a prinde click-urile din navbar și din pagină
     document.addEventListener("click", handleClick, true)
     return () => document.removeEventListener("click", handleClick, true)
+  }, [services])
+
+  // Listener separat pentru schimbările de hash (pentru navigarea directă)
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace("#", "")
+      if (hash && services.some(s => s.id === hash)) {
+        setFocusedId(hash)
+        setTimeout(() => {
+          const el = refs.current[hash]
+          if (el) {
+            const rect = el.getBoundingClientRect()
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+            window.scrollTo({
+              top: rect.top + scrollTop - NAVBAR_HEIGHT - 50,
+              behavior: "smooth"
+            })
+          }
+        }, 100)
+        // Remove effect after 5s
+        setTimeout(() => {
+          setFocusedId(null)
+        }, 5000)
+      }
+    }
+
+    window.addEventListener("hashchange", handleHashChange)
+    return () => window.removeEventListener("hashchange", handleHashChange)
   }, [services])
 
   return (
@@ -120,7 +165,7 @@ export default function ModificationServices({ title, subtitle, services = [] })
               viewport={{ once: true }}
               whileHover={focusedId === service.id ? {} : { scale: 1.03 }}
               className={`flex flex-col bg-white shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300 w-full max-w-md md:w-[calc(50%-12px)] xl:w-[calc(33.333%-16px)]
-                ${focusedId === service.id ? "pulse-glow" : "hover-effect"}
+                ${focusedId === service.id ? "pulse-glow no-hover" : "hover-effect"}
               `}
               
             >
@@ -143,6 +188,12 @@ export default function ModificationServices({ title, subtitle, services = [] })
         }
         .hover-effect:hover {
           transform: scale(1.03);
+        }
+        .no-hover {
+          transform: scale(1.01) !important;
+        }
+        .no-hover:hover {
+          transform: scale(1.01) !important;
         }
         @keyframes pulse-glow {
           0% {
