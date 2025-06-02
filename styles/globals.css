@@ -99,6 +99,3 @@ body {
 .primaryColor {
   color: #020F59 !important;
 }
-.border-gradient-to-r {
-  border-image: linear-gradient(to right, #020F59, #5e658b) 1;
-}

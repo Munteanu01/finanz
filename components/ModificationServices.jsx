@@ -7,7 +7,9 @@ export default function ModificationServices({ title, subtitle, services = [] })
   const [fadeOutId, setFadeOutId] = useState(null)
   const refs = useRef({})
 
-  // Efect doar la click pe link din navbar (nu la încărcare pagină direct pe hash)
+  // Înălțimea navbarului (ajustează dacă ai altă valoare)
+  const NAVBAR_HEIGHT = 80
+
   useEffect(() => {
     if (typeof window === "undefined") return
 
@@ -17,12 +19,23 @@ export default function ModificationServices({ title, subtitle, services = [] })
         const hash = anchor.hash.replace("#", "")
         if (services.some(s => s.id === hash)) {
           setFocusedId(hash)
-          refs.current[hash]?.scrollIntoView({ behavior: "smooth", block: "center" })
+          // Scroll cu offset pentru navbar
+          setTimeout(() => {
+            const el = refs.current[hash]
+            if (el) {
+              const rect = el.getBoundingClientRect()
+              const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+              window.scrollTo({
+                top: rect.top + scrollTop - NAVBAR_HEIGHT - 24,
+                behavior: "smooth"
+              })
+            }
+          }, 10)
           // Start fade out after 3s
           setTimeout(() => {
             setFadeOutId(hash)
             setFocusedId(null)
-            setTimeout(() => setFadeOutId(null), 700) // 0.7s fade out
+            setTimeout(() => setFadeOutId(null), 700)
           }, 3000)
         }
       }
@@ -69,13 +82,9 @@ export default function ModificationServices({ title, subtitle, services = [] })
               viewport={{ once: true }}
               whileHover={{ scale: 1.03 }}
               className={`flex flex-col bg-white shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300 w-full max-w-md md:w-[calc(50%-12px)] xl:w-[calc(33.333%-16px)]
-                ${focusedId === service.id ? "border-4 border-transparent border-gradient-to-r from-blue-400 to-cyan-400 border-animate" : fadeOutId === service.id ? "border-4 border-blue-400 border-gradient-to-r from-blue-400 to-cyan-400 border-fade" : "border border-gray-100"}
+                ${focusedId === service.id ? "border-4 border-transparent border-gradient-to-r from-blue-700 to-cyan-700 border-animate-dark ring-4 ring-blue-300 ring-opacity-70" : ""}
               `}
-              style={
-                (focusedId === service.id || fadeOutId === service.id)
-                  ? { borderImage: "linear-gradient(to right, #60a5fa, #22d3ee) 1" }
-                  : {}
-              }
+              
             >
               <h1 className="text-xl font-bold text-primaryColor mb-4 bg-[#E8EBFA] px-3 py-1 rounded-lg w-fit">
                 {service.price}
@@ -91,11 +100,12 @@ export default function ModificationServices({ title, subtitle, services = [] })
         </div>
       </div>
       <style jsx global>{`
-        .border-animate {
-          transition: border-color 0.7s, border-image 0.7s, opacity 0.7s;
+        .border-animate-dark {
+          transition: box-shadow 0.7s, border-color 0.7s, border-image 0.7s, opacity 0.7s;
           opacity: 1;
+          box-shadow: 0 0 0 8px #93c5fdcc;
         }
-        .border-fade {
+        .border-fade-dark {
           opacity: 0;
           transition: opacity 0.7s;
         }
