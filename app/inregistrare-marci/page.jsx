@@ -4,8 +4,9 @@ import Footer from "../../components/footer";
 import HeroPages from "../../components/HeroPages";
 import { Briefcase, ShieldCheck, UserCheck, FileText, FileCheck, Award } from "lucide-react";
 import LegalSupport from "../../components/LegalSupport";
-import FAQ from "../../components/faq"; // Folosește componenta existentă
-import AccountingFeatures from "../../components/firstFeatures"; // Importăm componenta
+import FAQ from "../../components/faq";
+import AccountingFeatures from "../../components/firstFeatures";
+import { motion } from "framer-motion";
 
 // FAQ data
 const faqData = [
@@ -65,6 +66,64 @@ const featuresData = [
   },
 ];
 
+// Etapele OSIM/EUIPO data
+const etapeOSIMData = [
+  {
+    number: "1",
+    title: "Comanda Dvs.",
+    description: "După primirea comenzii Dvs., o analizăm pentru a verifica dacă este corectă și completă.",
+    icon: <FileText className="w-12 h-12 text-amber-600" />,
+    iconBg: "bg-amber-50",
+    numberColor: "bg-amber-600",
+    shadowColor: "hover:shadow-amber-100/50",
+  },
+  {
+    number: "2", 
+    title: "Consultarea cu Dvs.",
+    description: "Dacă identificăm ceva incomplet, vă contactăm pentru o consultație completă.",
+    icon: <UserCheck className="w-12 h-12 text-green-500" />,
+    iconBg: "bg-green-50",
+    numberColor: "bg-green-500",
+    shadowColor: "hover:shadow-green-100/50",
+  },
+  {
+    number: "3",
+    title: "Depunerea",
+    description: "Când avem confirmarea Dvs. privind caracterul complet și corect, depunem marca la OSIM/EUIPO.",
+    icon: <FileCheck className="w-12 h-12 text-indigo-600" />,
+    iconBg: "bg-indigo-50",
+    numberColor: "bg-indigo-600",
+    shadowColor: "hover:shadow-indigo-100/50",
+  },
+  {
+    number: "4",
+    title: "Informarea Dvs.",
+    description: "Vă oferim toate informațiile relevante privind depunerea, vă avertizăm despre riscuri și ținem la curent în legătură cu toate etapele înregistrării.",
+    icon: <ShieldCheck className="w-12 h-12 text-purple-600" />,
+    iconBg: "bg-purple-50",
+    numberColor: "bg-purple-600",
+    shadowColor: "hover:shadow-purple-100/50",
+  },
+  {
+    number: "5",
+    title: "Obstacole?",
+    description: "Când intervin obstacole în procesul de înregistrare, vă informăm prompt și vă propunem soluții viabile pentru a depăși orice astfel de obstacole.",
+    icon: <Briefcase className="w-12 h-12 text-orange-600" />,
+    iconBg: "bg-orange-50",
+    numberColor: "bg-orange-600",
+    shadowColor: "hover:shadow-orange-100/50",
+  },
+  {
+    number: "6",
+    title: "Înregistrare",
+    description: "Când primim confirmarea privind înregistrarea Dvs. de marcă, vă informăm prompt și vă întrebăm cum doriți să intrați în posesia certificatului.",
+    icon: <Award className="w-12 h-12 text-rose-600" />,
+    iconBg: "bg-rose-50",
+    numberColor: "bg-rose-600",
+    shadowColor: "hover:shadow-rose-100/50",
+  },
+];
+
 export default function InregistrareMarcePage() {
   return (
     <div className="min-h-screen overflow-x-hidden">
@@ -100,6 +159,69 @@ export default function InregistrareMarcePage() {
         title="Înregistrează-ți marca simplu și fără birocrație"
         features={featuresData}
       />
+
+      {/* Secțiunea pentru etapele OSIM/EUIPO */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-primaryColor mb-6">
+              Etapele pentru înregistrare mărci OSIM/EUIPO
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Am conceput proceduri simple și eficiente pentru a optimiza procesul de înregistrare.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {etapeOSIMData.map((etapa, index) => (
+              <motion.div
+                key={index}
+                className={`bg-white rounded-2xl p-8 border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-xl ${etapa.shadowColor} cursor-pointer`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.1,
+                  ease: "easeOut" 
+                }}
+                viewport={{ once: true }}
+                whileHover={{ 
+                  y: -8,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                {/* Icon la centru sus */}
+                <div className="flex justify-center mb-6">
+                  <div className={`p-4 ${etapa.iconBg} rounded-2xl shadow-md`}>
+                    {etapa.icon}
+                  </div>
+                </div>
+
+                {/* Numărul și titlul pe același rând */}
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className={`flex items-center justify-center w-8 h-8 ${etapa.numberColor} text-white rounded-full font-bold text-sm`}>
+                    {etapa.number}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {etapa.title}
+                  </h3>
+                </div>
+
+                {/* Descrierea */}
+                <p className="text-gray-700 leading-relaxed text-center">
+                  {etapa.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <FAQ items={faqData} />
       <LegalSupport />
