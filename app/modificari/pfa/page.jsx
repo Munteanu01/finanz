@@ -3,7 +3,8 @@ import FinanzNavbar from "../../../navbar"
 import Footer from "../../../components/footer"
 import HeroPages from "../../../components/HeroPages"
 import ModificationServices from "../../../components/ModificationServices"
-import { Globe, FileText, Smile } from "lucide-react"
+import FirstFeatures from "../../../components/firstFeatures"
+import { Globe, FileText, Smile, Edit, FileCheck2, Send } from "lucide-react"
 
 const modificationServicesData = [
 	{
@@ -68,6 +69,27 @@ const modificationServicesData = [
 	},
 ]
 
+const firstFeaturesData = [
+	{
+		icon: <Edit className="w-10 h-10 text-primaryColor mb-4" />,
+		title: "Completezi cererea online",
+		description:
+			"Completează formularul cu detaliile modificării și un consultant te va contacta rapid pentru confirmare.",
+	},
+	{
+		icon: <FileCheck2 className="w-10 h-10 text-primaryColor mb-4" />,
+		title: "Verificăm și pregătim actele",
+		description:
+			"Ne ocupăm de redactarea documentelor și îți trimitem totul gata de semnat, fără efort din partea ta.",
+	},
+	{
+		icon: <Send className="w-10 h-10 text-primaryColor mb-4" />,
+		title: "Depunere și aprobare rapidă",
+		description:
+			"Depunem actele la Registrul Comerțului, iar în câteva zile modificarea firmei tale este finalizată.",
+	},
+]
+
 export default function ModificariPfaPage() {
 	return (
 		<div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
@@ -88,7 +110,7 @@ export default function ModificariPfaPage() {
 					{
 						title: "Documente procesate în 30 min",
 						description:
-							"Ne ocupăm rapid de actele necesare, astfel încât firma ta să fie înregistrată. Tot ce trebuie să faci este să ne trimiți documentele!",
+							"Ne ocupăm rapid de actele necesare, astfel încât firma ta să fie modificată fără întârzieri. Tot ce trebuie să faci este să ne trimiți documentele!",
 						icon: <FileText className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
 					},
 					{
@@ -98,6 +120,11 @@ export default function ModificariPfaPage() {
 						icon: <Smile className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
 					},
 				]}
+			/>
+
+			<FirstFeatures
+				title="Trei pași simpli pentru un proces fără complicații"
+				features={firstFeaturesData}
 			/>
 
 			<ModificationServices
