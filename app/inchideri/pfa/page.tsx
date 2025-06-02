@@ -33,7 +33,7 @@ export default function InchiderePfaPage() {
       <FinanzNavbar />
 
       <HeroPages
-        backgroundImage="/inchidere-pfa.jpg"
+        backgroundImage="/closed.jpg"
         title="Închide PFA-ul 100% Online"
         subtitle="Procesul complet în doar 3 zile lucrătoare"
         badge="Digital • Rapid • Sigur"
