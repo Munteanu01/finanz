@@ -74,7 +74,7 @@ export default function ModificariPfaPage() {
 			<FinanzNavbar />
 
 			<HeroPages
-				backgroundImage="/modify.jpg"
+				backgroundImage="/modificare.jpg"
 				badge="Modifică firma 100% online"
 				title="Modificare PFA"
 				subtitle="Modifică-ți PFA-ul rapid și eficient, fără deplasări inutile"
@@ -83,19 +83,19 @@ export default function ModificariPfaPage() {
 						title: "Modificare 100% online",
 						description:
 							"Modifică PFA-ul fără drumuri la instituții! Tot procesul se desfășoară online, indiferent unde te afli – în România sau în străinătate.",
-						icon: <Globe className="w-8 h-8 text-blue-600" />,
+						icon: <Globe className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
 					},
 					{
 						title: "Documente procesate în 30 min",
 						description:
 							"Ne ocupăm rapid de actele necesare, astfel încât firma ta să fie înregistrată. Tot ce trebuie să faci este să ne trimiți documentele!",
-						icon: <FileText className="w-8 h-8 text-blue-600" />,
+						icon: <FileText className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
 					},
 					{
 						title: "Garanția mulțumirii sau rambursare",
 						description:
 							"Ai siguranța unui serviciu eficient! Dacă nu ești mulțumit de proces, îți returnăm banii fără întrebări.",
-						icon: <Smile className="w-8 h-8 text-blue-600" />,
+						icon: <Smile className="text-primaryColor mx-auto w-10 h-10 mb-4" />,
 					},
 				]}
 			/>
