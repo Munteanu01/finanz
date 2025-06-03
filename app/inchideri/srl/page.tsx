@@ -165,7 +165,7 @@ export default function InchidereSrlPage() {
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-8">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Pachet complet închidere firmă</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Pachet complet închidere firmă ONRC</h3>
                   <p className="text-gray-600">Tot ce ai nevoie pentru închiderea legală a firmei</p>
                 </div>
                 <div className="text-right">
