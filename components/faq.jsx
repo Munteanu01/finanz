@@ -8,7 +8,7 @@ export default function FAQ({ items }) {
   };
 
   return (
-    <div className="w-full py-16 lg:py-24">
+    <div className="max-w-5xl mx-auto py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl lg:text-4xl text-center font-bold text-gray-700 mb-10 pt-10">
           Întrebări frecvente
