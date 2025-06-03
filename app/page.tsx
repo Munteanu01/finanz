@@ -326,30 +326,28 @@ export default function Page() {
           </div>
           
           {/* Card jos, pe toată lățimea, col-span-3, stil modern cu grid */}
-          <div className="mt-12 col-span-3">
-            <div className="w-full max-w-[90rem] mx-auto">
-              <div className="bg-white p-12 rounded-3xl shadow-lg border border-gray-100">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  {/* Coloana text */}
-                  <div className="flex flex-col justify-center items-center h-full text-center px-4 md:px-8 lg:px-12">
-                    <h3 className="text-3xl md:text-4xl font-bold text-primaryColor mb-6">
-                      Alături de afacerea ta, <span className="whitespace-nowrap">pas cu pas</span>
-                    </h3>
-                    <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                      Suntem încântați să anunțăm că întregul departament <b className="text-primaryColor whitespace-nowrap">Financiar-Contabil</b> al <b className="text-primaryColor whitespace-nowrap">SRL Consult</b> se transformă în <b className="text-primaryColor whitespace-nowrap">Finanz Consult</b>! Această schimbare vine ca parte a strategiei noastre de expansiune și dezvoltare, menită să ne permită să oferim servicii și mai eficiente și adaptate nevoilor clienților noștri.
-                    </p>
-                    <p className="text-gray-700 text-lg leading-relaxed">
-                      În contextul creșterii cererii pentru servicii financiare și contabile de înaltă calitate, am decis să ne extindem și să ne consolidăm sub noul brand <b className="text-primaryColor whitespace-nowrap">Finanz Consult</b>. Această transformare ne va permite să ne adaptăm mai bine la schimbările pieței și să oferim soluții inovatoare și personalizate pentru fiecare client.
-                    </p>
-                  </div>
-                  {/* Coloana imagine - mai mare */}
-                  <div className="flex justify-center items-center">
-                    <img
-                      src="/images/about-highlight-image.jpg"
-                      alt="Despre Finanz Consult"
-                      className="rounded-2xl shadow-md object-cover w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96"
-                    />
-                  </div>
+          <div className="mt-12 lg:col-span-3">
+            <div className="bg-white p-12 rounded-3xl shadow-lg border border-gray-100">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Coloana text */}
+                <div className="flex flex-col justify-center items-center h-full text-center px-4 md:px-8 lg:px-12">
+                  <h3 className="text-3xl md:text-4xl font-bold text-primaryColor mb-6">
+                    Alături de afacerea ta, <span className="whitespace-nowrap">pas cu pas</span>
+                  </h3>
+                  <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                    Suntem încântați să anunțăm că întregul departament <b className="text-primaryColor whitespace-nowrap">Financiar-Contabil</b> al <b className="text-primaryColor whitespace-nowrap">SRL Consult</b> se transformă în <b className="text-primaryColor whitespace-nowrap">Finanz Consult</b>! Această schimbare vine ca parte a strategiei noastre de expansiune și dezvoltare, menită să ne permită să oferim servicii și mai eficiente și adaptate nevoilor clienților noștri.
+                  </p>
+                  <p className="text-gray-700 text-lg leading-relaxed">
+                    În contextul creșterii cererii pentru servicii financiare și contabile de înaltă calitate, am decis să ne extindem și să ne consolidăm sub noul brand <b className="text-primaryColor whitespace-nowrap">Finanz Consult</b>. Această transformare ne va permite să ne adaptăm mai bine la schimbările pieței și să oferim soluții inovatoare și personalizate pentru fiecare client.
+                  </p>
+                </div>
+                {/* Coloana imagine */}
+                <div className="flex justify-center items-center">
+                  <img
+                    src="/images/about-highlight-image.jpg"
+                    alt="Despre Finanz Consult"
+                    className="rounded-2xl shadow-md object-cover w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96"
+                  />
                 </div>
               </div>
             </div>
@@ -376,8 +374,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-
-     
 
       {/* Testimonials Section - Modern Design */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
@@ -464,8 +460,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-
-     
 
       <Footer />
     </div>
