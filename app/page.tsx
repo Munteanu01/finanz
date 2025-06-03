@@ -275,27 +275,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primaryColor mb-2">1000+</div>
-              <div className="text-gray-600">Clienți mulțumiți</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primaryColor mb-2">15+</div>
-              <div className="text-gray-600">Ani de experiență</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primaryColor mb-2">25+</div>
-              <div className="text-gray-600">Membrii in echipa</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <Banks />
       {/* Despre */}
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50"></div>
@@ -309,9 +289,10 @@ export default function Page() {
             </p>
           </div>
 
-          {/* Mereu 1 sau 3 pe rând, niciodată 2 */}
+          {/* Grid cu 3 carduri sus */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-center">
-            <div className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+            {/* Card 1 */}
+            <div className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-center">
               <div className="w-20 mx-auto h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Award className="h-10 w-10 text-white" />
               </div>
@@ -321,7 +302,8 @@ export default function Page() {
               </p>
             </div>
 
-            <div className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+            {/* Card 2 */}
+            <div className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-center">
               <div className="w-20 h-20 mx-auto bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Users className="h-10 w-10 text-white" />
               </div>
@@ -331,7 +313,8 @@ export default function Page() {
               </p>
             </div>
 
-            <div className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+            {/* Card 3 */}
+            <div className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col justify-center">
               <div className="w-20 mx-auto h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Zap className="h-10 w-10 text-white" />
               </div>
@@ -341,9 +324,9 @@ export default function Page() {
               </p>
             </div>
           </div>
-
-          {/* Anunț sub Despre noi - 2 coloane: text cu padding generos și imagine mai mare */}
-          <div className="mt-12">
+          
+          {/* Card jos, pe toată lățimea, col-span-3, stil modern cu grid */}
+          <div className="mt-12 col-span-3">
             <div className="w-full max-w-[90rem] mx-auto">
               <div className="bg-white p-12 rounded-3xl shadow-lg border border-gray-100">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -373,7 +356,29 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <Banks />
+
+      {/* Stats Section */}
+      <section className="py-16 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primaryColor mb-2">1000+</div>
+              <div className="text-gray-600">Clienți mulțumiți</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primaryColor mb-2">15+</div>
+              <div className="text-gray-600">Ani de experiență</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primaryColor mb-2">25+</div>
+              <div className="text-gray-600">Membrii in echipa</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+     
+
       {/* Testimonials Section - Modern Design */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
         <div className="container mx-auto px-4">
