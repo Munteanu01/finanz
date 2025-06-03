@@ -86,19 +86,25 @@ export default function AutorizatiiPage() {
       />
 
       {/* Sectiune: Tipuri de autorizații */}
-      <section className="max-w-4xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold mb-8 text-center text-primaryColor">Tipuri de autorizații și avize</h2>
+      <section className="max-w-5xl mx-auto px-4 py-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-700 tracking-tight">
+          Tipuri de autorizații și avize
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="bg-[#e6f7f2] rounded-xl shadow-lg p-6 border border-primaryColor/10 flex flex-col items-start"
+            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center hover:shadow-[0_8px_32px_0_rgba(29,191,115,0.25)] transition-shadow group"
           >
-            <ShieldCheck className="w-10 h-10 text-[#1dbf73] mb-4" />
-            <h3 className="text-xl font-semibold text-primaryColor">DSV / DSP</h3>
-            <p className="mt-2 text-gray-700">
+            <div className="flex items-center justify-center mb-4">
+              <ShieldCheck className="w-10 h-10 mr-2 text-[#1dbf73]" />
+              <h3 className="text-xl font-semibold text-center" style={{ color: "#1dbf73" }}>
+                DSV / DSP
+              </h3>
+            </div>
+            <p className="mt-1 text-gray-700 leading-relaxed text-center">
               Autorizaţia DSV reprezintă actul care condiţionează funcţionarea comercianţilor de respectarea legislaţiei sanitar – veterinare, iar autorizația DSP depinde de codurile CAEN ale companiei dvs.<br />
               Pentru a obține avizul DSP, este necesar să urmați demersurile la unitatea care se află în raza teritorială a punctului de lucru.
             </p>
@@ -108,11 +114,15 @@ export default function AutorizatiiPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-[#f3f6fd] rounded-xl shadow-lg p-6 border border-primaryColor/10 flex flex-col items-start"
+            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center hover:shadow-[0_8px_32px_0_rgba(59,130,246,0.25)] transition-shadow group"
           >
-            <FileText className="w-10 h-10 text-[#3b82f6] mb-4" />
-            <h3 className="text-xl font-semibold text-primaryColor">Primărie</h3>
-            <p className="mt-2 text-gray-700">
+            <div className="flex items-center justify-center mb-4">
+              <FileText className="w-10 h-10 mr-2 text-[#3b82f6]" />
+              <h3 className="text-xl font-semibold text-center" style={{ color: "#3b82f6" }}>
+                Primărie
+              </h3>
+            </div>
+            <p className="mt-1 text-gray-700 leading-relaxed text-center">
               Autorizația de Functionare eliberată de către primărie este un document oficial esențial în desfășurarea activităților comerciale sau profesionale într-un anumit loc sau punct de lucru. Acest acord de functionare reprezintă permisiunea și aprobarea autorității locale pentru desfășurarea activităților specifice, cum ar fi magazine, restaurante, saloane de înfrumusețare sau birouri.
             </p>
           </motion.div>
@@ -121,11 +131,15 @@ export default function AutorizatiiPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="bg-[#fdf6e3] rounded-xl shadow-lg p-6 border border-primaryColor/10 flex flex-col items-start"
+            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center hover:shadow-[0_8px_32px_0_rgba(245,158,66,0.25)] transition-shadow group"
           >
-            <Award className="w-10 h-10 text-[#f59e42] mb-4" />
-            <h3 className="text-xl font-semibold text-primaryColor">Mediu</h3>
-            <p className="mt-2 text-gray-700">
+            <div className="flex items-center justify-center mb-4">
+              <Award className="w-10 h-10 mr-2 text-[#f59e42]" />
+              <h3 className="text-xl font-semibold text-center" style={{ color: "#f59e42" }}>
+                Mediu
+              </h3>
+            </div>
+            <p className="mt-1 text-gray-700 leading-relaxed text-center">
               Avizul de mediu este actul administrativ emis de autoritatea competentă pentru protecţia mediului, care confirmă integrarea aspectelor privind protecţia mediului. Autorizații de mediu se solicită pentru activități economice cu impact asupra mediului și sănătății publice.
             </p>
           </motion.div>
@@ -134,11 +148,15 @@ export default function AutorizatiiPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-[#fbeff2] rounded-xl shadow-lg p-6 border border-primaryColor/10 flex flex-col items-start"
+            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center hover:shadow-[0_8px_32px_0_rgba(225,29,72,0.25)] transition-shadow group"
           >
-            <UserCheck className="w-10 h-10 text-[#e11d48] mb-4" />
-            <h3 className="text-xl font-semibold text-primaryColor">ISU</h3>
-            <p className="mt-2 text-gray-700">
+            <div className="flex items-center justify-center mb-4">
+              <UserCheck className="w-10 h-10 mr-2 text-[#e11d48]" />
+              <h3 className="text-xl font-semibold text-center" style={{ color: "#e11d48" }}>
+                ISU
+              </h3>
+            </div>
+            <p className="mt-1 text-gray-700 leading-relaxed text-center">
               Autorizația ISU este una din cele mai importante autorizații necesare unei afaceri deoarece ea certifică îndeplinirea normelor de securitate în cazuri de urgență. Obținerea autorizației ISU nu este obligatorie pentru toate tipurile de activități.
             </p>
           </motion.div>
@@ -147,11 +165,15 @@ export default function AutorizatiiPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
             viewport={{ once: true }}
-            className="bg-[#f0f9ff] rounded-xl shadow-lg p-6 border border-primaryColor/10 flex flex-col items-start md:col-span-2"
+            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center md:col-span-2 hover:shadow-[0_8px_32px_0_rgba(14,165,233,0.25)] transition-shadow group"
           >
-            <Briefcase className="w-10 h-10 text-[#0ea5e9] mb-4" />
-            <h3 className="text-xl font-semibold text-primaryColor">IGI</h3>
-            <p className="mt-2 text-gray-700">
+            <div className="flex items-center justify-center mb-4">
+              <Briefcase className="w-10 h-10 mr-2 text-[#0ea5e9]" />
+              <h3 className="text-xl font-semibold text-center" style={{ color: "#0ea5e9" }}>
+                IGI
+              </h3>
+            </div>
+            <p className="mt-1 text-gray-700 leading-relaxed text-center">
               Şederea pe teritoriul României a cetăţenilor străini se poate realiza prin mai multe moduri.<br />
               Noi vă oferim asistenţă şi reprezentare ȋn faţa Inspectoratului General pentru Imigrări (IGI).
             </p>
