@@ -10,14 +10,14 @@ export default function ContactPage() {
 
   const contactCards = [
     {
-      icon: <Mail className="h-8 w-8 text-blue" />,
+      icon: <Mail className="h-8 w-8 text-blue-500" />, // iconiță albastră
       border: "from-blue-400 to-blue-600",
-      bg: "bg-blue/10",
-      title: "Email",
+      bg: "bg-blue-500/10",
+      title: <span className="text-gray-800">Email</span>, // titlu albastru
       content: (
         <a
           href="mailto:contact@finanzconsult.ro"
-          className="text-blue hover:text-blue/80 text-sm break-all"
+          className="text-blue-500 hover:text-blue-600 text-sm break-all font-semibold"
         >
           contact@finanzconsult.ro
         </a>
@@ -27,11 +27,11 @@ export default function ContactPage() {
       icon: <Phone className="h-8 w-8 text-green-500" />,
       border: "from-green-400 to-green-600",
       bg: "bg-green-500/10",
-      title: "Telefon",
+      title: <span className="text-gray-800">Telefon</span>,
       content: (
         <a
           href="tel:021203082014"
-          className="text-green-500 hover:text-green-500/80 text-sm"
+          className="text-green-500 hover:text-green-500/80 text-sm font-semibold"
         >
           021 20308 2014 2077
         </a>
@@ -41,13 +41,13 @@ export default function ContactPage() {
       icon: <MapPin className="h-8 w-8 text-purple-500" />,
       border: "from-purple-400 to-purple-600",
       bg: "bg-purple-500/10",
-      title: "Adresa",
+      title: <span className="text-gray-800">Adresa</span>,
       content: (
         <a
           href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-purple-500 hover:text-purple-500/80 text-sm"
+          className="text-purple-500 hover:text-purple-500/80 text-sm font-semibold"
         >
           Splaiul Independentei, Nr 202B
           <br />
@@ -59,9 +59,9 @@ export default function ContactPage() {
       icon: <Clock className="h-8 w-8 text-orange-500" />,
       border: "from-orange-400 to-orange-600",
       bg: "bg-orange-500/10",
-      title: "Program",
+      title: <span className="text-gray-800">Program</span>,
       content: (
-        <div className="text-orange-500 text-sm">
+        <div className="text-orange-500 text-sm font-semibold">
           <p>Luni - Vineri: 09:00 - 18:00</p>
           <p>Sâmbătă: 10:00 - 14:00</p>
         </div>

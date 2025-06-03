@@ -16,7 +16,7 @@ export default function LegalSupport() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <p className="text-sm uppercase font-semibold tracking-wider primary">
+            <p className="text-sm py-1 px-3 text-white rounded-md bg-secundaryColor uppercase font-semibold tracking-wider primary">
               100% online
             </p>
             <h2 className="text-3xl md:text-4xl font-bold leading-tight secondary">
