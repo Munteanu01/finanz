@@ -25,10 +25,6 @@ const juridicFaq = [
     question: "Oferiți consultanță online?",
     answer: "Da, oferim consultanță juridică online prin videoconferință sau telefon, pentru a fi accesibili indiferent de locația dumneavoastră."
   },
-  {
-    question: "Ce autorizații puteți obține pentru firma mea?",
-    answer: "Putem asista în obținerea tuturor tipurilor de autorizații: Primărie, DSV, DSP, ISU, Mediu, IGI și alte avize necesare activității dumneavoastră."
-  }
 ]
 
 const featuresData = [
