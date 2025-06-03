@@ -10,7 +10,7 @@ const infiintariOngFaq = [
   {
     question: "Cât durează înființarea unei ONG?",
     answer:
-      "Procedura de înființare ONG durează între 30-45 zile, în funcție de complexitatea dosarului și programul Tribunalului.",
+      "Procedura de înființare ONG durează între 30-45 zile, în funcție de complexitatea dosarului și programul Judecatoriei.",
   },
   {
     question: "Ce diferență este între asociație și fundație?",
@@ -25,7 +25,7 @@ const infiintariOngFaq = [
   {
     question: "Unde se înregistrează ONG-ul?",
     answer:
-      "ONG-ul se înregistrează la Tribunalul competent teritorial, iar apoi se completează procedurile de înregistrare fiscală pentru obținerea CIF-ului.",
+      "ONG-ul se înregistrează la Judecatoria competentă teritorial, iar apoi se completează procedurile de înregistrare fiscală pentru obținerea CIF-ului.",
   },
   {
     question: "Ce activități poate desfășura o ONG?",
@@ -58,7 +58,7 @@ const prices = [
       "Minimum 1 fondator",
       "Patrimoniu de constituire inclus",
       "Redactarea actului constitutiv și statutului",
-      "Înregistrarea la Tribunal",
+      "Înregistrarea la Judecatorie",
       "Obținerea CIF-ului",
       "Deschiderea contului bancar",
       "Consultanță juridică inclusă",
