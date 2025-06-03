@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 export interface HeroCard {
@@ -23,6 +23,15 @@ export default function HeroPages({
   cards,
 }: HeroProps) {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // Ensure imageLoaded is set if the image is cached
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img && img.complete) {
+      setImageLoaded(true);
+    }
+  }, [backgroundImage]);
 
   return (
     <section className="relative w-full lg:h-[90vh] flex flex-col justify-center items-center text-white">
@@ -31,6 +40,7 @@ export default function HeroPages({
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{
           backgroundImage: imageLoaded ? `url('${backgroundImage}')` : "none",
+          backgroundColor: "#222", // fallback color
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: imageLoaded ? 1 : 0 }}
@@ -38,6 +48,7 @@ export default function HeroPages({
       />
       {/* Preîncărcare imagine */}
       <img
+        ref={imgRef}
         src={backgroundImage}
         alt=""
         style={{ display: "none" }}
