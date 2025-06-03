@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
+import { ArrowRight } from "lucide-react" // sau alt icon arrow dacă folosești altă librărie
 
 export default function ModificationServices({ title, subtitle, services = [] }) {
   const [focusedId, setFocusedId] = useState(null)
@@ -164,10 +165,9 @@ export default function ModificationServices({ title, subtitle, services = [] })
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={focusedId === service.id ? {} : { scale: 1.03 }}
-              className={`flex flex-col bg-white shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300 w-full max-w-md md:w-[calc(50%-12px)] xl:w-[calc(33.333%-16px)]
+              className={`flex flex-col bg-white shadow-lg rounded-2xl p-8 min-h-[260px] transition-transform duration-300 w-full max-w-md md:w-[calc(50%-12px)] xl:w-[calc(33.333%-16px)]
                 ${focusedId === service.id ? "pulse-glow no-hover" : "hover-effect"}
               `}
-              
             >
               <h1 className="text-xl font-bold text-primaryColor mb-4 bg-[#E8EBFA] px-3 py-1 rounded-lg w-fit">
                 {service.price}
@@ -175,55 +175,63 @@ export default function ModificationServices({ title, subtitle, services = [] })
               <h3 className="text-3xl font-bold mb-4 text-gray-700">
                 {service.title}
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed mb-6">
                 {service.description}
               </p>
+              <a
+                href="/contact"
+                className="mt-auto inline-flex items-center justify-between gap-4 bg-primaryColor hover:bg-secundaryColor hover:bg-[#1e293b] text-white font-semibold py-3 px-8 rounded-2xl shadow transition-all duration-300 text-base"
+                style={{ fontSize: "1.05rem", fontWeight: 600 }}
+              >
+                <span className="text-left flex-1">Află mai multe</span>
+                <ArrowRight className="w-7 h-7" />
+              </a>
             </motion.div>
           ))}
         </div>
       </div>
       <style jsx global>{`
         .pulse-glow {
-          animation: pulse-glow 5s ease-in-out;
+          animation: pulse-glow 4s cubic-bezier(0.4,0,0.2,1);
+          z-index: 1;
+          position: relative;
+          border: 5px solid #F26419 !important;
+          box-shadow: none !important;
+          transition: border-color 0.25s cubic-bezier(0.4,0,0.2,1);
+        }
+        .pulse-glow::after {
+          display: none;
+        }
+        @keyframes pulse-glow {
+          0%,
+          100%,
+          50%,
+          20% {
+            border-color: #F26419;
+          }
+        }
+        .hover-effect {
+          transition:
+            transform 0.15s cubic-bezier(0.4,0,0.2,1),
+            box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
+          box-shadow: 0 4px 16px 0 #1e293b22;
+          border: 2px solid #e5e7eb;
+          position: relative;
+          z-index: 1;
         }
         .hover-effect:hover {
           transform: scale(1.03);
+          box-shadow: none;
+          border: 2px solid #e5e7eb;
+          transition:
+            transform 0.15s cubic-bezier(0.4,0,0.2,1),
+            box-shadow 0.12s cubic-bezier(0.4,0,0.2,1);
         }
         .no-hover {
           transform: scale(1.01) !important;
         }
         .no-hover:hover {
           transform: scale(1.01) !important;
-        }
-        @keyframes pulse-glow {
-          0% {
-            transform: scale(1);
-            box-shadow: 0 0 3px #60a5fa55, 0 0 6px #60a5fa55;
-          }
-          10% {
-            transform: scale(1.005);
-            box-shadow: 0 0 8px #60a5fa77, 0 0 12px #60a5fa77;
-          }
-          25% {
-            transform: scale(1.008);
-            box-shadow: 0 0 12px #60a5fa88, 0 0 18px #60a5fa88;
-          }
-          50% {
-            transform: scale(1.01);
-            box-shadow: 0 0 15px #60a5fa99, 0 0 22px #60a5fa99;
-          }
-          75% {
-            transform: scale(1.008);
-            box-shadow: 0 0 12px #60a5fa88, 0 0 18px #60a5fa88;
-          }
-          90% {
-            transform: scale(1.005);
-            box-shadow: 0 0 8px #60a5fa77, 0 0 12px #60a5fa77;
-          }
-          100% {
-            transform: scale(1);
-            box-shadow: 0 0 3px #60a5fa55, 0 0 6px #60a5fa55;
-          }
         }
       `}</style>
     </div>
