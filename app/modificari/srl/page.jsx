@@ -76,6 +76,18 @@ const modificationServicesData = [
         description:
             "Transferă părțile sociale către noi asociați sau parteneri și actualizează structura de proprietate a firmei tale.",
     },
+    {
+        price: "350 lei",
+        title: "Reluare activitate SRL",
+        description:
+            "Reîncepe activitatea SRL-ului tău simplu și rapid, cu actele actualizate și conforme legal.",
+    },
+    {
+        price: "350 lei",
+        title: "Închidere activitate SRL",
+        description:
+            "Încheie activitatea SRL-ului tău definitiv, cu toate formalitățile gestionate rapid și corect, fără complicații birocratice.",
+    },
 ]
 
 const firstFeaturesData = [
@@ -199,6 +211,12 @@ export default function ModificariSrlPage() {
                             case "Cesiune părți sociale":
                                 id = "cesiune-parti"
                                 break
+                                case "Reluare activitate SRL":
+                                    id = "reluare-activitate"
+                                    break
+                                case "Închidere activitate SRL":
+                                    id = "inchidere-activitate"
+                                    break
                             default:
                                 id = ""
                         }

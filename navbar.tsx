@@ -65,6 +65,8 @@ const MENU_ITEMS = {
     { title: "Modificare nume firmă", href: "/modificari/srl#modificare-nume" },
     { title: "Majorare capital social", href: "/modificari/srl#majorare-capital" },
     { title: "Cesiune părți sociale", href: "/modificari/srl#cesiune-parti" },
+    { title: "Reluare activitate SRL", href: "/modificari/srl#reluare-activitate" }, // <-- added
+    { title: "Închidere activitate SRL", href: "/modificari/srl#inchidere-activitate" }, // <-- added
   ],
   modificariPfa: [
     { title: "Actualizare Rev. 3", href: "/modificari/pfa#actualizare-rev3" },
