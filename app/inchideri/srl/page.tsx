@@ -205,6 +205,7 @@ export default function InchidereSrlPage() {
                     {[
                       "Suport expert chat, telefonic și email cu experții Finanz Consult",
                       "Opțional: Găzduire sediu social în orice județ în 41 de locații",
+                      "Închidere ANAF",
                     ].map((item, index) => (
                       <motion.div
                         key={index}

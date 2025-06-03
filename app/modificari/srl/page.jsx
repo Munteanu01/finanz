@@ -12,9 +12,9 @@ import { Globe, FileText, Smile, Edit, FileCheck2, Send } from "lucide-react"
 const modificationServicesData = [
     {
         price: "650 lei",
-        title: "Actualizarea codurilor CAEN",
+        title: "Actualizare coduri CAEN Rev 3",
         description:
-            "Adu-ți codurile CAEN la zi conform noilor standarde Revizia 3 pentru a asigura conformitatea activităților firmei tale.",
+            "Adu-ți codurile CAEN la zi conform noilor standarde Rev-3 pentru a asigura conformitatea activităților firmei tale.",
     },
     {
         price: "600 lei",

@@ -69,7 +69,7 @@ const MENU_ITEMS = {
     { title: "Închidere activitate SRL", href: "/modificari/srl#inchidere-activitate" }, // <-- added
   ],
   modificariPfa: [
-    { title: "Actualizare Rev. 3", href: "/modificari/pfa#actualizare-rev3" },
+    { title: "Actualizare Rev. 3", href: "/modificari/pfa#actualizare-Rev-3" },
     { title: "Adăugare cod CAEN", href: "/modificari/pfa#cod-caen" },
     { title: "Schimbare sediu social", href: "/modificari/pfa#sediu-social" },
     { title: "Prelungire sediu social", href: "/modificari/pfa#prelungire-sediu" },

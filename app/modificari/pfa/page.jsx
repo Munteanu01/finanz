@@ -12,9 +12,9 @@ import { Globe, FileText, Smile, Edit, FileCheck2, Send } from "lucide-react"
 const modificationServicesData = [
 	{
 		price: "650 lei",
-		title: "Actualizare coduri CAEN",
+		title: "Actualizare coduri CAEN Rev 3",
 		description:
-			"Adu-ți codurile CAEN la zi conform noilor standarde Revizia 3 pentru a asigura conformitatea activităților firmei tale.",
+			"Adu-ți codurile CAEN la zi conform noilor standarde Rev-3 pentru a asigura conformitatea activităților firmei tale.",
 	},
 	{
 		price: "350 lei",
@@ -156,7 +156,7 @@ export default function ModificariPfaPage() {
 						let id = ""
 						switch (service.title) {
 							case "Actualizare coduri CAEN":
-								id = "actualizare-rev3"
+								id = "actualizare-Rev-3"
 								break
 							case "Adăugare Cod CAEN":
 								id = "cod-caen"

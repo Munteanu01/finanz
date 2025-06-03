@@ -233,6 +233,7 @@ export default function InchiderePfaPage() {
                       "Suport telefonic și email",
                       "Consultanță juridică gratuită",
                       "Opțional: Găzduire sediu social",
+                      "Închidere ANAF",
                     ].map((item, index) => (
                       <motion.div
                         key={index}
