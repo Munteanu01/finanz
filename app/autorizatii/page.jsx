@@ -96,11 +96,11 @@ export default function AutorizatiiPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center hover:shadow-[0_8px_32px_0_rgba(29,191,115,0.25)] transition-shadow group"
+            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center transition-shadow group"
           >
-            <div className="flex items-center justify-center mb-4">
-              <ShieldCheck className="w-10 h-10 mr-2 text-[#1dbf73]" />
-              <h3 className="text-xl font-semibold text-center" style={{ color: "#1dbf73" }}>
+            <div className="flex items-center justify-center mb-4 bg-secundaryColor rounded-xl px-4 py-2">
+              <ShieldCheck className="w-10 h-10 mr-2 text-white" />
+              <h3 className="text-xl font-semibold text-center text-white">
                 DSV / DSP
               </h3>
             </div>
@@ -114,11 +114,11 @@ export default function AutorizatiiPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center hover:shadow-[0_8px_32px_0_rgba(59,130,246,0.25)] transition-shadow group"
+            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center transition-shadow group"
           >
-            <div className="flex items-center justify-center mb-4">
-              <FileText className="w-10 h-10 mr-2 text-[#3b82f6]" />
-              <h3 className="text-xl font-semibold text-center" style={{ color: "#3b82f6" }}>
+            <div className="flex items-center justify-center mb-4 bg-secundaryColor rounded-xl px-4 py-2">
+              <FileText className="w-10 h-10 mr-2 text-white" />
+              <h3 className="text-xl font-semibold text-center text-white">
                 Primărie
               </h3>
             </div>
@@ -131,11 +131,11 @@ export default function AutorizatiiPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center hover:shadow-[0_8px_32px_0_rgba(245,158,66,0.25)] transition-shadow group"
+            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center transition-shadow group"
           >
-            <div className="flex items-center justify-center mb-4">
-              <Award className="w-10 h-10 mr-2 text-[#f59e42]" />
-              <h3 className="text-xl font-semibold text-center" style={{ color: "#f59e42" }}>
+            <div className="flex items-center justify-center mb-4 bg-secundaryColor rounded-xl px-4 py-2">
+              <Award className="w-10 h-10 mr-2 text-white" />
+              <h3 className="text-xl font-semibold text-center text-white">
                 Mediu
               </h3>
             </div>
@@ -148,11 +148,11 @@ export default function AutorizatiiPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center hover:shadow-[0_8px_32px_0_rgba(225,29,72,0.25)] transition-shadow group"
+            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center transition-shadow group"
           >
-            <div className="flex items-center justify-center mb-4">
-              <UserCheck className="w-10 h-10 mr-2 text-[#e11d48]" />
-              <h3 className="text-xl font-semibold text-center" style={{ color: "#e11d48" }}>
+            <div className="flex items-center justify-center mb-4 bg-secundaryColor rounded-xl px-4 py-2">
+              <UserCheck className="w-10 h-10 mr-2 text-white" />
+              <h3 className="text-xl font-semibold text-center text-white">
                 ISU
               </h3>
             </div>
@@ -165,11 +165,13 @@ export default function AutorizatiiPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
             viewport={{ once: true }}
-            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center md:col-span-2 hover:shadow-[0_8px_32px_0_rgba(14,165,233,0.25)] transition-shadow group"
+            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center transition-shadow
+              hover:shadow-[0_8px_32px_0_theme(colors.secundaryColor/40%)] duration-200
+              md:col-start-1 md:col-end-3 md:w-1/2 mx-auto"
           >
-            <div className="flex items-center justify-center mb-4">
-              <Briefcase className="w-10 h-10 mr-2 text-[#0ea5e9]" />
-              <h3 className="text-xl font-semibold text-center" style={{ color: "#0ea5e9" }}>
+            <div className="flex items-center justify-center mb-4 bg-secundaryColor rounded-xl px-4 py-2">
+              <Briefcase className="w-10 h-10 mr-2 text-white" />
+              <h3 className="text-xl font-semibold text-center text-white">
                 IGI
               </h3>
             </div>
