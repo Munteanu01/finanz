@@ -362,16 +362,16 @@ export default function Page() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-primaryColor mb-2">1000+</div>
-              <div className="text-gray-600">Clienți mulțumiți</div>
+              <div className="text-4xl font-bold text-secundaryColor/90 mb-2">1000+</div>
+              <div className="text-primaryColor font-bold">Clienți mulțumiți</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-primaryColor mb-2">15+</div>
-              <div className="text-gray-600">Ani de experiență</div>
+              <div className="text-4xl font-bold text-secundaryColor/90 mb-2">15+</div>
+              <div className="text-primaryColor font-bold">Ani de experiență</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-primaryColor mb-2">25+</div>
-              <div className="text-gray-600">Membrii in echipa</div>
+              <div className="text-4xl font-bold text-secundaryColor/90 mb-2">25+</div>
+              <div className="text-primaryColor font-bold">Membrii in echipa</div>
             </div>
           </div>
         </div>
