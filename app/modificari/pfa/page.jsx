@@ -155,7 +155,7 @@ export default function ModificariPfaPage() {
 					services={modificationServicesData.map((service) => {
 						let id = ""
 						switch (service.title) {
-							case "Actualizare coduri CAEN":
+							case "Actualizare coduri CAEN Rev 3": // <-- adaugă această linie
 								id = "actualizare-Rev-3"
 								break
 							case "Adăugare Cod CAEN":

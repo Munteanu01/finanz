@@ -178,7 +178,8 @@ export default function ModificariSrlPage() {
                     services={modificationServicesData.map((service) => {
                         let id = ""
                         switch (service.title) {
-                            case "Actualizarea codurilor CAEN":
+                        
+                            case "Actualizare coduri CAEN Rev 3": // <-- adăugat aici
                                 id = "actualizare-caen"
                                 break
                             case "Adăugare/Ștergere Cod CAEN":
