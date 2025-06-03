@@ -53,7 +53,7 @@ export default function HeroSection() {
                   className="w-full inline-flex items-center justify-center px-6 py-4 bg-primaryColor text-white rounded-xl  transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <Mail className="h-5 w-5 mr-3" />
-                  <span className="font-semibold">contact@finanzconsult.rofinanzconsult.ro</span>
+                  <span className="font-semibold">contact@finanzconsult.ro</span>
                 </a>
 
                 {/* Phone - Full width */}

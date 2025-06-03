@@ -178,13 +178,13 @@ export default function ContabilitatePfaPage() {
 				</div>
 			</section>
 
+			<section className="w-full bg-white">
+				<FacturareDiv />
+			</section>
 			<section className="w-full bg-gray-50">
 				<Features />
 			</section>
 
-			<section className="w-full bg-white">
-				<FacturareDiv />
-			</section>
 
 			<section className="w-full bg-gray-50">
 				<LegalSupport />

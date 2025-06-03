@@ -387,7 +387,8 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {/* Testimonial 1 */}
             <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
               <div className="flex items-center mb-6">
                 <div className="flex">
@@ -397,20 +398,20 @@ export default function Page() {
                 </div>
               </div>
               <p className="text-gray-700 mb-6 leading-relaxed text-lg">
-                "Servicii profesionale și prompte. Echipa FINANZ Consult ne-a ajutat să înființăm compania rapid și
-                eficient."
+                Am început drumul antreprenoriatului în 2023, complet pierdut, fără să știu pașii corecți. FinanzConsult a fost alături de mine de la început – cu răbdare, claritate și mult profesionalism. M-au ajutat să-mi înființez firma, să trec prin provocările unei asocieri, iar mai recent,  să-mi dezvolt agenția. De fiecare dată, am primit sfaturi reale și soluții rapide. Le sunt profund recunoscător și îi recomand cu toată încrederea!
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-white font-bold">MP</span>
+                  <span className="text-white font-bold">MM</span>
                 </div>
                 <div>
-                  <div className="font-bold text-gray-900">Maria Popescu</div>
-                  <div className="text-sm text-gray-500">Director General, ABC SRL</div>
+                  <div className="font-bold text-gray-900">Mădălin M.</div>
+                  <div className="text-sm text-gray-500">RETEAUA DE IMOBILIARE S.R.L</div>
                 </div>
               </div>
             </div>
 
+            {/* Testimonial 2 */}
             <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
               <div className="flex items-center mb-6">
                 <div className="flex">
@@ -418,42 +419,17 @@ export default function Page() {
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                
               </div>
               <p className="text-gray-700 mb-6 leading-relaxed text-lg">
-                "Colaborăm de 5 ani cu FINANZ Consult pentru contabilitatea companiei. Sunt foarte mulțumit de
-                servicii."
+                Lucrez cu această firmă de contabilitate de peste 5 ani și sunt extrem de mulțumit de colaborare. Profesioniști, prompți și mereu atenți la detalii, m-au ajutat să gestionez corect și eficient toate aspectele financiare ale afacerii mele. Comunicarea este excelentă, primesc mereu răspunsuri clare și rapide, iar sfaturile oferite au fost de mare ajutor în luarea unor decizii importante. Recomand cu încredere oricui caută un partener de încredere în domeniul contabilității!
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-white font-bold">IG</span>
+                  <span className="text-white font-bold">RG</span>
                 </div>
                 <div>
-                  <div className="font-bold text-gray-900">Ion Georgescu</div>
-                  <div className="text-sm text-gray-500">Antreprenor, XYZ PFA</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <div className="flex items-center mb-6">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                
-              </div>
-              <p className="text-gray-700 mb-6 leading-relaxed text-lg">
-                "Consultanță fiscală excelentă și suport permanent. Recomand cu încredere serviciile lor."
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-white font-bold">AD</span>
-                </div>
-                <div>
-                  <div className="font-bold text-gray-900">Ana Dumitrescu</div>
-                  <div className="text-sm text-gray-500">Manager Financiar, DEF SRL</div>
+                  <div className="font-bold text-gray-900">Romulus G</div>
+                  <div className="text-sm text-gray-500">SMILE AVENUE CLINICS S.R.L</div>
                 </div>
               </div>
             </div>
