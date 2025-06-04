@@ -13,6 +13,10 @@ import {
   UserPlus,
   Database,
   CloudUpload,
+  Smartphone,
+  Laptop,
+  Tablet,
+  ArrowRight,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -82,176 +86,298 @@ export default function AplicatiePage() {
         backgroundImage="/aplicatie.jpg"
         cards={[]}
       />
-      <main className="max-w-5xl mx-auto px-4 py-16 space-y-20 text-gray-800">
-        {/* Intro */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="space-y-8"
-        >
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-2 text-primaryColor">
-              Navigăm împreună prin{" "}
-              <span className="text-secondaryColor">fiscalitate</span>
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-secondaryColor">
-              Facturezi de pe dispozitivul preferat
-            </h2>
-          </div>
-          <div className="space-y-4 max-w-3xl mx-auto text-lg text-gray-700">
-            <p>
-              Cu aplicația <b>Finanz Consult</b>, facturarea devine rapidă și
-              eficientă, indiferent dacă alegi să o faci de pe telefon sau desktop.
-              Grație funcției de sincronizare între dispozitive, toate datele tale
-              sunt actualizate și accesibile, asigurând o experiență de utilizare
-              fluidă și fără întreruperi.
-            </p>
-            <p>
-              Pentru a gestiona volume mari de muncă cu maximă eficiență,
-              aplicația noastră îți pune la dispoziție un set complet de instrumente
-              într-un mediu desktop avansat și intuitiv. Astfel, poți să îți
-              îndeplinești sarcinile rapid și precis, fără a sacrifica calitatea
-              muncii.
-            </p>
-            <p>
-              Descoperă flexibilitatea oferită de aplicația noastră, disponibilă pe
-              Android, iOS și Desktop. Indiferent de dispozitivul pe care preferi să
-              lucrezi, aplicația noastră se adaptează nevoilor tale, permițându-ți să
-              facturezi mai inteligent și mai eficient.
-            </p>
-          </div>
-        </motion.section>
 
-        {/* Beneficii */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-2xl font-bold text-primaryColor mb-8 flex items-center gap-3 justify-center">
-            Ne ocupăm de contabilitate, tu te concentrezi pe afacerea ta
-          </h2>
-          <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col gap-6 border border-secondaryColor/20">
-            <p className="text-gray-700 text-center max-w-2xl mx-auto mb-4">
-              Finanz Consult pune la dispoziția clienților săi o aplicație online
-              care facilitează accesul rapid și eficient la serviciile financiare și
-              contabile. Prin intermediul acestei aplicații, clienții pot:
-            </p>
-            <ul className="space-y-5 text-lg">
-              <li>
-                <b>Monitoriza cheltuieli/venituri</b>
-                <div className="text-gray-600 text-base">
-                  Aplicația permite urmărirea în timp real a tranzacțiilor financiare,
-                  oferind o imagine clară asupra situației financiare.
-                </div>
-              </li>
-              <li>
-                <b>Accesa rapoarte financiare</b>
-                <div className="text-gray-600 text-base">
-                  Aplicația generează rapoarte detaliate și statistici financiare,
-                  facilitând analiza și luarea deciziilor informate.
-                </div>
-              </li>
-              <li>
-                <b>Planifica economiile și investițiile</b>
-                <div className="text-gray-600 text-base">
-                  Aplicația oferă instrumente pentru planificarea economiilor și
-                  investițiilor, ajutând clienții să își atingă obiectivele financiare.
-                </div>
-              </li>
-              <li>
-                <b>Gestiona bugetele</b>
-                <div className="text-gray-600 text-base">
-                  Clienții pot crea și urmări bugete personalizate, optimizând astfel
-                  gestionarea resurselor financiare.
-                </div>
-              </li>
-              <li>
-                <b>Comunica cu experții</b>
-                <div className="text-gray-600 text-base">
-                  Clienții pot trimite întrebări și solicita consultanță direct prin
-                  aplicație, beneficiind de suport rapid și eficient.
-                </div>
-              </li>
-            </ul>
-          </div>
-        </motion.section>
+      {/* Background pattern */}
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primaryColor/5 via-transparent to-secundaryColor/5 -z-10" />
 
-        {/* Avantaje aplicație */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-2xl font-bold text-primaryColor mb-8 flex items-center gap-3 justify-center">
-            Avantajele aplicației FinanzConsult.ro
-          </h2>
-          <p className="text-center text-gray-700 mb-8 max-w-2xl mx-auto">
-            Aceste funcționalități sunt concepute pentru a simplifica și eficientiza
-            procesele financiare și contabile, oferind clienților o experiență modernă
-            și intuitivă
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {avantaje.map((item, idx) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-xl p-7 shadow-lg hover:shadow-2xl border border-secondaryColor/20 flex flex-col items-center text-center transition-all duration-300"
-              >
-                <div className="p-3 rounded-full bg-primaryColor/10 mb-4">
-                  {item.icon}
-                </div>
-                <h3 className="font-semibold text-lg mb-2 text-secondaryColor">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
+        <main className="max-w-6xl mx-auto px-4 py-20 space-y-32 text-gray-800">
+          {/* Intro Section */}
+          <motion.section
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="bg-white/70 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/20 overflow-hidden">
+              <div className="grid lg:grid-cols-2 gap-12 p-8 lg:p-16">
+                <div className="space-y-8">
+                  <div className="space-y-4">
+                    <motion.h1
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                      className="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primaryColor to-secundaryColor bg-clip-text text-transparent leading-tight"
+                    >
+                      Navigăm împreună prin fiscalitate
+                    </motion.h1>
+                    <motion.h2
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.3 }}
+                      className="text-2xl lg:text-3xl font-semibold text-secundaryColor"
+                    >
+                      Facturezi de pe dispozitivul preferat
+                    </motion.h2>
+                  </div>
 
-        {/* Relația cu contabilul */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-2xl font-bold text-primaryColor mb-8 flex items-center gap-3 justify-center">
-            Abordează relația cu contabilul tău într-un mod diferit
-          </h2>
-          <p className="text-center text-gray-700 mb-8 max-w-2xl mx-auto">
-            Poți avea un control mai mare asupra activității contabilului tău,
-            asigurându-te că documentele încărcate în sistem sunt procesate la timp și
-            conform standardelor de calitate așteptate.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            {relatii.map((item, idx) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-xl p-5 shadow-md hover:shadow-xl border border-secondaryColor/20 flex flex-col items-center text-center transition-all duration-300"
-              >
-                <div className="p-2 rounded-full bg-secondaryColor/10 mb-3">
-                  {item.icon}
+                  <div className="flex items-center gap-4 bg-primaryColor/10 rounded-2xl p-4">
+                    <Smartphone className="w-8 h-8 text-primaryColor" />
+                    <Tablet className="w-8 h-8 text-secundaryColor" />
+                    <Laptop className="w-8 h-8 text-primaryColor" />
+                    <span className="text-gray-700 font-medium">
+                      Android • iOS • Desktop
+                    </span>
+                  </div>
+
+                  <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4 }}
+                    >
+                      Cu aplicația{" "}
+                      <span className="font-bold text-primaryColor">
+                        Finanz Consult
+                      </span>
+                      , facturarea devine rapidă și eficientă, indiferent dacă
+                      alegi să o faci de pe telefon sau desktop. Grație funcției de
+                      sincronizare între dispozitive, toate datele tale sunt
+                      actualizate și accesibile, asigurând o experiență de utilizare
+                      fluidă și fără întreruperi.
+                    </motion.p>
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.5 }}
+                    >
+                      Pentru a gestiona volume mari de muncă cu maximă eficiență,
+                      aplicația noastră îți pune la dispoziție un set complet de
+                      instrumente într-un mediu desktop avansat și intuitiv. Astfel,
+                      poți să îți îndeplinești sarcinile rapid și precis, fără a
+                      sacrifica calitatea muncii.
+                    </motion.p>
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.6 }}
+                    >
+                      Descoperă flexibilitatea oferită de aplicația noastră,
+                      disponibilă pe Android, iOS și Desktop. Indiferent de
+                      dispozitivul pe care preferi să lucrezi, aplicația noastră se
+                      adaptează nevoilor tale, permițându-ți să facturezi mai
+                      inteligent și mai eficient.
+                    </motion.p>
+                  </div>
                 </div>
-                <h4 className="font-semibold mb-1 text-primaryColor">{item.title}</h4>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-      </main>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  className="flex items-center justify-center"
+                >
+                  <div className="relative">
+                    <div className="absolute -inset-4 bg-gradient-to-r from-primaryColor/20 to-secundaryColor/20 rounded-3xl blur-2xl" />
+                    <img
+                      src="/mockup.png"
+                      alt="Mockup aplicație"
+                      className="relative w-80 h-80 object-contain rounded-2xl"
+                    />
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* Beneficii Section */}
+          <motion.section
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-primaryColor mb-6">
+                Ne ocupăm de contabilitate, tu te concentrezi pe afacerea ta
+              </h2>
+            </div>
+
+            <div className="bg-white/70 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/20 p-8 lg:p-12">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8">
+                  <p className="text-xl text-gray-700 leading-relaxed">
+                    Finanz Consult pune la dispoziția clienților săi o aplicație
+                    online care facilitează accesul rapid și eficient la serviciile
+                    financiare și contabile. Prin intermediul acestei aplicații,
+                    clienții pot:
+                  </p>
+
+                  <div className="space-y-6">
+                    {[
+                      {
+                        icon: <BarChart className="w-6 h-6" />,
+                        title: "Monitoriza cheltuieli/venituri",
+                        desc: "Aplicația permite urmărirea în timp real a tranzacțiilor financiare, oferind o imagine clară asupra situației financiare.",
+                        color: "text-primaryColor",
+                      },
+                      {
+                        icon: <Receipt className="w-6 h-6" />,
+                        title: "Accesa rapoarte financiare",
+                        desc: "Aplicația generează rapoarte detaliate și statistici financiare, facilitând analiza și luarea deciziilor informate.",
+                        color: "text-secundaryColor",
+                      },
+                      {
+                        icon: <FolderOpen className="w-6 h-6" />,
+                        title: "Planifica economiile și investițiile",
+                        desc: "Aplicația oferă instrumente pentru planificarea economiilor și investițiilor, ajutând clienții să își atingă obiectivele financiare.",
+                        color: "text-primaryColor",
+                      },
+                      {
+                        icon: <Lock className="w-6 h-6" />,
+                        title: "Gestiona bugetele",
+                        desc: "Clienții pot crea și urmări bugete personalizate, optimizând astfel gestionarea resurselor financiare.",
+                        color: "text-secundaryColor",
+                      },
+                      {
+                        icon: <MessageSquare className="w-6 h-6" />,
+                        title: "Comunica cu experții",
+                        desc: "Clienții pot trimite întrebări și solicita consultanță direct prin aplicație, beneficiind de suport rapid și eficient.",
+                        color: "text-primaryColor",
+                      },
+                    ].map((item, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: idx * 0.1 }}
+                        className="flex items-start gap-4 p-4 rounded-xl bg-white/50 border border-gray-100/50 hover:shadow-lg transition-all duration-300"
+                      >
+                        <div className={`p-2 rounded-lg ${item.color} bg-gray-50`}>
+                          {item.icon}
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-lg text-gray-800 mb-1">
+                            {item.title}
+                          </h3>
+                          <p className="text-gray-600">{item.desc}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="flex justify-center"
+                >
+                  <div className="relative">
+                    <div className="absolute -inset-6 bg-gradient-to-r from-secundaryColor/20 to-primaryColor/20 rounded-3xl blur-2xl" />
+                    <img
+                      src="/contabilitate-beneficii.png"
+                      alt="Beneficii aplicație"
+                      className="relative w-80 h-80 object-contain rounded-2xl"
+                    />
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.section>
+
+          {/* Avantaje Section */}
+          <motion.section
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-primaryColor mb-6">
+                Avantajele aplicației FinanzConsult.ro
+              </h2>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                Aceste funcționalități sunt concepute pentru a simplifica și
+                eficientiza procesele financiare și contabile, oferind clienților o
+                experiență modernă și intuitivă
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {avantaje.map((item, idx) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group relative"
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primaryColor/20 to-secundaryColor/20 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300" />
+                  <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
+                    <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primaryColor/10 to-secundaryColor/10 rounded-2xl mb-6 mx-auto">
+                      {item.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-secundaryColor mb-4 text-center">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600 text-center leading-relaxed flex-grow">
+                      {item.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
+
+          {/* Relația cu contabilul Section */}
+          <motion.section
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-primaryColor mb-6">
+                Abordează relația cu contabilul tău într-un mod diferit
+              </h2>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                Poți avea un control mai mare asupra activității contabilului tău,
+                asigurându-te că documentele încărcate în sistem sunt procesate la
+                timp și conform standardelor de calitate așteptate.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {relatii.map((item, idx) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group relative"
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-secundaryColor/20 to-primaryColor/20 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300" />
+                  <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col text-center">
+                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-secundaryColor/10 to-primaryColor/10 rounded-xl mb-4 mx-auto">
+                      {item.icon}
+                    </div>
+                    <h4 className="font-bold text-primaryColor mb-3 text-lg">
+                      {item.title}
+                    </h4>
+                    <p className="text-gray-600 text-sm leading-relaxed flex-grow">
+                      {item.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
+        </main>
+      </div>
       <Footer />
     </>
   );
