@@ -183,7 +183,7 @@ export default function AplicatiePage() {
                     <img
                       src="/mockup.png"
                       alt="Mockup aplicație"
-                      className="relative w-80 h-80 object-contain rounded-2xl"
+                      className="relative w-96 h-96 lg:w-[500px] lg:h-[500px] xl:w-[600px] xl:h-[600px] object-contain rounded-2xl"
                     />
                   </div>
                 </motion.div>
@@ -277,7 +277,7 @@ export default function AplicatiePage() {
                   <div className="relative">
                     <div className="absolute -inset-6 bg-gradient-to-r from-secundaryColor/20 to-primaryColor/20 rounded-3xl blur-2xl" />
                     <img
-                      src="/contabilitate-beneficii.png"
+                      src="/laptopmockup.png"
                       alt="Beneficii aplicație"
                       className="relative w-80 h-80 object-contain rounded-2xl"
                     />
