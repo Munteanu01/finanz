@@ -35,11 +35,14 @@ export default function AccountingFeatures({ title, features }) {
               transition={{ delay: index * 0.15 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.03 }}
-              className="flex flex-col bg-white shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300"
+              className="flex flex-col bg-primaryColor/90 text-center shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300"
             >
-              {feature.icon}
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-700">{feature.description}</p>
+              <div className="[&>*]:!text-white [&>*]:!mx-auto [&>*]:!mb-4 [&>*]:!text-5xl [&>*]:!flex [&>*]:!items-center [&>*]:!justify-center">
+                {feature.icon}
+                
+              </div>
+              <h3 className="text-xl text-white font-semibold mb-2">{feature.title}</h3>
+              <p className="text-white">{feature.description}</p>
             </motion.div>
           ))}
         </div>
