@@ -8,8 +8,8 @@ export default function AccountingFeatures({ title, features }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Decorative background blur circles */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute w-96 h-96 bg-primaryColor/20 rounded-full blur-[150px] -top-20 -left-20" />
-          <div className="absolute w-96 h-96 bg-primaryColor/10 rounded-full blur-[150px] bottom-0 right-0" />
+          <div className="absolute w-96 h-96 bg-mediumBlue/20 rounded-full blur-[150px] -top-20 -left-20" />
+          <div className="absolute w-96 h-96 bg-mediumBlue/10 rounded-full blur-[150px] bottom-0 right-0" />
         </div>
 
         <motion.h2
@@ -35,14 +35,13 @@ export default function AccountingFeatures({ title, features }) {
               transition={{ delay: index * 0.15 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.03 }}
-              className="flex flex-col bg-primaryColor/90 text-center shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300"
+              className="flex flex-col text-center shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300"
             >
-              <div className="[&>*]:!text-secundaryColor [&>*]:!mx-auto [&>*]:!mb-4 [&>*]:!text-5xl [&>*]:!flex [&>*]:!items-center [&>*]:!justify-center">
+              <div className="[&>*]:!text-primaryColor [&>*]:!mx-auto [&>*]:!mb-4 [&>*]:!text-5xl [&>*]:!flex [&>*]:!items-center [&>*]:!justify-center">
                 {feature.icon}
-                
               </div>
-              <h3 className="text-xl text-white font-semibold mb-2">{feature.title}</h3>
-              <p className="text-white">{feature.description}</p>
+              <h3 className="text-xl text-primaryColor font-semibold mb-2">{feature.title}</h3>
+              <p className="text-primaryColor">{feature.description}</p>
             </motion.div>
           ))}
         </div>
