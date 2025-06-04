@@ -2,31 +2,11 @@
 import FinanzNavbar from "../../navbar";
 import Footer from "../../components/footer";
 import HeroPages from "../../components/HeroPages";
-import { Briefcase, ShieldCheck, UserCheck, FileText, FileCheck, Award } from "lucide-react";
+import { Briefcase, ShieldCheck, UserCheck, FileText, FileCheck, Award, Globe } from "lucide-react"; // Add Globe icon
 import LegalSupport from "../../components/LegalSupport";
 import FAQ from "../../components/faq";
 import AccountingFeatures from "../../components/firstFeatures";
 import { motion } from "framer-motion";
-
-// FAQ data
-const faqData = [
-  {
-    question: "Ce acte trebuie să pregăsesc pentru început?",
-    answer: "Doar buletinul tău. De restul ne ocupăm noi.",
-  },
-  {
-    question: "Trebuie să merg personal la vreo instituție?",
-    answer: "Nu. Totul se face online, iar noi ne ocupăm de depunerea documentelor.",
-  },
-  {
-    question: "Cât durează tot procesul?",
-    answer: "Depinde de serviciul ales, dar în general între 2 și 5 zile lucrătoare.",
-  },
-  {
-    question: "Pot semna documentele fără să mă deplasez?",
-    answer: "Da. Folosim semnătură electronică calificată acceptată de toate instituțiile.",
-  },
-];
 
 // Features data
 const featuresData = [
@@ -86,106 +66,165 @@ export default function AutorizatiiPage() {
       />
 
       {/* Sectiune: Tipuri de autorizații */}
-      <section className="max-w-5xl mx-auto px-4 py-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-700 tracking-tight">
-          Tipuri de autorizații și avize
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center transition-shadow group"
-          >
-            <div className="flex items-center justify-center mb-4 bg-secundaryColor rounded-xl px-4 py-2">
-              <ShieldCheck className="w-10 h-10 mr-2 text-white" />
-              <h3 className="text-xl font-semibold text-center text-white">
-                DSV / DSP
-              </h3>
-            </div>
-            <p className="mt-1 text-gray-700 leading-relaxed text-center">
-              Autorizaţia DSV reprezintă actul care condiţionează funcţionarea comercianţilor de respectarea legislaţiei sanitar – veterinare, iar autorizația DSP depinde de codurile CAEN ale companiei dvs.<br />
-              Pentru a obține avizul DSP, este necesar să urmați demersurile la unitatea care se află în raza teritorială a punctului de lucru.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="mb-16"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center transition-shadow group"
           >
-            <div className="flex items-center justify-center mb-4 bg-secundaryColor rounded-xl px-4 py-2">
-              <FileText className="w-10 h-10 mr-2 text-white" />
-              <h3 className="text-xl font-semibold text-center text-white">
-                Primărie
-              </h3>
-            </div>
-            <p className="mt-1 text-gray-700 leading-relaxed text-center">
-              Autorizația de Functionare eliberată de către primărie este un document oficial esențial în desfășurarea activităților comerciale sau profesionale într-un anumit loc sau punct de lucru. Acest acord de functionare reprezintă permisiunea și aprobarea autorității locale pentru desfășurarea activităților specifice, cum ar fi magazine, restaurante, saloane de înfrumusețare sau birouri.
+            <h2 className="text-4xl md:text-5xl font-bold text-primaryColor mb-6">
+              Autorizații și <br className="hidden md:block" />
+              <span className="text-secundaryColor">avize necesare</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl">
+              Obține rapid și fără stres toate autorizațiile necesare pentru afacerea ta.
             </p>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center transition-shadow group"
-          >
-            <div className="flex items-center justify-center mb-4 bg-secundaryColor rounded-xl px-4 py-2">
-              <Award className="w-10 h-10 mr-2 text-white" />
-              <h3 className="text-xl font-semibold text-center text-white">
-                Mediu
-              </h3>
-            </div>
-            <p className="mt-1 text-gray-700 leading-relaxed text-center">
-              Avizul de mediu este actul administrativ emis de autoritatea competentă pentru protecţia mediului, care confirmă integrarea aspectelor privind protecţia mediului. Autorizații de mediu se solicită pentru activități economice cu impact asupra mediului și sănătății publice.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center transition-shadow group"
-          >
-            <div className="flex items-center justify-center mb-4 bg-secundaryColor rounded-xl px-4 py-2">
-              <UserCheck className="w-10 h-10 mr-2 text-white" />
-              <h3 className="text-xl font-semibold text-center text-white">
-                ISU
-              </h3>
-            </div>
-            <p className="mt-1 text-gray-700 leading-relaxed text-center">
-              Autorizația ISU este una din cele mai importante autorizații necesare unei afaceri deoarece ea certifică îndeplinirea normelor de securitate în cazuri de urgență. Obținerea autorizației ISU nu este obligatorie pentru toate tipurile de activități.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            viewport={{ once: true }}
-            className="relative bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center transition-shadow
-              hover:shadow-[0_8px_32px_0_theme(colors.secundaryColor/40%)] duration-200
-              md:col-start-1 md:col-end-3 md:w-1/2 mx-auto"
-          >
-            <div className="flex items-center justify-center mb-4 bg-secundaryColor rounded-xl px-4 py-2">
-              <Briefcase className="w-10 h-10 mr-2 text-white" />
-              <h3 className="text-xl font-semibold text-center text-white">
-                IGI
-              </h3>
-            </div>
-            <p className="mt-1 text-gray-700 leading-relaxed text-center">
-              Şederea pe teritoriul României a cetăţenilor străini se poate realiza prin mai multe moduri.<br />
-              Noi vă oferim asistenţă şi reprezentare ȋn faţa Inspectoratului General pentru Imigrări (IGI).
-            </p>
-          </motion.div>
+
+          <div className="grid grid-cols-1 xl:grid-cols-4 gap-6">
+            {/* DSV Card */}
+            <motion.div
+              className="col-span-1 xl:col-span-3 bg-gray-50 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 cursor-pointer group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex flex-col gap-4">
+                <div className="bg-secundaryColor p-4 rounded-2xl shadow-lg w-fit">
+                  <ShieldCheck className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">DSV</h3>
+                <p className="text-gray-800 text-lg leading-relaxed">
+                  Toate companiile care fac comert, productie sau depozitare de alimente, trebuie sa fie autorizate de Autoritatea Nationala Sanitar Veterinara si pentru Siguranta Alimentelor inaintea inceperii activitatii.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* DSP Card */}
+            <motion.div
+              className="col-span-1 bg-gray-50 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 cursor-pointer group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex flex-col gap-4">
+                <div className="bg-secundaryColor p-4 rounded-2xl shadow-lg w-fit">
+                  <ShieldCheck className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">DSP</h3>
+                <p className="text-gray-800 text-lg leading-relaxed">
+                  Autorizația sanitară este necesară pentru spațiile cu specific comercial sau social.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Primărie Card */}
+            <motion.div
+              className="md:col-span-2 bg-gray-50 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 cursor-pointer group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex flex-col gap-4">
+                <div className="bg-secundaryColor p-4 rounded-2xl shadow-lg w-fit">
+                  <FileText className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Primărie</h3>
+                <p className="text-gray-800 text-lg leading-relaxed">
+                  Document oficial esențial pentru desfășurarea activităților comerciale.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* IGI Card */}
+            <motion.div
+              className="md:col-span-2 bg-gray-50 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 cursor-pointer group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex flex-col gap-4">
+                <div className="bg-secundaryColor p-4 rounded-2xl shadow-lg w-fit">
+                  <UserCheck className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">IGI</h3>
+                <p className="text-gray-800 text-lg leading-relaxed">
+                  Şederea pe teritoriul României a cetăţenilor străini se poate realiza prin mai multe moduri.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* ISU Card */}
+            <motion.div
+              className="md:col-span-2 bg-gray-50 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 cursor-pointer group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex flex-col gap-4">
+                <div className="bg-secundaryColor p-4 rounded-2xl shadow-lg w-fit">
+                  <ShieldCheck className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">ISU</h3>
+                <p className="text-gray-800 text-lg leading-relaxed">
+                  Autorizația ISU este una din cele mai importante autorizații necesare unei afaceri deoarece ea certifică îndeplinirea normelor de securitate în cazuri de urgență.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Mediu Card */}
+            <motion.div
+              className="md:col-span-2 bg-gray-50 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 cursor-pointer group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex flex-col gap-4">
+                <div className="bg-secundaryColor p-4 rounded-2xl shadow-lg w-fit">
+                  <Globe className="w-8 h-8 text-white" /> {/* Changed from Award to Globe */}
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Mediu</h3>
+                <p className="text-gray-800 text-lg leading-relaxed">
+                  Avizul de mediu este actul administrativ emis de autoritatea competentă pentru protecţia mediului, care confirmă integrarea aspectelor privind protecţia mediului.
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
+     
+
+          <FAQ items={[
+            {
+              question: "Ce acte trebuie să pregăsesc pentru început?",
+              answer: "Doar buletinul tău. De restul ne ocupăm noi."
+            },
+            {
+              question: "Trebuie să merg personal la vreo instituție?",
+              answer: "Nu. Totul se face online, iar noi ne ocupăm de depunerea documentelor."
+            },
+            {
+              question: "Cât durează tot procesul?",
+              answer: "Depinde de serviciul ales, dar în general între 2 și 5 zile lucrătoare."
+            },
+            {
+              question: "Pot semna documentele fără să mă deplasez?",
+              answer: "Da. Folosim semnătură electronică calificată acceptată de toate instituțiile."
+            }
+          ]} />
+     
       <LegalSupport />
-      <FAQ items={faqData} />
-      
+
       <Footer />
     </div>
   );
