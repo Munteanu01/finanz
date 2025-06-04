@@ -34,13 +34,15 @@ export default function HeroPages({
   }, [backgroundImage]);
 
   return (
-    <section className="relative w-full lg:h-[90vh] flex flex-col justify-center items-center text-white">
+    <section
+      className="relative w-full flex flex-col justify-center items-center text-white min-h-screen lg:min-h-[90vh]"
+    >
       {/* Fundalul secțiunii Hero cu fade-in */}
       <motion.div
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{
           backgroundImage: imageLoaded ? `url('${backgroundImage}')` : "none",
-          backgroundColor: "#222", // fallback color
+          backgroundColor: "#222",
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: imageLoaded ? 1 : 0 }}

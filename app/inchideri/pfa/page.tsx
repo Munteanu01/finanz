@@ -83,19 +83,19 @@ export default function InchiderePfaPage() {
               className="relative group"
             >
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-primaryColor"></div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="bg-gradient-to-br from-blue-500 to-cyan-500 p-3 rounded-xl">
+                  <div className="p-3 rounded-xl bg-primaryColor">
                     <FileText className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-3xl font-bold text-gray-200 group-hover:text-blue-200 transition-colors">
+                  <span className="text-3xl font-bold text-gray-200 group-hover:text-primaryColor transition-colors">
                     01
                   </span>
                 </div>
                 <h4 className="text-xl font-bold text-gray-800 mb-3">Completare formular</h4>
                 <div className="flex items-center gap-2 mb-4">
-                  <Clock className="w-4 h-4 text-blue-500" />
-                  <span className="text-sm font-semibold text-blue-600">1 minut</span>
+                  <Clock className="w-4 h-4 text-primaryColor" />
+                  <span className="text-sm font-semibold text-primaryColor">1 minut</span>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
                   Completezi formularul online sau contactezi un consilier pentru asistență personalizată în alegerea
@@ -114,19 +114,19 @@ export default function InchiderePfaPage() {
               className="relative group"
             >
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-primaryColor"></div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-xl">
+                  <div className="p-3 rounded-xl bg-primaryColor">
                     <Users className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-3xl font-bold text-gray-200 group-hover:text-blue-200 transition-colors">
+                  <span className="text-3xl font-bold text-gray-200 group-hover:text-primaryColor transition-colors">
                     02
                   </span>
                 </div>
                 <h4 className="text-xl font-bold text-gray-800 mb-3">Redactare & semnare</h4>
                 <div className="flex items-center gap-2 mb-4">
-                  <Clock className="w-4 h-4 text-blue-500" />
-                  <span className="text-sm font-semibold text-blue-600">30 minute</span>
+                  <Clock className="w-4 h-4 text-primaryColor" />
+                  <span className="text-sm font-semibold text-primaryColor">30 minute</span>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
                   Redactăm documentația completă, o pregătim pentru semnare și o depunem la ONRC în numele tău.
@@ -144,19 +144,19 @@ export default function InchiderePfaPage() {
               className="relative group"
             >
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-emerald-500"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-secundaryColor"></div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="bg-gradient-to-br from-green-500 to-emerald-500 p-3 rounded-xl">
+                  <div className="p-3 rounded-xl bg-secundaryColor">
                     <CheckCircle className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-3xl font-bold text-gray-200 group-hover:text-green-200 transition-colors">
+                  <span className="text-3xl font-bold text-gray-200 group-hover:text-secundaryColor transition-colors">
                     03
                   </span>
                 </div>
                 <h4 className="text-xl font-bold text-gray-800 mb-3">Finalizare proces</h4>
                 <div className="flex items-center gap-2 mb-4">
-                  <Clock className="w-4 h-4 text-green-500" />
-                  <span className="text-sm font-semibold text-green-600">2-3 zile</span>
+                  <Clock className="w-4 h-4 text-secundaryColor" />
+                  <span className="text-sm font-semibold text-secundaryColor">2-3 zile</span>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
                   Primești pe email certificatul de închidere și toate documentele necesare, semnate digital de ONRC.
