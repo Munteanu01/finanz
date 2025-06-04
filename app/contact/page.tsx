@@ -10,44 +10,60 @@ export default function ContactPage() {
 
   const contactCards = [
     {
-      icon: <Mail className="h-8 w-8 text-blue-500" />, // iconiță albastră
-      border: "from-blue-400 to-blue-600",
-      bg: "bg-blue-500/10",
-      title: <span className="text-gray-800">Email</span>, // titlu albastru
+      icon: <Mail className="h-8 w-8 text-primaryColor" />,
+      border: "from-primaryColor to-secundaryColor",
+      bg: "bg-primaryColor/10",
+      title: <span className="text-primaryColor">Email</span>,
       content: (
-        <a
-          href="mailto:contact@finanzconsult.ro"
-          className="text-blue-500 hover:text-blue-600 text-sm break-all font-semibold"
-        >
-          contact@finanzconsult.ro
-        </a>
+        <div className="flex flex-col items-center gap-1">
+          <a
+            href="mailto:contact@finanzconsult.ro"
+            className="text-secundaryColor hover:text-primaryColor text-sm break-all font-semibold"
+          >
+            contact@finanzconsult.ro
+          </a>
+          <a
+            href="mailto:financiar.contabil@finanzconsult.ro"
+            className="text-secundaryColor hover:text-primaryColor text-sm break-all font-semibold"
+          >
+            financiar.contabil@finanzconsult.ro
+          </a>
+        </div>
       ),
     },
     {
-      icon: <Phone className="h-8 w-8 text-green-500" />,
-      border: "from-green-400 to-green-600",
-      bg: "bg-green-500/10",
-      title: <span className="text-gray-800">Telefon</span>,
+      icon: <Phone className="h-8 w-8 text-primaryColor" />,
+      border: "from-primaryColor tosecundaryColor",
+      bg: "bg-primaryColor/10",
+      title: <span className="text-primaryColor">Telefon</span>,
       content: (
-        <a
-          href="tel:021203082014"
-          className="text-green-500 hover:text-green-500/80 text-sm font-semibold"
-        >
-          021 20308 2014 2077
-        </a>
+        <div className="flex flex-col items-center gap-1">
+          <a
+            href="tel:0219222"
+            className="text-secundaryColor hover:text-primaryColor text-sm font-semibold"
+          >
+            021 9222
+          </a>
+          <a
+            href="tel:0213081477"
+            className="text-secundaryColor hover:text-primaryColor text-sm font-semibold"
+          >
+            021 308 14 77
+          </a>
+        </div>
       ),
     },
     {
-      icon: <MapPin className="h-8 w-8 text-purple-500" />,
-      border: "from-purple-400 to-purple-600",
-      bg: "bg-purple-500/10",
-      title: <span className="text-gray-800">Adresa</span>,
+      icon: <MapPin className="h-8 w-8 text-primaryColor" />,
+      border: "from-primaryColor to-secundaryColor",
+      bg: "bg-primaryColor/10",
+      title: <span className="text-primaryColor">Adresa</span>,
       content: (
         <a
           href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-purple-500 hover:text-purple-500/80 text-sm font-semibold"
+          className="text-secundaryColor hover:text-primaryColor text-sm font-semibold"
         >
           Splaiul Independentei, Nr 202B
           <br />
@@ -56,14 +72,13 @@ export default function ContactPage() {
       ),
     },
     {
-      icon: <Clock className="h-8 w-8 text-orange-500" />,
-      border: "from-orange-400 to-orange-600",
-      bg: "bg-orange-500/10",
-      title: <span className="text-gray-800">Program</span>,
+      icon: <Clock className="h-8 w-8 text-primaryColor" />,
+      border: "from-primaryColor to-secundaryColor",
+      bg: "bg-primaryColor/10",
+      title: <span className="text-primaryColor">Program</span>,
       content: (
-        <div className="text-orange-500 text-sm font-semibold">
+        <div className="text-secundaryColor text-sm font-semibold">
           <p>Luni - Vineri: 09:00 - 18:00</p>
-          <p>Sâmbătă: 10:00 - 14:00</p>
         </div>
       ),
     },
@@ -76,14 +91,14 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">Contact</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Contact</h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Suntem aici să vă ajutăm! Contactați-ne pentru orice întrebări sau pentru a programa o consultanță.
             </p>
           </div>
 
           {/* Contact Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-1 mb-12">
             {contactCards.map((card, idx) => (
               <div
                 key={idx}
