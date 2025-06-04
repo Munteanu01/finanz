@@ -621,7 +621,7 @@ export default function FinanzNavbar() {
                     text-gray-700 hover:text-secundaryColor
                     relative
                   `}
-                  style={{ height: 40, width: 40, minWidth: 40, minHeight: 40, top: '-2px' }} // puțin mai sus
+                  style={{ height: 40, width: 40, minWidth: 40, minHeight: 40,  }} // puțin mai sus
                 >
                   <Search className="h-5 w-5" />
                   <span className="sr-only">Caută</span>
