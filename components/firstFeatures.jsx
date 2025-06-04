@@ -37,7 +37,7 @@ export default function AccountingFeatures({ title, features }) {
               whileHover={{ scale: 1.03 }}
               className="flex flex-col bg-primaryColor/90 text-center shadow-xl rounded-2xl p-8 min-h-[260px] transition-transform duration-300"
             >
-              <div className="[&>*]:!text-white [&>*]:!mx-auto [&>*]:!mb-4 [&>*]:!text-5xl [&>*]:!flex [&>*]:!items-center [&>*]:!justify-center">
+              <div className="[&>*]:!text-secundaryColor [&>*]:!mx-auto [&>*]:!mb-4 [&>*]:!text-5xl [&>*]:!flex [&>*]:!items-center [&>*]:!justify-center">
                 {feature.icon}
                 
               </div>
