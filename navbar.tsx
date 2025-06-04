@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronDown, Menu, X, Phone, Mail } from "lucide-react"
+import { ChevronDown, Menu, X, Phone, Mail, Search } from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect, useRef, useCallback } from "react"
 import Image from "next/image"
@@ -35,9 +35,9 @@ const NAVBAR_CONFIG = {
     zIndex: "z-50",
   },
   spacing: {
-    desktop: "space-x-1 2xl:space-x-2",
-    padding: "px-1 xl:px-2 2xl:px-3 py-2",
-    textSize: "text-xs xl:text-sm",
+    desktop: "space-x-0", // Remove spacing between items
+    padding: "px-1 xl:px-2 2xl:px-2 py-2", // Reduced horizontal padding
+    textSize: "text-sm 3xl:text-base", // Modified: Increased text size
   },
 }
 
@@ -164,6 +164,18 @@ const getButtonClasses = (isActive: boolean, isAppLink = false) => {
   return `${baseClasses} ${stateClasses}`
 }
 
+// Add this helper function at the top with other utility functions
+const removeDiacritics = (str: string) => {
+  const diacriticsMap: { [key: string]: string } = {
+    'ă': 'a', 'â': 'a', 'î': 'i',
+    'ș': 's', 'ş': 's', 'ţ': 't',
+    'ț': 't', 'Ă': 'A', 'Â': 'A',
+    'Î': 'I', 'Ș': 'S', 'Ş': 'S',
+    'Ţ': 'T', 'Ț': 'T'
+  };
+  
+  return str.replace(/[ăâîșşţțĂÂÎȘŞŢȚ]/g, letter => diacriticsMap[letter] || letter);
+}
 
 // ===== COMPONENTS =====
 
@@ -262,11 +274,160 @@ const SimpleMobileDropdownSection = ({
   </div>
 )
 
-// ===== MAIN COMPONENT =====
+// Adaugă importurile necesare la începutul fișierului
+// import { Search, X } from "lucide-react"
+// import { useState, useCallback } from "react"
+
+// Adaugă această componentă în fișier, înainte de componenta principală FinanzNavbar
+const SearchOverlay = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+  const [searchQuery, setSearchQuery] = useState("")
+  const [searchResults, setSearchResults] = useState<Array<{ title: string; href: string }>>([])
+
+  const handleSearch = useCallback((query: string) => {
+    setSearchQuery(query)
+    
+    const searchTerms = query.toLowerCase().split(' ')
+    const normalizedTerms = searchTerms.map(term => removeDiacritics(term))
+    
+    const searchInItems = (items: typeof MENU_ITEMS.contabilitate) => {
+      return items.filter(item => {
+        const titleWords = item.title.toLowerCase()
+        const normalizedTitle = removeDiacritics(titleWords)
+        
+        return normalizedTerms.some(term => {
+          if (term.length >= 2) {
+            return normalizedTitle.split(' ').some(word => 
+              word.startsWith(term.substring(0, 2))
+            ) || titleWords.split(' ').some(word => 
+              word.startsWith(term.substring(0, 2))
+            )
+          }
+          return false
+        })
+      })
+    }
+
+    // Caută în toate secțiunile dacă avem cel puțin 2 caractere
+    if (query.length >= 2) {
+      const results: Array<{ title: string; href: string }> = [
+        ...searchInItems(MENU_ITEMS.contabilitate),
+        ...searchInItems(MENU_ITEMS.infiintari),
+        ...searchInItems(MENU_ITEMS.modificariSrl),
+        ...searchInItems(MENU_ITEMS.modificariPfa),
+        ...searchInItems(MENU_ITEMS.inchideri),
+        ...STATIC_LINKS.filter(item => {
+          const titleWords = item.title.toLowerCase()
+          return searchTerms.some(term => {
+            if (term.length >= 2) {
+              return titleWords.split(' ').some(word => 
+                word.startsWith(term.substring(0, 2))
+              )
+            }
+            return false
+          })
+        })
+      ]
+
+      // Remove duplicates based on href
+      const uniqueResults = Array.from(new Map(results.map(item => [item.href, item])).values())
+      
+      // Sort results by relevance (exact matches first)
+      uniqueResults.sort((a, b) => {
+        const aExact = a.title.toLowerCase().includes(query.toLowerCase())
+        const bExact = b.title.toLowerCase().includes(query.toLowerCase())
+        if (aExact && !bExact) return -1
+        if (!aExact && bExact) return 1
+        return 0
+      })
+
+      setSearchResults(uniqueResults)
+    } else {
+      setSearchResults([])
+    }
+  }, [])
+
+  const highlightMatch = (text: string, query: string) => {
+    if (!query) return text;
+    
+    const normalizedText = removeDiacritics(text.toLowerCase());
+    const normalizedQuery = removeDiacritics(query.toLowerCase());
+    
+    const parts = text.split(new RegExp(`(${query})`, 'gi'));
+    
+    return parts.map((part, i) => {
+      const normalizedPart = removeDiacritics(part.toLowerCase());
+      if (normalizedPart === normalizedQuery) {
+        return <span key={i} className="bg-secundaryColor/20 px-1 rounded">{part}</span>;
+      }
+      return part;
+    });
+  };
+
+  return (
+    <div
+      className={`fixed inset-0 bg-white z-[100] transition-transform duration-300 ${
+        isOpen ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex justify-end mb-6">
+          <button
+            onClick={onClose}
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+          >
+            <X className="h-6 w-6 text-gray-600" />
+          </button>
+        </div>
+
+        <div className="max-w-3xl mx-auto">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Caută servicii, informații..."
+              value={searchQuery}
+              onChange={(e) => handleSearch(e.target.value)}
+              className="w-full px-4 py-3 text-xl border-b-2 border-gray-200 focus:border-secundaryColor outline-none transition-colors"
+              autoFocus
+            />
+            <Search className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+          </div>
+
+          {searchQuery.length >= 2 && (
+            <div className="mt-8">
+              {searchResults.length > 0 ? (
+                <div className="space-y-4">
+                  {searchResults.map((result, index) => (
+                    <Link
+                      key={index}
+                      href={result.href}
+                      onClick={onClose}
+                      className="block p-4 hover:bg-gray-50 rounded-lg transition-colors"
+                    >
+                      <h3 className="text-lg font-medium text-gray-900">
+                        {highlightMatch(result.title, searchQuery)}
+                      </h3>
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-8">
+                  <p className="text-gray-500">Nu au fost găsite rezultate pentru "{searchQuery}"</p>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// În componenta FinanzNavbar, adaugă state pentru search
 export default function FinanzNavbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [showContactBar, setShowContactBar] = useState(false)
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
   const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
 
   // ===== HOOKS =====
@@ -322,6 +483,11 @@ export default function FinanzNavbar() {
   const handleDropdownClose = useCallback(() => {
     setOpenDropdown(null)
   }, [])
+
+  // Filter out "Aplicație" and "Contact" from static links
+  const filteredStaticLinks = STATIC_LINKS.filter(
+    link => !["aplicație", "contact"].includes(link.title.toLowerCase())
+  );
 
   // ===== RENDER =====
 
@@ -391,7 +557,7 @@ export default function FinanzNavbar() {
           ${showContactBar ? "top-[28px]" : "top-0"}
         `}
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 2xl:max-w-[1536px] 3xl:max-w-[1800px]">
           <div
             className={`flex items-center justify-between ${NAVBAR_CONFIG.heights.mobile} ${NAVBAR_CONFIG.heights.desktop}`}
           >
@@ -422,39 +588,46 @@ export default function FinanzNavbar() {
                 />
               ))}
 
-              {/* Static Links */}
-              {STATIC_LINKS.map(({ title, href }) => {
-                const isAppLink = title.toLowerCase() === "aplicație";
-                const isContactLink = title.toLowerCase() === "contact";
-                const specialClasses = isAppLink
-                  ? "bg-primaryColor text-white hover:text-white hover:bg-primaryColor/80"
-                  : isContactLink
-                  ? "bg-secundaryColor text-white hover:text-white hover:bg-secundaryColor/80"
-                  : "text-gray-700 hover:text-secundaryColor"; // Updated hover color
+              {/* Regular Static Links */}
+              {filteredStaticLinks.map(({ title, href }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium text-gray-700 hover:text-secundaryColor hover:bg-gray-50 rounded-lg transition-colors whitespace-nowrap`}
+                >
+                  {title}
+                </Link>
+              ))}
 
-                const baseClasses = `
-                  ${NAVBAR_CONFIG.spacing.padding} 
-                  ${NAVBAR_CONFIG.spacing.textSize} 
-                  font-medium 
-                  whitespace-nowrap
-                  rounded-lg
-                  transition-colors
-                  hover:bg-gray-50
-                `; // Removed the hover:text-primaryColor
-             
-                return (
-                  <Link
-                    key={href}
-                    href={href}
-                    className={`${baseClasses} ${specialClasses}`}
-                    target={isAppLink ? "_blank" : undefined}
-                    rel={isAppLink ? "noopener noreferrer" : undefined}
-                  >
-                    {title}
-                  </Link>
-                );
-              })}
+              {/* Special buttons group with new order */}
+              <div className="flex items-center gap-1 ml-2"> {/* Added ml-2 for spacing */}
+                {/* Search Button */}
+                <button
+                  onClick={() => setIsSearchOpen(true)}
+                  className={`${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium text-gray-700 hover:text-secundaryColor hover:bg-gray-50 rounded-lg transition-colors flex items-center gap-2`}
+                >
+                  <Search className="h-4 w-4" />
+                  <span className="sr-only">Caută</span>
+                </button>
 
+                {/* App Link */}
+                <Link
+                  href="https://online-srlconsult.ro/"
+                  className={`${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium bg-primaryColor text-white hover:bg-primaryColor/80 rounded-lg transition-colors whitespace-nowrap`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Aplicație
+                </Link>
+
+                {/* Contact Link */}
+                <Link
+                  href="/contact"
+                  className={`${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium bg-secundaryColor text-white hover:bg-secundaryColor/80 rounded-lg transition-colors whitespace-nowrap`}
+                >
+                  Contact
+                </Link>
+              </div>
             </div>
 
             {/* Mobile menu button */}
@@ -523,6 +696,9 @@ export default function FinanzNavbar() {
           </div>
         </div>
       )}
+
+      {/* Add SearchOverlay */}
+      <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
       {/* Custom CSS for responsive dropdown positioning */}
       <style jsx global>{`
