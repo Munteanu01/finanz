@@ -35,7 +35,7 @@ export default function InchiderePfaPage() {
       <HeroPages
         backgroundImage="/closed.jpg"
         title="Închide PFA-ul 100% Online"
-        subtitle="Procesul complet în doar 3 zile lucrătoare"
+        subtitle=""
         badge="Digital • Rapid • Sigur"
         cards={[]}
       />
@@ -156,7 +156,7 @@ export default function InchiderePfaPage() {
                 <h4 className="text-xl font-bold text-gray-800 mb-3">Finalizare proces</h4>
                 <div className="flex items-center gap-2 mb-4">
                   <Clock className="w-4 h-4 text-secundaryColor" />
-                  <span className="text-sm font-semibold text-secundaryColor">2-3 zile</span>
+                  <span className="text-sm font-semibold text-secundaryColor">1-2 luni</span>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
                   Primești pe email certificatul de închidere și toate documentele necesare, semnate digital de ONRC.

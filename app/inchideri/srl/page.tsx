@@ -13,7 +13,7 @@ export default function InchidereSrlPage() {
       <HeroPages
         backgroundImage="/closed.jpg"
         title="Închidere firmă 100% Online"
-        subtitle="Procesul complet în doar câteva zile lucrătoare"
+        subtitle=""
         badge="Digital • Rapid • Sigur"
         cards={[]}
       />
@@ -131,7 +131,7 @@ export default function InchidereSrlPage() {
                 <h4 className="text-xl font-bold text-gray-800 mb-3">Finalizare proces</h4>
                 <div className="flex items-center gap-2 mb-4">
                   <Clock className="w-4 h-4 text-secundaryColor" />
-                  <span className="text-sm font-semibold text-secundaryColor">2-3 zile</span>
+                  <span className="text-sm font-semibold text-secundaryColor">1-2 luni</span>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
                   Primești pe email certificatul de închidere și toate documentele necesare, semnate digital de ONRC.
@@ -216,7 +216,7 @@ export default function InchidereSrlPage() {
                         transition={{ duration: 0.4, delay: index * 0.1 + 0.4 }}
                         className="flex items-center gap-3"
                       >
-                        <CheckCircle className="w-5 h-5 text-accentColor flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-primaryColor flex-shrink-0" />
                         <span className="text-gray-700">{item}</span>
                       </motion.div>
                     ))}
@@ -227,7 +227,7 @@ export default function InchidereSrlPage() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gradient-to-r from-secundaryColor/80 to-secundaryColor text-white py-4 px-8 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
+                  className="w-full bg-secundaryColor text-white py-4 px-8 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
                 >
                   Începe procesul de închidere
                   <ArrowRight className="w-5 h-5" />
