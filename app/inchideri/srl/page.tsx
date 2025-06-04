@@ -59,19 +59,19 @@ export default function InchidereSrlPage() {
               className="relative group"
             >
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-primaryColor"></div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="bg-gradient-to-br from-blue-500 to-cyan-500 p-3 rounded-xl">
+                  <div className="p-3 rounded-xl bg-primaryColor">
                     <FileText className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-3xl font-bold text-gray-200 group-hover:text-blue-200 transition-colors">
+                  <span className="text-3xl font-bold text-gray-200 group-hover:text-primaryColor transition-colors">
                     01
                   </span>
                 </div>
                 <h4 className="text-xl font-bold text-gray-800 mb-3">Completare formular</h4>
                 <div className="flex items-center gap-2 mb-4">
-                  <Clock className="w-4 h-4 text-blue-500" />
-                  <span className="text-sm font-semibold text-blue-600">1 minut</span>
+                  <Clock className="w-4 h-4 text-primaryColor" />
+                  <span className="text-sm font-semibold text-primaryColor">1 minut</span>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
                   Completezi formularul online sau contactezi un consilier pentru asistență personalizată.
@@ -89,19 +89,19 @@ export default function InchidereSrlPage() {
               className="relative group"
             >
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-primaryColor"></div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-xl">
+                  <div className="p-3 rounded-xl bg-primaryColor">
                     <Users className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-3xl font-bold text-gray-200 group-hover:text-blue-200 transition-colors">
+                  <span className="text-3xl font-bold text-gray-200 group-hover:text-primaryColor transition-colors">
                     02
                   </span>
                 </div>
                 <h4 className="text-xl font-bold text-gray-800 mb-3">Redactare & semnare</h4>
                 <div className="flex items-center gap-2 mb-4">
-                  <Clock className="w-4 h-4 text-blue-500" />
-                  <span className="text-sm font-semibold text-blue-600">30 minute</span>
+                  <Clock className="w-4 h-4 text-primaryColor" />
+                  <span className="text-sm font-semibold text-primaryColor">30 minute</span>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
                   Redactăm documentația completă, o pregătim pentru semnare și o depunem la ONRC în numele tău.
@@ -119,19 +119,19 @@ export default function InchidereSrlPage() {
               className="relative group"
             >
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-emerald-500"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-secundaryColor"></div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="bg-gradient-to-br from-green-500 to-emerald-500 p-3 rounded-xl">
+                  <div className="p-3 rounded-xl bg-secundaryColor">
                     <CheckCircle className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-3xl font-bold text-gray-200 group-hover:text-green-200 transition-colors">
+                  <span className="text-3xl font-bold text-gray-200 group-hover:text-secundaryColor transition-colors">
                     03
                   </span>
                 </div>
                 <h4 className="text-xl font-bold text-gray-800 mb-3">Finalizare proces</h4>
                 <div className="flex items-center gap-2 mb-4">
-                  <Clock className="w-4 h-4 text-green-500" />
-                  <span className="text-sm font-semibold text-green-600">2-3 zile</span>
+                  <Clock className="w-4 h-4 text-secundaryColor" />
+                  <span className="text-sm font-semibold text-secundaryColor">2-3 zile</span>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
                   Primești pe email certificatul de închidere și toate documentele necesare, semnate digital de ONRC.
@@ -169,8 +169,9 @@ export default function InchidereSrlPage() {
                   <p className="text-gray-600">Tot ce ai nevoie pentru închiderea legală a firmei</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-4xl font-bold text-blue-600 mb-1">540 lei</div>
-                  <div className="text-sm text-gray-500">Plată unică / <span className="font-semibold text-red-600">135 lei Taxe ORC</span></div>
+                  <div className="text-4xl font-bold text-primaryColor mb-1">540 lei</div>
+                  <div className="text-sm text-gray-500">Plată unică</div>
+                  <div className="text-sm font-semibold text-secundaryColor">135 lei taxe ORC</div>
                 </div>
               </div>
 
@@ -192,7 +193,7 @@ export default function InchidereSrlPage() {
                         transition={{ duration: 0.4, delay: index * 0.1 }}
                         className="flex items-center gap-3"
                       >
-                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-mediumBlue flex-shrink-0" />
                         <span className="text-gray-700">{item}</span>
                       </motion.div>
                     ))}
@@ -215,7 +216,7 @@ export default function InchidereSrlPage() {
                         transition={{ duration: 0.4, delay: index * 0.1 + 0.4 }}
                         className="flex items-center gap-3"
                       >
-                        <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-accentColor flex-shrink-0" />
                         <span className="text-gray-700">{item}</span>
                       </motion.div>
                     ))}
@@ -223,15 +224,14 @@ export default function InchidereSrlPage() {
                 </div>
               </div>
               <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => window.location.href = '/contact'}
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-4 px-8 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
-              >
-                Începe procesul de închidere
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-gradient-to-r from-secundaryColor/80 to-secundaryColor text-white py-4 px-8 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
+                >
+                  Începe procesul de închidere
+                  <ArrowRight className="w-5 h-5" />
+                </motion.button>
               </Link>
             </div>
           </motion.div>

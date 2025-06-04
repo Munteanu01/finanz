@@ -194,9 +194,9 @@ export default function InchiderePfaPage() {
                   <p className="text-gray-600">Tot ce ai nevoie pentru închiderea legală a PFA-ului</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-4xl font-bold text-blue-600 mb-1">350 lei</div>
+                  <div className="text-4xl font-bold text-primaryColor mb-1">350 lei</div>
                   <div className="text-sm text-gray-500">Plată unică</div>
-                  <div className="text-sm font-semibold text-green-600">0 lei taxe ONRC</div>
+                  <div className="text-sm font-semibold text-secundaryColor">0 lei taxe ONRC</div>
                 </div>
               </div>
 
@@ -218,7 +218,7 @@ export default function InchiderePfaPage() {
                         transition={{ duration: 0.4, delay: index * 0.1 }}
                         className="flex items-center gap-3"
                       >
-                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-mediumBlue flex-shrink-0" />
                         <span className="text-gray-700">{item}</span>
                       </motion.div>
                     ))}
@@ -243,7 +243,7 @@ export default function InchiderePfaPage() {
                         transition={{ duration: 0.4, delay: index * 0.1 + 0.4 }}
                         className="flex items-center gap-3"
                       >
-                        <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-accentColor flex-shrink-0" />
                         <span className="text-gray-700">{item}</span>
                       </motion.div>
                     ))}
@@ -254,7 +254,7 @@ export default function InchiderePfaPage() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-4 px-8 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
+                className="w-full bg-gradient-to-r from-secundaryColor/80 to-secundaryColor text-white py-4 px-8 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
               > 
              Începe procesul de închidere
                 
