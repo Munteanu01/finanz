@@ -43,10 +43,10 @@ export default function FacturareDiv() {
                     className="inline-flex flex-wrap text-3xl sm:text-4xl font-extrabold text-primaryColor gap-x-2 gap-y-3 leading-tight"
                   >
                     <span className="mr-1">Facturare</span>
-                    <HighlightedText isHovered={isHovered}>gratuită,</HighlightedText>
-                    <HighlightedText isHovered={isHovered}>rapidă și complet</HighlightedText>
+                    <HighlightedText isHovered={isHovered}>rapidă </HighlightedText>
+                    <HighlightedText isHovered={isHovered}>și complet integrată</HighlightedText>
                     <div className="basis-full h-0" />
-                    <HighlightedText isHovered={isHovered}>integrată</HighlightedText>
+                    <HighlightedText isHovered={isHovered}>2 euro/lună + TVA</HighlightedText>
                   </div>
                 </motion.h2>
 

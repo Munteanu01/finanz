@@ -20,7 +20,7 @@ export default function LegalSupport() {
               100% online
             </p>
             <h2 className="text-3xl md:text-4xl font-bold leading-tight secondary">
-              Consilier juridic dedicat pe tot parcursul procesului de modificare al firmei
+              Avocat si Consilier juridic dedicat pe tot parcursul procesului de modificare al firmei
             </h2>
           </motion.div>
 
