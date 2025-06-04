@@ -284,30 +284,34 @@ const SearchOverlay = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
   const [searchResults, setSearchResults] = useState<Array<{ title: string; href: string }>>([])
 
   const handleSearch = useCallback((query: string) => {
-    setSearchQuery(query)
-    
-    const searchTerms = query.toLowerCase().split(' ')
-    const normalizedTerms = searchTerms.map(term => removeDiacritics(term))
-    
+    setSearchQuery(query);
+
+    const searchTerms = query.toLowerCase().split(' ').filter(Boolean);
+    const normalizedTerms = searchTerms.map(term => removeDiacritics(term));
+
     const searchInItems = (items: typeof MENU_ITEMS.contabilitate) => {
       return items.filter(item => {
-        const titleWords = item.title.toLowerCase()
-        const normalizedTitle = removeDiacritics(titleWords)
-        
+        const title = item.title;
+        const titleLower = title.toLowerCase();
+        const normalizedTitle = removeDiacritics(titleLower);
+
         return normalizedTerms.some(term => {
           if (term.length >= 2) {
-            return normalizedTitle.split(' ').some(word => 
-              word.startsWith(term.substring(0, 2))
-            ) || titleWords.split(' ').some(word => 
-              word.startsWith(term.substring(0, 2))
-            )
+            // Exact match
+            if (normalizedTitle === term || titleLower === term) return true;
+            // Prefix match
+            if (
+              normalizedTitle.split(' ').some(word => word.startsWith(term)) ||
+              titleLower.split(' ').some(word => word.startsWith(term))
+            ) return true;
+            // Contains
+            if (normalizedTitle.includes(term) || titleLower.includes(term)) return true;
           }
-          return false
-        })
-      })
-    }
+          return false;
+        });
+      });
+    };
 
-    // Caută în toate secțiunile dacă avem cel puțin 2 caractere
     if (query.length >= 2) {
       const results: Array<{ title: string; href: string }> = [
         ...searchInItems(MENU_ITEMS.contabilitate),
@@ -316,52 +320,57 @@ const SearchOverlay = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
         ...searchInItems(MENU_ITEMS.modificariPfa),
         ...searchInItems(MENU_ITEMS.inchideri),
         ...STATIC_LINKS.filter(item => {
-          const titleWords = item.title.toLowerCase()
-          return searchTerms.some(term => {
+          const titleLower = item.title.toLowerCase();
+          const normalizedTitle = removeDiacritics(titleLower);
+          return normalizedTerms.some(term => {
             if (term.length >= 2) {
-              return titleWords.split(' ').some(word => 
-                word.startsWith(term.substring(0, 2))
-              )
+              if (normalizedTitle === term || titleLower === term) return true;
+              if (
+                normalizedTitle.split(' ').some(word => word.startsWith(term)) ||
+                titleLower.split(' ').some(word => word.startsWith(term))
+              ) return true;
+              if (normalizedTitle.includes(term) || titleLower.includes(term)) return true;
             }
-            return false
-          })
+            return false;
+          });
         })
-      ]
+      ];
 
       // Remove duplicates based on href
-      const uniqueResults = Array.from(new Map(results.map(item => [item.href, item])).values())
-      
-      // Sort results by relevance (exact matches first)
-      uniqueResults.sort((a, b) => {
-        const aExact = a.title.toLowerCase().includes(query.toLowerCase())
-        const bExact = b.title.toLowerCase().includes(query.toLowerCase())
-        if (aExact && !bExact) return -1
-        if (!aExact && bExact) return 1
-        return 0
-      })
+      const uniqueResults = Array.from(new Map(results.map(item => [item.href, item])).values());
 
-      setSearchResults(uniqueResults)
+      // Sort by: exact match > prefix > contains
+      uniqueResults.sort((a, b) => {
+        const normQ = removeDiacritics(query.toLowerCase());
+        const aNorm = removeDiacritics(a.title.toLowerCase());
+        const bNorm = removeDiacritics(b.title.toLowerCase());
+
+        const aExact = aNorm === normQ;
+        const bExact = bNorm === normQ;
+        if (aExact && !bExact) return -1;
+        if (!aExact && bExact) return 1;
+
+        const aPrefix = aNorm.split(' ').some(word => word.startsWith(normQ));
+        const bPrefix = bNorm.split(' ').some(word => word.startsWith(normQ));
+        if (aPrefix && !bPrefix) return -1;
+        if (!aPrefix && bPrefix) return 1;
+
+        const aContains = aNorm.includes(normQ);
+        const bContains = bNorm.includes(normQ);
+        if (aContains && !bContains) return -1;
+        if (!aContains && bContains) return 1;
+
+        return 0;
+      });
+
+      setSearchResults(uniqueResults);
     } else {
-      setSearchResults([])
+      setSearchResults([]);
     }
   }, [])
 
-  const highlightMatch = (text: string, query: string) => {
-    if (!query) return text;
-    
-    const normalizedText = removeDiacritics(text.toLowerCase());
-    const normalizedQuery = removeDiacritics(query.toLowerCase());
-    
-    const parts = text.split(new RegExp(`(${query})`, 'gi'));
-    
-    return parts.map((part, i) => {
-      const normalizedPart = removeDiacritics(part.toLowerCase());
-      if (normalizedPart === normalizedQuery) {
-        return <span key={i} className="bg-secundaryColor/20 px-1 rounded">{part}</span>;
-      }
-      return part;
-    });
-  };
+  // 1. highlightMatch: fără bold, fără efect
+  const highlightMatch = (text: string, query: string) => text;
 
   return (
     <div
@@ -573,7 +582,7 @@ export default function FinanzNavbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className={`hidden 2xl:flex items-center space-x-0 ${NAVBAR_CONFIG.spacing.desktop}`}>
+            <div className={`hidden 2xl:flex items-center ${NAVBAR_CONFIG.spacing.desktop}`}>
               {/* Dropdown Menus */}
               {DROPDOWN_CONFIG.map((dropdown) => (
                 <CustomDropdown
@@ -589,41 +598,49 @@ export default function FinanzNavbar() {
               ))}
 
               {/* Regular Static Links */}
-              {filteredStaticLinks.map(({ title, href }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className={`${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium text-gray-700 hover:text-secundaryColor hover:bg-gray-50 rounded-lg transition-colors whitespace-nowrap`}
-                >
-                  {title}
-                </Link>
-              ))}
+              <div className="flex items-center gap-2 ml-2"> {/* Adaugă spațiu între linkuri */}
+                {filteredStaticLinks.map(({ title, href }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    className={`${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium text-gray-700 hover:text-secundaryColor hover:bg-gray-50 rounded-lg transition-colors whitespace-nowrap flex items-center`}
+                    style={{ height: 40 }}
+                  >
+                    {title}
+                  </Link>
+                ))}
 
-              {/* Special buttons group with new order */}
-              <div className="flex items-center gap-1 ml-2"> {/* Added ml-2 for spacing */}
-                {/* Search Button */}
+                {/* Search Button - desktop: fără bg, icon ca linkurile, puțin mai sus */}
                 <button
                   onClick={() => setIsSearchOpen(true)}
-                  className={`${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium text-gray-700 hover:text-secundaryColor hover:bg-gray-50 rounded-lg transition-colors flex items-center gap-2`}
+                  className={`
+                    flex items-center justify-center
+                    rounded-lg
+                    transition-colors
+                    ${NAVBAR_CONFIG.spacing.textSize}
+                    text-gray-700 hover:text-secundaryColor
+                    relative
+                  `}
+                  style={{ height: 40, width: 40, minWidth: 40, minHeight: 40, top: '-2px' }} // puțin mai sus
                 >
-                  <Search className="h-4 w-4" />
+                  <Search className="h-5 w-5" />
                   <span className="sr-only">Caută</span>
                 </button>
-
                 {/* App Link */}
                 <Link
                   href="https://online-srlconsult.ro/"
-                  className={`${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium bg-primaryColor text-white hover:bg-primaryColor/80 rounded-lg transition-colors whitespace-nowrap`}
+                  className={`${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium bg-primaryColor text-white hover:bg-primaryColor/80 rounded-lg transition-colors whitespace-nowrap flex items-center`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  style={{ height: 40 }}
                 >
                   Aplicație
                 </Link>
-
                 {/* Contact Link */}
                 <Link
                   href="/contact"
-                  className={`${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium bg-secundaryColor text-white hover:bg-secundaryColor/80 rounded-lg transition-colors whitespace-nowrap`}
+                  className={`${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium bg-secundaryColor text-white hover:bg-secundaryColor/80 rounded-lg transition-colors whitespace-nowrap flex items-center`}
+                  style={{ height: 40 }}
                 >
                   Contact
                 </Link>
@@ -631,10 +648,20 @@ export default function FinanzNavbar() {
             </div>
 
             {/* Mobile menu button */}
-            <Button variant="ghost" size="sm" className="2xl:hidden" onClick={() => setIsOpen(!isOpen)}>
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle navigation menu</span>
-            </Button>
+            <div className="flex 2xl:hidden items-center gap-1">
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                className="p-2 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center"
+                aria-label="Caută"
+                style={{ height: 40, width: 40 }}
+              >
+                <Search className="h-5 w-5" />
+              </button>
+              <Button variant="ghost" size="sm" onClick={() => setIsOpen(!isOpen)}>
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Toggle navigation menu</span>
+              </Button>
+            </div>
           </div>
         </div>
       </nav>
