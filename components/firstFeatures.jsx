@@ -25,7 +25,7 @@ export default function AccountingFeatures({ title, features }) {
         <div
           className={`grid ${
             features.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2 2xl:grid-cols-4"
-          } gap-6`}
+          } gap-3`}
         >
           {features.map((feature, index) => (
             <motion.div
@@ -40,7 +40,9 @@ export default function AccountingFeatures({ title, features }) {
               <div className="[&>*]:!text-primaryColor [&>*]:!mx-auto [&>*]:!mb-4 [&>*]:!text-5xl [&>*]:!flex [&>*]:!items-center [&>*]:!justify-center">
                 {feature.icon}
               </div>
-              <h3 className="text-xl text-primaryColor font-semibold mb-2">{feature.title}</h3>
+              <h3 className="text-xl text-primaryColor font-semibold mb-2 min-h-[3.5em] flex items-center justify-center">
+  {feature.title}
+</h3>
               <p className="text-primaryColor">{feature.description}</p>
             </motion.div>
           ))}
