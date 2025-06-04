@@ -622,14 +622,12 @@ export default function FinanzNavbar() {
                 <button
                   onClick={() => setIsSearchOpen(true)}
                   className={`
-                    flex items-center justify-center
-                    rounded-lg
-                    transition-colors
+                    ${NAVBAR_CONFIG.spacing.padding}
                     ${NAVBAR_CONFIG.spacing.textSize}
-                    text-gray-700 hover:text-secundaryColor
-                    relative
+                    font-medium text-gray-700 hover:text-secundaryColor hover:bg-gray-50
+                    rounded-lg transition-colors whitespace-nowrap flex items-center
                   `}
-                  style={{ height: 40, width: 40, minWidth: 40, minHeight: 40,  }} // puțin mai sus
+                  style={{ paddingTop: undefined, paddingBottom: undefined, height: undefined, width: undefined, minWidth: undefined, minHeight: undefined }}
                 >
                   <Search className="h-5 w-5" />
                   <span className="sr-only">Caută</span>
