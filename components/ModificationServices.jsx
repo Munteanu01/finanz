@@ -180,7 +180,7 @@ export default function ModificationServices({ title, subtitle, services = [] })
               </p>
               <a
                 href="/contact"
-                className="mt-auto inline-flex items-center justify-between gap-4 bg-primaryColor hover:bg-secundaryColor hover:bg-[#1e293b] text-white font-semibold py-3 px-8 rounded-2xl shadow transition-all duration-300 text-base"
+                className="mt-auto inline-flex items-center justify-between gap-4 bg-primaryColor hover:bg-secundaryColor  text-white font-semibold py-3 px-8 rounded-2xl shadow transition-all duration-300 text-base"
                 style={{ fontSize: "1.05rem", fontWeight: 600 }}
               >
                 <span className="text-left flex-1">Află mai multe</span>
