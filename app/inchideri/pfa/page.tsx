@@ -2,32 +2,11 @@
 import FinanzNavbar from "../../../navbar"
 import Footer from "../../../components/footer"
 import HeroPages from "../../../components/HeroPages"
-import { FileText, Clock, Shield, CheckCircle, ArrowRight, Zap, Users, Award, Phone, MessageSquare } from "lucide-react"
+import { FileText, Clock, CheckCircle, ArrowRight, Users } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+
 export default function InchiderePfaPage() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  }
-
   return (
     <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
       <FinanzNavbar />
@@ -39,8 +18,6 @@ export default function InchiderePfaPage() {
         badge="Digital • Rapid • Sigur"
         cards={[]}
       />
-
-
 
       <main className="container mx-auto py-16 px-4">
         {/* Process Steps */}
@@ -98,8 +75,7 @@ export default function InchiderePfaPage() {
                   <span className="text-sm font-semibold text-primaryColor">1 minut</span>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  Completezi formularul online sau contactezi un consilier pentru asistență personalizată în alegerea
-                  opțiunilor potrivite.
+                  Completezi formularul online sau contactezi un consilier pentru asistență personalizată.
                 </p>
               </div>
             </motion.div>
@@ -176,7 +152,7 @@ export default function InchiderePfaPage() {
         >
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-              Pachete de închidere PFA
+              Pachet de închidere PFA
             </h2>
           </div>
 
@@ -190,7 +166,7 @@ export default function InchiderePfaPage() {
             <div className="relative z-10">
               <div className="flex items-center justify-between mb-8">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Pachet complet închidere PFA</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Pachet complet închidere PFA ONRC</h3>
                   <p className="text-gray-600">Tot ce ai nevoie pentru închiderea legală a PFA-ului</p>
                 </div>
                 <div className="text-right">
@@ -200,9 +176,9 @@ export default function InchiderePfaPage() {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div className="space-y-4">
-                  <h4 className="font-semibold text-gray-800 mb-3">Servicii incluse:</h4>
+              <div className="grid md:grid-cols-2 gap-6 mb-8 items-start">
+                <div className="flex flex-col h-full">
+                  <h4 className="font-semibold text-gray-800 mb-3">Incluse:</h4>
                   <div className="space-y-3">
                     {[
                       "Dosar complet cu toate documentele necesare",
@@ -216,16 +192,16 @@ export default function InchiderePfaPage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: index * 0.1 }}
-                        className="flex items-center gap-3"
+                        className="flex items-start gap-3"
                       >
-                        <CheckCircle className="w-5 h-5 text-mediumBlue flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-mediumBlue flex-shrink-0 mt-1" />
                         <span className="text-gray-700">{item}</span>
                       </motion.div>
                     ))}
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="flex flex-col h-full">
                   <h4 className="font-semibold text-gray-800 mb-3">Suport expert:</h4>
                   <div className="space-y-3">
                     {[
@@ -241,9 +217,9 @@ export default function InchiderePfaPage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: index * 0.1 + 0.4 }}
-                        className="flex items-center gap-3"
+                        className="flex items-start gap-3"
                       >
-                        <CheckCircle className="w-5 h-5 text-accentColor flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-primaryColor flex-shrink-0 mt-1" />
                         <span className="text-gray-700">{item}</span>
                       </motion.div>
                     ))}
@@ -251,15 +227,14 @@ export default function InchiderePfaPage() {
                 </div>
               </div>
               <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-secundaryColor/80 to-secundaryColor text-white py-4 px-8 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
-              > 
-             Începe procesul de închidere
-                
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-secundaryColor text-white py-4 px-8 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
+                >
+                  Începe procesul de închidere
+                  <ArrowRight className="w-5 h-5" />
+                </motion.button>
               </Link>
             </div>
           </motion.div>

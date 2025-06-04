@@ -175,8 +175,8 @@ export default function InchidereSrlPage() {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div className="space-y-4">
+              <div className="grid md:grid-cols-2 gap-6 mb-8 items-start">
+                <div className="flex flex-col h-full">
                   <h4 className="font-semibold text-gray-800 mb-3">Incluse:</h4>
                   <div className="space-y-3">
                     {[
@@ -191,16 +191,16 @@ export default function InchidereSrlPage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: index * 0.1 }}
-                        className="flex items-center gap-3"
+                        className="flex items-start gap-3"
                       >
-                        <CheckCircle className="w-5 h-5 text-mediumBlue flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-mediumBlue flex-shrink-0 mt-1" />
                         <span className="text-gray-700">{item}</span>
                       </motion.div>
                     ))}
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="flex flex-col h-full">
                   <h4 className="font-semibold text-gray-800 mb-3">Suport expert:</h4>
                   <div className="space-y-3">
                     {[
@@ -214,9 +214,9 @@ export default function InchidereSrlPage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: index * 0.1 + 0.4 }}
-                        className="flex items-center gap-3"
+                        className="flex items-start gap-3"
                       >
-                        <CheckCircle className="w-5 h-5 text-primaryColor flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-primaryColor flex-shrink-0 mt-1" />
                         <span className="text-gray-700">{item}</span>
                       </motion.div>
                     ))}
