@@ -68,37 +68,41 @@ export default function AutorizatiiPage() {
       {/* Sectiune: Tipuri de autorizații */}
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Title Section - adjusted to match grid margins */}
           <motion.div 
-            className="mb-8 sm:mb-12 lg:mb-16"
+            className="mb-8 sm:mb-12 lg:mb-16 md:col-span-2 xl:col-span-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primaryColor mb-4 sm:mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primaryColor mb-4 sm:mb-6">
               Autorizații și{" "}
-              <span className="text-secundaryColor block sm:inline">avize necesare</span>
+              <span className="text-secundaryColor block pt-2">avize necesare</span>
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-2xl">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl">
               Obține rapid și fără stres toate autorizațiile necesare pentru afacerea ta.
             </p>
           </motion.div>
 
+          {/* Grid remains the same */}
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6">
             {/* DSV Card */}
             <motion.div
-              className="col-span-1 md:col-span-2 xl:col-span-3 bg-white/80 rounded-3xl p-6 sm:p-8 hover:shadow-2xl shadow-lg transition-all duration-500 cursor-pointer group hover:scale-[1.02]"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              className="col-span-1 md:col-span-2 xl:col-span-3 bg-white/90 rounded-3xl p-6 sm:p-8 shadow-lg"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
               <div className="flex flex-col gap-3 sm:gap-4">
-                <div className="bg-secundaryColor p-3 sm:p-4 rounded-2xl shadow-md w-fit group-hover:bg-secundaryColor/90 transition-all duration-300">
-                  <ShieldCheck className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                <div className="bg-primaryColor flex p-3 sm:p-4 rounded-2xl shadow-md w-fit">
+                  <ShieldCheck className="w-6 h-6 mr-5 sm:w-8 sm:h-8 text-white" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">DSV</h3>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-primaryColor">DSV</h3>
-                <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
+                
+                <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                   Toate companiile care fac comert, productie sau depozitare de alimente, trebuie sa fie autorizate de Autoritatea Nationala Sanitar Veterinara si pentru Siguranta Alimentelor inaintea inceperii activitatii.
                 </p>
               </div>
@@ -106,18 +110,19 @@ export default function AutorizatiiPage() {
 
             {/* DSP Card */}
             <motion.div
-              className="col-span-1 bg-white/80 rounded-3xl p-6 sm:p-8 hover:shadow-2xl shadow-lg transition-all duration-500 cursor-pointer group hover:scale-[1.02]"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              className="col-span-1 bg-white/90 rounded-3xl p-6 sm:p-8 shadow-lg"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
               <div className="flex flex-col gap-3 sm:gap-4">
-                <div className="bg-secundaryColor p-3 sm:p-4 rounded-2xl shadow-md w-fit group-hover:bg-secundaryColor/90 transition-all duration-300">
-                  <ShieldCheck className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                <div className="bg-primaryColor flex p-3 sm:p-4 rounded-2xl shadow-md w-fit">
+                  <ShieldCheck className="w-6 h-6 mr-5 sm:w-8 sm:h-8 text-white" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">DSP</h3>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-primaryColor">DSP</h3>
-                <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
+                <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                   Autorizația sanitară este necesară pentru spațiile cu specific comercial sau social.
                 </p>
               </div>
@@ -125,18 +130,19 @@ export default function AutorizatiiPage() {
 
             {/* Primărie Card */}
             <motion.div
-              className="md:col-span-2 bg-white/80 rounded-3xl p-6 sm:p-8 hover:shadow-2xl shadow-lg transition-all duration-500 cursor-pointer group hover:scale-[1.02]"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              className="md:col-span-2 bg-white/90 rounded-3xl p-6 sm:p-8 shadow-lg"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
               <div className="flex flex-col gap-3 sm:gap-4">
-                <div className="bg-secundaryColor p-3 sm:p-4 rounded-2xl shadow-md w-fit group-hover:bg-secundaryColor/90 transition-all duration-300">
-                  <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                <div className="bg-primaryColor flex p-3 sm:p-4 rounded-2xl shadow-md w-fit">
+                  <FileText className="w-6 h-6 mr-5 sm:w-8 sm:h-8 text-white" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">Primărie</h3>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-primaryColor">Primărie</h3>
-                <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
+                <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                   Document oficial esențial pentru desfășurarea activităților comerciale.
                 </p>
               </div>
@@ -144,18 +150,19 @@ export default function AutorizatiiPage() {
 
             {/* IGI Card */}
             <motion.div
-              className="md:col-span-2 bg-white/80 rounded-3xl p-6 sm:p-8 hover:shadow-2xl shadow-lg transition-all duration-500 cursor-pointer group hover:scale-[1.02]"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              className="md:col-span-2 bg-white/90 rounded-3xl p-6 sm:p-8 shadow-lg"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
               <div className="flex flex-col gap-3 sm:gap-4">
-                <div className="bg-secundaryColor p-3 sm:p-4 rounded-2xl shadow-md w-fit group-hover:bg-secundaryColor/90 transition-all duration-300">
-                  <UserCheck className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                <div className="bg-primaryColor flex p-3 sm:p-4 rounded-2xl shadow-md w-fit">
+                  <UserCheck className="w-6 h-6 mr-5 sm:w-8 sm:h-8 text-white" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">IGI</h3>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-primaryColor">IGI</h3>
-                <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
+                <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                   Şederea pe teritoriul României a cetăţenilor străini se poate realiza prin mai multe moduri.
                 </p>
               </div>
@@ -163,18 +170,19 @@ export default function AutorizatiiPage() {
 
             {/* ISU Card */}
             <motion.div
-              className="md:col-span-2 bg-white/80 rounded-3xl p-6 sm:p-8 hover:shadow-2xl shadow-lg transition-all duration-500 cursor-pointer group hover:scale-[1.02]"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              className="md:col-span-2 bg-white/90 rounded-3xl p-6 sm:p-8 shadow-lg"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
               <div className="flex flex-col gap-3 sm:gap-4">
-                <div className="bg-secundaryColor p-3 sm:p-4 rounded-2xl shadow-md w-fit group-hover:bg-secundaryColor/90 transition-all duration-300">
-                  <ShieldCheck className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                <div className="bg-primaryColor flex p-3 sm:p-4 rounded-2xl shadow-md w-fit">
+                  <ShieldCheck className="w-6 h-6 mr-5 sm:w-8 sm:h-8 text-white" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">ISU</h3>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold textPrimaryColor">ISU</h3>
-                <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
+                <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                   Autorizația ISU este una din cele mai importante autorizații necesare unei afaceri deoarece ea certifică îndeplinirea normelor de securitate în cazuri de urgență.
                 </p>
               </div>
@@ -182,18 +190,19 @@ export default function AutorizatiiPage() {
 
             {/* Mediu Card */}
             <motion.div
-              className="md:col-span-2 bg-white/80 rounded-3xl p-6 sm:p-8 hover:shadow-2xl shadow-lg transition-all duration-500 cursor-pointer group hover:scale-[1.02]"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
+              className="md:col-span-2 bg-white/90 rounded-3xl p-6 sm:p-8 shadow-lg"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
               <div className="flex flex-col gap-3 sm:gap-4">
-                <div className="bg-secundaryColor p-3 sm:p-4 rounded-2xl shadow-md w-fit group-hover:bg-secundaryColor/90 transition-all duration-300">
-                  <Globe className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                <div className="bg-primaryColor flex p-3 sm:p-4 rounded-2xl shadow-md w-fit">
+                  <Globe className="w-6 h-6 mr-5 sm:w-8 sm:h-8 text-white" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">Mediu</h3>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-primaryColor">Mediu</h3>
-                <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
+                <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                   Avizul de mediu este actul administrativ emis de autoritatea competentă pentru protecţia mediului, care confirmă integrarea aspectelor privind protecţia mediului.
                 </p>
               </div>
