@@ -44,6 +44,7 @@ const NAVBAR_CONFIG = {
 // ===== MENU DATA =====
 const MENU_ITEMS = {
   contabilitate: [
+    { title: "Aplicație", href: "/contabilitate/aplicatie" }, 
     { title: "Contabilitate SRL", href: "/contabilitate/srl" },
     { title: "Contabilitate PFA", href: "/contabilitate/pfa" },
     { title: "Tarife contabilitate", href: "/contabilitate/tarife" },
