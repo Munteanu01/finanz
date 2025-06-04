@@ -282,6 +282,13 @@ const SimpleMobileDropdownSection = ({
 const SearchOverlay = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const [searchQuery, setSearchQuery] = useState("")
   const [searchResults, setSearchResults] = useState<Array<{ title: string; href: string }>>([])
+  const inputRef = useRef<HTMLInputElement>(null) // <-- adaugă ref
+
+  useEffect(() => {
+    if (isOpen && inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, [isOpen])
 
   const handleSearch = useCallback((query: string) => {
     setSearchQuery(query);
@@ -391,6 +398,7 @@ const SearchOverlay = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
         <div className="max-w-3xl mx-auto">
           <div className="relative">
             <input
+              ref={inputRef} // <-- adaugă ref aici
               type="text"
               placeholder="Caută servicii, informații..."
               value={searchQuery}
