@@ -77,7 +77,7 @@ export default function PasiInfiintare() {
 
 								<div className="text-center">
 									<span className="inline-block px-4 py-2 rounded-full bg-primaryColor/10 text-primaryColor font-medium text-sm">
-										Dură{" "}
+										Durată{" "}
 										<span className="whitespace-nowrap">
 											{pas.duration}
 										</span>

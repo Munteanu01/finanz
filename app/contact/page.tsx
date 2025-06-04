@@ -65,7 +65,7 @@ export default function ContactPage() {
           rel="noopener noreferrer"
           className="text-secundaryColor hover:text-primaryColor text-sm font-semibold"
         >
-          Splaiul Independentei, Nr 202B
+          Splaiul Independentei, Nr 202B,
           <br />
           Sector 6, București
         </a>
@@ -103,7 +103,7 @@ export default function ContactPage() {
               <div
                 key={idx}
                 className={`
-                  text-center p-4 rounded-xl bg-white
+                  text-center px-2 py-4 rounded-xl bg-white
                   border-2
                   border-gray-200
                   bg-clip-padding
