@@ -274,13 +274,34 @@ export default function AplicatiePage() {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="flex justify-center"
                 >
-                  <div className="relative">
-                    <div className="absolute -inset-6 bg-gradient-to-r from-secundaryColor/20 to-primaryColor/20 rounded-3xl blur-2xl" />
-                    <img
-                      src="/laptopmockup.png"
-                      alt="Beneficii aplicație"
-                      className="relative w-80 h-80 object-contain rounded-2xl"
-                    />
+                  <div className="relative flex flex-col items-center gap-4">
+                    {/* Laptop 2 */}
+                    <div className="relative">
+                      <div className="absolute -inset-6 bg-gradient-to-r from-secundaryColor/20 to-primaryColor/20 rounded-3xl blur-2xl" />
+                      <img
+                        src="/laptopmockup.png"
+                        alt="Laptop 2"
+                        className="relative w-80 h-80 object-contain rounded-2xl z-10"
+                      />
+                    </div>
+                    {/* Laptop Mockup */}
+                    <div className="relative">
+                      <div className="absolute -inset-6 bg-gradient-to-r from-secundaryColor/20 to-primaryColor/20 rounded-3xl blur-2xl" />
+                      <img
+                        src="/laptop2.jpg"
+                        alt="Beneficii aplicație"
+                        className="relative w-80 h-80 object-contain rounded-2xl z-10"
+                      />
+                    </div>
+                    {/* Laptop 3 */}
+                    <div className="relative">
+                      <div className="absolute -inset-6 bg-gradient-to-r from-secundaryColor/20 to-primaryColor/20 rounded-3xl blur-2xl" />
+                      <img
+                        src="/laptop3.jpg"
+                        alt="Laptop 3"
+                        className="relative w-80 h-80 object-contain rounded-2xl z-10"
+                      />
+                    </div>
                   </div>
                 </motion.div>
               </div>
