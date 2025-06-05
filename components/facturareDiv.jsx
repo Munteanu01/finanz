@@ -61,7 +61,7 @@ export default function FacturareDiv() {
                   și încasezi rapid, economisind timp și bani pentru afacerea ta.
                 </motion.p>
 
-                <Link href="https://online-srlconsult.ro/">
+                <Link href="https://finanzconsult.app/">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

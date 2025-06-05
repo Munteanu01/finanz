@@ -92,7 +92,7 @@ const STATIC_LINKS = [
   { title: "Autorizații", href: "/autorizatii" },
   { title: "Înregistrare mărci", href: "/inregistrare-marci" },
   { title: "Juridic", href: "/juridic" }, // This is now a simple link
-  { title: "Aplicație", href: "https://online-srlconsult.ro/" },
+  { title: "Aplicație", href: "https://finanzconsult.app/" },
   { title: "Contact", href: "/contact" },
 
 ]
@@ -635,7 +635,7 @@ export default function FinanzNavbar() {
                 </button>
                 {/* App Link */}
                 <Link
-                  href="https://online-srlconsult.ro/"
+                  href="https://finanzconsult.app/"
                   className={`${NAVBAR_CONFIG.spacing.padding} ${NAVBAR_CONFIG.spacing.textSize} font-medium bg-primaryColor text-white hover:bg-primaryColor/80 rounded-lg transition-colors whitespace-nowrap flex items-center`}
                   target="_blank"
                   rel="noopener noreferrer"
