@@ -195,7 +195,7 @@ export default function TarifePage() {
                           <div className="flex flex-col xl:flex-row items-end xl:items-baseline justify-end space-y-1 xl:space-y-0 xl:space-x-2">
                             <div className="flex items-baseline space-x-2">
                               <span className="text-gray-400 text-sm">de la</span>
-                              <span className="text-primaryColor font-bold">700 lei</span>
+                              <span className="text-primaryColor font-bold">500 lei</span>
                             </div>
                             <span className="text-gray-400 text-sm text-right xl:text-left xl:mt-0 mt-1 xl:whitespace-nowrap">
                               (în funcție de complexitate)
@@ -211,7 +211,7 @@ export default function TarifePage() {
                           <div className="flex flex-col xl:flex-row items-end xl:items-baseline justify-end space-y-1 xl:space-y-0 xl:space-x-2">
                             <div className="flex items-baseline space-x-2">
                               <span className="text-gray-400 text-sm">de la</span>
-                              <span className="text-primaryColor font-bold">600 lei</span>
+                              <span className="text-primaryColor font-bold">500 lei</span>
                             </div>
                             <span className="text-gray-400 text-sm text-right xl:text-left xl:mt-0 mt-1 xl:whitespace-nowrap">
                               (în funcție de complexitate)
