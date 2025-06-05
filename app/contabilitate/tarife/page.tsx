@@ -13,12 +13,32 @@ const accountingPrices = {
   headers: ["Volum", "Neplătitor TVA", "Plătitor TVA"],
   rows: [
     { service: "Fără activitate", price: { nonVAT: "150 lei", VAT: "170 lei" } },
-    { service: "10 documente", price: { nonVAT: "195 lei", VAT: "245 lei" } },
-    { service: "20 documente", price: { nonVAT: "295 lei", VAT: "345 lei" } },
-    { service: "30 documente", price: { nonVAT: "395 lei", VAT: "445 lei" } },
-    { service: "50 documente", price: { nonVAT: "595 lei", VAT: "645 lei" } },
+    { service: "*10 documente", price: { nonVAT: "195 lei", VAT: "245 lei" } },
+    { service: "*20 documente", price: { nonVAT: "295 lei", VAT: "345 lei" } },
+    { service: "*30 documente", price: { nonVAT: "395 lei", VAT: "445 lei" } },
+    { service: "*50 documente", price: { nonVAT: "595 lei", VAT: "645 lei" } },
   ],
   note: "Ai un volum mai mare de 100 de documente lunar? Contactează-ne pentru o ofertă personalizată.",
+};
+
+const stockSinglePrice = {
+  title: "",
+  headers: ["Serviciu", "Preț"],
+  rows: [
+    {
+      service: "Evidență stoc",
+      price: "de la 500 lei (în funcție de complexitate)",
+    },
+    {
+      service: "Gestiune contabilă cantitativ-valorică",
+      price: "de la 700 lei (în funcție de volum și complexitate)",
+    },
+    {
+      service: "Gestiune contabilă cantitativ-global valorică",
+      price: "de la 600 lei (în funcție de volum și complexitate)",
+    },
+  ],
+  note: "",
 };
 
 const payrollPrices = {
@@ -130,6 +150,82 @@ export default function TarifePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
             <PriceTable {...accountingPrices} />
+
+            {/* Hardcoded Stock Table */}
+            <div className="w-full relative">
+              {/* Decorative background blur circles for consistency */}
+              <div className="absolute inset-0 -z-10 overflow-hidden">
+                <div className="absolute w-96 h-96 bg-primaryColor/20 rounded-full blur-[150px] -top-20 -left-20" />
+                <div className="absolute w-96 h-96 bg-primaryColor/10 rounded-full blur-[150px] bottom-0 right-0" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-20 text-gray-700">
+                {/* You can add a title here if needed */}
+              </h2>
+              <div className="bg-white shadow-xl rounded-2xl overflow-hidden max-w-full mx-auto relative">
+                <div className="overflow-x-auto">
+                  <table className="w-full min-w-[480px] table-auto">
+                    <thead>
+                      <tr className="bg-primaryColor bg-opacity-10">
+                        <th className="px-6 py-4 text-lg font-semibold text-primaryColor text-left">Serviciu</th>
+                        <th className="px-6 xl:pr-80 pr-28 py-4 text-lg font-semibold text-primaryColor text-right">Preț</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-200">
+                      <tr className="hover:bg-secundaryColor/30 transition-colors duration-200">
+                        <td className="px-6 py-4 text-gray-700 font-medium whitespace-normal text-left">
+                          *Evidență stoc
+                        </td>
+                        <td className="px-6 pr-24 py-4 text-lg text-primaryColor font-bold text-right align-middle">
+                          <div className="flex flex-col xl:flex-row items-end xl:items-baseline justify-end space-y-1 xl:space-y-0 xl:space-x-2">
+                            <div className="flex items-baseline space-x-2">
+                              <span className="text-gray-400 text-sm">de la</span>
+                              <span className="text-primaryColor font-bold">500 lei</span>
+                            </div>
+                            <span className="text-gray-400 text-sm text-right xl:text-left xl:mt-0 mt-1 xl:whitespace-nowrap">
+                              (în funcție de complexitate)
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-secundaryColor/30 transition-colors duration-200">
+                        <td className="px-6 py-4 text-gray-700 font-medium whitespace-normal text-left">
+                          *Gestiune contabilă cantitativ-valorică
+                        </td>
+                        <td className="px-6 pr-24 py-4 text-lg text-primaryColor font-bold text-right align-middle">
+                          <div className="flex flex-col xl:flex-row items-end xl:items-baseline justify-end space-y-1 xl:space-y-0 xl:space-x-2">
+                            <div className="flex items-baseline space-x-2">
+                              <span className="text-gray-400 text-sm">de la</span>
+                              <span className="text-primaryColor font-bold">700 lei</span>
+                            </div>
+                            <span className="text-gray-400 text-sm text-right xl:text-left xl:mt-0 mt-1 xl:whitespace-nowrap">
+                              (în funcție de complexitate)
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-secundaryColor/30 transition-colors duration-200">
+                        <td className="px-6 py-4 text-gray-700 font-medium whitespace-normal text-left">
+                          *Gestiune contabilă cantitativ-global valorică
+                        </td>
+                        <td className="px-6 pr-24 py-4 text-lg text-primaryColor font-bold text-right align-middle">
+                          <div className="flex flex-col xl:flex-row items-end xl:items-baseline justify-end space-y-1 xl:space-y-0 xl:space-x-2">
+                            <div className="flex items-baseline space-x-2">
+                              <span className="text-gray-400 text-sm">de la</span>
+                              <span className="text-primaryColor font-bold">600 lei</span>
+                            </div>
+                            <span className="text-gray-400 text-sm text-right xl:text-left xl:mt-0 mt-1 xl:whitespace-nowrap">
+                              (în funcție de complexitate)
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            {/* End Hardcoded Stock Table */}
+
             <PriceTable {...payrollPrices} />
             <PriceTable {...payrollServicesPrices} />
             <PriceTable {...consultingPrices} />
