@@ -142,7 +142,7 @@ export default function AplicatiePage() {
                         Finanz Consult
                       </span>
                       , facturarea devine rapidă și eficientă, indiferent dacă
-                      alegi să o faci de pe telefon sau desktop. Grație funcției de
+                      alegi să o faci de pe telefon sau desktop. Grația funcției de
                       sincronizare între dispozitive, toate datele tale sunt
                       actualizate și accesibile, asigurând o experiență de utilizare
                       fluidă și fără întreruperi.
@@ -170,6 +170,23 @@ export default function AplicatiePage() {
                       inteligent și mai eficient.
                     </motion.p>
                   </div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.7 }}
+                    className="flex flex-col sm:flex-row gap-4"
+                  >
+                    <a
+                      href="https://finanzconsult.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center justify-center gap-2 bg-primaryColor text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                    >
+                      Accesează aplicația
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </motion.div>
                 </div>
 
                 <motion.div
@@ -396,6 +413,31 @@ export default function AplicatiePage() {
                 </motion.div>
               ))}
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-center mt-12"
+            >
+              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-lg">
+                <h3 className="text-2xl font-bold text-primaryColor mb-4">
+                  Gata să transformi modul în care gestionezi contabilitatea?
+                </h3>
+                <p className="text-gray-700 mb-6 text-lg">
+                  Începe să folosești aplicația și descoperă diferența!
+                </p>
+                <a
+                  href="https://finanzconsult.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-2 bg-primaryColor text-white px-10 py-5 rounded-2xl font-bold text-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                >
+                  Accesează aplicația acum
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </motion.div>
           </motion.section>
         </main>
       </div>
