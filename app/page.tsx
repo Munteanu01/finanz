@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import FinanzNavbar from "../navbar"
-import HeroSection from "../hero-section"
-import Footer from "../components/footer"
-import Banks from "../components/banks.jsx"
+import FinanzNavbar from "../navbar";
+import HeroSection from "../hero-section";
+import Footer from "../components/footer";
+import Banks from "../components/banks.jsx";
 import {
   Users,
   ArrowRight,
@@ -15,8 +15,8 @@ import {
   Globe,
   Award,
   Zap,
-} from "lucide-react"
-import Link from "next/link"
+} from "lucide-react";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -24,7 +24,7 @@ export default function Page() {
       <FinanzNavbar />
       <HeroSection />
 
-      {/* Services Section - Modern Design */}
+      {/* Services Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0">
@@ -40,7 +40,7 @@ export default function Page() {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Oferim soluții complete și personalizate pentru toate nevoile dumneavoastră de contabilitate și
-              consultanță juridică
+              consultanță juridică.
             </p>
           </div>
 
@@ -375,7 +375,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Testimonials Section - Modern Design */}
+      {/* Testimonials Section - Compact Design */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -383,82 +383,42 @@ export default function Page() {
               Ce spun clienții noștri
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Feedback-ul clienților noștri confirmă calitatea serviciilor oferite
+              Feedback-ul clienților noștri confirmă calitatea serviciilor oferite.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <div className="flex items-center mb-6">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                text: "Am avut norocul să colaborez cu o echipă excepțională încă de la începutul parcursului meu antreprenorial, în 2022. La momentul înființării societății mele, nu știam exact care sunt pașii de urmat, dar sprijinul oferit de FinanzConsult a fost esențial. Cu profesionalism, promptitudine și o comunicare impecabilă, m-au ghidat în fiecare etapă – de la primele documente până la primele declarații fiscale. Recomand cu mare drag această echipă dedicată și le urez mult succes în continuare! ",
+                name: "Daniel I. - CHOOSEAX HOUSE S.R.L.",
+              },
+              {
+                text: "Am început drumul antreprenoriatului în 2023, complet pierdut, fără să știu pașii corecți. FinanzConsult a fost alături de mine de la început – cu răbdare, claritate și mult profesionalism. M-au ajutat să-mi înființez firma, să trec prin provocările unei asocieri, iar mai recent, să-mi dezvolt agenția. De fiecare dată, am primit sfaturi reale și soluții rapide. Le sunt profund recunoscător și îi recomand cu toată încrederea!",
+                name: "Mădălin M. - RETEAUA DE IMOBILIARE S.R.L.",
+              },
+              {
+                text: "Lucrez cu această firmă de contabilitate de peste 5 ani și sunt extrem de mulțumit de colaborare. Profesioniști, prompți și mereu atenți la detalii, m-au ajutat să gestionez corect și eficient toate aspectele financiare ale afacerii mele. Comunicarea este excelentă, primesc mereu răspunsuri clare și rapide, iar sfaturile oferite au fost de mare ajutor în luarea unor decizii importante. Recomand cu încredere oricui caută un partener de încredere în domeniul contabilității!",
+                name: "Romulus G. - SMILE AVENUE CLINICS S.R.L.",
+              },
+            ].map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+              >
+                <p className="text-gray-700 leading-relaxed text-sm md:text-base mb-4">
+                  {testimonial.text}
+                </p>
+                <div className="text-gray-900 font-bold text-sm md:text-base text-right">
+                  {testimonial.name}
                 </div>
               </div>
-              <p className="text-gray-700 mb-6 leading-relaxed text-lg">
-                Am început drumul antreprenoriatului în 2023, complet pierdut, fără să știu pașii corecți. FinanzConsult a fost alături de mine de la început – cu răbdare, claritate și mult profesionalism. M-au ajutat să-mi înființez firma, să trec prin provocările unei asocieri, iar mai recent,  să-mi dezvolt agenția. De fiecare dată, am primit sfaturi reale și soluții rapide. Le sunt profund recunoscător și îi recomand cu toată încrederea!
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-white font-bold">MM</span>
-                </div>
-                <div>
-                  <div className="font-bold text-gray-900">Mădălin M.</div>
-                  <div className="text-sm text-gray-500">RETEAUA DE IMOBILIARE S.R.L</div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <div className="flex items-center mb-6">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-              </div>
-              <p className="text-gray-700 mb-6 leading-relaxed text-lg">
-                Am început drumul antreprenoriatului în 2023, complet pierdut, fără să știu pașii corecți. FinanzConsult a fost alături de mine de la început – cu răbdare, claritate și mult profesionalism. M-au ajutat să-mi înființez firma, să trec prin provocările unei asocieri, iar mai recent,  să-mi dezvolt agenția. De fiecare dată, am primit sfaturi reale și soluții rapide. Le sunt profund recunoscător și îi recomand cu toată încrederea!
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-white font-bold">MM</span>
-                </div>
-                <div>
-                  <div className="font-bold text-gray-900">Mădălin M.</div>
-                  <div className="text-sm text-gray-500">RETEAUA DE IMOBILIARE S.R.L</div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Testimonial 2 */}
-            <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <div className="flex items-center mb-6">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-              </div>
-              <p className="text-gray-700 mb-6 leading-relaxed text-lg">
-                Lucrez cu această firmă de contabilitate de peste 5 ani și sunt extrem de mulțumit de colaborare. Profesioniști, prompți și mereu atenți la detalii, m-au ajutat să gestionez corect și eficient toate aspectele financiare ale afacerii mele. Comunicarea este excelentă, primesc mereu răspunsuri clare și rapide, iar sfaturile oferite au fost de mare ajutor în luarea unor decizii importante. Recomand cu încredere oricui caută un partener de încredere în domeniul contabilității!
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-white font-bold">RG</span>
-                </div>
-                <div>
-                  <div className="font-bold text-gray-900">Romulus G</div>
-                  <div className="text-sm text-gray-500">SMILE AVENUE CLINICS S.R.L</div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       <Footer />
     </div>
-  )
+  );
 }
