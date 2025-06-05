@@ -376,6 +376,8 @@ export default function Page() {
       </section>
 
       {/* Testimonials Section - Compact Design */}
+
+      {/* Testimonials Section - Compact Design */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -387,10 +389,10 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
             {[
               {
-                text: "Am avut norocul să colaborez cu o echipă excepțională încă de la începutul parcursului meu antreprenorial, în 2022. La momentul înființării societății mele, nu știam exact care sunt pașii de urmat, dar sprijinul oferit de FinanzConsult a fost esențial. Cu profesionalism, promptitudine și o comunicare impecabilă, m-au ghidat în fiecare etapă – de la primele documente până la primele declarații fiscale. Recomand cu mare drag această echipă dedicată și le urez mult succes în continuare! ",
+                text: "Am avut norocul să colaborez cu o echipă excepțională încă de la începutul parcursului meu antreprenorial, în 2022. La momentul înființării societății mele, nu știam exact care sunt pașii de urmat, dar sprijinul oferit de FinanzConsult a fost esențial. Cu profesionalism, promptitudine și o comunicare impecabilă, m-au ghidat în fiecare etapă – de la primele documente până la primele declarații fiscale. Recomand cu mare drag această echipă dedicată și le urez mult succes în continuare!",
                 name: "Daniel I. - CHOOSEAX HOUSE S.R.L.",
               },
               {
@@ -401,15 +403,24 @@ export default function Page() {
                 text: "Lucrez cu această firmă de contabilitate de peste 5 ani și sunt extrem de mulțumit de colaborare. Profesioniști, prompți și mereu atenți la detalii, m-au ajutat să gestionez corect și eficient toate aspectele financiare ale afacerii mele. Comunicarea este excelentă, primesc mereu răspunsuri clare și rapide, iar sfaturile oferite au fost de mare ajutor în luarea unor decizii importante. Recomand cu încredere oricui caută un partener de încredere în domeniul contabilității!",
                 name: "Romulus G. - SMILE AVENUE CLINICS S.R.L.",
               },
-            ].map((testimonial, index) => (
+            ].map((testimonial, index, arr) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col "
               >
-                <p className="text-gray-700 leading-relaxed text-sm md:text-base mb-4">
-                  {testimonial.text}
-                </p>
-                <div className="text-gray-900 font-bold text-sm md:text-base text-right">
+                <div className="flex flex-col flex-grow">
+                  <div className="flex  mb-2">
+                    {/* 5 stars */}
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-[#F6ae2d] fill-[#F6ae2d] mr-1" fill="currentColor" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 leading-relaxed pt-2 text-sm md:text-base mb-2 text-left">
+                    {testimonial.text}
+                  </p>
+                </div>
+                {/* Name always at the same vertical position */}
+                <div className="pt-4 text-primaryColor font-bold text-base  min-h-[3rem] flex items-center ">
                   {testimonial.name}
                 </div>
               </div>
