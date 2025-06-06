@@ -109,7 +109,7 @@ export default function HeroSection() {
           {/* Address badge - la bottom-ul secțiunii, doar pe lg+ */}
           <div className="hidden lg:block absolute left-4 bottom-8 z-20">
             <a
-              href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+București"
+              href="https://maps.app.goo.gl/7fRUwEm1n9Psuuyn8"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-4 bg-white/90 backdrop-blur-sm text-gray-700 rounded-full text-sm font-medium shadow-lg border border-gray-200 hover:bg-white hover:shadow-xl transition-all duration-300"
@@ -137,7 +137,7 @@ export default function HeroSection() {
         {/* Address badge - bottom left for mobile */}
         <div className="absolute bottom-8 left-6 z-20">
           <a
-            href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+București"
+            href="https://maps.app.goo.gl/7fRUwEm1n9Psuuyn8"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-3 py-2 bg-white/90 backdrop-blur-sm text-gray-700 rounded-full text-xs font-medium shadow-lg border border-gray-200 hover:bg-white hover:shadow-xl transition-all duration-300"
@@ -150,8 +150,8 @@ export default function HeroSection() {
         <div className="container mx-auto px-6 relative z-10 flex flex-col justify-center h-full">
           {/* Title */}
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold mb-3 text-gray-700leading-tight">
-              <span className=" group leading-relaxed">
+            <h1 className="sm:text-4xl text-3xl font-bold mb-3 text-gray-700 leading-tight">
+              <span className=" group">
                 Dedicați <span className="relative inline-block">
                   <span className="relative z-10">excelenței</span>
                   <span className="absolute left-0 bottom-1 w-full h-1 bg-[#FE6309] z-0 transition-all duration-300 group-hover:h-5/6"></span>

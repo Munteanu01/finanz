@@ -60,7 +60,7 @@ export default function ContactPage() {
       title: <span className="text-primaryColor">Adresa</span>,
       content: (
         <a
-          href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
+          href="https://maps.app.goo.gl/7fRUwEm1n9Psuuyn8"
           target="_blank"
           rel="noopener noreferrer"
           className="text-secundaryColor hover:text-primaryColor text-sm font-semibold"
@@ -263,7 +263,7 @@ export default function ContactPage() {
                 </p>
               </div>
               <a
-                href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
+                href="https://maps.app.goo.gl/7fRUwEm1n9Psuuyn8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full mt-auto bg-primaryColor text-white py-3 px-6 rounded-lg hover:bg-primaryColor hover:bg-opacity-90 transition-colors font-semibold flex items-center justify-center"
@@ -300,7 +300,7 @@ export default function ContactPage() {
                 <h3 className="font-semibold text-gray-900 mb-2 text-base md:text-lg">FINANZ CONSULT S.R.L.</h3>
                 {/* Only the address is a link */}
                 <a
-                  href="https://maps.google.com/?q=Splaiul+Independentei+202B+Sector+6+Bucuresti"
+                  href="https://maps.app.goo.gl/7fRUwEm1n9Psuuyn8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 text-sm md:text-base  hover:text-primaryColor transition-colors"
