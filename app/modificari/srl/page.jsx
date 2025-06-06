@@ -60,8 +60,13 @@ const modificationServicesData = [
     {
         price: "450 lei",
         title: "Deschidere punct de lucru",
-        description:
-            "Extinde-ți afacerea prin deschiderea unui nou punct de lucru și înregistrează-l oficial la autoritățile competente.",
+        description: "Extinde-ți afacerea prin deschiderea unui nou punct de lucru și înregistrează-l oficial la autoritățile competente.",
+        priceNote: "...",
+        priceNoteDescription: (
+            <ul className="list-disc pl-5 space-y-1">
+                <li><b>+100</b> Autorizare cod CAEN punct lucru</li>
+            </ul>
+        ),
     },
     {
         price: "450 lei",
