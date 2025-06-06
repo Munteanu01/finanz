@@ -399,13 +399,13 @@ const SearchOverlay = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
         <div className="max-w-3xl mx-auto">
           <div className="relative">
             <input
-              ref={inputRef} // <-- adaugă ref aici
+              ref={inputRef}
               type="text"
               placeholder="Caută servicii, informații..."
               value={searchQuery}
               onChange={(e) => handleSearch(e.target.value)}
               className="w-full px-4 py-3 text-xl border-b-2 border-gray-200 focus:border-secundaryColor outline-none transition-colors"
-              autoFocus
+              autoFocus={isOpen} // <-- Only autofocus when overlay is open
             />
             <Search className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
           </div>
@@ -744,7 +744,9 @@ export default function FinanzNavbar() {
       </div>
 
       {/* Add SearchOverlay */}
-      <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      {isSearchOpen && (
+        <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      )}
 
       {/* Custom CSS for responsive dropdown positioning */}
       <style jsx global>{`
