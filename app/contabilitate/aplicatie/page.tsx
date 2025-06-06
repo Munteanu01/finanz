@@ -17,8 +17,11 @@ import {
   Laptop,
   Tablet,
   ArrowRight,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const avantaje = [
   {
@@ -77,6 +80,12 @@ const relatii = [
 ];
 
 export default function AplicatiePage() {
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+
+  const toggleDropdown = (index: number) => {
+    setOpenDropdown(openDropdown === index ? null : index);
+  };
+
   return (
     <>
       <FinanzNavbar />
@@ -388,7 +397,7 @@ export default function AplicatiePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="max-w-4xl mx-auto space-y-4">
               {relatii.map((item, idx) => (
                 <motion.div
                   key={item.title}
@@ -399,16 +408,45 @@ export default function AplicatiePage() {
                   className="group relative"
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-secundaryColor/20 to-primaryColor/20 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-300" />
-                  <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col text-center">
-                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-secundaryColor/10 to-primaryColor/10 rounded-xl mb-4 mx-auto">
-                      {item.icon}
-                    </div>
-                    <h4 className="font-bold text-primaryColor mb-3 text-lg">
-                      {item.title}
-                    </h4>
-                    <p className="text-gray-600 text-sm leading-relaxed flex-grow">
-                      {item.desc}
-                    </p>
+                  <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <button
+                      onClick={() => toggleDropdown(idx)}
+                      className="w-full flex items-center justify-between p-6 text-left hover:bg-white/50 transition-colors duration-200 rounded-2xl"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-secundaryColor/10 to-primaryColor/10 rounded-xl">
+                          {item.icon}
+                        </div>
+                        <h4 className="font-bold text-primaryColor text-lg">
+                          {item.title}
+                        </h4>
+                      </div>
+                      <div className="flex-shrink-0 ml-4">
+                        {openDropdown === idx ? (
+                          <ChevronUp className="w-5 h-5 text-primaryColor transition-transform duration-200" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5 text-primaryColor transition-transform duration-200" />
+                        )}
+                      </div>
+                    </button>
+                    
+                    <motion.div
+                      initial={false}
+                      animate={{
+                        height: openDropdown === idx ? "auto" : 0,
+                        opacity: openDropdown === idx ? 1 : 0
+                      }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 pt-0">
+                        <div className="pl-16">
+                          <p className="text-gray-600 leading-relaxed">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
                   </div>
                 </motion.div>
               ))}
@@ -418,24 +456,26 @@ export default function AplicatiePage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-center mt-12"
+              className="mt-12"
             >
-              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-lg">
-                <h3 className="text-2xl font-bold text-primaryColor mb-4">
-                  Gata să transformi modul în care gestionezi contabilitatea?
-                </h3>
-                <p className="text-gray-700 mb-6 text-lg">
-                  Începe să folosești aplicația și descoperă diferența!
-                </p>
-                <a
-                  href="https://finanzconsult.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 bg-primaryColor text-white px-10 py-5 rounded-2xl font-bold text-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
-                >
-                  Accesează aplicația acum
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                </a>
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-lg text-center">
+                  <h3 className="text-2xl font-bold text-primaryColor mb-4">
+                    Gata să transformi modul în care gestionezi contabilitatea?
+                  </h3>
+                  <p className="text-gray-700 mb-6 text-lg">
+                    Începe să folosești aplicația și descoperă diferența!
+                  </p>
+                  <a
+                    href="https://finanzconsult.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center justify-center gap-2 bg-primaryColor text-white px-10 py-5 rounded-2xl font-bold text-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                  >
+                    Accesează aplicația acum
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           </motion.section>
