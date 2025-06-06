@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Building, Wallet, FileSignature, Receipt } from "lucide-react";
+import { Building, Wallet, FileSignature, Receipt, Phone, Smartphone } from "lucide-react";
 
 const operationalSteps = [
 	{
@@ -15,10 +15,22 @@ const operationalSteps = [
 			"Îți oferim suport pentru alegerea și deschiderea rapidă a contului la banca dorită.",
 	},
 	{
-		icon: <FileSignature className="w-12 h-12" />,
-		title: "Obții semnătura și SPV",
-		description:
-			"Ne ocupăm de generarea semnăturii electronice și de înregistrarea în Spațiul Privat Virtual.",
+		icon: <Smartphone className="w-12 h-12" />,
+		title: "Beneficiile aplicației",
+		description: (
+			<>
+				Gestionezi firma de oriunde, ai acces rapid la documente, notificări automate și suport dedicat direct din{" "}
+				<a
+					href="https://finanzconsult.app/"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="text-primaryColor semi-bold hover:text-orange-500 transition-colors"
+				>
+					aplicație
+				</a>
+				.
+			</>
+		),
 	},
 	{
 		icon: <Receipt className="w-12 h-12" />,
@@ -26,6 +38,7 @@ const operationalSteps = [
 		description:
 			"Ai toate documentele pregătite pentru a emite facturi și a primi plăți imediat.",
 	},
+	
 ];
 
 export default function OperationalSteps() {
