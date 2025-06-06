@@ -70,11 +70,21 @@ const priceTableData = {
 // Modification services data (now with unique id for each service)
 const modificationServicesData = [
   {
-    id: "actualizare-caen",
-    price: "650 lei",
-    title: "Actualizarea codurilor CAEN",
-    description: "Adu-ți codurile CAEN la zi conform noilor standarde Rev-3 pentru a asigura conformitatea activităților firmei tale.",
-  },
+		price: "550 lei",
+		title: "Actualizare coduri CAEN Rev 3",
+    id: "actualizare-caen-rev3",
+		description:
+			"Adu-ți codurile CAEN la zi conform noilor standarde Rev-3 pentru a asigura conformitatea activităților firmei tale.",
+		priceNote: "...",
+		priceNoteDescription: (
+			<>
+				<ul className="list-disc pl-5 space-y-1">
+				<li><b>+100</b> </li>
+					<li>Nota de plată aferentă dosarului se achită de client.</li>
+				</ul>
+			</>
+		),
+	},
   {
     id: "adaugare-stergere-caen",
     price: "600 lei",

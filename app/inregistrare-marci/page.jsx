@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 const faqData = [
   {
     question: "Ce acte trebuie să pregătesc pentru început?",
-    answer: "Doar buletinul tău. De restul ne ocupăm noi.",
+    answer: "Doar buletinul tău și actele firmei. De restul ne ocupăm noi.",
   },
   {
     question: "Trebuie să merg personal la vreo instituție?",
