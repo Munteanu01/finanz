@@ -145,9 +145,22 @@ const modificationServicesData = [
   },
   {
     id: "cesiune-parti-sociale",
-    price: "600 lei",
+    price: "600-1000 lei",
     title: "Cesiune părți sociale",
     description: "Transferă părțile sociale către noi asociați sau parteneri și actualizează structura de proprietate a firmei tale.",
+    priceNote: "...",
+    priceNoteDescription: (
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Cesiune cu includere</li>
+        <li>Cesiune cu excludere</li>
+        <li>Cesiune cu excludere și închidere</li>
+        <li>
+          <span className="italic">
+            *Se adaugă: <span className="block text-base">Numire administrator – 480 lei</span><span className="block text-base">Set declarații asociat – 100 lei/asociat</span>
+          </span>
+        </li>
+      </ul>
+    ),
   },
 ];
 
