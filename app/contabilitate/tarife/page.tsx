@@ -73,6 +73,8 @@ const payrollServicesPrices = {
     { service: "Administrare poprire angajat (pe lună)", price: "100 ron" },
     { service: "Întocmire act adițional la CIM", price: "100 ron" },
     { service: "Înregistrare concediu medical angajat", price: "100 ron" },
+    { service: "Adeverință I.C.C.", price: "150 lei" },
+    { service: "Eliberare adeverință bancă", price: "150 lei" },
   ],
 };
 
@@ -103,7 +105,6 @@ const consultingPrices = {
     { service: "Schimbare certificat TVA", price: "300 ron" },
     { service: "Cod TVA intracomunitar", price: "300 ron" },
     { service: "Reînregistrare TVA pentru firme cu cod anulat", price: "600 ron" },
-    { service: "Înregistrare și depunere dosar pentru Cod Special TVA RO", price: "600 ron" },
     { service: "Anulare Cod Special TVA", price: "300 ron" },
     { service: "Depunere cerere eșalonare obligații bugetare", price: "500 ron" },
     { service: "Asistență pentru rambursare TVA", price: "comision 1%" },
@@ -113,8 +114,7 @@ const consultingPrices = {
     { service: "Întocmire și depunere Formular 177", price: "300 lei" },
     { service: "Depunere cerere reactivare fiscală în SPV", price: "450 lei" },
     { service: "Obținere CIF pentru puncte de lucru", price: "300 lei" },
-    { service: "Adeverință I.C.C.", price: "150 lei" },
-    { service: "Eliberare adeverțină bancă", price: "150 lei" },
+
   ],
 };
 
@@ -179,7 +179,7 @@ export default function TarifePage() {
                           <div className="flex flex-col xl:flex-row items-end xl:items-baseline justify-end space-y-1 xl:space-y-0 xl:space-x-2">
                             <div className="flex items-baseline space-x-2">
                               <span className="text-gray-400 text-sm">de la</span>
-                              <span className="text-primaryColor font-bold">500 lei</span>
+                              <span className="text-primaryColor font-bold">499 lei</span>
                             </div>
                             <span className="text-gray-400 text-sm text-right xl:text-left xl:mt-0 mt-1 xl:whitespace-nowrap">
                               (în funcție de complexitate)
@@ -195,7 +195,7 @@ export default function TarifePage() {
                           <div className="flex flex-col xl:flex-row items-end xl:items-baseline justify-end space-y-1 xl:space-y-0 xl:space-x-2">
                             <div className="flex items-baseline space-x-2">
                               <span className="text-gray-400 text-sm">de la</span>
-                              <span className="text-primaryColor font-bold">500 lei</span>
+                              <span className="text-primaryColor font-bold">499 lei</span>
                             </div>
                             <span className="text-gray-400 text-sm text-right xl:text-left xl:mt-0 mt-1 xl:whitespace-nowrap">
                               (în funcție de complexitate)
@@ -211,7 +211,7 @@ export default function TarifePage() {
                           <div className="flex flex-col xl:flex-row items-end xl:items-baseline justify-end space-y-1 xl:space-y-0 xl:space-x-2">
                             <div className="flex items-baseline space-x-2">
                               <span className="text-gray-400 text-sm">de la</span>
-                              <span className="text-primaryColor font-bold">500 lei</span>
+                              <span className="text-primaryColor font-bold">499 lei</span>
                             </div>
                             <span className="text-gray-400 text-sm text-right xl:text-left xl:mt-0 mt-1 xl:whitespace-nowrap">
                               (în funcție de complexitate)

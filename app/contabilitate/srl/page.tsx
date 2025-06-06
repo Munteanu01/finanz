@@ -104,19 +104,19 @@ const prices = [
       "Încasare online prin Stripe",
       "Facturare în mai multe monede",
       "Evidență contabilă digitală completă",
-      "Salarizare și administrare personal",
+      ,
       "Contabil dedicat pentru consultanță fiscală",
       "Comunicare directă prin chat și telefon",
     ],
   },
   {
-    title: "Basic",
+    title: "Plus",
     price: "€50/lună + TVA",
     subtitle: "Servicii contabile esențiale pentru SRL-uri aflate la început de drum.",
     details: [
       "Acces complet la platforma de contabilitate",
       "Gestionare de până la 20 documente lunar",
-      "Salarizare pentru 2 angajați incluși",
+      
       "Facturare automată cu e-Factura",
       "Import rapid al facturilor de la furnizori",
       "Încasare facturi cu cardul prin Stripe",
@@ -126,12 +126,12 @@ const prices = [
   },
   {
     title: "Pro",
-    price: "€100/lună + TVA",
+    price: "€150/lună + TVA",
     subtitle: "Ideal pentru SRL-uri cu activitate intensă și gestionare avansată a documentelor.",
     details: [
       "Acces premium la aplicația de contabilitate",
       "Gestionare de până la 200 documente lunar",
-      "Salarizare pentru 5 angajați incluși",
+      
       "Facturare rapidă, integrată cu e-Factura",
       "Preluare automată a facturilor furnizorilor",
       "Încasare digitală prin Stripe",
