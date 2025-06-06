@@ -6,7 +6,7 @@ const operationalSteps = [
 		icon: <Building className="w-12 h-12" />,
 		title: "Înregistrezi firma rapid",
 		description:
-			"În doar 3 zile, ai firma înființată și toate actele necesare, fără drumuri la instituții.",
+			"În doar 3-5 zile, ai firma înființată și toate actele necesare, fără drumuri la instituții.",
 	},
 	{
 		icon: <Wallet className="w-12 h-12" />,

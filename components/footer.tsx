@@ -73,7 +73,7 @@ const Footer = () => {
                 className="flex items-center text-gray-600 hover:text-green-600 transition-colors text-sm"
               >
                 <Phone className="h-4 w-4 mr-2 flex-shrink-0" />
-                021 308 14 77
+                021 9222
               </a>
             </div>
           </div>

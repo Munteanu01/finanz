@@ -20,8 +20,8 @@ const pasi = [
 		icon: <MailCheck className="w-12 h-12" />,
 		title: "Primești documentele",
 		description:
-			"În 2-3 zile, certificatul de înregistrare și anexele sunt gata și le primești pe email, semnate digital de ONRC.",
-		duration: "2-3 zile",
+			"În 3-5 zile, certificatul de înregistrare și anexele sunt gata și le primești pe email, semnate digital de ONRC.",
+		duration: "3-5 zile",
 	},
 ];
 

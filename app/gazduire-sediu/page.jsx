@@ -48,7 +48,7 @@ const featuresData = [
   {
     title: "Primești contractul semnat",
     description:
-      "În 3 zile, vei primi contractul de sediu semnat, împreună cu anexele necesare, gata pentru înregistrare la Registrul Comerțului.",
+      "În 3-5 zile, vei primi contractul de sediu semnat, împreună cu anexele necesare, gata pentru înregistrare la Registrul Comerțului.",
     icon: <Award className="w-10 h-10 text-primaryColor mb-4" />,
   },
 ];

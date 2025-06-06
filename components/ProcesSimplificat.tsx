@@ -16,8 +16,8 @@ const beneficii = [
   },
   {
     icon: <Clock className="w-8 h-8 text-white" />,
-    title: "Modificări în doar 3 zile",
-    description: "Timpul tău este prețios. Orice schimbare necesară firmei tale este gata în maximum 3 zile.",
+    title: "Modificări în doar 3-5 zile",
+    description: "Timpul tău este prețios. Orice schimbare necesară firmei tale este gata în 3-5 zile.",
   },
   {
     icon: <FileCheck className="w-8 h-8 text-white" />,
@@ -31,7 +31,7 @@ const beneficii = [
   },
   {
     icon: <Scale className="w-8 h-8 text-white" />,
-    title: "Consultanță juridică inclusă",
+    title: "Consultanță juridică online inclusă",
     description: "De la primul pas până la finalizare, beneficiezi de suport specializat pentru succes garantat.",
   },
 ];

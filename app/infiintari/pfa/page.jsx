@@ -7,7 +7,7 @@ import { Laptop, FileText, ShieldCheck } from "lucide-react";
 const infiintariPfaFaq = [
   {
     question: "Cât durează înființarea unui PFA?",
-    answer: "În mod normal, procedura durează între 1-3 zile lucrătoare de la depunerea dosarului complet.",
+    answer: "În mod normal, procedura durează între 3-5 zile lucrătoare de la depunerea dosarului complet.",
   },
   {
     question: "Ce documente sunt necesare pentru înființarea unui PFA?",
@@ -37,7 +37,7 @@ const prices = [
       "Depunerea dosarului la ANAF",
       "Ridicarea autorizației PFA",
       "Fără costuri ascunse",
-      "Proces rapid: 1-3 zile lucrătoare",
+      "Proces rapid: 3-5 zile lucrătoare",
     ],
   },
 ];

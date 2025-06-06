@@ -64,8 +64,8 @@ export default function InfiintariLayout({
         features={[
           {
             icon: <Clock className="w-10 h-10 text-primaryColor mb-4" />,
-            title: "Modificări rapide, în doar 3 zile",
-            description: "Timpul tău este prețios. Orice schimbare necesară firmei tale este gata în maximum 3 zile, fără întârzieri.",
+            title: "Modificări rapide, în doar 3-5 zile",
+            description: "Timpul tău este prețios. Orice schimbare necesară firmei tale este gata în maximum 3-5 zile, fără întârzieri.",
           },
           {
             icon: <FileCheck2 className="w-10 h-10 text-primaryColor mb-4" />,
@@ -79,7 +79,7 @@ export default function InfiintariLayout({
           },
           {
             icon: <Gavel className="w-10 h-10 text-primaryColor mb-4" />,
-            title: "Consultanță juridică inclusă",
+            title: "Consultanță juridică online inclusă",
             description: "De la primul pas până la finalizare, beneficiezi de suport specializat pentru ca totul să decurgă fără probleme.",
           },
         ]}
