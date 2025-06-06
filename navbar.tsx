@@ -552,7 +552,7 @@ export default function FinanzNavbar() {
             <a href="https://www.tiktok.com/@finanz" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70">
               <Image src="/tik-tok.png" alt="TikTok" width={12} height={12} />
             </a>
-            <a href="https://www.facebook.com/finanzconsult" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70">
+            <a href="https://www.facebook.com/people/Finanz-Consult/61576331645872/#" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70">
               <Image src="/facebook-app-symbol.png" alt="Facebook" width={12} height={12} />
             </a>
             <a href="https://www.instagram.com/finanzconsult" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70">
