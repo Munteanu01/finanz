@@ -15,14 +15,10 @@ const infiintariFaq = [
       <ul>
         <li>Copie CI/Pașaport pentru asociați</li>
         <li>Contract sediu social</li>
-        <li>Specimen de semnătură</li>
         <li>Declarații pe propria răspundere</li>
       </ul>`,
 	},
-	{
-		question: "Care sunt costurile totale pentru înființarea unui SRL?",
-		answer: "Costul total pentru înființarea unui SRL este de 270€, care include toate taxele și procedurile necesare.",
-	},
+	
 ];
 
 const prices = [

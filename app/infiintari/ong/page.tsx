@@ -25,7 +25,7 @@ const infiintariOngFaq = [
   {
     question: "Unde se înregistrează ONG-ul?",
     answer:
-      "ONG-ul se înregistrează la Judecatoria competentă teritorial, iar apoi se completează procedurile de înregistrare fiscală pentru obținerea CIF-ului.",
+      "ONG-ul se înregistrează la Judecătoria competentă teritorial, iar apoi se completează procedurile de înregistrare fiscală pentru obținerea CIF-ului.",
   },
   {
     question: "Ce activități poate desfășura o ONG?",

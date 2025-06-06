@@ -13,7 +13,7 @@ const pasi = [
 		icon: <FileSignature className="w-12 h-12" />,
 		title: "Semnezi actele",
 		description:
-			"În 30 de minute, rezervăm numele PFA-ului, redactăm documentele necesare și ți le trimitem gata de semnat.",
+			"În 30 de minute, rezervăm numele, redactăm documentele necesare și ți le trimitem gata de semnat.",
 		duration: "30 minute",
 	},
 	{
