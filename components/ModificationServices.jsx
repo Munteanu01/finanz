@@ -169,18 +169,25 @@ export default function ModificationServices({ title, subtitle, services = [] })
                 ${focusedId === service.id ? "pulse-glow no-hover" : "hover-effect"}
               `}
             >
-              <h1 className="text-xl font-bold text-primaryColor mb-4 bg-[#E8EBFA] px-3 py-1 rounded-lg w-fit">
-                {service.price}
-              </h1>
+              <div className="flex justify-between items-start mb-4">
+                <div className="relative">
+                  <h1 className="text-xl font-bold text-primaryColor bg-[#E8EBFA] px-3 py-1 rounded-lg w-fit">
+                    {service.price}
+                  </h1>
+                </div>
+              </div>
               <h3 className="text-3xl font-bold mb-4 text-gray-700">
                 {service.title}
               </h3>
               <p className="text-gray-700 leading-relaxed mb-6">
                 {service.description}
               </p>
+              <p className="text-sm text-gray-500 mb-4 mt-auto">
+                *Tarifelor se adaugă TVA
+              </p>
               <a
                 href="/contact"
-                className="mt-auto inline-flex items-center justify-between gap-4 bg-primaryColor hover:bg-secundaryColor  text-white font-semibold py-3 px-8 rounded-2xl shadow transition-all duration-300 text-base"
+                className="inline-flex items-center justify-between gap-4 bg-primaryColor hover:bg-secundaryColor text-white font-semibold py-3 px-8 rounded-2xl shadow transition-all duration-300 text-base"
                 style={{ fontSize: "1.05rem", fontWeight: 600 }}
               >
                 <span className="text-left flex-1">Află mai multe</span>
