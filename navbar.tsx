@@ -492,6 +492,7 @@ export default function FinanzNavbar() {
 
   const handleMenuClose = useCallback(() => {
     setIsOpen(false)
+    setIsSearchOpen(false) // <-- Add this line
   }, [])
 
   const handleDropdownToggle = useCallback((dropdownKey: string) => {
