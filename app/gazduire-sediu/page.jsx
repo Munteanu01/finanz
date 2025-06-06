@@ -105,7 +105,7 @@ const modificationServicesData = [
     description: "Menține activitatea punctului de lucru existent prin prelungirea duratei de funcționare înregistrată oficial.",
   },
   {
-    price: "450 lei",
+    price: "350 lei",
     title: "Închidere punct de lucru",
     description: "Închide un punct de lucru care nu mai este activ și actualizează documentele firmei pentru a reflecta această modificare.",
   },

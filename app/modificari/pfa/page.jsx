@@ -53,10 +53,10 @@ const modificationServicesData = [
 			"Închide un punct de lucru inactiv și actualizează documentele firmei rapid și corect.",
 	},
 	{
-		price: "350 lei",
+		price: "450 lei",
 		title: "Suspendare activitate PFA",
 		description:
-			"Întrerupe temporar activitatea PFA-ului tău și evită obligațiile fiscale pe durata suspendării, fără să închizi definitiv firma.",
+			"Află cum îți poți pune pe pauză activitatea pentru maximum 3 ani.",
 	},
 	{
 		price: "350 lei",
