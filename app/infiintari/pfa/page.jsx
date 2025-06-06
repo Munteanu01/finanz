@@ -22,14 +22,14 @@ const infiintariPfaFaq = [
   },
   {
     question: "Care sunt costurile totale pentru înființarea unui PFA?",
-    answer: "Costul total pentru înființarea unui PFA este de 210 lei, plată unică, fără costuri ascunse.",
+    answer: "Costul total pentru înființarea unui PFA este de 410 lei, plată unică, fără costuri ascunse.",
   },
 ];
 
 const prices = [
   {
     title: "Înființare PFA",
-    price: "210 lei",
+    price: "410 lei",
     subtitle: "Plată unică",
     details: [
       "Consultanță și alegerea codurilor CAEN",

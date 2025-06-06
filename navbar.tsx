@@ -52,7 +52,7 @@ const MENU_ITEMS = {
   infiintari: [
     { title: "Înființare SRL", href: "/infiintari/srl" },
     { title: "Înființare PFA", href: "/infiintari/pfa" },
-    { title: "Înființare ONG", href: "/infiintari/ong" },
+    //{ title: "Înființare ONG", href: "/infiintari/ong" },
   ],
   modificariSrl: [
     { title: "Actualizarea codurilor CAEN", href: "/modificari/srl#actualizare-caen" },
@@ -552,7 +552,7 @@ export default function FinanzNavbar() {
           {/* Urmareste-ne section - ascuns pe mobil */}
           <div className="hidden sm:flex items-center gap-2.5">
             <span className="text-white/90 font-semibold text-[11px] sm:text-xs">Urmărește-ne:</span>
-            <a href="https://www.tiktok.com/@finanz" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70">
+            <a href="https://www.tiktok.com/@finanz_consult" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70">
               <Image src="/tik-tok.png" alt="TikTok" width={12} height={12} />
             </a>
             <a href="https://www.facebook.com/people/Finanz-Consult/61576331645872/#" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70">

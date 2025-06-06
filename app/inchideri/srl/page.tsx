@@ -169,7 +169,7 @@ export default function InchidereSrlPage() {
                   <p className="text-gray-600">Tot ce ai nevoie pentru închiderea legală a firmei</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-4xl font-bold text-primaryColor mb-1">540 lei</div>
+                  <div className="text-4xl font-bold text-primaryColor mb-1">600 lei</div>
                   <div className="text-sm text-gray-500">Plată unică</div>
                   <div className="text-sm font-semibold text-secundaryColor">135 lei taxe ORC</div>
                 </div>
