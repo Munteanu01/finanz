@@ -674,8 +674,25 @@ export default function FinanzNavbar() {
       </nav>
 
       {/* Simple Mobile Menu Overlay */}
-      {isOpen && (
-        <div className="2xl:hidden fixed inset-0 bg-white z-50 overflow-x-hidden">
+      <div className="2xl:hidden fixed inset-0 z-50 overflow-x-hidden pointer-events-none">
+        {/* Backdrop */}
+        <div
+          className={`
+            absolute inset-0 bg-black/20 transition-opacity duration-300
+            ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0"}
+          `}
+          onClick={handleMenuClose}
+        />
+        {/* Sliding menu */}
+        <div
+          className={`
+            fixed top-0 right-0 h-full w-[90vw] max-w-xs bg-white shadow-lg
+            transition-transform duration-300
+            ${isOpen ? "translate-x-0" : "translate-x-full"}
+            pointer-events-auto
+          `}
+          style={{ zIndex: 60 }}
+        >
           <div className="h-full overflow-y-auto">
             <div className="p-6">
               {/* Mobile Header */}
@@ -687,7 +704,6 @@ export default function FinanzNavbar() {
                   <X className="h-6 w-6 text-gray-600" />
                 </button>
               </div>
-
               {/* Simple Mobile Menu Content - All items in one list */}
               <div className="space-y-2">
                 {/* Dropdown Sections */}
@@ -696,31 +712,26 @@ export default function FinanzNavbar() {
                   items={MENU_ITEMS.contabilitate}
                   onItemClick={handleMenuClose}
                 />
-
                 <SimpleMobileDropdownSection
                   title="Înființări"
                   items={MENU_ITEMS.infiintari}
                   onItemClick={handleMenuClose}
                 />
-
                 <SimpleMobileDropdownSection
                   title="Modificări SRL"
                   items={MENU_ITEMS.modificariSrl}
                   onItemClick={handleMenuClose}
                 />
-
                 <SimpleMobileDropdownSection
                   title="Modificări PFA"
                   items={MENU_ITEMS.modificariPfa}
                   onItemClick={handleMenuClose}
                 />
-
                 <SimpleMobileDropdownSection
                   title="Închideri"
                   items={MENU_ITEMS.inchideri}
                   onItemClick={handleMenuClose}
                 />
-
                 {/* Static Links */}
                 {STATIC_LINKS.map((link) => (
                   <SimpleMobileMenuItem key={link.href} title={link.title} href={link.href} onClick={handleMenuClose} />
@@ -729,7 +740,7 @@ export default function FinanzNavbar() {
             </div>
           </div>
         </div>
-      )}
+      </div>
 
       {/* Add SearchOverlay */}
       <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
