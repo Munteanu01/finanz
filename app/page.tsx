@@ -391,13 +391,14 @@ export default function Page() {
 
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
             {[
-              {
-                text: "Am avut norocul să colaborez cu o echipă excepțională încă de la începutul parcursului meu antreprenorial, în 2022. La momentul înființării societății mele, nu știam exact care sunt pașii de urmat, dar sprijinul oferit de FinanzConsult a fost esențial. Cu profesionalism, promptitudine și o comunicare impecabilă, m-au ghidat în fiecare etapă – de la primele documente până la primele declarații fiscale. Recomand cu mare drag această echipă dedicată și le urez mult succes în continuare!",
-                name: "Daniel I. - CHOOSEAX HOUSE S.R.L.",
-              },
+
               {
                 text: "Am început drumul antreprenoriatului în 2023, complet pierdut, fără să știu pașii corecți. FinanzConsult a fost alături de mine de la început – cu răbdare, claritate și mult profesionalism. M-au ajutat să-mi înființez firma, să trec prin provocările unei asocieri, iar mai recent, să-mi dezvolt agenția. De fiecare dată, am primit sfaturi reale și soluții rapide. Le sunt profund recunoscător și îi recomand cu toată încrederea!",
                 name: "Mădălin M. - RETEAUA DE IMOBILIARE S.R.L.",
+              },
+              {
+                text: "Colaborarea cu voi mi-a oferit claritate și sprijin în gestionarea financiar contabilă a startup-ului. Explicațiile oferite au fost concise și adaptate nevoilor mele. Răspunsurile rapide la întrebările punctuale m-au ajutat să înțeleg imediat obligațiile fiscale și procedurile contabile. Apreciez soluțiile practice pentru optimizarea fluxului de numerar și recomandările pentru simplificarea proceselor interne. Datorită implicării voastre, am economisit timp prețios și am putut să mă concentrez pe dezvoltarea afacerii. Recomand cu încredere serviciile voastre oricărui antreprenor!",
+                name: "Răzvan T. - A.I. Matrix Behavioral Nexus",
               },
               {
                 text: "Lucrez cu această firmă de contabilitate de peste 5 ani și sunt extrem de mulțumit de colaborare. Profesioniști, prompți și mereu atenți la detalii, m-au ajutat să gestionez corect și eficient toate aspectele financiare ale afacerii mele. Comunicarea este excelentă, primesc mereu răspunsuri clare și rapide, iar sfaturile oferite au fost de mare ajutor în luarea unor decizii importante. Recomand cu încredere oricui caută un partener de încredere în domeniul contabilității!",
