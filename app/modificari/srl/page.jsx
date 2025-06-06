@@ -53,7 +53,7 @@ const modificationServicesData = [
             "Menține activitatea punctului de lucru existent prin prelungirea duratei de funcționare înregistrată oficial.",
     },
     {
-        price: "450 lei",
+        price: "350 lei",
         title: "Închidere punct de lucru",
         description:
             "Închide un punct de lucru care nu mai este activ și actualizează documentele firmei pentru a reflecta această modificare.",
@@ -78,7 +78,7 @@ const modificationServicesData = [
     },
     {
         price: "350 lei",
-        title: "Reluare activitate SRL",
+        title: "Reactivare activitate SRL",
         description:
             "Reîncepe activitatea SRL-ului tău simplu și rapid, cu actele actualizate și conforme legal.",
     },
@@ -87,6 +87,12 @@ const modificationServicesData = [
         title: "Închidere activitate SRL",
         description:
             "Încheie activitatea SRL-ului tău definitiv, cu toate formalitățile gestionate rapid și corect, fără complicații birocratice.",
+    },
+    {
+        price: "450 lei",
+        title: "Suspendare activitate",
+        description:
+            "Află cum îți poți pune pe pauză activitatea pentru maximum 3 ani.",
     },
 ]
 
@@ -212,12 +218,15 @@ export default function ModificariSrlPage() {
                             case "Cesiune părți sociale":
                                 id = "cesiune-parti"
                                 break
-                                case "Reluare activitate SRL":
+                                case "Reactivare activitate SRL":
                                     id = "reluare-activitate"
                                     break
                                 case "Închidere activitate SRL":
                                     id = "inchidere-activitate"
                                     break
+                                    case "Suspendare activitate":
+                                        id = "suspendare-activitate"
+                                        break
                             default:
                                 id = ""
                         }

@@ -66,8 +66,10 @@ const MENU_ITEMS = {
     { title: "Modificare nume firmă", href: "/modificari/srl#modificare-nume" },
     { title: "Majorare capital social", href: "/modificari/srl#majorare-capital" },
     { title: "Cesiune părți sociale", href: "/modificari/srl#cesiune-parti" },
-    { title: "Reluare activitate SRL", href: "/modificari/srl#reluare-activitate" }, // <-- added
-    { title: "Închidere activitate SRL", href: "/modificari/srl#inchidere-activitate" }, // <-- added
+    { title: "Reactivare activitate SRL", href: "/modificari/srl#reluare-activitate" }, // <-- added
+    { title: "Închidere activitate SRL", href: "/modificari/srl#inchidere-activitate" },
+    { title: "Suspendare activitate", href: "/modificari/srl#suspendare-activitate" }, // <-- adăugat aici
+    // <-- added
   ],
   modificariPfa: [
     { title: "Actualizare Rev. 3", href: "/modificari/pfa#actualizare-Rev-3" },
@@ -78,7 +80,7 @@ const MENU_ITEMS = {
     { title: "Prelungire punct de lucru", href: "/modificari/pfa#prelungire-punct" },
     { title: "Închidere punct de lucru", href: "/modificari/pfa#inchidere-punct" },
     { title: "Suspendare activitate", href: "/modificari/pfa#suspendare" },
-    { title: "Reluare activitate", href: "/modificari/pfa#reluare" },
+    { title: "Reactivare activitate", href: "/modificari/pfa#reluare" },
     { title: "Închidere", href: "/modificari/pfa#inchidere" },
   ],
   inchideri: [

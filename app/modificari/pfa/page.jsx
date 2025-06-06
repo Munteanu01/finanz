@@ -60,7 +60,7 @@ const modificationServicesData = [
 	},
 	{
 		price: "350 lei",
-		title: "Reluare activitate PFA",
+		title: "Reactivare activitate PFA",
 		description:
 			"Reîncepe activitatea PFA-ului tău simplu și rapid, cu actele actualizate și conforme legal.",
 	},
@@ -179,7 +179,7 @@ export default function ModificariPfaPage() {
 							case "Suspendare activitate PFA":
 								id = "suspendare"
 								break
-							case "Reluare activitate PFA":
+							case "Reactivare activitate PFA":
 								id = "reluare"
 								break
 							case "Închidere activitate PFA":
