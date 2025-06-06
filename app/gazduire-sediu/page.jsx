@@ -81,9 +81,16 @@ const modificationServicesData = [
   },
   {
     price: "600 lei",
-    title: "Schimbare cod CAEN principal",
-    description: "Modifică activitatea principală a firmei tale prin actualizarea codului CAEN principal pentru a reflecta noua direcție a afacerii.",
-  },
+    title: "Schimbare obiect principal activitate",
+    description:
+        "Modifică activitatea principală a firmei tale prin actualizarea codului CAEN principal pentru a reflecta noua direcție a afacerii.",
+    priceNote: "...",
+    priceNoteDescription: (
+        <ul className="list-disc pl-5 space-y-1">
+            <li><b>+ 100 lei autorizare cod CAEN terți</b></li>
+            <li>Contactează-ne pentru detalii specifice situației tale.</li>
+        </ul>
+    )  },
   {
     price: "600 lei",
     title: "Schimbare sediu social",

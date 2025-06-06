@@ -57,7 +57,7 @@ const MENU_ITEMS = {
   modificariSrl: [
     { title: "Actualizarea codurilor CAEN", href: "/modificari/srl#actualizare-caen" },
     { title: "Adăugare/Ștergere Cod CAEN", href: "/modificari/srl#adaugare-stergere-caen" },
-    { title: "Schimbare cod CAEN principal", href: "/modificari/srl#schimbare-caen-principal" },
+    { title: "Schimbare obiect principal activitate", href: "/modificari/srl#schimbare-caen-principal" },
     { title: "Schimbare sediu social", href: "/modificari/srl#sediu-social" },
     { title: "Prelungire sediu social", href: "/modificari/srl#prelungire-sediu" },
     { title: "Deschidere punct de lucru", href: "/modificari/srl#deschidere-punct" },

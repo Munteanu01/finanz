@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react" // sau alt icon arrow dacă folosești
 
 export default function ModificationServices({ title, subtitle, services = [] }) {
   const [focusedId, setFocusedId] = useState(null)
+  const [noteOpen, setNoteOpen] = useState(null) // id-ul serviciului pentru care e deschis pop-up-ul
   const refs = useRef({})
 
   // Înălțimea navbarului (ajustează dacă ai altă valoare)
@@ -170,9 +171,20 @@ export default function ModificationServices({ title, subtitle, services = [] })
               `}
             >
               <div className="flex justify-between items-start mb-4">
-                <div className="relative">
-                  <h1 className="text-xl font-bold text-primaryColor bg-[#E8EBFA] px-3 py-1 rounded-lg w-fit">
+                <div className="relative flex items-center">
+                  <h1 className="text-xl font-bold text-primaryColor bg-[#E8EBFA] px-3 py-1 rounded-lg w-fit flex items-center">
                     {service.price}
+                    {service.priceNote && (
+                      <button
+                        type="button"
+                        className="ml-2 text-secundaryColor font-bold focus:outline-none price-note-btn"
+                        style={{ fontSize: "1.35em", background: "transparent", fontWeight: 700 }}
+                        onClick={() => setNoteOpen(service.id)}
+                        title="Detalii preț"
+                      >
+                        + {service.priceNote}
+                      </button>
+                    )}
                   </h1>
                 </div>
               </div>
@@ -193,6 +205,30 @@ export default function ModificationServices({ title, subtitle, services = [] })
                 <span className="text-left flex-1">Află mai multe</span>
                 <ArrowRight className="w-7 h-7" />
               </a>
+              {/* Pop-up pentru detalii preț */}
+              {noteOpen === service.id && (
+                <div className="absolute inset-0 z-30 bg-black bg-opacity-20 rounded-2xl">
+                  <div
+                    className="bg-white rounded-xl shadow-lg p-6 price-note-popup relative h-full w-full flex flex-col"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      maxWidth: "100%",
+                      minWidth: 0,
+                    }}
+                  >
+                    <button
+                      className="absolute top-2 right-3 text-gray-400 hover:text-gray-700 text-2xl font-bold"
+                      onClick={() => setNoteOpen(null)}
+                      aria-label="Închide"
+                    >
+                      &times;
+                    </button>
+                    <div className="text-secundaryColor font-semibold mb-2" style={{ fontSize: "1.5em" }}>Detalii preț</div>
+                    <div className="text-gray-700" style={{ fontSize: "1.25em" }}>{service.priceNoteDescription}</div>
+                  </div>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
@@ -239,6 +275,21 @@ export default function ModificationServices({ title, subtitle, services = [] })
         }
         .no-hover:hover {
           transform: scale(1.01) !important;
+        }
+        .price-note-btn {
+          font-size: 1.35em !important;
+          font-weight: 700 !important;
+        }
+        .price-note-popup {
+          width: 100%;
+          max-width: 100%;
+          min-width: 280px;
+          box-sizing: border-box;
+        }
+        @media (min-width: 768px) {
+          .price-note-popup {
+            max-width: 28rem; /* matches max-w-md */
+          }
         }
       `}</style>
     </div>
