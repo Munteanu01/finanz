@@ -18,8 +18,8 @@ const modificationServicesData = [
 		priceNote: "...",
 		priceNoteDescription: (
 			<>
-				<ul style={{ paddingLeft: 20, marginBottom: 0 }}>
-					<li>+100</li>
+				<ul className="list-disc pl-5 space-y-1">
+				<li><b>+100</b> </li>
 					<li>Nota de plată aferentă dosarului se achită de client.</li>
 				</ul>
 			</>

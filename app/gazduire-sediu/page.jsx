@@ -67,72 +67,84 @@ const priceTableData = {
   ],
 };
 
-// Modification services data
+// Modification services data (now with unique id for each service)
 const modificationServicesData = [
   {
+    id: "actualizare-caen",
     price: "650 lei",
     title: "Actualizarea codurilor CAEN",
     description: "Adu-ți codurile CAEN la zi conform noilor standarde Rev-3 pentru a asigura conformitatea activităților firmei tale.",
   },
   {
+    id: "adaugare-stergere-caen",
     price: "600 lei",
     title: "Adăugare/Ștergere Cod CAEN",
     description: "Extinde sau restrânge domeniul de activitate al firmei tale prin adăugarea sau eliminarea codurilor CAEN relevante.",
   },
   {
+    id: "schimbare-obiect-principal",
     price: "600 lei",
     title: "Schimbare obiect principal activitate",
     description:
-        "Modifică activitatea principală a firmei tale prin actualizarea codului CAEN principal pentru a reflecta noua direcție a afacerii.",
+      "Modifică activitatea principală a firmei tale prin actualizarea codului CAEN principal pentru a reflecta noua direcție a afacerii.",
     priceNote: "...",
     priceNoteDescription: (
-        <ul className="list-disc pl-5 space-y-1">
-            <li><b>+ 100 lei autorizare cod CAEN terți</b></li>
-            <li>Contactează-ne pentru detalii specifice situației tale.</li>
-        </ul>
-    )  },
+      <ul className="list-disc pl-5 space-y-1">
+        <li><b>+ 100 lei autorizare cod CAEN terți</b></li>
+        <li>Contactează-ne pentru detalii specifice situației tale.</li>
+      </ul>
+    ),
+  },
   {
+    id: "schimbare-sediu-social",
     price: "600 lei",
     title: "Schimbare sediu social",
     description: "Mută sediul social al firmei tale într-o nouă locație și actualizează documentele oficiale pentru a reflecta această schimbare.",
   },
   {
+    id: "prelungire-sediu-social",
     price: "450 lei",
     title: "Prelungire sediu social",
     description: "Extinde perioada de valabilitate a sediului social actual prin prelungirea duratei contractului de închiriere sau a dreptului de folosință.",
   },
   {
+    id: "deschidere-punct-lucru",
     price: "450 lei",
     title: "Deschidere punct de lucru",
     description: "Extinde-ți afacerea prin deschiderea unui nou punct de lucru și înregistrează-l oficial la autoritățile competente.",
     priceNote: "...",
     priceNoteDescription: (
-        <ul className="list-disc pl-5 space-y-1">
-            <li><b>+100</b> Autorizare cod CAEN punct lucru</li>
-        </ul>
+      <ul className="list-disc pl-5 space-y-1">
+        <li><b>+100</b> Autorizare cod CAEN punct lucru</li>
+      </ul>
     ),
-},
+  },
   {
+    id: "prelungire-punct-lucru",
     price: "450 lei",
     title: "Prelungire punct de lucru",
     description: "Menține activitatea punctului de lucru existent prin prelungirea duratei de funcționare înregistrată oficial.",
   },
   {
+    id: "inchidere-punct-lucru",
     price: "350 lei",
     title: "Închidere punct de lucru",
     description: "Închide un punct de lucru care nu mai este activ și actualizează documentele firmei pentru a reflecta această modificare.",
   },
   {
+    id: "modificare-nume-firma",
     price: "600 lei",
     title: "Modificare nume firmă",
     description: "Redefinește identitatea afacerii tale prin schimbarea denumirii oficiale a firmei și înregistrarea noii denumiri.",
   },
   {
+    id: "majorare-capital-social",
     price: "600 lei",
     title: "Majorare capital social",
     description: "Consolidează baza financiară a firmei tale prin majorarea capitalului social și actualizarea actelor constitutive.",
   },
   {
+    id: "cesiune-parti-sociale",
     price: "600 lei",
     title: "Cesiune părți sociale",
     description: "Transferă părțile sociale către noi asociați sau parteneri și actualizează structura de proprietate a firmei tale.",
