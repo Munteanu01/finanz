@@ -10,21 +10,20 @@ export default function ContactPage() {
 
   const contactCards = [
     {
-      icon: <Mail className="h-8 w-8 text-primaryColor" />,
-      border: "from-primaryColor to-secundaryColor",
-      bg: "bg-primaryColor/10",
-      title: <span className="text-primaryColor">Email</span>,
+      icon: <Mail className="h-6 w-6 text-white" />,
+      bgColor: "bg-mediumBlue",
+      title: "Email",
       content: (
-        <div className="flex flex-col items-center gap-1">
+        <div className="space-y-3">
           <a
             href="mailto:contact@finanzconsult.ro"
-            className="text-secundaryColor hover:text-primaryColor text-sm break-all font-semibold"
+            className="block text-gray-700 hover:text-mediumBlue text-sm font-medium transition-colors duration-200 hover:underline"
           >
             contact@finanzconsult.ro
           </a>
           <a
             href="mailto:financiar.contabil@finanzconsult.ro"
-            className="text-secundaryColor hover:text-primaryColor text-sm break-all font-semibold"
+            className="block text-gray-700 hover:text-mediumBlue text-sm font-medium transition-colors duration-200 hover:underline"
           >
             financiar.contabil@finanzconsult.ro
           </a>
@@ -32,21 +31,20 @@ export default function ContactPage() {
       ),
     },
     {
-      icon: <Phone className="h-8 w-8 text-primaryColor" />,
-      border: "from-primaryColor tosecundaryColor",
-      bg: "bg-primaryColor/10",
-      title: <span className="text-primaryColor">Telefon</span>,
+      icon: <Phone className="h-6 w-6 text-white" />,
+      bgColor: "bg-secundaryColor",
+      title: "Telefon",
       content: (
-        <div className="flex flex-col items-center gap-1">
+        <div className="space-y-3">
           <a
             href="tel:0219222"
-            className="text-secundaryColor hover:text-primaryColor text-sm font-semibold"
+            className="block text-gray-700 hover:text-secundaryColor text-sm font-medium transition-colors duration-200 hover:underline"
           >
             021 9222
           </a>
           <a
             href="tel:0213081477"
-            className="text-secundaryColor hover:text-primaryColor text-sm font-semibold"
+            className="block text-gray-700 hover:text-secundaryColor text-sm font-medium transition-colors duration-200 hover:underline"
           >
             021 308 14 77
           </a>
@@ -54,16 +52,15 @@ export default function ContactPage() {
       ),
     },
     {
-      icon: <MapPin className="h-8 w-8 text-primaryColor" />,
-      border: "from-primaryColor to-secundaryColor",
-      bg: "bg-primaryColor/10",
-      title: <span className="text-primaryColor">Adresa</span>,
+      icon: <MapPin className="h-6 w-6 text-white" />,
+      bgColor: "bg-accentColor",
+      title: "Adresa",
       content: (
         <a
           href="https://maps.app.goo.gl/7fRUwEm1n9Psuuyn8"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-secundaryColor hover:text-primaryColor text-sm font-semibold"
+          className="text-gray-700 hover:text-accentColor text-sm font-medium transition-colors duration-200 hover:underline block"
         >
           Splaiul Independentei, Nr 202B,
           <br />
@@ -72,12 +69,11 @@ export default function ContactPage() {
       ),
     },
     {
-      icon: <Clock className="h-8 w-8 text-primaryColor" />,
-      border: "from-primaryColor to-secundaryColor",
-      bg: "bg-primaryColor/10",
-      title: <span className="text-primaryColor">Program</span>,
+      icon: <Clock className="h-6 w-6 text-white" />,
+      bgColor: "bg-primaryColor",
+      title: "Program",
       content: (
-        <div className="text-secundaryColor text-sm font-semibold">
+        <div className="text-gray-700 text-sm font-medium">
           <p>Luni - Vineri: 09:00 - 18:00</p>
         </div>
       ),
@@ -98,33 +94,19 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-1 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-4 gap-4 lg:gap-2 mb-12">
             {contactCards.map((card, idx) => (
               <div
                 key={idx}
-                className={`
-                  text-center px-2 py-4 rounded-xl bg-white
-                  border-2
-                  border-gray-200
-                  bg-clip-padding
-                  relative
-                  before:content-['']
-                  before:absolute before:inset-0 before:rounded-xl
-                  before:bg-gradient-to-br before:${card.border}
-                  before:z-[-1]
-                  before:p-[2px]
-                  before:pointer-events-none
-                  overflow-hidden
-                `}
-                style={{
-                  boxShadow: "0 2px 8px 0 rgba(0,0,0,0.03)",
-                }}
+                className="bg-white rounded-2xl p-6 lg:px-4 lg:py-5 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 flex flex-col items-center text-center"
               >
-                <div className={`w-16 h-16 ${card.bg} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                <div className={`w-12 h-12 lg:w-14 lg:h-14 ${card.bgColor} rounded-xl flex items-center justify-center mb-4 lg:mb-6 shadow-md`}>
                   {card.icon}
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">{card.title}</h3>
-                {card.content}
+                <h3 className="font-bold text-gray-900 mb-3 lg:mb-4 text-lg lg:text-xl">{card.title}</h3>
+                <div className="text-center">
+                  {card.content}
+                </div>
               </div>
             ))}
           </div>
