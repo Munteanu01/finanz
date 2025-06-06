@@ -15,6 +15,15 @@ const modificationServicesData = [
 		title: "Actualizare coduri CAEN Rev 3",
 		description:
 			"Adu-ți codurile CAEN la zi conform noilor standarde Rev-3 pentru a asigura conformitatea activităților firmei tale.",
+		priceNote: "...",
+		priceNoteDescription: (
+			<>
+				<ul style={{ paddingLeft: 20, marginBottom: 0 }}>
+					<li>+100</li>
+					<li>Nota de plată aferentă dosarului se achită de client.</li>
+				</ul>
+			</>
+		),
 	},
 	{
 		price: "350 lei",
