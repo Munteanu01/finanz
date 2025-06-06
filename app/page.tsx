@@ -18,6 +18,8 @@ import {
   Zap,
 } from "lucide-react";
 import Link from "next/link";
+import FacturareDiv from "@/components/facturareDiv";
+import LegalSupport from "@/components/LegalSupport";
 
 export default function Page() {
   return (
@@ -388,7 +390,8 @@ export default function Page() {
             </div>
           </div>
         </section>
-
+        <LegalSupport />
+        <FacturareDiv />
         {/* Testimonials Section - Compact Design */}
         <section className="py-20 bg-gradient-to-br from-gray-50 to-[#86bbd8]/20 relative overflow-hidden">
           <div className="container mx-auto px-4">

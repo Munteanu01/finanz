@@ -40,13 +40,13 @@ export default function FacturareDiv() {
                   <div
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
-                    className="inline-flex flex-wrap text-3xl sm:text-4xl font-extrabold text-primaryColor gap-x-2 gap-y-3 leading-tight"
+                    className="inline-flex flex-wrap text-3xl sm:text-4xl font-extrabold text-primaryColor gap-x-2 gap-y-2 leading-tight"
                   >
                     <span className="mr-1">Facturare</span>
                     <HighlightedText isHovered={isHovered}>rapidă </HighlightedText>
                     <HighlightedText isHovered={isHovered}>și complet integrată</HighlightedText>
                     <div className="basis-full h-0" />
-                    <HighlightedText isHovered={isHovered}>2 euro/lună + TVA</HighlightedText>
+                   
                   </div>
                 </motion.h2>
 
@@ -89,7 +89,7 @@ export default function FacturareDiv() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  src="/laptop2.jpg"
+                  src="/3.jpg"
                   alt="Telefon aplicație contabilitate"
                   className="rounded-2xl shadow-xl w-64 -translate-x-12 -translate-y-12 
                     hover:scale-105 transition-all duration-300"
